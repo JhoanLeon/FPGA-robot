@@ -1,0 +1,926 @@
+Analysis & Synthesis report for BB_SYSTEM
+Mon Jul 26 22:16:53 2021
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: SI_DEBOUNCE:DB_START_u0
+ 15. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0
+ 16. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0
+ 17. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u1
+ 18. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos
+ 19. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin
+ 20. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_sin
+ 21. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_cos
+ 22. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qadd:adder_vx
+ 23. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qadd:adder_vy
+ 24. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u2
+ 25. Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u3
+ 26. Parameter Settings for Inferred Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0
+ 27. Parameter Settings for Inferred Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4
+ 28. Parameter Settings for Inferred Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2
+ 29. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_cos"
+ 30. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_sin"
+ 31. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin"
+ 32. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos"
+ 33. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u1"
+ 34. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0"
+ 35. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter"
+ 36. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter"
+ 37. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U"
+ 38. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0"
+ 39. Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jul 26 22:16:53 2021       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; BB_SYSTEM                                   ;
+; Top-level Entity Name              ; BB_SYSTEM                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 837                                         ;
+;     Total combinational functions  ; 784                                         ;
+;     Dedicated logic registers      ; 356                                         ;
+; Total registers                    ; 356                                         ;
+; Total pins                         ; 11                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; BB_SYSTEM          ; BB_SYSTEM          ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone IV GX      ;
+; Maximum processors allowed for parallel compilation              ; 2                  ;                    ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
+; rtl/SC_STATEMACHINE_GLOBAL_VEL.v ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_STATEMACHINE_GLOBAL_VEL.v ;         ;
+; rtl/SC_REGGENERAL.v              ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_REGGENERAL.v              ;         ;
+; rtl/SC_GLOBAL_VELOCITY.v         ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v         ;         ;
+; rtl/qmults.v                     ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/qmults.v                     ;         ;
+; rtl/qadd.v                       ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/qadd.v                       ;         ;
+; rtl/core_cordic.v                ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v                ;         ;
+; rtl/SI_DEBOUNCE.v                ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SI_DEBOUNCE.v                ;         ;
+; BB_SYSTEM.v                      ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/BB_SYSTEM.v                      ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                             ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/addcore.inc                                 ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/look_add.inc                                ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/bypassff.inc                                ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altshift.inc                                ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                     ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                              ;         ;
+; db/add_sub_svi.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/db/add_sub_svi.tdf               ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 837                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 784                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 302                      ;
+;     -- 3 input functions                    ; 360                      ;
+;     -- <=2 input functions                  ; 122                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 491                      ;
+;     -- arithmetic mode                      ; 293                      ;
+;                                             ;                          ;
+; Total registers                             ; 356                      ;
+;     -- Dedicated logic registers            ; 356                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 11                       ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
+; Maximum fan-out                             ; 356                      ;
+; Total fan-out                               ; 3785                     ;
+; Average fan-out                             ; 3.26                     ;
++---------------------------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                      ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name                ; Library Name ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |BB_SYSTEM                                         ; 784 (2)             ; 356 (0)                   ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |BB_SYSTEM                                                                                                                   ; BB_SYSTEM                  ; work         ;
+;    |SC_GLOBAL_VELOCITY:Global_Velocity_u0|         ; 756 (0)             ; 342 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0                                                                             ; SC_GLOBAL_VELOCITY         ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u0|                ; 0 (0)               ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u1|                ; 0 (0)               ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u1                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u2|                ; 26 (26)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u2                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0| ; 7 (7)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0                                  ; SC_STATEMACHINE_GLOBAL_VEL ; work         ;
+;       |cordic:cordic_core_u0|                      ; 368 (68)            ; 71 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0                                                       ; cordic                     ; work         ;
+;          |rotator:U|                               ; 300 (55)            ; 51 (51)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U                                             ; rotator                    ; work         ;
+;             |lpm_add_sub:Add0|                     ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0                            ; lpm_add_sub                ; work         ;
+;                |add_sub_svi:auto_generated|        ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0|add_sub_svi:auto_generated ; add_sub_svi                ; work         ;
+;             |lpm_add_sub:Add2|                     ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2                            ; lpm_add_sub                ; work         ;
+;                |add_sub_svi:auto_generated|        ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2|add_sub_svi:auto_generated ; add_sub_svi                ; work         ;
+;             |lpm_add_sub:Add4|                     ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4                            ; lpm_add_sub                ; work         ;
+;                |add_sub_svi:auto_generated|        ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4|add_sub_svi:auto_generated ; add_sub_svi                ; work         ;
+;             |signed_shifter:x_shifter|             ; 86 (86)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter                    ; signed_shifter             ; work         ;
+;             |signed_shifter:y_shifter|             ; 111 (111)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter                    ; signed_shifter             ; work         ;
+;       |qadd:adder_vx|                              ; 120 (120)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qadd:adder_vx                                                               ; qadd                       ; work         ;
+;       |qmults:multiplier_vx_cos|                   ; 139 (139)           ; 126 (126)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos                                                    ; qmults                     ; work         ;
+;       |qmults:multiplier_vy_sin|                   ; 96 (96)             ; 93 (93)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin                                                    ; qmults                     ; work         ;
+;    |SI_DEBOUNCE:DB_START_u0|                       ; 26 (26)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SI_DEBOUNCE:DB_START_u0                                                                                           ; SI_DEBOUNCE                ; work         ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register                                                                                                                                                                                                                                                            ;
++-------------------------------------+-----------------------------+-----------------------------+-----------------------------------+-----------------------------------+-------------------------------------+-------------------------------------+------------------------------------+------------------------------+------------------------------+------------------------------+
+; Name                                ; STATE_Register.STATE_DONE_1 ; STATE_Register.STATE_DONE_0 ; STATE_Register.STATE_START_MULT_1 ; STATE_Register.STATE_START_MULT_0 ; STATE_Register.STATE_VALID_CORDIC_1 ; STATE_Register.STATE_VALID_CORDIC_0 ; STATE_Register.STATE_INIT_CORDIC_0 ; STATE_Register.STATE_CHECK_0 ; STATE_Register.STATE_START_0 ; STATE_Register.STATE_RESET_0 ;
++-------------------------------------+-----------------------------+-----------------------------+-----------------------------------+-----------------------------------+-------------------------------------+-------------------------------------+------------------------------------+------------------------------+------------------------------+------------------------------+
+; STATE_Register.STATE_RESET_0        ; 0                           ; 0                           ; 0                                 ; 0                                 ; 0                                   ; 0                                   ; 0                                  ; 0                            ; 0                            ; 0                            ;
+; STATE_Register.STATE_START_0        ; 0                           ; 0                           ; 0                                 ; 0                                 ; 0                                   ; 0                                   ; 0                                  ; 0                            ; 1                            ; 1                            ;
+; STATE_Register.STATE_CHECK_0        ; 0                           ; 0                           ; 0                                 ; 0                                 ; 0                                   ; 0                                   ; 0                                  ; 1                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_INIT_CORDIC_0  ; 0                           ; 0                           ; 0                                 ; 0                                 ; 0                                   ; 0                                   ; 1                                  ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_VALID_CORDIC_0 ; 0                           ; 0                           ; 0                                 ; 0                                 ; 0                                   ; 1                                   ; 0                                  ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_VALID_CORDIC_1 ; 0                           ; 0                           ; 0                                 ; 0                                 ; 1                                   ; 0                                   ; 0                                  ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_START_MULT_0   ; 0                           ; 0                           ; 0                                 ; 1                                 ; 0                                   ; 0                                   ; 0                                  ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_START_MULT_1   ; 0                           ; 0                           ; 1                                 ; 0                                 ; 0                                   ; 0                                   ; 0                                  ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_DONE_0         ; 0                           ; 1                           ; 0                                 ; 0                                 ; 0                                   ; 0                                   ; 0                                  ; 0                            ; 0                            ; 1                            ;
+; STATE_Register.STATE_DONE_1         ; 1                           ; 0                           ; 0                                 ; 0                                 ; 0                                   ; 0                                   ; 0                                  ; 0                            ; 0                            ; 1                            ;
++-------------------------------------+-----------------------------+-----------------------------+-----------------------------------+-----------------------------------+-------------------------------------+-------------------------------------+------------------------------------+------------------------------+------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                           ;
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; Register name                                                                                     ; Reason for Removal                                                                       ;
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[0..14]       ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[15]          ; Stuck at VCC due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[16]          ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[17]          ; Stuck at VCC due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[18..31]      ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[0..15]       ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[16]          ; Stuck at VCC due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[17]          ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[18]          ; Stuck at VCC due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[19..31]      ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u1|REGGENERAL_Register[16..30]     ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0|REGGENERAL_Register[16..30]     ; Stuck at GND due to stuck port data_in                                                   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_done                           ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_done      ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[5]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[5]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[31]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[31] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[30]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[30] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[29]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[29] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[28]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[28] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[27]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[27] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[26]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[26] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[25]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[25] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[24]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[24] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[23]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[23] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[22]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[22] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[21]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[21] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[20]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[20] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[19]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[19] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[18]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[18] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[17]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[17] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[16]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[16] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[15]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[15] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[14]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[14] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[13]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[13] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[12]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[12] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[11]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[11] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[10]                      ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[10] ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[9]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[9]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[8]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[8]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[7]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[7]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[6]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[6]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[4]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[4]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[3]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[3]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[2]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[2]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[1]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[1]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_count[0]                       ; Merged with SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_count[0]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~4 ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~5 ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~6 ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~7 ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[46..62]        ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[46..62]        ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_working_result[46..62]         ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_working_result[46..62]         ; Lost fanout                                                                              ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|iteration[4]                          ; Lost fanout                                                                              ;
+; Total Number of Removed Registers = 200                                                           ;                                                                                          ;
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                   ;
++-----------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
+; Register name                                                                           ; Reason for Removal        ; Registers Removed due to This Register                                                  ;
++-----------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[62]  ; Lost Fanouts              ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[61], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[60], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[59], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[58], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[57], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[56], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[55], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[54], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[53], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[52], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[51], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[50], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[49], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[48], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[47], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[46]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[62]  ; Lost Fanouts              ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[61], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[60], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[59], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[58], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[57], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[56], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[55], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[54], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[53], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[52], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[51], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[50], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[49], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[48], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[47], ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[46]  ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[0] ; Stuck at GND              ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_working_result[58],  ;
+;                                                                                         ; due to stuck port data_in ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_working_result[59],  ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_working_result[60],  ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_working_result[61]   ;
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[0] ; Stuck at GND              ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_working_result[58],  ;
+;                                                                                         ; due to stuck port data_in ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_working_result[59],  ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_working_result[60],  ;
+;                                                                                         ;                           ; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_working_result[61]   ;
++-----------------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 356   ;
+; Number of registers using Synchronous Clear  ; 152   ;
+; Number of registers using Synchronous Load   ; 42    ;
+; Number of registers using Asynchronous Clear ; 72    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 227   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                      ;
++-------------------------------------------------------------------------+---------+
+; Inverted Register                                                       ; Fan out ;
++-------------------------------------------------------------------------+---------+
+; SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_done ; 108     ;
+; Total number of inverted registers = 1                                  ;         ;
++-------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u2|REGGENERAL_Register[13]            ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_working_result[60]                ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin|reg_working_result[29]                ;
+; 3:1                ; 94 bits   ; 188 LEs       ; 94 LEs               ; 94 LEs                 ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[58]               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[0]                ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[12]               ;
+; 4:1                ; 51 bits   ; 102 LEs       ; 102 LEs              ; 0 LEs                  ; Yes        ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|y_1[16]                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[14] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[13] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[12] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[11] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[10] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[9]  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[8]  ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[7]  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[6]  ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[5]  ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[4]  ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[3]  ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[2]  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[0]  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SI_DEBOUNCE:DB_START_u0 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; N              ; 11    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0 ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N_WIDTH        ; 32    ; Signed Integer                                            ;
+; Q_WIDTH        ; 15    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0 ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                            ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; REGGENERAL_DATAWIDTH ; 32    ; Signed Integer                                                                  ;
++----------------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u1 ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                            ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; REGGENERAL_DATAWIDTH ; 32    ; Signed Integer                                                                  ;
++----------------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Q              ; 15    ; Signed Integer                                                                     ;
+; N              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Q              ; 15    ; Signed Integer                                                                     ;
+; N              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_sin ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Q              ; 15    ; Signed Integer                                                                     ;
+; N              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_cos ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Q              ; 15    ; Signed Integer                                                                     ;
+; N              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qadd:adder_vx ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; Q              ; 15    ; Signed Integer                                                          ;
+; N              ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|qadd:adder_vy ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; Q              ; 15    ; Signed Integer                                                          ;
+; N              ; 32    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u2 ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                            ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; REGGENERAL_DATAWIDTH ; 32    ; Signed Integer                                                                  ;
++----------------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u3 ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                            ;
++----------------------+-------+---------------------------------------------------------------------------------+
+; REGGENERAL_DATAWIDTH ; 32    ; Signed Integer                                                                  ;
++----------------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0 ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                            ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 17           ; Untyped                                                                                         ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                         ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                                                         ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                         ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                         ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                         ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                         ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                         ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                              ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                         ;
+; USE_WYS                ; OFF          ; Untyped                                                                                         ;
+; STYLE                  ; FAST         ; Untyped                                                                                         ;
+; CBXI_PARAMETER         ; add_sub_svi  ; Untyped                                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                                  ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4 ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                            ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 17           ; Untyped                                                                                         ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                         ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                                                         ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                         ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                         ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                         ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                         ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                         ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                              ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                         ;
+; USE_WYS                ; OFF          ; Untyped                                                                                         ;
+; STYLE                  ; FAST         ; Untyped                                                                                         ;
+; CBXI_PARAMETER         ; add_sub_svi  ; Untyped                                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                                  ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2 ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                            ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 17           ; Untyped                                                                                         ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                         ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                                                         ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                         ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                         ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                         ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                         ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                         ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                              ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                         ;
+; USE_WYS                ; OFF          ; Untyped                                                                                         ;
+; STYLE                  ; FAST         ; Untyped                                                                                         ;
+; CBXI_PARAMETER         ; add_sub_svi  ; Untyped                                                                                         ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                                  ;
++------------------------+--------------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_cos" ;
++------------+--------+----------+-----------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                   ;
++------------+--------+----------+-----------------------------------------------------------+
+; o_complete ; Output ; Info     ; Explicitly unconnected                                    ;
+; o_overflow ; Output ; Info     ; Explicitly unconnected                                    ;
++------------+--------+----------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_sin" ;
++------------+--------+----------+-----------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                   ;
++------------+--------+----------+-----------------------------------------------------------+
+; o_complete ; Output ; Info     ; Explicitly unconnected                                    ;
+; o_overflow ; Output ; Info     ; Explicitly unconnected                                    ;
++------------+--------+----------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vy_sin" ;
++------------+--------+----------+-----------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                   ;
++------------+--------+----------+-----------------------------------------------------------+
+; o_complete ; Output ; Info     ; Explicitly unconnected                                    ;
+; o_overflow ; Output ; Info     ; Explicitly unconnected                                    ;
++------------+--------+----------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos" ;
++------------+--------+----------+-----------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                   ;
++------------+--------+----------+-----------------------------------------------------------+
+; o_overflow ; Output ; Info     ; Explicitly unconnected                                    ;
++------------+--------+----------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u1" ;
++----------------------------------+-------+----------+-----------------------------------------+
+; Port                             ; Type  ; Severity ; Details                                 ;
++----------------------------------+-------+----------+-----------------------------------------+
+; SC_REGGENERAL_data_InBus[30..16] ; Input ; Info     ; Stuck at GND                            ;
++----------------------------------+-------+----------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0" ;
++----------------------------------+-------+----------+-----------------------------------------+
+; Port                             ; Type  ; Severity ; Details                                 ;
++----------------------------------+-------+----------+-----------------------------------------+
+; SC_REGGENERAL_data_InBus[30..16] ; Input ; Info     ; Stuck at GND                            ;
++----------------------------------+-------+----------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter"                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; i    ; Input ; Warning  ; Input port expression (5 bits) is wider than the input port (4 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter"                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; i    ; Input ; Warning  ; Input port expression (5 bits) is wider than the input port (4 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U" ;
++----------------+-------+----------+---------------------------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                                       ;
++----------------+-------+----------+---------------------------------------------------------------+
+; tangle[16..14] ; Input ; Info     ; Stuck at GND                                                  ;
++----------------+-------+----------+---------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0" ;
++-------------+--------+----------+-------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                               ;
++-------------+--------+----------+-------------------------------------------------------+
+; x_i[11..10] ; Input  ; Info     ; Stuck at VCC                                          ;
+; x_i[8..7]   ; Input  ; Info     ; Stuck at VCC                                          ;
+; x_i[5..3]   ; Input  ; Info     ; Stuck at VCC                                          ;
+; x_i[16..15] ; Input  ; Info     ; Stuck at GND                                          ;
+; x_i[13..12] ; Input  ; Info     ; Stuck at GND                                          ;
+; x_i[2..0]   ; Input  ; Info     ; Stuck at GND                                          ;
+; x_i[14]     ; Input  ; Info     ; Stuck at VCC                                          ;
+; x_i[9]      ; Input  ; Info     ; Stuck at GND                                          ;
+; x_i[6]      ; Input  ; Info     ; Stuck at GND                                          ;
+; y_i         ; Input  ; Info     ; Stuck at GND                                          ;
+; theta_o     ; Output ; Info     ; Explicitly unconnected                                ;
++-------------+--------+----------+-------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SC_GLOBAL_VELOCITY:Global_Velocity_u0"                                                                                     ;
++---------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                                        ; Type   ; Severity ; Details                                                                             ;
++---------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; SC_GLOBAL_VELOCITY_VX_LOCAL_InBus[30..19]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_VX_LOCAL_InBus[15..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_VX_LOCAL_InBus[31]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_VX_LOCAL_InBus[18]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_VX_LOCAL_InBus[17]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_VX_LOCAL_InBus[16]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_VY_LOCAL_InBus[30..18]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_VY_LOCAL_InBus[14..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_VY_LOCAL_InBus[31]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_VY_LOCAL_InBus[17]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_VY_LOCAL_InBus[16]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_VY_LOCAL_InBus[15]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_WZ_LOCAL_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[18..17]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[31..21]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[14..0]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[20]          ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[19]          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[16]          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SC_GLOBAL_VELOCITY_THETA_InBus[15]          ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SC_GLOBAL_VELOCITY_DONE_Out                 ; Output ; Info     ; Explicitly unconnected                                                              ;
+; SC_GLOBAL_VELOCITY_VX_GLOBAL_OutBus[30..20] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SC_GLOBAL_VELOCITY_VX_GLOBAL_OutBus[12..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SC_GLOBAL_VELOCITY_VY_GLOBAL_OutBus         ; Output ; Info     ; Explicitly unconnected                                                              ;
+; SC_GLOBAL_VELOCITY_WZ_GLOBAL_OutBus         ; Output ; Info     ; Explicitly unconnected                                                              ;
++---------------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 11                          ;
+; cycloneiii_ff         ; 356                         ;
+;     CLR               ; 30                          ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 94                          ;
+;     ENA CLR           ; 34                          ;
+;     ENA CLR SLD       ; 7                           ;
+;     ENA SCLR          ; 92                          ;
+;     SCLR              ; 60                          ;
+;     SLD               ; 34                          ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 784                         ;
+;     arith             ; 293                         ;
+;         2 data inputs ; 41                          ;
+;         3 data inputs ; 252                         ;
+;     normal            ; 491                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 108                         ;
+;         4 data inputs ; 302                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.60                       ;
+; Average LUT depth     ; 5.40                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Mon Jul 26 22:16:39 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_statemachine_global_vel.v
+    Info (12023): Found entity 1: SC_STATEMACHINE_GLOBAL_VEL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_STATEMACHINE_GLOBAL_VEL.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_reggeneral.v
+    Info (12023): Found entity 1: SC_REGGENERAL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_REGGENERAL.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/sc_global_velocity.v
+    Info (12023): Found entity 1: SC_GLOBAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/qmults.v
+    Info (12023): Found entity 1: qmults File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/qmults.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/qadd.v
+    Info (12023): Found entity 1: qadd File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/qadd.v Line: 21
+Info (12021): Found 3 design units, including 3 entities, in source file rtl/core_cordic.v
+    Info (12023): Found entity 1: signed_shifter File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 162
+    Info (12023): Found entity 2: rotator File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 180
+    Info (12023): Found entity 3: cordic File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 252
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/si_debounce.v
+    Info (12023): Found entity 1: SI_DEBOUNCE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SI_DEBOUNCE.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
+    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/BB_SYSTEM.v Line: 6
+Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
+Info (12128): Elaborating entity "SI_DEBOUNCE" for hierarchy "SI_DEBOUNCE:DB_START_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/BB_SYSTEM.v Line: 53
+Info (12128): Elaborating entity "SC_GLOBAL_VELOCITY" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/BB_SYSTEM.v Line: 75
+Info (12128): Elaborating entity "SC_STATEMACHINE_GLOBAL_VEL" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v Line: 109
+Info (12128): Elaborating entity "cordic" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v Line: 129
+Info (12128): Elaborating entity "rotator" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 373
+Info (12128): Elaborating entity "signed_shifter" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 205
+Info (12128): Elaborating entity "SC_REGGENERAL" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|SC_REGGENERAL:REGGENERAL_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v Line: 138
+Info (12128): Elaborating entity "qmults" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qmults:multiplier_vx_cos" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v Line: 157
+Info (12128): Elaborating entity "qadd" for hierarchy "SC_GLOBAL_VELOCITY:Global_Velocity_u0|qadd:adder_vx" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/SC_GLOBAL_VELOCITY.v Line: 194
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|Add0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 234
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|Add4" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 239
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|Add2" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 236
+Info (12130): Elaborated megafunction instantiation "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 234
+Info (12133): Instantiated megafunction "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 234
+    Info (12134): Parameter "LPM_WIDTH" = "17"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_svi.tdf
+    Info (12023): Found entity 1: add_sub_svi File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/db/add_sub_svi.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 236
+Info (12133): Instantiated megafunction "SC_GLOBAL_VELOCITY:Global_Velocity_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_synthesis/rtl/core_cordic.v Line: 236
+    Info (12134): Parameter "LPM_WIDTH" = "17"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 73 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 848 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 837 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 647 megabytes
+    Info: Processing ended: Mon Jul 26 22:16:53 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:29
+
+

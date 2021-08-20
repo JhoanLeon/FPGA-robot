@@ -1,0 +1,235 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim
+vBB_SYSTEM
+Z1 !s110 1627320409
+!i10b 1
+!s100 gcdb;=:>b>c7d`N_>N:0L1
+IBi8f1mWg=IJ>f]doQ[@2M2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1627320090
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/BB_SYSTEM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/BB_SYSTEM.v
+L0 5
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1627320409.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/BB_SYSTEM.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex}
+Z6 tCvgOpt 0
+n@b@b_@s@y@s@t@e@m
+vcordic
+Z7 !s110 1627320408
+!i10b 1
+!s100 ?1RTEIWOo]SAGJc[[daiS1
+I<@cM=W[O?LlihhT<LUf8F1
+R2
+R0
+Z8 w1626148380
+Z9 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/core_cordic.v
+Z10 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/core_cordic.v
+L0 252
+R3
+r1
+!s85 0
+31
+Z11 !s108 1627320408.000000
+Z12 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/core_cordic.v|
+Z13 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/core_cordic.v|
+!i113 1
+R5
+Z14 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl}
+R6
+vqadd
+R1
+!i10b 1
+!s100 X`flW7fg3j`B^9ofbn8B92
+I<?;L;zKIb]0E74:gaaXzF2
+R2
+R0
+w1624988595
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qadd.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qadd.v
+Z15 L0 21
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qadd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qadd.v|
+!i113 1
+R5
+R14
+R6
+vqmults
+R1
+!i10b 1
+!s100 dj=c6HMGjDJ>69BR[blgL0
+Ij10alM`WGzPPV>579H:W63
+R2
+R0
+w1626141751
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qmults.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qmults.v
+R15
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qmults.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/qmults.v|
+!i113 1
+R5
+R14
+R6
+vrotator
+R7
+!i10b 1
+!s100 WJ^TlBI0@?Vo4B6jd?;F60
+I0[fF@;o7d2d:Z^[^>fzUG1
+R2
+R0
+R8
+R9
+R10
+L0 180
+R3
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 1
+R5
+R14
+R6
+vSC_GLOBAL_VELOCITY
+R7
+!i10b 1
+!s100 [>>Q[LeQKfC8GBZ?AJf9f1
+IclSSh7;8X;FIaIWHclC;80
+R2
+R0
+w1627189994
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_GLOBAL_VELOCITY.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_GLOBAL_VELOCITY.v
+L0 14
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_GLOBAL_VELOCITY.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_GLOBAL_VELOCITY.v|
+!i113 1
+R5
+R14
+R6
+n@s@c_@g@l@o@b@a@l_@v@e@l@o@c@i@t@y
+vSC_REGGENERAL
+R7
+!i10b 1
+!s100 A2;bMP?bSZN=bS_^7[`H50
+IEozNQfOShi>jKP3jzeTQ72
+R2
+R0
+w1626146914
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_REGGENERAL.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_REGGENERAL.v
+R15
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_REGGENERAL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_REGGENERAL.v|
+!i113 1
+R5
+R14
+R6
+n@s@c_@r@e@g@g@e@n@e@r@a@l
+vSC_STATEMACHINE_GLOBAL_VEL
+R7
+!i10b 1
+!s100 ;Oib1eiQ7YElOP0:l]h2[1
+I:Q:S:en9>kRg^jbBB:9U?3
+R2
+R0
+w1627078098
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_STATEMACHINE_GLOBAL_VEL.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_STATEMACHINE_GLOBAL_VEL.v
+R15
+R3
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_STATEMACHINE_GLOBAL_VEL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/rtl/SC_STATEMACHINE_GLOBAL_VEL.v|
+!i113 1
+R5
+R14
+R6
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e_@g@l@o@b@a@l_@v@e@l
+vsigned_shifter
+R7
+!i10b 1
+!s100 ml>oSd:=<nB`WeGABZnEA0
+IgC>]ea5PX<gEB`2LLz;KQ1
+R2
+R0
+R8
+R9
+R10
+L0 162
+R3
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 1
+R5
+R14
+R6
+vTB_SYSTEM
+R1
+!i10b 1
+!s100 lS@4Ajc]JI3;3;73JnSnY0
+Ij6_a:i0DK<Q091`<c[5UR0
+R2
+R0
+w1627319544
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim/TB_SYSTEM.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim/TB_SYSTEM.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_complex/simulation/modelsim}
+R6
+n@t@b_@s@y@s@t@e@m

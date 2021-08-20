@@ -1,0 +1,122 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim
+vBB_SYSTEM
+Z1 !s110 1628224310
+!i10b 1
+!s100 H]Xnl0b]clQ[mC8@KFbVh1
+IMm5@4Cmegof?lmMFKLSfP2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1628187315
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/BB_SYSTEM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/BB_SYSTEM.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1628224310.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/BB_SYSTEM.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic}
+Z6 tCvgOpt 0
+n@b@b_@s@y@s@t@e@m
+vcordic
+R1
+!i10b 1
+!s100 1jBOAFEYRd]U74Ubefj[o2
+I8LH:N5BU<W=T<fK:n1b=m1
+R2
+R0
+Z7 w1628222612
+Z8 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/rtl/core_cordic.v
+Z9 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/rtl/core_cordic.v
+L0 252
+R3
+r1
+!s85 0
+31
+R4
+Z10 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/rtl/core_cordic.v|
+Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/rtl/core_cordic.v|
+!i113 1
+R5
+Z12 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/rtl}
+R6
+vrotator
+R1
+!i10b 1
+!s100 WJ^TlBI0@?Vo4B6jd?;F60
+I]`<k2KVHmK@85XC<Boc>Q3
+R2
+R0
+R7
+R8
+R9
+L0 180
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vsigned_shifter
+R1
+!i10b 1
+!s100 ml>oSd:=<nB`WeGABZnEA0
+IBe7[>K9;NW_4i^P<]P>jj1
+R2
+R0
+R7
+R8
+R9
+L0 162
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R12
+R6
+vTB_SYSTEM
+R1
+!i10b 1
+!s100 3dkPUH;B1GFd<>HLfcS5o3
+IggL6iP5COinJZo`d:RAgA0
+R2
+R0
+w1628193670
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim/TB_SYSTEM.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim/TB_SYSTEM.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_cordic/simulation/modelsim}
+R6
+n@t@b_@s@y@s@t@e@m

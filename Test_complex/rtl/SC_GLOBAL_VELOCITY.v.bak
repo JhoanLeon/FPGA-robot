@@ -1,0 +1,169 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+/*
+This module computes geometry transformations for local to global velocities, this is:
+vx_global = vx_local*cos(theta) - vy_local*sin(theta)
+vy_global = vx_local*sin(theta) + vy_local*cos(theta)
+wz_global = wz_local
+
+inputs and output results are all in [m/s]
+*/
+
+module SC_GLOBAL_VELOCITY 
+#(
+	//Parameterized values
+	parameter N_WIDTH = 32,
+	parameter Q_WIDTH = 15
+) 
+(
+//////////// INPUTS //////////
+	SC_GLOBAL_VELOCITY_CLOCK_50,
+	SC_GLOBAL_VELOCITY_RESET_InHigh,
+	
+	SC_GLOBAL_VELOCITY_VX_LOCAL_InBus,
+	SC_GLOBAL_VELOCITY_VY_LOCAL_InBus,
+	SC_GLOBAL_VELOCITY_WZ_LOCAL_InBus,
+	SC_GLOBAL_VELOCITY_THETA_InBus, // theta angle to compute in notation 32b |S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF|
+
+//////////// OUTPUTS //////////
+	SC_GLOBAL_VELOCITY_DONE_Out,
+	SC_GLOBAL_VELOCITY_VX_GLOBAL_OutBus,
+	SC_GLOBAL_VELOCITY_VY_GLOBAL_OutBus,
+	SC_GLOBAL_VELOCITY_WZ_GLOBAL_OutBus
+	
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+localparam THETA_BITS = 17;
+localparam XY_BITS_WIDTH = 17;
+localparam CORDIC_CST = 17'd19896;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input	SC_GLOBAL_VELOCITY_CLOCK_50;
+input	SC_GLOBAL_VELOCITY_RESET_InHigh;
+	
+input 	[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_VX_LOCAL_InBus;
+input		[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_VY_LOCAL_InBus;
+input		[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_WZ_LOCAL_InBus;
+input		[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_THETA_InBus;
+
+output 						SC_GLOBAL_VELOCITY_DONE_Out;
+output	[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_VX_GLOBAL_OutBus;
+output	[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_VY_GLOBAL_OutBus;
+output	[N_WIDTH-1:0]	SC_GLOBAL_VELOCITY_WZ_GLOBAL_OutBus;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+wire [XY_BITS_WIDTH-1:0] cos_17_to_32;
+wire [N_WIDTH-1:0] cos_output_32;
+
+wire [XY_BITS_WIDTH-1:0] sin_17_to_32;
+wire [N_WIDTH-1:0] sin_output_32;
+
+wire [N_WIDTH-1:0] vx_cos_result;
+wire [N_WIDTH-1:0] vy_sin_result;
+wire [N_WIDTH-1:0] vx_sin_result;
+wire [N_WIDTH-1:0] vy_cos_result;
+
+wire sign_change_operand;
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+// STATE MACHINE
+
+
+
+cordic cordic_core_u0 (
+
+  .clk(SC_GLOBAL_VELOCITY_CLOCK_50),
+  .rst(SC_GLOBAL_VELOCITY_RESET_InHigh),
+  
+  .init(), // signal to load data on cordic system
+  .valid_in(), // input in high for iniciate iterations of cordic algorithm
+  .x_i(CORDIC_CST),
+  .y_i(17'd0),
+  .theta_i({SC_GLOBAL_VELOCITY_THETA_InBus[N_WIDTH-1], SC_GLOBAL_VELOCITY_THETA_InBus[22:7]}), // theta angle to compute in notation 17b |S|IIIIIIII|FFFFFFFF| [0°-90°]
+  
+  .valid_out(), // output flag flag that indicates final result of iterations in cordic core
+  
+  .x_o(cos_17_to_32), // output cos(theta) 17b |S|I|FFFFFFFFFFFFFFF|
+  .y_o(sin_17_to_32), // output sin(theta) 17b |S|I|FFFFFFFFFFFFFFF|
+  .theta_o() // don't care this signal
+
+);
+
+
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_cos (
+	.i_multiplicand(SC_GLOBAL_VELOCITY_VX_LOCAL_InBus),
+	.i_multiplier(cos_output_32),
+	.i_start(),
+	.i_clk(SC_GLOBAL_VELOCITY_CLOCK_50),
+	.o_result_out(vx_cos_result),
+	.o_complete(),
+	.o_overflow()
+);
+
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_sin (
+	.i_multiplicand(SC_GLOBAL_VELOCITY_VY_LOCAL_InBus),
+	.i_multiplier(sin_output_32),
+	.i_start(),
+	.i_clk(SC_GLOBAL_VELOCITY_CLOCK_50),
+	.o_result_out(vy_sin_result),
+	.o_complete(),
+	.o_overflow()
+);
+
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_sin (
+	.i_multiplicand(SC_GLOBAL_VELOCITY_VX_LOCAL_InBus),
+	.i_multiplier(sin_output_32),
+	.i_start(),
+	.i_clk(SC_GLOBAL_VELOCITY_CLOCK_50),
+	.o_result_out(vx_sin_result),
+	.o_complete(),
+	.o_overflow()
+);
+
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_cos (
+	.i_multiplicand(SC_GLOBAL_VELOCITY_VY_LOCAL_InBus),
+	.i_multiplier(cos_output_32),
+	.i_start(),
+	.i_clk(SC_GLOBAL_VELOCITY_CLOCK_50),
+	.o_result_out(vy_cos_result),
+	.o_complete(),
+	.o_overflow()
+);
+
+
+qadd #(.N(N_WIDTH), .Q(Q_WIDTH)) adder_vx (
+	.a(vx_cos_result),
+   .b({sign_change_operand, vy_sin_result[N_WIDTH-2:0]}), //vy_sin_result), //{~vy_sin_result[N_WIDTH-1],vy_sin_result[N_WIDTH-2:0]}),
+   .c(SC_GLOBAL_VELOCITY_VX_GLOBAL_OutBus)
+);
+
+qadd #(.N(N_WIDTH), .Q(Q_WIDTH)) adder_vy (
+	.a(vx_sin_result),
+   .b(vy_cos_result),
+   .c(SC_GLOBAL_VELOCITY_VY_GLOBAL_OutBus)
+);
+
+
+assign cos_output_32 = {cos_17_to_32[XY_BITS_WIDTH-1], 15'b0, cos_17_to_32[15:0]}; // |S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF| 32b 
+																											  // |S|000000000000000I|FFFFFFFFFFFFFFF| 17b 
+																																				  
+assign sin_output_32 = {sin_17_to_32[XY_BITS_WIDTH-1], 15'b0, sin_17_to_32[15:0]}; // |S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF| 32b 
+																											  // |S|000000000000000I|FFFFFFFFFFFFFFF| 17b 
+									
+assign sign_change_operand = ~vy_sin_result[N_WIDTH-1];
+									
+assign SC_GLOBAL_VELOCITY_WZ_GLOBAL_OutBus = SC_GLOBAL_VELOCITY_WZ_LOCAL_InBus;
+
+endmodule

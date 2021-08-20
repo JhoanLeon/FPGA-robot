@@ -1,0 +1,180 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "06/29/2021 13:07:44"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+
+parameter TCK = 20; // clock period in ns of 50MHz
+//parameter CLK_FREQ = 1000000000 / TCK; // Frequenzy in HZ (50MHz)
+parameter DATAWIDTH_N = 32;
+parameter FRACTIONAL_Q = 15;
+
+
+// test vector input registers
+reg [DATAWIDTH_N-1:0] TB_SYSTEM_Aop_BusIn;
+reg [DATAWIDTH_N-1:0] TB_SYSTEM_Bop_BusIn;
+
+reg TB_SYSTEM_Start_Mult;
+reg TB_SYSTEM_Start_Div;
+
+reg TB_SYSTEM_CLOCK_50;
+reg TB_SYSTEM_Reset_InHigh;
+
+// wires                                               
+wire [DATAWIDTH_N-1:0]  TB_SYSTEM_AddResult_BusOut;
+wire [DATAWIDTH_N-1:0]  TB_SYSTEM_MultResult_BusOut;
+wire [DATAWIDTH_N-1:0]  TB_SYSTEM_DivResult_BusOut;
+
+wire TB_SYSTEM_Mult_Comp;
+wire TB_SYSTEM_Mult_Over;
+wire TB_SYSTEM_Div_Comp;
+wire TB_SYSTEM_Div_Over;
+
+
+// assign statements (if any)                          
+BB_SYSTEM u1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_AddResult_BusOut(TB_SYSTEM_AddResult_BusOut),
+	.BB_SYSTEM_MultResult_BusOut(TB_SYSTEM_MultResult_BusOut),
+	.BB_SYSTEM_DivResult_BusOut(TB_SYSTEM_DivResult_BusOut),
+	
+	.BB_SYSTEM_Mult_Comp_Out(TB_SYSTEM_Mult_Comp),
+	.BB_SYSTEM_Mult_Over_Out(TB_SYSTEM_Mult_Over),
+
+	.BB_SYSTEM_Div_Comp_Out(TB_SYSTEM_Div_Comp),
+	.BB_SYSTEM_Div_Over_Out(TB_SYSTEM_Div_Over),
+	
+	.BB_SYSTEM_Aop_BusIn(TB_SYSTEM_Aop_BusIn),
+	.BB_SYSTEM_Bop_BusIn(TB_SYSTEM_Bop_BusIn),
+	.BB_SYSTEM_Start_Mult_InHigh(TB_SYSTEM_Start_Mult),
+	.BB_SYSTEM_Start_Div_InHigh(TB_SYSTEM_Start_Div),
+	
+	.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+	.BB_SYSTEM_Reset_InHigh(TB_SYSTEM_Reset_InHigh)
+);
+
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+TB_SYSTEM_CLOCK_50 <= 1'b0;                                              
+// --> end                                             
+$display("Running testbench");                       
+end   
+     
+	  
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)   
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+initial	begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin    
+										 //32'b|S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF|
+										
+	#0	    TB_SYSTEM_Aop_BusIn <= 32'b0; // Number 0.0
+			 TB_SYSTEM_Bop_BusIn <= 32'b0; // Number 0.0 
+			 TB_SYSTEM_Start_Mult <= 1'b0;
+ 			 TB_SYSTEM_Start_Div <= 1'b0;
+			 
+	#500   TB_SYSTEM_Aop_BusIn <= 32'b00000000000000110000000000000000; // Number +6.0 
+			 TB_SYSTEM_Bop_BusIn <= 32'b00000000000011000000000000000000; // Number +24.0
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = +30.0
+																							  // Mult = +144.0
+																							  // Div  = +0.2500
+			 
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+	
+	#500   TB_SYSTEM_Aop_BusIn <= 32'b00000000001010011000000000000000; // Number +83.0
+			 TB_SYSTEM_Bop_BusIn <= 32'b10000000000010100000000000000000; // Number -20.0
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = +63.0
+																							  // Mult = -1660.0
+																							  // Div  = -4.1500
+			 
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+			 
+	#500   TB_SYSTEM_Aop_BusIn <= 32'b10000000000001010000000000000000; // Number -10.0
+			 TB_SYSTEM_Bop_BusIn <= 32'b00000000000110000000000000000000; // Number +48.0
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = +38.0
+																							  // Mult = -480.0
+																							  // Div  = -0.2083			 
+			 
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+
+	#500	 TB_SYSTEM_Aop_BusIn <= 32'b00000000000010011000000000000000; // Number +19.0
+			 TB_SYSTEM_Bop_BusIn <= 32'b10000000010000010000000000000000; // Number -130.0 
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = -111.0
+																							  // Mult = -2470.0
+																							  // Div  = -0.1462			 
+
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+																		 
+	#500	 TB_SYSTEM_Aop_BusIn <= 32'b00000000000000010010101100000000; // Number +2.3359
+			 TB_SYSTEM_Bop_BusIn <= 32'b00000000000000100011110100000000; // Number +4.4766
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = +6.8125
+																							  // Mult = +10.4569
+																							  // Div  = +0.5218			 
+			 
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+		 
+	#500	 TB_SYSTEM_Aop_BusIn <= 32'b00000000000010100000111100000000; // Number +20.1172
+			 TB_SYSTEM_Bop_BusIn <= 32'b10000000000010000110111100000000; // Number -16.8672
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = +3.2500
+																							  // Mult = -339.3208
+																							  // Div  = -1.1927
+
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+																		 
+	#500	 TB_SYSTEM_Aop_BusIn <= 32'b10000000000010100000111100000000; // Number -20.1172
+			 TB_SYSTEM_Bop_BusIn <= 32'b10000000000010000110111100000000; // Number -16.8672
+			 TB_SYSTEM_Start_Mult <= 1'b1;
+ 			 TB_SYSTEM_Start_Div <= 1'b1;						 					  // Add  = -36.984
+																							  // Mult = +339.3208
+																							  // Div  = +1.1927
+
+	#500 	 TB_SYSTEM_Start_Mult <= 1'b0; TB_SYSTEM_Start_Div <= 1'b0;
+		 
+	#500   TB_SYSTEM_Aop_BusIn <= 32'b0; // Number 0.0
+			 TB_SYSTEM_Bop_BusIn <= 32'b0; // Number 0.0 
+			 TB_SYSTEM_Start_Mult <= 1'b0;
+ 			 TB_SYSTEM_Start_Div <= 1'b0; 
+	
+@eachvec;
+$finish;                                           
+// --> end                                             
+end
+                                                    
+endmodule

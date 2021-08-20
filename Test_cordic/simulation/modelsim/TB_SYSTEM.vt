@@ -1,0 +1,142 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "07/01/2021 22:40:19"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+
+parameter TCK = 20; // clock period in ns of 50MHz, 
+//parameter CLK_FREQ = 1000000000 / TCK; // Frequenzy in HZ (50MHz)
+
+// test vector input registers
+reg TB_SYSTEM_CLOCK_50;
+reg TB_SYSTEM_Reset_InHigh;
+reg TB_SYSTEM_init_InHigh;
+reg [16:0] TB_SYSTEM_theta_i_InBus;
+reg   TB_SYSTEM_valid_in;
+// wires                                               
+wire [16:0]  TB_SYSTEM_cos_OutBus;
+wire [16:0]  TB_SYSTEM_sin_OutBus;
+wire   TB_SYSTEM_valid_out;
+
+// assign statements (if any)                          
+BB_SYSTEM U1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+	.BB_SYSTEM_Reset_InHigh(TB_SYSTEM_Reset_InHigh),
+	.BB_SYSTEM_init_InHigh(TB_SYSTEM_init_InHigh),
+	
+	.BB_SYSTEM_valid_In(TB_SYSTEM_valid_in),
+	.BB_SYSTEM_valid_Out(TB_SYSTEM_valid_out),
+	
+	.BB_SYSTEM_theta_i_InBus(TB_SYSTEM_theta_i_InBus),
+	.BB_SYSTEM_xout_OutBus(TB_SYSTEM_cos_OutBus),
+	.BB_SYSTEM_yout_OutBus(TB_SYSTEM_sin_OutBus)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+TB_SYSTEM_CLOCK_50 <= 1'b0;                                            
+// --> end                                             
+$display("Running testbench");                       
+end   
+                                                 
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn) 
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~TB_SYSTEM_CLOCK_50;                 
+initial begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+   #0	    TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b0;
+			 TB_SYSTEM_theta_i_InBus <= 17'b0;  
+			 
+			 
+	#1000  TB_SYSTEM_init_InHigh <= 1'b1; // load data of theta in component
+			 TB_SYSTEM_theta_i_InBus <= 17'b00000000000000000; // Angle = 0.0° |S|IIIIIIII|FFFFFFFF| minimun angle 
+			 
+	#100   TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b1; // start iterations of algorithm
+			 
+	#100	 TB_SYSTEM_valid_in <= 1'b0; // it's just a pulse
+
+	
+	#1000  TB_SYSTEM_init_InHigh <= 1'b1;
+			 TB_SYSTEM_theta_i_InBus <= {1'b0,8'd30,8'b0}; // Angle = 30.0° |S|IIIIIIII|FFFFFFFF|    
+	
+	#100   TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b1;
+			 
+	#100	 TB_SYSTEM_valid_in <= 1'b0;
+	
+
+	#1000  TB_SYSTEM_init_InHigh <= 1'b1;
+			 TB_SYSTEM_theta_i_InBus <= 17'b00010110100000000; // Angle = 45.0° |S|IIIIIIII|FFFFFFFF|    
+	
+	#100   TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b1;
+			 
+	#100	 TB_SYSTEM_valid_in <= 1'b0;			 			 
+			 
+			 
+	#1000  TB_SYSTEM_init_InHigh <= 1'b1;
+			 TB_SYSTEM_theta_i_InBus <= {1'b0,8'd60,8'b0}; // Angle = 60.0° |S|IIIIIIII|FFFFFFFF|    
+	
+	#100   TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b1;
+			 
+	#100	 TB_SYSTEM_valid_in <= 1'b0;			 			 
+						 
+						 
+	#1000  TB_SYSTEM_init_InHigh <= 1'b1;
+			 TB_SYSTEM_theta_i_InBus <= 17'b00101100111111111; // Angle = 89.9961° |S|IIIIIIII|FFFFFFFF| máximun angle   
+
+	#100   TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b1;
+			 
+	#100	 TB_SYSTEM_valid_in <= 1'b0;			 
+			 
+			 
+	#1000  TB_SYSTEM_init_InHigh <= 1'b1;
+			 TB_SYSTEM_theta_i_InBus <= {1'b0,8'd90,8'b0}; // Angle = 90.0° |S|IIIIIIII|FFFFFFFF| máximun angle 
+			 
+	#100   TB_SYSTEM_init_InHigh <= 1'b0;
+			 TB_SYSTEM_valid_in <= 1'b1;
+			 
+	#100	 TB_SYSTEM_valid_in <= 1'b0;	
+		
+@eachvec; 
+$finish;                                              
+// --> end                                             
+end                                                    
+endmodule
+

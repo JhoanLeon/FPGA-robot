@@ -1,0 +1,122 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim
+vBB_SYSTEM
+Z1 !s110 1628094036
+!i10b 1
+!s100 @VR3^KlM69BizfE5YJ=il3
+I952h_FbiZ6[6D7lbc;9;K2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1625008091
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/BB_SYSTEM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/BB_SYSTEM.v
+L0 3
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1628094036.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/BB_SYSTEM.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint}
+Z6 tCvgOpt 0
+n@b@b_@s@y@s@t@e@m
+vqadd
+R1
+!i10b 1
+!s100 X`flW7fg3j`B^9ofbn8B92
+I]KMd0k^e<Z_8VnCgVK2iQ2
+R2
+R0
+w1624988595
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qadd.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qadd.v
+Z7 L0 21
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qadd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qadd.v|
+!i113 1
+R5
+Z8 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl}
+R6
+vqdiv
+R1
+!i10b 1
+!s100 gB@G7[C>fFOFOk;=aHDY^2
+IUb998oLW1Ie1C`N:U;J>i2
+R2
+R0
+w1625003072
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qdiv.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qdiv.v
+L0 26
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qdiv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qdiv.v|
+!i113 1
+R5
+R8
+R6
+vqmults
+R1
+!i10b 1
+!s100 dj=c6HMGjDJ>69BR[blgL0
+I^G6>??2eBVOF]HXMBc=zO0
+R2
+R0
+w1624997883
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qmults.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qmults.v
+R7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qmults.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/rtl/qmults.v|
+!i113 1
+R5
+R8
+R6
+vTB_SYSTEM
+!s110 1628094037
+!i10b 1
+!s100 Q@Wc8Ne0<9L;XCUo100So0
+I5dcZb<QffUDY9BL:5I2E_3
+R2
+R0
+w1628093554
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim/TB_SYSTEM.vt
+L0 29
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim/TB_SYSTEM.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/Test_fixedpoint/simulation/modelsim}
+R6
+n@t@b_@s@y@s@t@e@m
