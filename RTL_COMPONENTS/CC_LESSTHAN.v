@@ -15,65 +15,40 @@
 //# You should have received a copy of the GNU General Public License
 //# along with this program.  If not, see <http://www.gnu.org/licenses/>
 //####################################################################*/
-
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_REGGENERAL #(parameter REGGENERAL_DATAWIDTH=32)(
-
-	//////////// INPUTS //////////
-	SC_REGGENERAL_CLOCK_50,
-	SC_REGGENERAL_RESET_InHigh, 
-	SC_REGGENERAL_load_InLow, 
-	SC_REGGENERAL_data_InBus,
-	//////////// OUTPUTS //////////
-	SC_REGGENERAL_data_OutBUS
+module CC_LESSTHAN (
+//////////// OUTPUTS //////////
+	CC_LESSTHAN_lessthan_Out,
+//////////// INPUTS //////////
+	CC_LESSTHAN_dataA_InBUS,
+	CC_LESSTHAN_dataB_InBUS
 );
-
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-
+parameter NUMBER_DATAWIDTH = 8;
 //=======================================================
 //  PORT declarations
 //=======================================================
-input		SC_REGGENERAL_CLOCK_50;
-input		SC_REGGENERAL_RESET_InHigh;
-input		SC_REGGENERAL_load_InLow;	
-input		[REGGENERAL_DATAWIDTH-1:0]	SC_REGGENERAL_data_InBus;
-
-output	[REGGENERAL_DATAWIDTH-1:0]	SC_REGGENERAL_data_OutBUS;
-
+output reg CC_LESSTHAN_lessthan_Out;
+input 	[NUMBER_DATAWIDTH-1:0] CC_LESSTHAN_dataA_InBUS;
+input 	[NUMBER_DATAWIDTH-1:0] CC_LESSTHAN_dataB_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Register;
-reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Signal;
 
 //=======================================================
 //  Structural coding
 //=======================================================
-//INPUT LOGIC: COMBINATIONAL
 always @(*)
 begin
-	if (SC_REGGENERAL_load_InLow == 1'b0)
-		REGGENERAL_Signal = SC_REGGENERAL_data_InBus;
+	if (CC_LESSTHAN_dataA_InBUS < CC_LESSTHAN_dataB_InBUS)
+		CC_LESSTHAN_lessthan_Out = 1'b0;
 	else
-		REGGENERAL_Signal = REGGENERAL_Register;
-	end	
-//STATE REGISTER: SEQUENTIAL
-always @(posedge SC_REGGENERAL_CLOCK_50, posedge SC_REGGENERAL_RESET_InHigh)
-begin
-	if (SC_REGGENERAL_RESET_InHigh == 1'b1)
-		REGGENERAL_Register <= 0;
-	else
-		REGGENERAL_Register <= REGGENERAL_Signal;
+		CC_LESSTHAN_lessthan_Out = 1'b1;
 end
 
-//=======================================================
-//  Outputs
-//=======================================================
-//OUTPUT LOGIC: COMBINATIONAL
-assign SC_REGGENERAL_data_OutBUS = REGGENERAL_Register;
-
 endmodule
+

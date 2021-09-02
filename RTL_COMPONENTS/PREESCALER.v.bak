@@ -1,0 +1,64 @@
+//Author: Jhoan Esteban León
+
+module PREESCALER
+(
+
+	//////////// INPUT //////////
+	CLOCK_IN,
+	
+	//////////// OUTPUT //////////
+	CLOCK_OUT
+	
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//Frecuencia de salida f = f(in)/2^N
+//Periodo de salida T = 2^N*T(clock de entrada)
+
+//Clock incial 50 MHZ
+
+//1	25 MHz	0.167 usec
+//2	12.5 MHz	0.333 usec
+//3   
+//4
+
+parameter N_DATAWIDTH = 4;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+
+//////////// CLOCK IN //////////
+input CLOCK_IN;
+
+//////////// CLOCK OUT //////////
+output CLOCK_OUT;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+wire CLOCK_IN;
+wire CLOCK_OUT;
+reg [N_DATAWIDTH-1:0] COUNT;
+
+//=======================================================
+//  Structural coding
+//=======================================================
+
+
+//STATE REGISTER: SEQUENTIAL
+always @(posedge CLOCK_IN)
+ begin 
+  COUNT <= COUNT + 1'b1;
+ end
+
+
+//OUTPUT LOGIC: COMBINATIONAL
+assign CLOCK_OUT = COUNT[N_DATAWIDTH-1];
+
+
+endmodule

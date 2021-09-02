@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "BB_SYSTEM_Count_OutBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_Count_OutBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_Count_OutBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_Count_OutBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_Button_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_Reset_InLow",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_Count_InLow",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

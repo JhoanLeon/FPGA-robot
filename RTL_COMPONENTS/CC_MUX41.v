@@ -15,21 +15,16 @@
 //# You should have received a copy of the GNU General Public License
 //# along with this program.  If not, see <http://www.gnu.org/licenses/>
 //####################################################################*/
-
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_REGGENERAL #(parameter REGGENERAL_DATAWIDTH=32)(
-
-	//////////// INPUTS //////////
-	SC_REGGENERAL_CLOCK_50,
-	SC_REGGENERAL_RESET_InHigh, 
-	SC_REGGENERAL_load_InLow, 
-	SC_REGGENERAL_data_InBus,
-	//////////// OUTPUTS //////////
-	SC_REGGENERAL_data_OutBUS
+module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
+//////////// OUTPUTS //////////
+	CC_MUX41_z_Out,
+//////////// INPUTS //////////
+	CC_MUX41_select_InBUS,
+	CC_MUX41_data_InBUS
 );
-
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
@@ -37,43 +32,17 @@ module SC_REGGENERAL #(parameter REGGENERAL_DATAWIDTH=32)(
 //=======================================================
 //  PORT declarations
 //=======================================================
-input		SC_REGGENERAL_CLOCK_50;
-input		SC_REGGENERAL_RESET_InHigh;
-input		SC_REGGENERAL_load_InLow;	
-input		[REGGENERAL_DATAWIDTH-1:0]	SC_REGGENERAL_data_InBus;
-
-output	[REGGENERAL_DATAWIDTH-1:0]	SC_REGGENERAL_data_OutBUS;
-
+output	CC_MUX41_z_Out;
+input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_select_InBUS;
+input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Register;
-reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Signal;
 
 //=======================================================
 //  Structural coding
 //=======================================================
-//INPUT LOGIC: COMBINATIONAL
-always @(*)
-begin
-	if (SC_REGGENERAL_load_InLow == 1'b0)
-		REGGENERAL_Signal = SC_REGGENERAL_data_InBus;
-	else
-		REGGENERAL_Signal = REGGENERAL_Register;
-	end	
-//STATE REGISTER: SEQUENTIAL
-always @(posedge SC_REGGENERAL_CLOCK_50, posedge SC_REGGENERAL_RESET_InHigh)
-begin
-	if (SC_REGGENERAL_RESET_InHigh == 1'b1)
-		REGGENERAL_Register <= 0;
-	else
-		REGGENERAL_Register <= REGGENERAL_Signal;
-end
-
-//=======================================================
-//  Outputs
-//=======================================================
-//OUTPUT LOGIC: COMBINATIONAL
-assign SC_REGGENERAL_data_OutBUS = REGGENERAL_Register;
+assign CC_MUX41_z_Out = CC_MUX41_data_InBUS[CC_MUX41_select_InBUS];
 
 endmodule
+

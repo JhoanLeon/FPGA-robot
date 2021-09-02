@@ -1,0 +1,125 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim
+vBB_SYSTEM
+Z1 !s110 1630602911
+!i10b 1
+!s100 Cncnb<m8g_SA=K:k<D2oW1
+I[h3?:UgYHf:nbTBi`OVgz3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1630602869
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/BB_SYSTEM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/BB_SYSTEM.v
+L0 15
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1630602911.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/BB_SYSTEM.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard}
+Z6 tCvgOpt 0
+n@b@b_@s@y@s@t@e@m
+vPREESCALER
+R1
+!i10b 1
+!s100 S`Mk]l7e?d1fRT_hQiboW2
+IJYL3PzT<P;D`6RXSQFcHl2
+R2
+R0
+w1630602829
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v
+L0 6
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v|
+!i113 1
+R5
+Z7 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS}
+R6
+n@p@r@e@e@s@c@a@l@e@r
+vSC_COUNTER
+R1
+!i10b 1
+!s100 Jh>`4?RfK9H?S162=Dn4=2
+I]@HC`^5`hj]LjZD`O[IkK1
+R2
+R0
+w1630595794
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v
+L0 10
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v|
+!i113 1
+R5
+R7
+R6
+n@s@c_@c@o@u@n@t@e@r
+vSC_DEBOUNCE
+R1
+!i10b 1
+!s100 UJc=KldDRVFdK18L>ZcM^3
+IS4818Zm[W57K=U^k_:kLd3
+R2
+R0
+w1630599221
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v
+L0 44
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v|
+!i113 1
+R5
+R7
+R6
+n@s@c_@d@e@b@o@u@n@c@e
+vTB_SYSTEM
+R1
+!i10b 1
+!s100 <A<@mf37M6m]Z4Z=LcAOO0
+IMP1l73KV?Aj4=3J5DM9;A3
+R2
+R0
+w1630600222
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim/TB_SYSTEM.vt
+L0 29
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim/TB_SYSTEM.vt|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Test_fpgaboard/simulation/modelsim}
+R6
+n@t@b_@s@y@s@t@e@m
