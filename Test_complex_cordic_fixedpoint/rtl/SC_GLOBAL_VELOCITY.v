@@ -1,8 +1,4 @@
-//=======================================================
-//  MODULE Definition
-//=======================================================
-
-/*
+﻿/*
 Created by: Jhoan Esteban Leon
 with libraries from https://github.com/freecores/verilog_fixed_point_math_library
 and https://github.com/freecores/verilog_cordic_core
@@ -14,6 +10,10 @@ wz_global = wz_local
 
 inputs and output results are all in [m/s] [rad/s] and fixed point 32b notation U(32,15) U(N,Q)
 */
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
 
 module SC_GLOBAL_VELOCITY 
 #(
