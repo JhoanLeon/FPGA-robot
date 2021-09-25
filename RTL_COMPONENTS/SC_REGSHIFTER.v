@@ -30,6 +30,7 @@ module SC_REGSHIFTER #(parameter REGSHIFTER_DATAWIDTH=8)(
 	SC_REGSHIFTER_shiftselection_In,
 	SC_REGSHIFTER_data_InBUS
 );
+
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
@@ -48,8 +49,9 @@ input		[REGSHIFTER_DATAWIDTH-1:0]	SC_REGSHIFTER_data_InBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [REGSHIFTER_DATAWIDTH-1:0] REGSHIFTER_Register;
-reg [REGSHIFTER_DATAWIDTH-1:0] REGSHIFTER_Signal;
+reg [REGSHIFTER_DATAWIDTH-1:0] REGSHIFTER_Register = 0;
+reg [REGSHIFTER_DATAWIDTH-1:0] REGSHIFTER_Signal = 0;
+
 //=======================================================
 //  Structural coding
 //=======================================================

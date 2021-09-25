@@ -17,7 +17,7 @@
 //####################################################################*/
 // FROM: DeBounce_v.v https://eewiki.net/pages/viewpage.action?pageId=13599139
 
-//////////////////////// Button Debounceer ///////////////////////////////////////
+//////////////////////// Button Debouncer ///////////////////////////////////////
 //***********************************************************************
 // FileName: DeBounce_v.v
 // FPGA: MachXO2 7000HE
@@ -40,7 +40,6 @@
 // Initial Public Release
 // Small Footprint Button Debouncer
 
-//`timescale 1 ns / 100 ps
 module  SC_DEBOUNCE 
 	(
 	input 			SC_DEBOUNCE_CLOCK_50, SC_DEBOUNCE_RESET_InHigh, SC_DEBOUNCE_button_In,				// inputs

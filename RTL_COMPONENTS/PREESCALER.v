@@ -19,7 +19,7 @@ module PREESCALER #(parameter N_DATAWIDTH = 4)
 //Frecuencia de salida f = f(in)/2^N
 //Periodo de salida T = 2^N*T(clock de entrada)
 
-//Clock incial 50 MHZ 20ns
+//Clock inicial 50 MHZ 20ns
 
 //N=1		25 MHz		40 ns
 //N=2		12.5 MHz		80 ns
@@ -44,7 +44,7 @@ output wire CLOCK_OUT;
 reg [N_DATAWIDTH-1:0] COUNT = 0;
 
 //=======================================================
-//  Structural coding
+//  STRUCTURAL coding
 //=======================================================
 
 //STATE REGISTER: SEQUENTIAL

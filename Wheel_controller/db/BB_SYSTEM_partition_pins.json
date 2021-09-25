@@ -1,0 +1,293 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "BB_SYSTEM_DIR_OutBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DIR_OutBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_PWM_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RPM_OutBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[16]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[17]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[18]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[19]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[20]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[21]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[22]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_W_OutBus[31]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[17]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[18]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[19]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[20]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[21]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[22]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[16]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[23]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[24]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[25]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[26]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[27]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[28]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[29]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[30]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_TARGETW_InBus[31]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RESET_InLow",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_ENCODERA_In",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_ENCODERB_In",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

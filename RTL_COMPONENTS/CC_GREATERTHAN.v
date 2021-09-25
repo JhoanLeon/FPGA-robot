@@ -15,26 +15,30 @@
 //# You should have received a copy of the GNU General Public License
 //# along with this program.  If not, see <http://www.gnu.org/licenses/>
 //####################################################################*/
+
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_GREATERTHAN (
+module CC_GREATERTHAN #(parameter NUMBER_DATAWIDTH = 8)
+(
 //////////// OUTPUTS //////////
-	CC_GREATERTHAN_greaterthan_Out,
+	CC_GREATERTHAN_greaterthan_OutLow,
 //////////// INPUTS //////////
 	CC_GREATERTHAN_dataA_InBUS,
 	CC_GREATERTHAN_dataB_InBUS
 );
+
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter NUMBER_DATAWIDTH = 8;
+
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg CC_GREATERTHAN_greaterthan_Out;
+output reg CC_GREATERTHAN_greaterthan_OutLow;
 input 	[NUMBER_DATAWIDTH-1:0] CC_GREATERTHAN_dataA_InBUS;
 input 	[NUMBER_DATAWIDTH-1:0] CC_GREATERTHAN_dataB_InBUS;
+
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -45,9 +49,9 @@ input 	[NUMBER_DATAWIDTH-1:0] CC_GREATERTHAN_dataB_InBUS;
 always @(*)
 begin
 	if (CC_GREATERTHAN_dataA_InBUS > CC_GREATERTHAN_dataB_InBUS)
-		CC_GREATERTHAN_greaterthan_Out = 1'b0;
+		CC_GREATERTHAN_greaterthan_OutLow = 1'b0;
 	else
-		CC_GREATERTHAN_greaterthan_Out = 1'b1;
+		CC_GREATERTHAN_greaterthan_OutLow = 1'b1;
 end
 
 endmodule

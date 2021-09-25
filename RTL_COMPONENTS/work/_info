@@ -1,0 +1,531 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/19.1
+vCC_EQUAL
+!s110 1631799530
+!i10b 1
+!s100 XYWJk4QW=k1L4h[Jd0jU01
+I04lNe6hg<R^RiG>`ozQ7d0
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS
+w1631799501
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_EQUAL.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_EQUAL.v
+Z2 L0 22
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1631799530.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_EQUAL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_EQUAL.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@c@c_@e@q@u@a@l
+vCC_GREATERTHAN
+!s110 1631799525
+!i10b 1
+!s100 MQR_Pl]?04>jB@3]WSX^60
+I_9;:5:n2cKniUYL5DCGd^2
+R0
+R1
+w1631799346
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_GREATERTHAN.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_GREATERTHAN.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631799525.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_GREATERTHAN.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_GREATERTHAN.v|
+!i113 1
+R4
+R5
+n@c@c_@g@r@e@a@t@e@r@t@h@a@n
+vCC_LESSTHAN
+!s110 1631799514
+!i10b 1
+!s100 V_Lja@4CkH1kKoUPRB:e23
+I>gLm^fg5fK_oTBTR?abba2
+R0
+R1
+w1631799247
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631799514.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v|
+!i113 1
+R4
+R5
+n@c@c_@l@e@s@s@t@h@a@n
+vCC_MUX41
+!s110 1631799452
+!i10b 1
+!s100 JigB;[LH;WTamk6>K71lI3
+IQ4AWT]H_0S:cUjQTE1@i>1
+R0
+R1
+w1631799144
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631799452.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v|
+!i113 1
+R4
+R5
+n@c@c_@m@u@x41
+vcordic
+Z6 !s110 1631799900
+!i10b 1
+!s100 1jBOAFEYRd]U74Ubefj[o2
+IGP1j5^fdP[ANKgS`jSGR21
+R0
+R1
+Z7 w1628222612
+Z8 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v
+Z9 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v
+L0 252
+R3
+r1
+!s85 0
+31
+Z10 !s108 1631799899.000000
+Z11 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v|
+!i113 1
+R4
+R5
+vEncoder
+!s110 1631808714
+!i10b 1
+!s100 URgMioV1];bH<mRGBeR@@2
+I3c?Dj9mG:ZM1RW[=:6J6<0
+R0
+R1
+w1631808680
+8C:\Users\USUARIO WINDOWS\Desktop\Proyecto de Grado\FPGA-robot\RTL_COMPONENTS\Encoder.v
+FC:\Users\USUARIO WINDOWS\Desktop\Proyecto de Grado\FPGA-robot\RTL_COMPONENTS\Encoder.v
+L0 9
+R3
+r1
+!s85 0
+31
+!s108 1631808714.000000
+!s107 C:\Users\USUARIO WINDOWS\Desktop\Proyecto de Grado\FPGA-robot\RTL_COMPONENTS\Encoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\USUARIO WINDOWS\Desktop\Proyecto de Grado\FPGA-robot\RTL_COMPONENTS\Encoder.v|
+!i113 1
+R4
+R5
+n@encoder
+vmoduloPWM
+!s110 1631802251
+!i10b 1
+!s100 R1[:8jhObcF[eJGT=eDTA1
+IYzF8:6bXVfFgQcHQ:;M?:0
+R0
+R1
+Z13 w1615301900
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1631802251.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v|
+!i113 1
+R4
+R5
+nmodulo@p@w@m
+vPID_control
+!s110 1631802258
+!i10b 1
+!s100 <7zVWRLO47g5QXj`jeiG?0
+IUQ[ZmNR64;:nFW^^2Z7Xo3
+R0
+R1
+R13
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PID_control.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PID_control.v
+L0 5
+R3
+r1
+!s85 0
+31
+!s108 1631802258.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PID_control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PID_control.v|
+!i113 1
+R4
+R5
+n@p@i@d_control
+vPREESCALER
+!s110 1631799810
+!i10b 1
+!s100 S`Mk]l7e?d1fRT_hQiboW2
+IQ<?0<1Y9H]eBJ_=G]2Zhj0
+R0
+R1
+w1631799669
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1631799810.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v|
+!i113 1
+R4
+R5
+n@p@r@e@e@s@c@a@l@e@r
+vqadd
+!s110 1631800043
+!i10b 1
+!s100 MlCg20Djel?kKV;m`hgY`0
+IBLKgMa;R1a<CCXni^mH?g0
+R0
+R1
+w1631800028
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631800042.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v|
+!i113 1
+R4
+R5
+vqdiv
+!s110 1631800080
+!i10b 1
+!s100 gB@G7[C>fFOFOk;=aHDY^2
+IJCNP3`<FDo:Ga5a`G9UiF1
+R0
+R1
+w1625003072
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qdiv.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qdiv.v
+L0 26
+R3
+r1
+!s85 0
+31
+!s108 1631800080.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qdiv.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qdiv.v|
+!i113 1
+R4
+R5
+vqmult
+!s110 1631800175
+!i10b 1
+!s100 FL]VDG9MI;2RC5ViBodzX1
+IYNm]iJo68DH;oHHHffP?h3
+R0
+R1
+w1631800107
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631800175.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v|
+!i113 1
+R4
+R5
+vqmults
+!s110 1631800209
+!i10b 1
+!s100 _L3`ZQahV6S_`[B?i6gX]1
+I2M7mF:ga>DOXaY:]h^BG^3
+R0
+R1
+w1631800197
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631800209.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v|
+!i113 1
+R4
+R5
+vrotator
+R6
+!i10b 1
+!s100 WJ^TlBI0@?Vo4B6jd?;F60
+IQ[1Aa84OCk_SNS?[1THjf1
+R0
+R1
+R7
+R8
+R9
+L0 180
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 1
+R4
+R5
+vRPM
+!s110 1631808706
+!i10b 1
+!s100 Md`SMSLU<T?0TB;J]`Mb72
+I_m[Nh6hGb5RiDanaE6oYN2
+R0
+R1
+w1631808689
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v
+L0 9
+R3
+r1
+!s85 0
+31
+!s108 1631808706.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v|
+!i113 1
+R4
+R5
+n@r@p@m
+vSC_COUNTER
+!s110 1631800955
+!i10b 1
+!s100 >bdd3QM2bo=WENo<W5mCV3
+IYC07WF50cJaY=nl8=MlAc1
+R0
+R1
+w1631800950
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v
+L0 10
+R3
+r1
+!s85 0
+31
+!s108 1631800954.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v|
+!i113 1
+R4
+R5
+n@s@c_@c@o@u@n@t@e@r
+vSC_DEBOUNCE
+!s110 1631800428
+!i10b 1
+!s100 N^SPR4KD:mBU3M2Y^UBVc1
+IdF4@^?d7g_EjQO9HeG4Z<3
+R0
+R1
+w1631800420
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v
+L0 43
+R3
+r1
+!s85 0
+31
+!s108 1631800428.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v|
+!i113 1
+R4
+R5
+n@s@c_@d@e@b@o@u@n@c@e
+vSC_GLOBAL_VELOCITY
+!s110 1631801023
+!i10b 1
+!s100 oP>6?nI>6KzX[6eLYm2^F0
+I@JOLEAUbGSkREiT7=WVRa0
+R0
+R1
+w1631800995
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_GLOBAL_VELOCITY.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_GLOBAL_VELOCITY.v
+L0 19
+R3
+r1
+!s85 0
+31
+!s108 1631801023.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_GLOBAL_VELOCITY.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_GLOBAL_VELOCITY.v|
+!i113 1
+R4
+R5
+n@s@c_@g@l@o@b@a@l_@v@e@l@o@c@i@t@y
+vSC_REGGENERAL
+!s110 1631801829
+!i10b 1
+!s100 Hi4ToV9201QFUnno1lkY@0
+I<<GGQTQ@`>jDB5RWCL8gI2
+R0
+R1
+w1631801793
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631801829.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v|
+!i113 1
+R4
+R5
+n@s@c_@r@e@g@g@e@n@e@r@a@l
+vSC_REGSHIFTER
+!s110 1631801754
+!i10b 1
+!s100 J0?U05Q2G^26Djg?7=n<13
+I3j8ENol0h>Q6e2NHOM7jW1
+R0
+R1
+w1631801705
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGSHIFTER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGSHIFTER.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631801754.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGSHIFTER.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGSHIFTER.v|
+!i113 1
+R4
+R5
+n@s@c_@r@e@g@s@h@i@f@t@e@r
+vSC_STATEMACHINE_BASE
+!s110 1631801673
+!i10b 1
+!s100 j[LQHRIkLgb@E`ldiUV@z2
+IEGomR8iiFiX3=fm4BO[FC2
+R0
+R1
+w1631801663
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_BASE.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_BASE.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631801673.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_BASE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_BASE.v|
+!i113 1
+R4
+R5
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e_@b@a@s@e
+vSC_STATEMACHINE_GLOBAL_VEL
+!s110 1631801338
+!i10b 1
+!s100 ddbG4HD`5f]Yd:KS75N2^0
+ImZa=@aj4NTJFW@J;2YO6Z2
+R0
+R1
+w1631801328
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v
+R2
+R3
+r1
+!s85 0
+31
+!s108 1631801338.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v|
+!i113 1
+R4
+R5
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e_@g@l@o@b@a@l_@v@e@l
+vsigned_shifter
+R6
+!i10b 1
+!s100 ml>oSd:=<nB`WeGABZnEA0
+Ia?VP17PW4XIZjgm:^lOfX0
+R0
+R1
+R7
+R8
+R9
+L0 162
+R3
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 1
+R4
+R5
+vSPI_SLAVE
+!s110 1631801248
+!i10b 1
+!s100 hFLBBeC5UnOm>UPAZSYTj3
+IW3z?LBVZaI?VOTG[TdiUW1
+R0
+R1
+w1631635908
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_SLAVE.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_SLAVE.v
+L0 23
+R3
+r1
+!s85 0
+31
+!s108 1631801248.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_SLAVE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_SLAVE.v|
+!i113 1
+R4
+R5
+n@s@p@i_@s@l@a@v@e

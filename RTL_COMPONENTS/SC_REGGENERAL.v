@@ -47,7 +47,7 @@ output	[REGGENERAL_DATAWIDTH-1:0]	SC_REGGENERAL_data_OutBUS;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Register;
+reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Register = 0;
 reg [REGGENERAL_DATAWIDTH-1:0] REGGENERAL_Signal;
 
 //=======================================================

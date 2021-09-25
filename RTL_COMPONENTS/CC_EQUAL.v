@@ -15,26 +15,30 @@
 //# You should have received a copy of the GNU General Public License
 //# along with this program.  If not, see <http://www.gnu.org/licenses/>
 //####################################################################*/
+
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_EQUAL (
+module CC_EQUAL #(parameter NUMBER_DATAWIDTH = 8)
+(
 //////////// OUTPUTS //////////
-	CC_EQUAL_equal_Out,
+	CC_EQUAL_equal_OutLow,
 //////////// INPUTS //////////
 	CC_EQUAL_dataA_InBUS,
 	CC_EQUAL_dataB_InBUS
 );
+
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter NUMBER_DATAWIDTH = 8;
+
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg CC_EQUAL_equal_Out;
+output reg CC_EQUAL_equal_OutLow;
 input 	[NUMBER_DATAWIDTH-1:0] CC_EQUAL_dataA_InBUS;
 input 	[NUMBER_DATAWIDTH-1:0] CC_EQUAL_dataB_InBUS;
+
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -45,9 +49,9 @@ input 	[NUMBER_DATAWIDTH-1:0] CC_EQUAL_dataB_InBUS;
 always @(*)
 begin
 	if (CC_EQUAL_dataA_InBUS == CC_EQUAL_dataB_InBUS)
-		CC_EQUAL_equal_Out = 1'b0;
+		CC_EQUAL_equal_OutLow = 1'b0;
 	else
-		CC_EQUAL_equal_Out = 1'b1;
+		CC_EQUAL_equal_OutLow = 1'b1;
 end
 
 endmodule

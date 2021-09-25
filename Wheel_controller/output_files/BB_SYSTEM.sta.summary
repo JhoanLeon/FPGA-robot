@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : -20.206
+TNS   : -494.821
+
+Type  : Slow 1200mV 85C Model Setup 'BB_SYSTEM_CLOCK_50'
+Slack : -7.743
+TNS   : -523.859
+
+Type  : Slow 1200mV 85C Model Hold 'BB_SYSTEM_CLOCK_50'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
+Slack : -4.000
+TNS   : -258.083
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : -1.487
+TNS   : -69.889
+
+Type  : Slow 1200mV 0C Model Setup 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : -18.561
+TNS   : -452.393
+
+Type  : Slow 1200mV 0C Model Setup 'BB_SYSTEM_CLOCK_50'
+Slack : -6.970
+TNS   : -468.316
+
+Type  : Slow 1200mV 0C Model Hold 'BB_SYSTEM_CLOCK_50'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
+Slack : -4.000
+TNS   : -257.869
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : -1.487
+TNS   : -69.889
+
+Type  : Fast 1200mV 0C Model Setup 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : -8.343
+TNS   : -193.241
+
+Type  : Fast 1200mV 0C Model Setup 'BB_SYSTEM_CLOCK_50'
+Slack : -2.887
+TNS   : -170.577
+
+Type  : Fast 1200mV 0C Model Hold 'BB_SYSTEM_CLOCK_50'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
+Slack : -3.000
+TNS   : -130.234
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us|COUNT[11]'
+Slack : -1.000
+TNS   : -47.000
+
+------------------------------------------------------------

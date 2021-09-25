@@ -1,0 +1,80 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "09/23/2021 10:25:18"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+
+parameter TCK = 20; // clock period in ns of 50MHz
+
+// test vector input registers
+reg TB_SYSTEM_CLOCK_50;
+reg TB_SYSTEM_ENCODERA_In;
+reg TB_SYSTEM_ENCODERB_In;
+reg TB_SYSTEM_RESET_InLow;
+reg [31:0] TB_SYSTEM_TARGETW_InBus;
+// wires                                               
+wire [1:0]  TB_SYSTEM_DIR_OutBus;
+wire TB_SYSTEM_PWM_Out;
+wire [7:0]  TB_SYSTEM_RPM_OutBus;
+wire [31:0]  TB_SYSTEM_W_OutBus;
+
+// assign statements (if any)                          
+BB_SYSTEM i1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+	.BB_SYSTEM_DIR_OutBus(TB_SYSTEM_DIR_OutBus),
+	.BB_SYSTEM_ENCODERA_In(TB_SYSTEM_ENCODERA_In),
+	.BB_SYSTEM_ENCODERB_In(TB_SYSTEM_ENCODERB_In),
+	.BB_SYSTEM_PWM_Out(TB_SYSTEM_PWM_Out),
+	.BB_SYSTEM_RESET_InLow(TB_SYSTEM_RESET_InLow),
+	.BB_SYSTEM_RPM_OutBus(TB_SYSTEM_RPM_OutBus),
+	.BB_SYSTEM_TARGETW_InBus(TB_SYSTEM_TARGETW_InBus),
+	.BB_SYSTEM_W_OutBus(TB_SYSTEM_W_OutBus)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+	TB_SYSTEM_CLOCK_50 <= 1'b0;                                             
+// --> end                                             
+	$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+                                                       
+@eachvec;                                              
+// --> end                                             
+end                                                    
+endmodule
+

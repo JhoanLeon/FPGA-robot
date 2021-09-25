@@ -15,26 +15,30 @@
 //# You should have received a copy of the GNU General Public License
 //# along with this program.  If not, see <http://www.gnu.org/licenses/>
 //####################################################################*/
+
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_LESSTHAN (
+module CC_LESSTHAN #(parameter NUMBER_DATAWIDTH = 8)
+(
 //////////// OUTPUTS //////////
-	CC_LESSTHAN_lessthan_Out,
+	CC_LESSTHAN_lessthan_OutLow,
 //////////// INPUTS //////////
 	CC_LESSTHAN_dataA_InBUS,
 	CC_LESSTHAN_dataB_InBUS
 );
+
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter NUMBER_DATAWIDTH = 8;
+
 //=======================================================
 //  PORT declarations
 //=======================================================
-output reg CC_LESSTHAN_lessthan_Out;
+output reg CC_LESSTHAN_lessthan_OutLow;
 input 	[NUMBER_DATAWIDTH-1:0] CC_LESSTHAN_dataA_InBUS;
 input 	[NUMBER_DATAWIDTH-1:0] CC_LESSTHAN_dataB_InBUS;
+
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
@@ -45,9 +49,9 @@ input 	[NUMBER_DATAWIDTH-1:0] CC_LESSTHAN_dataB_InBUS;
 always @(*)
 begin
 	if (CC_LESSTHAN_dataA_InBUS < CC_LESSTHAN_dataB_InBUS)
-		CC_LESSTHAN_lessthan_Out = 1'b0;
+		CC_LESSTHAN_lessthan_OutLow = 1'b0;
 	else
-		CC_LESSTHAN_lessthan_Out = 1'b1;
+		CC_LESSTHAN_lessthan_OutLow = 1'b1;
 end
 
 endmodule

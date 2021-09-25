@@ -15,16 +15,19 @@
 //# You should have received a copy of the GNU General Public License
 //# along with this program.  If not, see <http://www.gnu.org/licenses/>
 //####################################################################*/
+
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
+module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2, parameter MUX41_DATAWIDTH=4)
+(
 //////////// OUTPUTS //////////
 	CC_MUX41_z_Out,
 //////////// INPUTS //////////
 	CC_MUX41_select_InBUS,
 	CC_MUX41_data_InBUS
 );
+
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
@@ -35,6 +38,7 @@ module CC_MUX41 #(parameter MUX41_SELECTWIDTH=2,parameter MUX41_DATAWIDTH=4)(
 output	CC_MUX41_z_Out;
 input 	[MUX41_SELECTWIDTH-1:0] CC_MUX41_select_InBUS;
 input 	[MUX41_DATAWIDTH-1:0] CC_MUX41_data_InBUS;
+
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
