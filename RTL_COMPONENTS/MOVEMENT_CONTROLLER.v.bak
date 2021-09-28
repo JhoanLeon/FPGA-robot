@@ -1,0 +1,77 @@
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module MOVEMENT_CONTROLLER
+(
+
+	//////////// INPUTS //////////
+	MOVEMENT_CONTROLLER_CLOCK_50,
+	MOVEMENT_CONTROLLER_RESET_InLow,
+	
+	MOVEMENT_CONTROLLER_TARGETW_InBus,
+	
+	MOVEMENT_CONTROLLER_ENCODERA_In,
+	MOVEMENT_CONTROLLER_ENCODERB_In,
+	
+	//////////// OUTPUTS ////////// 
+	MOVEMENT_CONTROLLER_DIR_OutBus,
+	MOVEMENT_CONTROLLER_PWM_Out,
+	MOVEMENT_CONTROLLER_RPM_OutBus,
+	MOVEMENT_CONTROLLER_W_OutBus
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+parameter RPM_DATA = 8;
+parameter N_WIDTH = 32;
+parameter Q_WIDTH = 15;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input	MOVEMENT_CONTROLLER_CLOCK_50;
+input	MOVEMENT_CONTROLLER_RESET_InLow;
+	
+input [N_WIDTH-1:0]	MOVEMENT_CONTROLLER_TARGETW_InBus;
+	
+input	MOVEMENT_CONTROLLER_ENCODERA_In;
+input	MOVEMENT_CONTROLLER_ENCODERB_In;
+	
+output [1:0]				MOVEMENT_CONTROLLER_DIR_OutBus;
+output						MOVEMENT_CONTROLLER_PWM_Out;
+output [RPM_DATA-1:0]	MOVEMENT_CONTROLLER_RPM_OutBus;
+output [N_WIDTH-1:0]		MOVEMENT_CONTROLLER_W_OutBus;
+	
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+WHEEL_CONTROLLER WHEEL_CONTROLLER_I0
+(
+
+	//////////// INPUTS //////////
+	.WHEEL_CONTROLLER_CLOCK(MOVEMENT_CONTROLLER_CLOCK_50),
+	.WHEEL_CONTROLLER_RESET_InHigh(~MOVEMENT_CONTROLLER_RESET_InLow),
+	
+	.WHEEL_CONTROLLER_TARGETW_InBus(MOVEMENT_CONTROLLER_TARGETW_InBus),
+	
+	.WHEEL_CONTROLLER_ENCODERA_In(MOVEMENT_CONTROLLER_ENCODERA_In),
+	.WHEEL_CONTROLLER_ENCODERB_In(MOVEMENT_CONTROLLER_ENCODERB_In),
+	
+	//////////// OUTPUTS ////////// 
+	.WHEEL_CONTROLLER_DIR_OutBus(MOVEMENT_CONTROLLER_DIR_OutBus),
+	.WHEEL_CONTROLLER_PWM_Out(MOVEMENT_CONTROLLER_PWM_Out),
+	.WHEEL_CONTROLLER_RPM_OutBus(MOVEMENT_CONTROLLER_RPM_OutBus),
+	.WHEEL_CONTROLLER_W_OutBus(MOVEMENT_CONTROLLER_W_OutBus)
+
+);
+
+endmodule

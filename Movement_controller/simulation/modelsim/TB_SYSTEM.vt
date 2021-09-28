@@ -1,0 +1,135 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "09/25/2021 18:21:09"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+
+parameter TCK = 20; // clock period in ns of 50MHz
+
+// test vector input registers
+reg TB_SYSTEM_CLOCK_50;
+reg TB_SYSTEM_RESET_InLow;
+reg [31:0] TB_SYSTEM_TARGETVX_InBus;
+reg [31:0] TB_SYSTEM_TARGETVY_InBus;
+reg [31:0] TB_SYSTEM_TARGETWZ_InBus;
+// wires                                               
+wire [31:0]  TB_SYSTEM_W1_OutBus;
+wire [31:0]  TB_SYSTEM_W2_OutBus;
+wire [31:0]  TB_SYSTEM_W3_OutBus;
+wire [31:0]  TB_SYSTEM_W4_OutBus;
+
+// assign statements (if any)                          
+BB_SYSTEM i1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+	.BB_SYSTEM_RESET_InLow(TB_SYSTEM_RESET_InLow),
+	.BB_SYSTEM_TARGETVX_InBus(TB_SYSTEM_TARGETVX_InBus),
+	.BB_SYSTEM_TARGETVY_InBus(TB_SYSTEM_TARGETVY_InBus),
+	.BB_SYSTEM_TARGETWZ_InBus(TB_SYSTEM_TARGETWZ_InBus),
+	.BB_SYSTEM_W1_OutBus(TB_SYSTEM_W1_OutBus),
+	.BB_SYSTEM_W2_OutBus(TB_SYSTEM_W2_OutBus),
+	.BB_SYSTEM_W3_OutBus(TB_SYSTEM_W3_OutBus),
+	.BB_SYSTEM_W4_OutBus(TB_SYSTEM_W4_OutBus)
+);
+
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+TB_SYSTEM_CLOCK_50 <= 1'b0;                                              
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+
+always         
+begin                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~TB_SYSTEM_CLOCK_50;
+end 
+
+initial begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin 
+
+	#0 TB_SYSTEM_RESET_InLow <= 1'b0; // RESET
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1; // Todo en cero
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0_0000000000000000_100000000000000; // 0.5 m/s de velocidad en X (adelante) (w1 = 13.79310 rad/s)
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;		
+
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0_0000000000000000_010000000000000; // 0.25 m/s (w1 = 6.89655 rad/s)
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b1_0000000000000000_001000000000000; // -0.125 m/s (w1 = -3.44828 rad/s)
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0_0000000000000000_100000000000000; // 0.5 m/s en Y (izquierda) (w1 = -13.79310 rad/s)
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;		
+		
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 32'b1_0000000000000000_100000000000000; // -0.5 m/s en Y (derecha) (w1 = 13.79310 rad/s)
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;		
+
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+	
+	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;	
+		
+   $display("Finishing test vectors"); 
+	$stop;
+	
+@eachvec;                                              
+// --> end                                             
+end 
+                                                   
+endmodule
+

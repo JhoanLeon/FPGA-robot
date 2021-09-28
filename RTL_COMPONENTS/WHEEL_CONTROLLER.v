@@ -32,7 +32,7 @@ parameter RPM_DATA = 8;
 parameter N_WIDTH = 32;
 parameter Q_WIDTH = 15;
 
-parameter N_COUNTER_TICK_167ms = 20; // original value is 23 (tick at 167.77216ms), with 20bits -> tick at 20.97ms
+parameter N_COUNTER_TICK_167ms = 23; // original value is 23 (tick at 167.77216ms), with 20bits -> tick at 20.97ms
 parameter N_PRESCALER_82us = 11; // 12 for 20ms PWM period, 11 for 10ms PWM period
 
 //=======================================================
