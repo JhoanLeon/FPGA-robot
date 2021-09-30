@@ -9,9 +9,10 @@
 module Encoder(clk, tick, ChannelA, ChannelB, Count, Dir);
 
 input clk, tick, ChannelA, ChannelB;
-output reg [7:0] Count = 0;
+output [7:0] Count;
 output Dir; // 0 = cw - 1 = ccw
 
+reg [7:0] counter = 0;
 reg [2:0] ChannelA_delayed, ChannelB_delayed;
 
 always @(posedge clk) ChannelA_delayed <= {ChannelA_delayed[1:0], ChannelA};	//Seniales de los encoders retrasadas en el tiempo (1 muestreo)
@@ -27,10 +28,12 @@ assign Dir = ChannelA_delayed[1] ^ ChannelB_delayed[2];	//Direccion del giro (ot
 
 always @(posedge clk)
 begin
-	if (tick == 1'b0) // tick of counter at 350ms to reset the count of the pulses
-		Count <= 0;
+	if (tick == 1'b0) // tick of counter at 167.77ms to reset the count of the pulses
+		counter <= 0;
 	else if(Count_enable) // Cuenta cuando se debe
-		Count <= Count + 1'b1;
+		counter <= counter + 1'b1;
 end
+
+assign Count = {1'b0, counter[7:1]};
 
 endmodule

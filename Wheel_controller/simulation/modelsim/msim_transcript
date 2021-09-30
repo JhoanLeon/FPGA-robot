@@ -12,139 +12,139 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER_PWM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:29 on Sep 24,2021
+# Start time: 16:26:59 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER_PWM.v 
 # -- Compiling module SC_COUNTER_PWM
 # 
 # Top level modules:
 # 	SC_COUNTER_PWM
-# End time: 21:35:29 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:26:59 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PI_control.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:29 on Sep 24,2021
+# Start time: 16:26:59 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PI_control.v 
 # -- Compiling module PI_control
 # 
 # Top level modules:
 # 	PI_control
-# End time: 21:35:29 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:26:59 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:29 on Sep 24,2021
+# Start time: 16:26:59 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v 
 # -- Compiling module WHEEL_CONTROLLER
 # 
 # Top level modules:
 # 	WHEEL_CONTROLLER
-# End time: 21:35:29 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:26:59 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:29 on Sep 24,2021
+# Start time: 16:26:59 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v 
 # -- Compiling module SC_REGGENERAL
 # 
 # Top level modules:
 # 	SC_REGGENERAL
-# End time: 21:35:29 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:26:59 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:29 on Sep 24,2021
+# Start time: 16:26:59 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v 
 # -- Compiling module SC_COUNTER
 # 
 # Top level modules:
 # 	SC_COUNTER
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:01
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v 
 # -- Compiling module qmult
 # 
 # Top level modules:
 # 	qmult
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v 
 # -- Compiling module qadd
 # 
 # Top level modules:
 # 	qadd
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v 
 # -- Compiling module PREESCALER
 # 
 # Top level modules:
 # 	PREESCALER
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v 
 # -- Compiling module moduloPWM
 # 
 # Top level modules:
 # 	moduloPWM
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v 
 # -- Compiling module Encoder
 # 
 # Top level modules:
 # 	Encoder
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/Wheel_controller {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v 
 # -- Compiling module BB_SYSTEM
 # 
 # Top level modules:
 # 	BB_SYSTEM
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/RTL_COMPONENTS {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DIRECTION_DET.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DIRECTION_DET.v 
 # -- Compiling module DIRECTION_DET
 # 
 # Top level modules:
 # 	DIRECTION_DET
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/USUARIO\ WINDOWS/Desktop/Proyecto\ de\ Grado/FPGA-robot/Wheel_controller/simulation/modelsim {C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim" C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt 
 # -- Compiling module TB_SYSTEM
 # 
 # Top level modules:
 # 	TB_SYSTEM
-# End time: 21:35:30 on Sep 24,2021, Elapsed time: 0:00:00
+# End time: 16:27:00 on Sep 30,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  TB_SYSTEM
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" TB_SYSTEM 
-# Start time: 21:35:30 on Sep 24,2021
+# Start time: 16:27:00 on Sep 30,2021
 # Loading work.TB_SYSTEM
 # Loading work.BB_SYSTEM
 # Loading work.WHEEL_CONTROLLER
@@ -166,13 +166,13 @@
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # Running testbench
-add wave -position end sim:/TB_SYSTEM/i1/WHEEL_CONTROLLER_I0/PI_CONTROLLER_U0/*
+add wave -position end sim:/TB_SYSTEM/i1/WHEEL_CONTROLLER_I0/ENCODER_U0/*
+restart
+run -all
+# Running testbench
 # Finishing test vectors
-# ** Note: $stop    : C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt(122)
-#    Time: 400030 us  Iteration: 0  Instance: /TB_SYSTEM
-# Break in Module TB_SYSTEM at C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt line 122
-run
-run
-run
-# End time: 21:44:20 on Sep 24,2021, Elapsed time: 0:08:50
+# ** Note: $stop    : C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt(139)
+#    Time: 360020 us  Iteration: 0  Instance: /TB_SYSTEM
+# Break in Module TB_SYSTEM at C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt line 139
+# End time: 16:34:48 on Sep 30,2021, Elapsed time: 0:07:48
 # Errors: 0, Warnings: 0

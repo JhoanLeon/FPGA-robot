@@ -32,6 +32,8 @@ module TB_SYSTEM();
 reg eachvec;
 
 parameter TCK = 20; // clock period in ns of 50MHz
+parameter encodert = 8550000; // 8.55ms of period for 93.56rpms
+//parameter encodert = 5330000; // 5.33ms of period for 150rpms
 
 // test vector input registers
 reg TB_SYSTEM_CLOCK_50;
@@ -63,7 +65,9 @@ initial
 begin                                                  
 // code that executes only once                        
 // insert code here --> begin                          
-	TB_SYSTEM_CLOCK_50 <= 1'b0;                                             
+	TB_SYSTEM_CLOCK_50 <= 1'b0; 
+	TB_SYSTEM_ENCODERA_In <= 1'b0;
+	TB_SYSTEM_ENCODERB_In <= 1'b0;
 // --> end                                             
 	$display("Running testbench");                       
 end
@@ -75,43 +79,56 @@ begin
 	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
 end     
 	  
+//always
+//begin                                                 
+//// optional sensitivity list                           
+//// @(event1 or event2 or .... eventn)
+//	#(encodert/2) TB_SYSTEM_ENCODERA_In <= ~ TB_SYSTEM_ENCODERA_In;
+//end  
+
+always
+begin                                                 
+	#(encodert/6) TB_SYSTEM_ENCODERA_In <= 1'b1;       
+	#(encodert/6) TB_SYSTEM_ENCODERA_In <= 1'b1;       
+	#(encodert/6) TB_SYSTEM_ENCODERA_In <= 1'b1;       
+	#(encodert/6) TB_SYSTEM_ENCODERA_In <= 1'b0;	
+	#(encodert/6) TB_SYSTEM_ENCODERA_In <= 1'b0;       
+	#(encodert/6) TB_SYSTEM_ENCODERA_In <= 1'b0;
+end 	  
+	
+//always
+//begin                                                 
+//	#(encodert/6) TB_SYSTEM_ENCODERB_In <= 1'b0;       
+//	#(encodert/6) TB_SYSTEM_ENCODERB_In <= 1'b1;       
+//	#(encodert/6) TB_SYSTEM_ENCODERB_In <= 1'b1;       
+//	#(encodert/6) TB_SYSTEM_ENCODERB_In <= 1'b1;
+//	#(encodert/6) TB_SYSTEM_ENCODERB_In <= 1'b0;       
+//	#(encodert/6) TB_SYSTEM_ENCODERB_In <= 1'b0;	
+//end
+	
 initial begin                                                  
 // code executes for every event on sensitivity list   
 // insert code here --> begin    
 	#0 TB_SYSTEM_RESET_InLow <= 1'b0;
 		TB_SYSTEM_TARGETW_InBus <= 32'b0;
-		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-		TB_SYSTEM_ENCODERB_In <= 1'b0; 
 	
 	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
 		TB_SYSTEM_TARGETW_InBus <= 32'b0;
-		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-		TB_SYSTEM_ENCODERB_In <= 1'b0;
 	
 	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
 		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000001010_000000000000000; // 10.0 rad/s -> 95.5 rpms
-		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-		TB_SYSTEM_ENCODERB_In <= 1'b0;
 
-	#300000000 TB_SYSTEM_RESET_InLow <= 1'b1; // 300ms
+	#360000000 TB_SYSTEM_RESET_InLow <= 1'b1; // 360ms
 		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000001010_000000000000000;
-		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-		TB_SYSTEM_ENCODERB_In <= 1'b0;		
 		
-	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
-		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000000001_000000000000000; // 1.0 rad/s -> 9.5 rpms
-		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-		TB_SYSTEM_ENCODERB_In <= 1'b0;
-
-	#200000000 TB_SYSTEM_RESET_InLow <= 1'b1; // 200ms
-		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000000001_000000000000000;
-		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-		TB_SYSTEM_ENCODERB_In <= 1'b0;		
-
+//	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
+//		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000000001_000000000000000; // 1.0 rad/s -> 9.5 rpms
+//
+//	#200000000 TB_SYSTEM_RESET_InLow <= 1'b1; // 200ms
+//		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000000001_000000000000000;
+//
 //	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
 //		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000001111_100000000000000; // 15.5 rad/s -> 148.0 rpms
-//		TB_SYSTEM_ENCODERA_In <= 1'b0; 
-//		TB_SYSTEM_ENCODERB_In <= 1'b0;
 //
 //	#50000000 TB_SYSTEM_RESET_InLow <= 1'b1; // 50ms
 //		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000001111_100000000000000;

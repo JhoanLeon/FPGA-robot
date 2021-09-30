@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim
 vBB_SYSTEM
-Z1 !s110 1632537330
+Z1 !s110 1633037220
 !i10b 1
 !s100 z[8iP68D2L@EJSL@>@DE^2
 IIHhlVnO:^@UPdGGoA`C^Y0
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1632537330.000000
+Z4 !s108 1633037220.000000
 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v|
 !i113 1
@@ -57,11 +57,11 @@ n@d@i@r@e@c@t@i@o@n_@d@e@t
 vEncoder
 R1
 !i10b 1
-!s100 URgMioV1];bH<mRGBeR@@2
-IOmU@[;J0oH:^`DCjB5^JG1
+!s100 bjCaXY7RKn9gl80i9WO6D1
+ImV1eAaA239NS5M]QJg4Z23
 R2
 R0
-w1631923711
+w1633036833
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v
 L0 9
@@ -101,7 +101,7 @@ R7
 R6
 nmodulo@p@w@m
 vPI_control
-Z8 !s110 1632537329
+Z8 !s110 1633037219
 !i10b 1
 !s100 6`>O@68Hogg[K1;`B7:E60
 I@IYOj6ePiaI5zBB:8g@N`2
@@ -115,7 +115,7 @@ R3
 r1
 !s85 0
 31
-Z9 !s108 1632537329.000000
+Z9 !s108 1633037219.000000
 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PI_control.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PI_control.v|
 !i113 1
@@ -262,11 +262,11 @@ n@s@c_@r@e@g@g@e@n@e@r@a@l
 vTB_SYSTEM
 R1
 !i10b 1
-!s100 Z=L:5XPAEYSiifli:=jP:3
-IT89kYb@ZJfIJAT1lWgzH73
+!s100 G@bz^YjfNgoP8DD9`ZAML0
+ISnA9E@n7CRO`dSDKWVLEJ1
 R2
 R0
-w1632537306
+w1633037202
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/simulation/modelsim/TB_SYSTEM.vt
 L0 29
@@ -285,11 +285,11 @@ n@t@b_@s@y@s@t@e@m
 vWHEEL_CONTROLLER
 R8
 !i10b 1
-!s100 Bc>EA[PQbdXXV2TXVAQEO2
-IiHLzOK592`<_9_XTS;^I30
+!s100 `7c1aEMQ3_j1JQ=T7FV061
+IU60WZ^UGz;I`P:dW8f9ZZ0
 R2
 R0
-w1632536630
+w1633024876
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v
 L0 8

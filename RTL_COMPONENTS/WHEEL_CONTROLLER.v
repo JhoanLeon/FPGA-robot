@@ -203,6 +203,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_U1
 
 
 assign WHEEL_CONTROLLER_RPM_OutBus = reg_rpm_out[22:15]; // 8 bits for int number of rpms
-assign WHEEL_CONTROLLER_W_OutBus = {current_direction_rot, reg_rad_out[30:0]};
+//assign WHEEL_CONTROLLER_W_OutBus = {current_direction_rot, reg_rad_out[30:0]}; // this uses direction calculated from encoders
+assign WHEEL_CONTROLLER_W_OutBus = {WHEEL_CONTROLLER_TARGETW_InBus[31], reg_rad_out[30:0]}; // this uses direction of setpoint velocity
 
 endmodule

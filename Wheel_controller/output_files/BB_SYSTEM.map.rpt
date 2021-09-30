@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Fri Sep 24 21:45:19 2021
+Thu Sep 30 16:24:42 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -49,10 +49,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  41. Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qadd:ERROR_CALCULATOR"
  42. Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RAD2RPM"
  43. Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM"
- 44. Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_COUNTER:COUNTER_TICK_167ms_U0"
- 45. Post-Synthesis Netlist Statistics for Top Partition
- 46. Elapsed Time Per Partition
- 47. Analysis & Synthesis Messages
+ 44. Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|Encoder:ENCODER_U0"
+ 45. Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_COUNTER:COUNTER_TICK_167ms_U0"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
 
 
 
@@ -79,15 +80,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 24 21:45:19 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 30 16:24:42 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 672                                         ;
-;     Total combinational functions  ; 653                                         ;
-;     Dedicated logic registers      ; 143                                         ;
-; Total registers                    ; 143                                         ;
+; Total logic elements               ; 684                                         ;
+;     Total combinational functions  ; 665                                         ;
+;     Dedicated logic registers      ; 144                                         ;
+; Total registers                    ; 144                                         ;
 ; Total pins                         ; 79                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -222,8 +223,8 @@ https://fpgasoftware.intel.com/eula.
 ; multcore.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/multcore.inc                               ;         ;
 ; bypassff.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/bypassff.inc                               ;         ;
 ; altshift.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altshift.inc                               ;         ;
-; db/mult_tgt.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_tgt.tdf    ;         ;
-; db/mult_ugt.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_ugt.tdf    ;         ;
+; db/mult_pgt.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_pgt.tdf    ;         ;
+; db/mult_rgt.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_rgt.tdf    ;         ;
 ; multcore.tdf                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/multcore.tdf                               ;         ;
 ; csa_add.inc                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/csa_add.inc                                ;         ;
 ; mpar_add.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/mpar_add.inc                               ;         ;
@@ -252,20 +253,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 672   ;
+; Estimated Total logic elements              ; 684   ;
 ;                                             ;       ;
-; Total combinational functions               ; 653   ;
+; Total combinational functions               ; 665   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 177   ;
-;     -- 3 input functions                    ; 343   ;
-;     -- <=2 input functions                  ; 133   ;
+;     -- 4 input functions                    ; 179   ;
+;     -- 3 input functions                    ; 346   ;
+;     -- <=2 input functions                  ; 140   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 296   ;
-;     -- arithmetic mode                      ; 357   ;
+;     -- normal mode                          ; 307   ;
+;     -- arithmetic mode                      ; 358   ;
 ;                                             ;       ;
-; Total registers                             ; 143   ;
-;     -- Dedicated logic registers            ; 143   ;
+; Total registers                             ; 144   ;
+;     -- Dedicated logic registers            ; 144   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 79    ;
@@ -273,9 +274,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 8     ;
 ;                                             ;       ;
 ; Maximum fan-out node                        ; rtl~0 ;
-; Maximum fan-out                             ; 99    ;
-; Total fan-out                               ; 2583  ;
-; Average fan-out                             ; 2.69  ;
+; Maximum fan-out                             ; 97    ;
+; Total fan-out                               ; 2604  ;
+; Average fan-out                             ; 2.67  ;
 +---------------------------------------------+-------+
 
 
@@ -284,11 +285,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                      ; Entity Name      ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |BB_SYSTEM                                              ; 653 (1)             ; 143 (0)                   ; 0           ; 8            ; 0       ; 4         ; 79   ; 0            ; |BB_SYSTEM                                                                                                                                                                                                               ; BB_SYSTEM        ; work         ;
-;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|               ; 652 (0)             ; 143 (0)                   ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0                                                                                                                                                                          ; WHEEL_CONTROLLER ; work         ;
+; |BB_SYSTEM                                              ; 665 (1)             ; 144 (0)                   ; 0           ; 8            ; 0       ; 4         ; 79   ; 0            ; |BB_SYSTEM                                                                                                                                                                                                               ; BB_SYSTEM        ; work         ;
+;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|               ; 664 (0)             ; 144 (0)                   ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0                                                                                                                                                                          ; WHEEL_CONTROLLER ; work         ;
 ;       |DIRECTION_DET:DIRECTION_MOTOR_U0|                ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|DIRECTION_DET:DIRECTION_MOTOR_U0                                                                                                                                         ; DIRECTION_DET    ; work         ;
-;       |Encoder:ENCODER_U0|                              ; 10 (10)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|Encoder:ENCODER_U0                                                                                                                                                       ; Encoder          ; work         ;
-;       |PI_control:PI_CONTROLLER_U0|                     ; 345 (28)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control       ; work         ;
+;       |Encoder:ENCODER_U0|                              ; 18 (18)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|Encoder:ENCODER_U0                                                                                                                                                       ; Encoder          ; work         ;
+;       |PI_control:PI_CONTROLLER_U0|                     ; 347 (30)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control       ; work         ;
 ;          |qadd:first_add|                               ; 107 (107)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qadd:first_add                                                                                                                               ; qadd             ; work         ;
 ;          |qadd:second_add|                              ; 92 (92)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd             ; work         ;
 ;          |qmult:MULT_KI_ERRORK1|                        ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1                                                                                                                        ; qmult            ; work         ;
@@ -314,15 +315,15 @@ https://fpgasoftware.intel.com/eula.
 ;                         |lpm_add_sub:adder[0]|          ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KP_ERRORK|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                             ; lpm_add_sub      ; work         ;
 ;                            |add_sub_pgh:auto_generated| ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KP_ERRORK|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_pgh:auto_generated  ; add_sub_pgh      ; work         ;
 ;       |PREESCALER:PREESCALER_82us|                      ; 11 (11)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PREESCALER:PREESCALER_82us                                                                                                                                               ; PREESCALER       ; work         ;
-;       |SC_COUNTER:COUNTER_TICK_167ms_U0|                ; 26 (26)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_COUNTER:COUNTER_TICK_167ms_U0                                                                                                                                         ; SC_COUNTER       ; work         ;
-;       |SC_REGGENERAL:REGGENERAL_U0|                     ; 23 (23)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U0                                                                                                                                              ; SC_REGGENERAL    ; work         ;
-;       |SC_REGGENERAL:REGGENERAL_U1|                     ; 20 (20)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U1                                                                                                                                              ; SC_REGGENERAL    ; work         ;
+;       |SC_COUNTER:COUNTER_TICK_167ms_U0|                ; 30 (30)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_COUNTER:COUNTER_TICK_167ms_U0                                                                                                                                         ; SC_COUNTER       ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_U0|                     ; 22 (22)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U0                                                                                                                                              ; SC_REGGENERAL    ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_U1|                     ; 19 (19)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U1                                                                                                                                              ; SC_REGGENERAL    ; work         ;
 ;       |moduloPWM:PWM_GENERATOR|                         ; 19 (3)              ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|moduloPWM:PWM_GENERATOR                                                                                                                                                  ; moduloPWM        ; work         ;
 ;          |SC_COUNTER_PWM:contador|                      ; 16 (16)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|moduloPWM:PWM_GENERATOR|SC_COUNTER_PWM:contador                                                                                                                          ; SC_COUNTER_PWM   ; work         ;
 ;       |qadd:ERROR_CALCULATOR|                           ; 102 (102)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qadd:ERROR_CALCULATOR                                                                                                                                                    ; qadd             ; work         ;
 ;       |qmult:CONV_PUL2RPM|                              ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM                                                                                                                                                       ; qmult            ; work         ;
 ;          |lpm_mult:Mult0|                               ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM|lpm_mult:Mult0                                                                                                                                        ; lpm_mult         ; work         ;
-;             |mult_tgt:auto_generated|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM|lpm_mult:Mult0|mult_tgt:auto_generated                                                                                                                ; mult_tgt         ; work         ;
+;             |mult_pgt:auto_generated|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM|lpm_mult:Mult0|mult_pgt:auto_generated                                                                                                                ; mult_pgt         ; work         ;
 ;       |qmult:CONV_RAD2RPM|                              ; 84 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RAD2RPM                                                                                                                                                       ; qmult            ; work         ;
 ;          |lpm_mult:Mult0|                               ; 84 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RAD2RPM|lpm_mult:Mult0                                                                                                                                        ; lpm_mult         ; work         ;
 ;             |multcore:mult_core|                        ; 84 (46)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core                                                                                                                     ; multcore         ; work         ;
@@ -336,7 +337,7 @@ https://fpgasoftware.intel.com/eula.
 ;                         |add_sub_kgh:auto_generated|    ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_kgh:auto_generated                                ; add_sub_kgh      ; work         ;
 ;       |qmult:CONV_RPM2RAD|                              ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD                                                                                                                                                       ; qmult            ; work         ;
 ;          |lpm_mult:Mult0|                               ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD|lpm_mult:Mult0                                                                                                                                        ; lpm_mult         ; work         ;
-;             |mult_ugt:auto_generated|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD|lpm_mult:Mult0|mult_ugt:auto_generated                                                                                                                ; mult_ugt         ; work         ;
+;             |mult_rgt:auto_generated|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD|lpm_mult:Mult0|mult_rgt:auto_generated                                                                                                                ; mult_rgt         ; work         ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -376,11 +377,11 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Register name                                                                                ; Reason for Removal                     ;
 +----------------------------------------------------------------------------------------------+----------------------------------------+
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U1|REGGENERAL_Register[28..30] ; Stuck at GND due to stuck port data_in ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U0|REGGENERAL_Register[26..30] ; Stuck at GND due to stuck port data_in ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U0|REGGENERAL_Register[25..30] ; Stuck at GND due to stuck port data_in ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U1|REGGENERAL_Register[25..27] ; Stuck at GND due to stuck port data_in ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U0|REGGENERAL_Register[0]      ; Stuck at GND due to stuck port data_in ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U1|REGGENERAL_Register[23,24]  ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 14                                                       ;                                        ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_REGGENERAL:REGGENERAL_U1|REGGENERAL_Register[22..24] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 16                                                       ;                                        ;
 +----------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -389,12 +390,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 143   ;
-; Number of registers using Synchronous Clear  ; 8     ;
+; Total registers                              ; 144   ;
+; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 15    ;
-; Number of registers using Asynchronous Clear ; 76    ;
+; Number of registers using Asynchronous Clear ; 77    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 56    ;
+; Number of registers using Clock Enable       ; 53    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -405,8 +406,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[2]        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|Control_k1[0]         ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|Encoder:ENCODER_U0|Count[1]                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|Control_k1[1]         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|Encoder:ENCODER_U0|counter[1]                     ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qadd:ERROR_CALCULATOR|c[7]                        ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qadd:second_add|c[23] ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qadd:first_add|c[8]   ;
@@ -433,7 +434,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; RPM_DATA             ; 8     ; Signed Integer                                     ;
 ; N_WIDTH              ; 32    ; Signed Integer                                     ;
 ; Q_WIDTH              ; 15    ; Signed Integer                                     ;
-; N_COUNTER_TICK_167ms ; 20    ; Signed Integer                                     ;
+; N_COUNTER_TICK_167ms ; 23    ; Signed Integer                                     ;
 ; N_PRESCALER_82us     ; 11    ; Signed Integer                                     ;
 +----------------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -444,7 +445,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                                                      ;
 +----------------+-------+-------------------------------------------------------------------------------------------+
-; N              ; 20    ; Signed Integer                                                                            ;
+; N              ; 23    ; Signed Integer                                                                            ;
 ; flag           ; 0     ; Signed Integer                                                                            ;
 +----------------+-------+-------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -600,10 +601,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                            ;
 ; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                            ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                          ;
-; LPM_WIDTHA                                     ; 23           ; Untyped                                                 ;
+; LPM_WIDTHA                                     ; 22           ; Untyped                                                 ;
 ; LPM_WIDTHB                                     ; 18           ; Untyped                                                 ;
-; LPM_WIDTHP                                     ; 41           ; Untyped                                                 ;
-; LPM_WIDTHR                                     ; 41           ; Untyped                                                 ;
+; LPM_WIDTHP                                     ; 40           ; Untyped                                                 ;
+; LPM_WIDTHR                                     ; 40           ; Untyped                                                 ;
 ; LPM_WIDTHS                                     ; 1            ; Untyped                                                 ;
 ; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                 ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped                                                 ;
@@ -618,7 +619,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                 ;
 ; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                 ;
 ; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                 ;
-; CBXI_PARAMETER                                 ; mult_tgt     ; Untyped                                                 ;
+; CBXI_PARAMETER                                 ; mult_pgt     ; Untyped                                                 ;
 ; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                 ;
 ; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                 ;
 ; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                 ;
@@ -635,10 +636,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                            ;
 ; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                            ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                          ;
-; LPM_WIDTHA                                     ; 26           ; Untyped                                                 ;
+; LPM_WIDTHA                                     ; 25           ; Untyped                                                 ;
 ; LPM_WIDTHB                                     ; 12           ; Untyped                                                 ;
-; LPM_WIDTHP                                     ; 38           ; Untyped                                                 ;
-; LPM_WIDTHR                                     ; 38           ; Untyped                                                 ;
+; LPM_WIDTHP                                     ; 37           ; Untyped                                                 ;
+; LPM_WIDTHR                                     ; 37           ; Untyped                                                 ;
 ; LPM_WIDTHS                                     ; 1            ; Untyped                                                 ;
 ; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                 ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped                                                 ;
@@ -653,7 +654,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                 ;
 ; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                 ;
 ; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                 ;
-; CBXI_PARAMETER                                 ; mult_ugt     ; Untyped                                                 ;
+; CBXI_PARAMETER                                 ; mult_rgt     ; Untyped                                                 ;
 ; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                 ;
 ; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                 ;
 ; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                 ;
@@ -773,9 +774,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+-------------------------------------------------------------------------------------------------------+
 ; Number of entity instances            ; 5                                                                                                     ;
 ; Entity Instance                       ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM|lpm_mult:Mult0                                ;
-;     -- LPM_WIDTHA                     ; 23                                                                                                    ;
+;     -- LPM_WIDTHA                     ; 22                                                                                                    ;
 ;     -- LPM_WIDTHB                     ; 18                                                                                                    ;
-;     -- LPM_WIDTHP                     ; 41                                                                                                    ;
+;     -- LPM_WIDTHP                     ; 40                                                                                                    ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                                              ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                                    ;
 ;     -- INPUT_B_IS_CONSTANT            ; YES                                                                                                   ;
@@ -784,9 +785,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                                    ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                                    ;
 ; Entity Instance                       ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD|lpm_mult:Mult0                                ;
-;     -- LPM_WIDTHA                     ; 26                                                                                                    ;
+;     -- LPM_WIDTHA                     ; 25                                                                                                    ;
 ;     -- LPM_WIDTHB                     ; 12                                                                                                    ;
-;     -- LPM_WIDTHP                     ; 38                                                                                                    ;
+;     -- LPM_WIDTHP                     ; 37                                                                                                    ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                                              ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                                    ;
 ;     -- INPUT_B_IS_CONSTANT            ; YES                                                                                                   ;
@@ -958,6 +959,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+--------+----------+----------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|Encoder:ENCODER_U0"                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Dir  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|SC_COUNTER:COUNTER_TICK_167ms_U0" ;
 +-------------------------+--------+----------+-----------------------------------------------------+
@@ -976,28 +986,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 79                          ;
-; cycloneiii_ff         ; 143                         ;
-;     CLR               ; 28                          ;
-;     ENA CLR           ; 48                          ;
-;     ENA SCLR          ; 8                           ;
+; cycloneiii_ff         ; 144                         ;
+;     CLR               ; 31                          ;
+;     ENA               ; 7                           ;
+;     ENA CLR           ; 46                          ;
+;     SCLR              ; 1                           ;
 ;     SLD               ; 15                          ;
 ;     plain             ; 44                          ;
-; cycloneiii_lcell_comb ; 654                         ;
-;     arith             ; 357                         ;
+; cycloneiii_lcell_comb ; 666                         ;
+;     arith             ; 358                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 86                          ;
+;         2 data inputs ; 87                          ;
 ;         3 data inputs ; 269                         ;
-;     normal            ; 297                         ;
+;     normal            ; 308                         ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 19                          ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 74                          ;
-;         4 data inputs ; 177                         ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 77                          ;
+;         4 data inputs ; 179                         ;
 ; cycloneiii_mac_mult   ; 4                           ;
 ; cycloneiii_mac_out    ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 26.00                       ;
-; Average LUT depth     ; 15.14                       ;
+; Max LUT depth         ; 25.70                       ;
+; Average LUT depth     ; 14.98                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1016,7 +1027,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Sep 24 21:44:59 2021
+    Info: Processing started: Thu Sep 30 16:24:19 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1100,30 +1111,30 @@ Info (278001): Inferred 5 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|Mult0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
 Info (12130): Elaborated megafunction instantiation "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM|lpm_mult:Mult0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
 Info (12133): Instantiated megafunction "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_PUL2RPM|lpm_mult:Mult0" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
-    Info (12134): Parameter "LPM_WIDTHA" = "23"
+    Info (12134): Parameter "LPM_WIDTHA" = "22"
     Info (12134): Parameter "LPM_WIDTHB" = "18"
-    Info (12134): Parameter "LPM_WIDTHP" = "41"
-    Info (12134): Parameter "LPM_WIDTHR" = "41"
+    Info (12134): Parameter "LPM_WIDTHP" = "40"
+    Info (12134): Parameter "LPM_WIDTHR" = "40"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_tgt.tdf
-    Info (12023): Found entity 1: mult_tgt File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_tgt.tdf Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_pgt.tdf
+    Info (12023): Found entity 1: mult_pgt File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_pgt.tdf Line: 31
 Info (12130): Elaborated megafunction instantiation "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD|lpm_mult:Mult0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
 Info (12133): Instantiated megafunction "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|qmult:CONV_RPM2RAD|lpm_mult:Mult0" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
-    Info (12134): Parameter "LPM_WIDTHA" = "26"
+    Info (12134): Parameter "LPM_WIDTHA" = "25"
     Info (12134): Parameter "LPM_WIDTHB" = "12"
-    Info (12134): Parameter "LPM_WIDTHP" = "38"
-    Info (12134): Parameter "LPM_WIDTHR" = "38"
+    Info (12134): Parameter "LPM_WIDTHP" = "37"
+    Info (12134): Parameter "LPM_WIDTHR" = "37"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_ugt.tdf
-    Info (12023): Found entity 1: mult_ugt File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_ugt.tdf Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_rgt.tdf
+    Info (12023): Found entity 1: mult_rgt File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/mult_rgt.tdf Line: 31
 Info (12130): Elaborated megafunction instantiation "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KP_ERRORK|lpm_mult:Mult0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
 Info (12133): Instantiated megafunction "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KP_ERRORK|lpm_mult:Mult0" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 49
     Info (12134): Parameter "LPM_WIDTHA" = "8"
@@ -1185,9 +1196,10 @@ Info (12131): Elaborated megafunction instantiation "WHEEL_CONTROLLER:WHEEL_CONT
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ngh.tdf
     Info (12023): Found entity 1: add_sub_ngh File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/db/add_sub_ngh.tdf Line: 23
 Info (12131): Elaborated megafunction instantiation "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "WHEEL_CONTROLLER:WHEEL_CONTROLLER_I0|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (13014): Ignored 73 buffer(s)
-    Info (13019): Ignored 73 SOFT buffer(s)
+Info (13014): Ignored 71 buffer(s)
+    Info (13019): Ignored 71 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "BB_SYSTEM_W_OutBus[22]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v Line: 47
     Warning (13410): Pin "BB_SYSTEM_W_OutBus[23]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v Line: 47
     Warning (13410): Pin "BB_SYSTEM_W_OutBus[24]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v Line: 47
     Warning (13410): Pin "BB_SYSTEM_W_OutBus[25]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Wheel_controller/BB_SYSTEM.v Line: 47
@@ -1199,15 +1211,15 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 784 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 796 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 43 output pins
-    Info (21061): Implemented 697 logic cells
+    Info (21061): Implemented 709 logic cells
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
     Info: Peak virtual memory: 646 megabytes
-    Info: Processing ended: Fri Sep 24 21:45:19 2021
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Processing ended: Thu Sep 30 16:24:42 2021
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:31
 
 
