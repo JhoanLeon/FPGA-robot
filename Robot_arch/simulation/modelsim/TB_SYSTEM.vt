@@ -1,0 +1,137 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "09/30/2021 17:23:00"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg TB_SYSTEM_CLOCK_50;
+reg TB_SYSTEM_CS_In;
+reg TB_SYSTEM_ECHO1_In;
+reg TB_SYSTEM_ECHO2_In;
+reg TB_SYSTEM_ECHO3_In;
+reg TB_SYSTEM_ECHO4_In;
+reg TB_SYSTEM_MOSI_In;
+reg TB_SYSTEM_PHASEA1_In;
+reg TB_SYSTEM_PHASEA2_In;
+reg TB_SYSTEM_PHASEA3_In;
+reg TB_SYSTEM_PHASEA4_In;
+reg TB_SYSTEM_PHASEB1_In;
+reg TB_SYSTEM_PHASEB2_In;
+reg TB_SYSTEM_PHASEB3_In;
+reg TB_SYSTEM_PHASEB4_In;
+reg TB_SYSTEM_RESET_InLow;
+reg TB_SYSTEM_SCLK_In;
+reg treg_TB_SYSTEM_SDA_InOut;
+reg [2:0] TB_SYSTEM_SELECT_InBus;
+// wires                                               
+wire TB_SYSTEM_IN11_Out;
+wire TB_SYSTEM_IN12_Out;
+wire TB_SYSTEM_IN21_Out;
+wire TB_SYSTEM_IN22_Out;
+wire TB_SYSTEM_IN31_Out;
+wire TB_SYSTEM_IN32_Out;
+wire TB_SYSTEM_IN41_Out;
+wire TB_SYSTEM_IN42_Out;
+wire [3:0]  TB_SYSTEM_LEDs_OutBus;
+wire TB_SYSTEM_MISO_Out;
+wire TB_SYSTEM_PWM1_Out;
+wire TB_SYSTEM_PWM2_Out;
+wire TB_SYSTEM_PWM3_Out;
+wire TB_SYSTEM_PWM4_Out;
+wire TB_SYSTEM_SCL_Out;
+wire TB_SYSTEM_SDA_InOut;
+wire TB_SYSTEM_TRIG1_Out;
+wire TB_SYSTEM_TRIG2_Out;
+wire TB_SYSTEM_TRIG3_Out;
+wire TB_SYSTEM_TRIG4_Out;
+
+// assign statements (if any)                          
+assign BB_SYSTEM_SDA_InOut = treg_TB_SYSTEM_SDA_InOut;
+BB_SYSTEM i1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+	.BB_SYSTEM_CS_In(TB_SYSTEM_CS_In),
+	.BB_SYSTEM_ECHO1_In(TB_SYSTEM_ECHO1_In),
+	.BB_SYSTEM_ECHO2_In(TB_SYSTEM_ECHO2_In),
+	.BB_SYSTEM_ECHO3_In(TB_SYSTEM_ECHO3_In),
+	.BB_SYSTEM_ECHO4_In(TB_SYSTEM_ECHO4_In),
+	.BB_SYSTEM_IN11_Out(TB_SYSTEM_IN11_Out),
+	.BB_SYSTEM_IN12_Out(TB_SYSTEM_IN12_Out),
+	.BB_SYSTEM_IN21_Out(TB_SYSTEM_IN21_Out),
+	.BB_SYSTEM_IN22_Out(TB_SYSTEM_IN22_Out),
+	.BB_SYSTEM_IN31_Out(TB_SYSTEM_IN31_Out),
+	.BB_SYSTEM_IN32_Out(TB_SYSTEM_IN32_Out),
+	.BB_SYSTEM_IN41_Out(TB_SYSTEM_IN41_Out),
+	.BB_SYSTEM_IN42_Out(TB_SYSTEM_IN42_Out),
+	.BB_SYSTEM_LEDs_OutBus(TB_SYSTEM_LEDs_OutBus),
+	.BB_SYSTEM_MISO_Out(TB_SYSTEM_MISO_Out),
+	.BB_SYSTEM_MOSI_In(TB_SYSTEM_MOSI_In),
+	.BB_SYSTEM_PHASEA1_In(TB_SYSTEM_PHASEA1_In),
+	.BB_SYSTEM_PHASEA2_In(TB_SYSTEM_PHASEA2_In),
+	.BB_SYSTEM_PHASEA3_In(TB_SYSTEM_PHASEA3_In),
+	.BB_SYSTEM_PHASEA4_In(TB_SYSTEM_PHASEA4_In),
+	.BB_SYSTEM_PHASEB1_In(TB_SYSTEM_PHASEB1_In),
+	.BB_SYSTEM_PHASEB2_In(TB_SYSTEM_PHASEB2_In),
+	.BB_SYSTEM_PHASEB3_In(TB_SYSTEM_PHASEB3_In),
+	.BB_SYSTEM_PHASEB4_In(TB_SYSTEM_PHASEB4_In),
+	.BB_SYSTEM_PWM1_Out(TB_SYSTEM_PWM1_Out),
+	.BB_SYSTEM_PWM2_Out(TB_SYSTEM_PWM2_Out),
+	.BB_SYSTEM_PWM3_Out(TB_SYSTEM_PWM3_Out),
+	.BB_SYSTEM_PWM4_Out(TB_SYSTEM_PWM4_Out),
+	.BB_SYSTEM_RESET_InLow(TB_SYSTEM_RESET_InLow),
+	.BB_SYSTEM_SCLK_In(TB_SYSTEM_SCLK_In),
+	.BB_SYSTEM_SCL_Out(TB_SYSTEM_SCL_Out),
+	.BB_SYSTEM_SDA_InOut(TB_SYSTEM_SDA_InOut),
+	.BB_SYSTEM_SELECT_InBus(TB_SYSTEM_SELECT_InBus),
+	.BB_SYSTEM_TRIG1_Out(TB_SYSTEM_TRIG1_Out),
+	.BB_SYSTEM_TRIG2_Out(TB_SYSTEM_TRIG2_Out),
+	.BB_SYSTEM_TRIG3_Out(TB_SYSTEM_TRIG3_Out),
+	.BB_SYSTEM_TRIG4_Out(TB_SYSTEM_TRIG4_Out)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+                                                       
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+                                                       
+@eachvec;                                              
+// --> end                                             
+end                                                    
+endmodule
+

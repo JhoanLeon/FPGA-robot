@@ -1,0 +1,29 @@
+
+// This project contains the complete architecture of the FPGA-ROBOT
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module BB_SYSTEM
+(
+
+	//////////// INPUTS //////////
+	BB_SYSTEM_CLOCK_50,
+	BB_SYSTEM_RESET_InLow,
+	
+	BB_SYSTEM_TARGETVX_InBus,
+	BB_SYSTEM_TARGETVY_InBus,
+	BB_SYSTEM_TARGETWZ_InBus,
+	
+	//////////// OUTPUTS //////////
+	BB_SYSTEM_W1_OutBus,
+	BB_SYSTEM_W2_OutBus,
+	BB_SYSTEM_W3_OutBus,
+	BB_SYSTEM_W4_OutBus
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
