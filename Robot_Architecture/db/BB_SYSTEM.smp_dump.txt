@@ -1,0 +1,14 @@
+
+State Machine - |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0|STATE_Register
+Name STATE_Register.00 STATE_Register.STATE_CHECK_0 STATE_Register.STATE_START_0 
+STATE_Register.00 0 0 0 
+STATE_Register.STATE_START_0 1 0 1 
+STATE_Register.STATE_CHECK_0 1 1 0 
+
+State Machine - |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register
+Name State_Register.State_NEW_DATA State_Register.State_RISE_EDGE State_Register.State_EDGE State_Register.State_IDLE State_Register.State_FALL_EDGE 
+State_Register.State_IDLE 0 0 0 0 0 
+State_Register.State_EDGE 0 0 1 1 0 
+State_Register.State_RISE_EDGE 0 1 0 1 0 
+State_Register.State_NEW_DATA 1 0 0 1 0 
+State_Register.State_FALL_EDGE 0 0 0 1 1 

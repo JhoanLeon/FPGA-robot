@@ -44,8 +44,8 @@ SC_COUNTER_PWM #(.N(8)) contador // N is the amount of bit for count, maximun nu
 always@(inPWM, outPWM, flagSubida, flagBajada)//Maquina de estados que traduce los flags en la senal
 begin
 	if( inPWM >= 8'd250 )
-		salidaActual <= 1'b1;
-		
+		salidaActual <= 1'b1; // saturacion por arriba
+	
 	else if( flagSubida == 1'b0 ) // flags are active in low
 			salidaActual <= 1'b1;
 	

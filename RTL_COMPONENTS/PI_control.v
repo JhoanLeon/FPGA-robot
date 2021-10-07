@@ -43,8 +43,13 @@ parameter K_I = 32'b0_0000000000000000_000101000111101; // este valor es el cali
 `endif
 
 `ifdef _17B
-parameter K_P = 17'b0_00000000_11011001; // este valor es el calibrado en software 0.5977 (0.8477)
-parameter K_I = 17'b0_00000000_00010100; // este valor es el calibrado en software 0.0781
+// caso en el que no llega a los setpoints, no oscila
+parameter K_P = 17'b0_00000000_00010100; // este valor debe ser calibrado 0.0781
+parameter K_I = 17'b0_00000000_00010100; // este valor debe ser calibrado 0.0781
+
+// caso en el que oscila para velocidades 0.125, 0.25 y 0.375, para 0.5 funciona preciso
+//parameter K_P = 17'b0_00000000_11011001; // este valor debe ser calibrado 0.8477
+//parameter K_I = 17'b0_00000000_11011001; // este valor debe ser calibrado 0.8477
 `endif
 
 
@@ -100,21 +105,6 @@ end
 `endif
 
 
-//`ifdef _17B
-//always @(posedge Prescaler_clk)
-//begin
-//	if ( Control_k[15:8] >= 8'd250 ) //Caso de saturacion del controlador por arriba
-//		COMANDO_PWM <= 8'd255;
-//	else if ( Control_k[15:8] <= 8'd5 ) //Caso de saturacion del controlador por abajo
-//		COMANDO_PWM <= 8'd0;
-//	else
-//		COMANDO_PWM <= Control_k[15:8];	// Caso sin saturacion 17b, solo parte entera del numero
-//		
-//	// Actualiza el (k-1) para la siguiente iteración k 
-//	Error_k1 <= Error_k;
-//	Control_k1 <= Control_k;
-//end
-//`endif
 
 
 `ifdef _32B

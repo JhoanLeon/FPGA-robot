@@ -175,8 +175,7 @@ moduloPWM PWM_GENERATOR
 (
 	.clock(clk_82us_period), 
 	.reset(WHEEL_CONTROLLER_RESET_InHigh), 
-	.inPWM(pwm_control), 
-	//.inPWM(8'd50), for test 
+	.inPWM(pwm_control),  
 	.outPWM(WHEEL_CONTROLLER_PWM_Out)
 );
 
