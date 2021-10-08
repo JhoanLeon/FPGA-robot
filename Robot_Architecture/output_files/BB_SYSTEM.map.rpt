@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu Oct 07 15:49:50 2021
+Thu Oct 07 22:54:50 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -124,15 +124,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 07 15:49:50 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 07 22:54:50 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 847                                         ;
-;     Total combinational functions  ; 792                                         ;
-;     Dedicated logic registers      ; 309                                         ;
-; Total registers                    ; 309                                         ;
+; Total logic elements               ; 865                                         ;
+;     Total combinational functions  ; 810                                         ;
+;     Dedicated logic registers      ; 316                                         ;
+; Total registers                    ; 316                                         ;
 ; Total pins                         ; 43                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -305,20 +305,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 847                      ;
+; Estimated Total logic elements              ; 865                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 792                      ;
+; Total combinational functions               ; 810                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 217                      ;
-;     -- 3 input functions                    ; 406                      ;
-;     -- <=2 input functions                  ; 169                      ;
+;     -- 4 input functions                    ; 220                      ;
+;     -- 3 input functions                    ; 420                      ;
+;     -- <=2 input functions                  ; 170                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 412                      ;
+;     -- normal mode                          ; 430                      ;
 ;     -- arithmetic mode                      ; 380                      ;
 ;                                             ;                          ;
-; Total registers                             ; 309                      ;
-;     -- Dedicated logic registers            ; 309                      ;
+; Total registers                             ; 316                      ;
+;     -- Dedicated logic registers            ; 316                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 43                       ;
@@ -326,9 +326,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 4                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 259                      ;
-; Total fan-out                               ; 3466                     ;
-; Average fan-out                             ; 2.91                     ;
+; Maximum fan-out                             ; 266                      ;
+; Total fan-out                               ; 3562                     ;
+; Average fan-out                             ; 2.93                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -337,7 +337,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                     ; Entity Name          ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |BB_SYSTEM                                              ; 792 (1)             ; 309 (0)                   ; 0           ; 4            ; 0       ; 2         ; 43   ; 0            ; |BB_SYSTEM                                                                                                                                                                                                              ; BB_SYSTEM            ; work         ;
+; |BB_SYSTEM                                              ; 810 (1)             ; 316 (0)                   ; 0           ; 4            ; 0       ; 2         ; 43   ; 0            ; |BB_SYSTEM                                                                                                                                                                                                              ; BB_SYSTEM            ; work         ;
 ;    |CC_MUX81:CC_MUX81_U0|                               ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX81:CC_MUX81_U0                                                                                                                                                                                         ; CC_MUX81             ; work         ;
 ;    |MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|         ; 145 (0)             ; 164 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0                                                                                                                                                                   ; MOVEMENT_CONTROLLER  ; work         ;
 ;       |SC_REGGENERAL:w1_reg_u1|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_REGGENERAL:w1_reg_u1                                                                                                                                           ; SC_REGGENERAL        ; work         ;
@@ -346,8 +346,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |qadd:qadd_w1_second|                             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qadd:qadd_w1_second                                                                                                                                               ; qadd                 ; work         ;
 ;       |qmults:qmult_w1_first|                           ; 46 (46)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first                                                                                                                                             ; qmults               ; work         ;
 ;       |qmults:qmult_w1_second|                          ; 95 (95)             ; 95 (95)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second                                                                                                                                            ; qmults               ; work         ;
-;    |SPI_INTERFACE:SPI_INTERFACE_U0|                     ; 35 (0)              ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0                                                                                                                                                                               ; SPI_INTERFACE        ; work         ;
-;       |MESSAGE_INTERPRETER:MESSAGE_INT_U0|              ; 14 (14)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0                                                                                                                                            ; MESSAGE_INTERPRETER  ; work         ;
+;    |SPI_INTERFACE:SPI_INTERFACE_U0|                     ; 53 (0)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0                                                                                                                                                                               ; SPI_INTERFACE        ; work         ;
+;       |MESSAGE_INTERPRETER:MESSAGE_INT_U0|              ; 32 (32)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0                                                                                                                                            ; MESSAGE_INTERPRETER  ; work         ;
 ;       |SPI_SLAVE:SPI_U0|                                ; 21 (21)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0                                                                                                                                                              ; SPI_SLAVE            ; work         ;
 ;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|                ; 610 (0)             ; 111 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
 ;       |DIRECTION_DET:DIRECTION_MOTOR_U0|                ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|DIRECTION_DET:DIRECTION_MOTOR_U0                                                                                                                                         ; DIRECTION_DET        ; work         ;
@@ -464,8 +464,6 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|ChannelB_delayed[0..2]                   ; Stuck at GND due to stuck port data_in                                                                  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[31]     ; Stuck at GND due to stuck port data_in                                                                  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_multiplicand_temp[31]      ; Stuck at GND due to stuck port data_in                                                                  ;
-; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[2..6]            ; Merged with SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[0]           ;
-; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[1]               ; Merged with SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[7]           ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_done                      ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_done                   ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_count[5]                  ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_count[5]               ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_count[31]                 ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_count[31]              ;
@@ -507,15 +505,15 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_working_result[0..62]      ; Stuck at GND due to stuck port data_in                                                                  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_REGGENERAL:w1_reg_u0|REGGENERAL_Register[0..30]   ; Stuck at GND due to stuck port data_in                                                                  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[0..11]  ; Stuck at GND due to stuck port data_in                                                                  ;
-; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[0]               ; Stuck at GND due to stuck port data_in                                                                  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_multiplier_temp[1..62]     ; Lost fanout                                                                                             ;
+; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[16..29] ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[30] ;
 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register~4                                ; Lost fanout                                                                                             ;
 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register~5                                ; Lost fanout                                                                                             ;
-; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[17..30] ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[16] ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[46..62]   ; Lost fanout                                                                                             ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[46..62]    ; Lost fanout                                                                                             ;
-; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[15,16]  ; Stuck at GND due to stuck port data_in                                                                  ;
-; Total Number of Removed Registers = 299                                                         ;                                                                                                         ;
+; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[30]     ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[15] ;
+; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[15]     ; Stuck at GND due to stuck port data_in                                                                  ;
+; Total Number of Removed Registers = 292                                                         ;                                                                                                         ;
 +-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -656,8 +654,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[55],    ;
 ;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[56],    ;
 ;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[57],    ;
-;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[15], ;
-;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[16]  ;
+;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[15]  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[31] ; Stuck at GND              ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[58],    ;
 ;                                                                                             ; due to stuck port data_in ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[59],    ;
 ;                                                                                             ;                           ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[60],    ;
@@ -672,12 +669,12 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 309   ;
+; Total registers                              ; 316   ;
 ; Number of registers using Synchronous Clear  ; 79    ;
-; Number of registers using Synchronous Load   ; 15    ;
-; Number of registers using Asynchronous Clear ; 116   ;
+; Number of registers using Synchronous Load   ; 21    ;
+; Number of registers using Asynchronous Clear ; 123   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 173   ;
+; Number of registers using Clock Enable       ; 181   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -700,18 +697,19 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[2]            ;
-; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[13]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|Control_k1[5]             ;
-; 3:1                ; 62 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[14] ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[5]                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[7]                          ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 24 LEs               ; 28 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_select[0]       ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|counter[7]                         ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|qadd:ERROR_CALCULATOR|c[6]                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qadd:second_add|c[16]     ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qadd:qadd_w1_first|c[13]                       ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qadd:first_add|c[5]       ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[6]            ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[10]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|Control_k1[1]             ;
+; 3:1                ; 62 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[52] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[1]                    ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[7]                          ;
+; 256:1              ; 4 bits    ; 680 LEs       ; 24 LEs               ; 656 LEs                ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_select[2]       ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 80 LEs               ; 1280 LEs               ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[7]         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|counter[4]                         ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|qadd:ERROR_CALCULATOR|c[14]                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qadd:second_add|c[23]     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qadd:qadd_w1_first|c[12]                       ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qadd:first_add|c[12]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
 
 
@@ -1762,24 +1760,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port                               ; Type   ; Severity ; Details                                                                             ;
 +------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; SPI_INTERFACE_POSX_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_POSY_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_THETA_InBus          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_RPM1_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_RPM2_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_RPM3_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_RPM4_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_DIST1_InBus          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_DIST2_InBus          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_DIST3_InBus          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_DIST4_InBus          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_BEHAVIOR_InBus[6..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_POSX_InBus[31..16]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_POSX_InBus[14..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_POSX_InBus[15]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_POSY_InBus[31..17]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_POSY_InBus[15..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_POSY_InBus[16]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_THETA_InBus[16..15]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_THETA_InBus[31..17]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_THETA_InBus[14..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM1_InBus[6..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM1_InBus[2..0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM1_InBus[7]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM2_InBus[6..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM2_InBus[2..1]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM2_InBus[7]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM2_InBus[0]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM3_InBus[6..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM3_InBus[7]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM3_InBus[2]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM3_InBus[1]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM3_InBus[0]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM4_InBus[6..3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM4_InBus[1..0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_RPM4_InBus[7]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_RPM4_InBus[2]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST1_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST1_InBus[21..17]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST1_InBus[15..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST1_InBus[22]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST1_InBus[16]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST2_InBus[16..15]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST2_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST2_InBus[21..17]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST2_InBus[14..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST2_InBus[22]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST3_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST3_InBus[21..18]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST3_InBus[16..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST3_InBus[22]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST3_InBus[17]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[21..18]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[14..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[22]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[17]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[16]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_DIST4_InBus[15]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_BEHAVIOR_InBus[4..3] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_BEHAVIOR_InBus[1..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_BEHAVIOR_InBus[6..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; SPI_INTERFACE_BEHAVIOR_InBus[7]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_BEHAVIOR_InBus[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_BEHAVIOR_InBus[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUX_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUY_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus           ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_BEHAVIOR_InBus[2]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[22..21]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[31..23]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[20..19]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[17..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[18]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[22..21]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[31..23]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[20..19]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[17..16]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[14..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[18]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[15]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[22..21]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[31..23]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[20..19]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[15..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[18]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[17]       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[16]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; SPI_INTERFACE_BEGINSIGNAL_OutLow   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------------------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -1790,31 +1841,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 43                          ;
-; cycloneiii_ff         ; 309                         ;
-;     CLR               ; 45                          ;
+; cycloneiii_ff         ; 316                         ;
+;     CLR               ; 44                          ;
 ;     ENA               ; 56                          ;
-;     ENA CLR           ; 71                          ;
+;     ENA CLR           ; 73                          ;
+;     ENA CLR SLD       ; 6                           ;
 ;     ENA SCLR          ; 46                          ;
 ;     SCLR              ; 33                          ;
 ;     SLD               ; 15                          ;
 ;     plain             ; 43                          ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 797                         ;
+; cycloneiii_lcell_comb ; 815                         ;
 ;     arith             ; 380                         ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 103                         ;
 ;         3 data inputs ; 273                         ;
-;     normal            ; 417                         ;
+;     normal            ; 435                         ;
 ;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 22                          ;
-;         2 data inputs ; 38                          ;
-;         3 data inputs ; 133                         ;
-;         4 data inputs ; 217                         ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 147                         ;
+;         4 data inputs ; 220                         ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 26.10                       ;
-; Average LUT depth     ; 13.02                       ;
+; Average LUT depth     ; 12.86                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1823,7 +1875,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -1833,7 +1885,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Oct 07 15:49:10 2021
+    Info: Processing started: Thu Oct 07 22:54:35 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
@@ -1919,13 +1971,87 @@ Warning (10034): Output port "BB_SYSTEM_SCL_Out" at BB_SYSTEM.v(121) has no driv
 Info (12128): Elaborating entity "SPI_INTERFACE" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 203
 Info (12128): Elaborating entity "SPI_SLAVE" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_INTERFACE.v Line: 114
 Info (12128): Elaborating entity "MESSAGE_INTERPRETER" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_INTERFACE.v Line: 153
-Info (12128): Elaborating entity "CC_MUX81" for hierarchy "CC_MUX81:CC_MUX81_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 248
-Info (12128): Elaborating entity "MOVEMENT_CONTROLLER" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 271
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(154): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 154
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(162): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 162
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(170): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 170
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(178): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 178
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(186): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 186
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(194): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 194
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(202): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 202
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(210): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 210
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(218): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 218
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(226): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 226
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(232): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 232
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(233): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 233
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(234): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 234
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(235): variable "MESSAGE_INTERPRETER_POSX_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 235
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(240): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 240
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(241): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 241
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(242): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 242
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(243): variable "MESSAGE_INTERPRETER_POSY_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 243
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(248): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 248
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(249): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 249
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(250): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 250
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(251): variable "MESSAGE_INTERPRETER_THETA_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 251
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(257): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 257
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(258): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 258
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(259): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 259
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(260): variable "MESSAGE_INTERPRETER_RPM1_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 260
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(265): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 265
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(266): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 266
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(267): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 267
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(268): variable "MESSAGE_INTERPRETER_RPM2_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 268
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(273): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 273
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(274): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 274
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(275): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 275
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(276): variable "MESSAGE_INTERPRETER_RPM3_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 276
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(281): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 281
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(282): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 282
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(283): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 283
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(284): variable "MESSAGE_INTERPRETER_RPM4_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 284
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(290): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 290
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(291): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 291
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(292): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 292
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(293): variable "MESSAGE_INTERPRETER_DIST1_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 293
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(298): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 298
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(299): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 299
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(300): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 300
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(301): variable "MESSAGE_INTERPRETER_DIST2_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 301
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(306): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 306
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(307): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 307
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(308): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 308
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(309): variable "MESSAGE_INTERPRETER_DIST3_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 309
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(314): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 314
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(315): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 315
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(316): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 316
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(317): variable "MESSAGE_INTERPRETER_DIST4_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 317
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(323): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 323
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(324): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 324
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(325): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 325
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(326): variable "MESSAGE_INTERPRETER_BEHAVIOR_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 326
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(331): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 331
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(332): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 332
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(333): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 333
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(334): variable "MESSAGE_INTERPRETER_IMUX_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 334
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(339): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 339
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(340): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 340
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(341): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 341
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(342): variable "MESSAGE_INTERPRETER_IMUY_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 342
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(347): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 347
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(348): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 348
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(349): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 349
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(350): variable "MESSAGE_INTERPRETER_IMUZ_InBus" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 350
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(355): variable "current_select" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 355
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(356): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 356
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(357): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 357
+Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(358): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 358
+Info (12128): Elaborating entity "CC_MUX81" for hierarchy "CC_MUX81:CC_MUX81_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 249
+Info (12128): Elaborating entity "MOVEMENT_CONTROLLER" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 272
 Info (12128): Elaborating entity "SC_STATEMACHINE_MULT" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 128
 Info (12128): Elaborating entity "qadd" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qadd:qadd_w1_first" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 139
 Info (12128): Elaborating entity "qmults" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 151
 Info (12128): Elaborating entity "SC_REGGENERAL" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_REGGENERAL:w1_reg_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 162
-Info (12128): Elaborating entity "WHEEL_CONTROLLER" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 290
+Info (12128): Elaborating entity "WHEEL_CONTROLLER" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 291
 Info (12128): Elaborating entity "DIRECTION_DET" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|DIRECTION_DET:DIRECTION_MOTOR_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 86
 Info (12128): Elaborating entity "SC_COUNTER" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|SC_COUNTER:COUNTER_TICK_167ms_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 100
 Info (12128): Elaborating entity "Encoder" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 112
@@ -2026,7 +2152,7 @@ Info (17049): 98 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/output_files/BB_SYSTEM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 11 input pin(s) that do not drive logic
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEB1_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 87
     Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEA2_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 92
     Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEB2_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 93
@@ -2038,17 +2164,20 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_ECHO2_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 112
     Warning (15610): No output dependent on input pin "BB_SYSTEM_ECHO3_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 115
     Warning (15610): No output dependent on input pin "BB_SYSTEM_ECHO4_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 118
-Info (21057): Implemented 920 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "BB_SYSTEM_SELECT_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 132
+    Warning (15610): No output dependent on input pin "BB_SYSTEM_SELECT_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 132
+    Warning (15610): No output dependent on input pin "BB_SYSTEM_SELECT_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 132
+Info (21057): Implemented 938 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 22 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 873 logic cells
+    Info (21061): Implemented 891 logic cells
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 685 megabytes
-    Info: Processing ended: Thu Oct 07 15:49:50 2021
-    Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:00:39
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 125 warnings
+    Info: Peak virtual memory: 676 megabytes
+    Info: Processing ended: Thu Oct 07 22:54:50 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+

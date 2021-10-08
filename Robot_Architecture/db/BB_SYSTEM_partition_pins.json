@@ -44,18 +44,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_SELECT_InBus[0]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_SELECT_InBus[1]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_SELECT_InBus[2]",
-					"strict" : false
-				},
-				{
 					"name" : "BB_SYSTEM_CS_In",
 					"strict" : false
 				},

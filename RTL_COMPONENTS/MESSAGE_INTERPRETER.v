@@ -51,6 +51,37 @@ parameter INT_WIDTH = 8;
 parameter N_WIDTH = 32;
 parameter Q_WIDTH = 15;
 
+localparam waypoint1 = 8'd1;
+localparam waypoint2 = 8'd2;
+localparam waypoint3 = 8'd3;
+localparam waypoint4 = 8'd4;
+localparam waypoint5 = 8'd5;
+localparam waypoint6 = 8'd6;
+localparam waypoint7 = 8'd7;
+localparam waypoint8 = 8'd8;
+localparam stop_signal = 8'd9;
+localparam begin_signal = 8'd10;
+
+localparam x_i = 8'd20;
+localparam y_i = 8'd21;
+localparam theta_i = 8'd22;
+
+localparam rpm_1 = 8'd30;
+localparam rpm_2 = 8'd31;
+localparam rpm_3 = 8'd32;
+localparam rpm_4 = 8'd33;
+
+localparam d_1 = 8'd40;
+localparam d_2 = 8'd41;
+localparam d_3 = 8'd42;
+localparam d_4 = 8'd43;
+
+localparam behavior = 8'd50;
+
+localparam accel_x = 8'd60;
+localparam accel_y = 8'd61;
+localparam gyro_z = 8'd62;
+
 //=======================================================
 //  PORT declarations
 //=======================================================
@@ -106,141 +137,227 @@ reg next_begin;
 //  STRUCTURAL coding
 //=======================================================
 
-///////////////// algorithm
-/*
-first receives the 10 commands, and interprets them properly to output signals
-
-
-
-*/
-
 assign MESSAGE_INTERPRETER_WAYSELECT_OutBus = current_select;
 assign MESSAGE_INTERPRETER_STOPSIGNAL_OutLow = current_stop;
 assign MESSAGE_INTERPRETER_BEGINSIGNAL_OutLow = current_begin;
 assign MESSAGE_INTERPRETER_DATAOUT_OutBus = current_data;
 
-always @(*)
+always @(MESSAGE_INTERPRETER_FLAGDATAIN_In, MESSAGE_INTERPRETER_DATAIN_InBus)
 begin
-	if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000001) // waypoint 1
+	case (MESSAGE_INTERPRETER_DATAIN_InBus)
+	
+	waypoint1: // waypoint 1
 		begin
-			next_select = 3'b000; // origin
-			next_stop = 1'b1;
-			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_select = 3'b000; // origin waypoint
+			next_stop = 1'b1; // no stop
+			next_begin = 1'b1; // no begin
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000010) // waypoint 2
+		
+	waypoint2: // waypoint 2
 		begin
 			next_select = 3'b001; // 2 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000011) // waypoint 3
+		
+	waypoint3: // waypoint 3
 		begin
 			next_select = 3'b010; // 3 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000100) // waypoint 4
+		
+	waypoint4: // waypoint 4
 		begin
 			next_select = 3'b011; // 4 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000101) // waypoint 5
+		
+	waypoint5: // waypoint 5
 		begin
 			next_select = 3'b100; // 5 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000110) // waypoint 6
+		
+	waypoint6: // waypoint 6
 		begin
 			next_select = 3'b101; // 6 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00000111) // waypoint 7
+		
+	waypoint7: // waypoint 7
 		begin
 			next_select = 3'b110; // 7 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00001000) // waypoint 8
+		
+	waypoint8: // waypoint 8
 		begin
 			next_select = 3'b111; // 8 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
 
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00001001) // stop
+	stop_signal: // stop
 		begin
 			next_select = 3'b000; 
 			next_stop = 1'b0; // stop signal active in low
 			next_begin = 1'b1;
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
 	
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b00001010) // begin
+	begin_signal: // begin
 		begin
 			next_select = 3'b000;
 			next_stop = 1'b1;
 			next_begin = 1'b0; // begin signal active in low
-			next_data = 8'b00000000;
+			next_data = current_data;
 		end
 	
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b01110000) // 'p' for position
+	
+	x_i: // '20' for x_i
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
-			next_begin = current_begin; // begin signal active in low
-			next_data = MESSAGE_INTERPRETER_POSX_InBus[22:15]; // first data
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_POSX_InBus[22:15]; // data
+		end	
+		
+	y_i: // '21' for y_i
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_POSY_InBus[22:15]; // data
+		end	
+		
+	theta_i: // '22' for theta_i
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_THETA_InBus[22:15]; // data
 		end	
 
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b01110010) // 'r' for rpms
+		
+	rpm_1: // '30' for rpm_1
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
-			next_begin = current_begin; // begin signal active in low
-			next_data = MESSAGE_INTERPRETER_RPM1_InBus; // first data to send
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_RPM1_InBus; // data
 		end		
 
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b01100100) // 'd' for distances
+	rpm_2: // '31' for rpm_2
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
-			next_begin = current_begin; // begin signal active in low
-			next_data = MESSAGE_INTERPRETER_DIST1_InBus[22:15]; // first data to send
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_RPM2_InBus; // data
+		end		
+		
+	rpm_3: // '32' for rpm_3
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_RPM3_InBus; // data
+		end		
+		
+	rpm_4: // '33' for rpm_4
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_RPM4_InBus; // data
+		end		
+		
+		
+	d_1: // '40' for dist_1
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_DIST1_InBus[22:15]; // data
 		end			
 
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b01100010) // 'b' for behavior
+	d_2: // '41' for dist_1
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
-			next_begin = current_begin; // begin signal active in low
-			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // only one data, this is correct
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_DIST2_InBus[22:15]; // data
+		end	
+
+	d_3: // '42' for dist_1
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_DIST3_InBus[22:15]; // data
+		end	
+
+	d_4: // '43' for dist_1
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_DIST4_InBus[22:15]; // data
+		end			
+		
+		
+	behavior: // '50' for behavior
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // data
 		end	
 	
-	else if (MESSAGE_INTERPRETER_DATAIN_InBus == 8'b01101101) // 'm' for imu
+	accel_x: // '60' for accel_x
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
-			next_begin = current_begin; // begin signal active in low
-			next_data = MESSAGE_INTERPRETER_IMUX_InBus[22:15]; // first data to send
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_IMUX_InBus[22:15]; // data
 		end			
 	
-	else
+	accel_y: // '60' for accel_y
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_IMUY_InBus[22:15]; // data
+		end	
+	
+	gyro_z: // '60' for gyro_z
+		begin
+			next_select = current_select;
+			next_stop = current_stop;
+			next_begin = current_begin;
+			next_data = MESSAGE_INTERPRETER_IMUZ_InBus[22:15]; // data
+		end	
+	
+	default:
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
 			next_data = current_data;
 		end	
+	endcase	
 end
 
 
