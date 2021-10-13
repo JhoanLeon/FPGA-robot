@@ -40,10 +40,16 @@ reg TB_SYSTEM_CLOCK_50;
 reg TB_SYSTEM_Reset_InHigh;
 
 reg TB_SYSTEM_ready_InHigh;
+reg [31:0] TB_SYSTEM_vx_In;
+reg [31:0] TB_SYSTEM_vy_In;
+reg [31:0] TB_SYSTEM_wz_In;
+reg [31:0] TB_SYSTEM_theta_In;
 
 // wires                                               
 wire TB_SYSTEM_done_Out;
-
+wire [31:0] TB_SYSTEM_vx_Out;
+wire [31:0] TB_SYSTEM_vy_Out;
+wire [31:0] TB_SYSTEM_wz_Out;
 
 // assign statements (if any)                          
 BB_SYSTEM u1 (
@@ -53,16 +59,16 @@ BB_SYSTEM u1 (
 	.BB_SYSTEM_Reset_InHigh(TB_SYSTEM_Reset_InHigh),
 	
 	.BB_SYSTEM_READY_In(TB_SYSTEM_ready_InHigh),
-//	BB_SYSTEM_VX_InBus, // local velocity vx in m/s (notation fixed point 32b)
-//	BB_SYSTEM_VY_InBus, // local velocity vy in m/s (in notation fixed point 32b)
-//	BB_SYSTEM_WZ_InBus, // local velocity wz in rad/s (in notation fixed point 32b)
-//	BB_SYSTEM_THETA_InBus, // rotation angle in degrees (in notation fixed point 32b)
+	.BB_SYSTEM_VX_InBus(TB_SYSTEM_vx_In), // local velocity vx in m/s (notation fixed point 32b)
+	.BB_SYSTEM_VY_InBus(TB_SYSTEM_vy_In), // local velocity vy in m/s (in notation fixed point 32b)
+	.BB_SYSTEM_WZ_InBus(TB_SYSTEM_wz_In), // local velocity wz in rad/s (in notation fixed point 32b)
+	.BB_SYSTEM_THETA_InBus(TB_SYSTEM_theta_In), // rotation angle in degrees (in notation fixed point 32b)
 
 	//////////// OUTPUTS //////////
-	.BB_SYSTEM_DONE_Out(TB_SYSTEM_done_Out)
-//	BB_SYSTEM_VX_OutBus,
-//	BB_SYSTEM_VY_OutBus,
-//	BB_SYSTEM_WZ_OutBus
+	.BB_SYSTEM_DONE_Out(TB_SYSTEM_done_Out),
+	.BB_SYSTEM_VX_OutBus(TB_SYSTEM_vx_Out),
+	.BB_SYSTEM_VY_OutBus(TB_SYSTEM_vy_Out),
+	.BB_SYSTEM_WZ_OutBus(TB_SYSTEM_wz_Out)
 
 );
 
@@ -83,25 +89,98 @@ always
 initial	begin                                                  
 // code executes for every event on sensitivity list   
 // insert code here --> begin    
-										
+
+	// 1 CHECK: VX_I = 0.0 , VY_I = 0.0 ; VX_O = 0.0 , VY_O = 0.0
 	#0	    TB_SYSTEM_Reset_InHigh <= 1'b1;
 			 TB_SYSTEM_ready_InHigh <= 1'b0; 
+			 TB_SYSTEM_vx_In <= 32'b0; // |S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF|										
+			 TB_SYSTEM_vy_In <= 32'b0;
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= 32'b0;
 			 
-	#500   TB_SYSTEM_Reset_InHigh <= 1'b0;
-			 TB_SYSTEM_ready_InHigh <= 1'b0; 
-			 
-	#500   TB_SYSTEM_Reset_InHigh <= 1'b0;
+	// 2 CHECK: VX_I = 10.0 , VY_I = 0.0 ; VX_O = 10.000305 , VY_O = 0.002136	 
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
 			 TB_SYSTEM_ready_InHigh <= 1'b1;
-		 
-	#500   TB_SYSTEM_Reset_InHigh <= 1'b0;
-			 TB_SYSTEM_ready_InHigh <= 1'b0;
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= 32'b0;
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= 32'b0; 
+
+	// 3 CHECK: VX_I = 0.0 , VY_I = 2.0 ; VX_O = 0.000427 , VY_O = 2.000061	  
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;
+			 TB_SYSTEM_vx_In <= {1'b0,16'd2,15'b0};
+			 TB_SYSTEM_vy_In <= 32'b0;
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= {1'b0,16'd90,15'b0}; 
+			 
+	// 4 CHECK: VX_I = 0.0 , VY_I = 10.0 ; VX_O = 0.002136 , VY_O = 10.000305		 
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= 32'b0;
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= {1'b0,16'd90,15'b0}; // this 90°
 		
-	#2000  TB_SYSTEM_Reset_InHigh <= 1'b0;
-			 TB_SYSTEM_ready_InHigh <= 1'b1;  
+	// 5 CHECK: VX_I = -10.606602 , VY_I = 3.535534 ; VX_O = -10.608368 , VY_O = 3.531799		
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= {1'b0,16'd5,15'b0};
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= {1'b0,16'd135,15'b0};	 
+
+	// 6 CHECK: VX_I = -10.0 , VY_I = 0.0 ; VX_O = -10.000305 , VY_O = 0.002136		 
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= 32'b0;
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= {1'b0,16'd180,15'b0}; // this 180°
+			 
+	// 7 CHECK: VX_I = 10.0 , VY_I = 5.0 ; VX_O = 9.999237 , VY_O = 5.002289		
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= {1'b0,16'd5,15'b0};
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= 32'b0;			
 		
-	#500   TB_SYSTEM_Reset_InHigh <= 1'b0;
-			 TB_SYSTEM_ready_InHigh <= 1'b0;  		
+	// 8 CHECK: VX_I = 3.535534 , VY_I = 10.606602 ; VX_O = 3.539581 , VY_O = 10.605774	
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;  		
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= {1'b0,16'd5,15'b0};
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= {1'b0,16'd45,15'b0};	
+
+	// 9 CHECK: VX_I = -3.535534 , VY_I = -10.606602 ; VX = -3.539581 , VY = -10.605774			 
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;  		
+			 TB_SYSTEM_vx_In <= {1'b1,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= {1'b1,16'd5,15'b0};
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= {1'b0,16'd45,15'b0};	
+
+	// 10 CHECK: VX_I = 10.0 , VY_I = -5.0 ; VX_O = 10.001373 , VY_O = -4.998017			 
+	#3000  TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b1;  		
+			 TB_SYSTEM_vx_In <= {1'b0,16'd10,15'b0};
+			 TB_SYSTEM_vy_In <= {1'b1,16'd5,15'b0};
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= 32'b0;			
+
+	// CHECK: VX_I = 0.0 , VY_I = 0.0 ; VX_O = 0.0 , VY_O = 0.0
+	#3000	 TB_SYSTEM_Reset_InHigh <= 1'b0;
+			 TB_SYSTEM_ready_InHigh <= 1'b0; 
+			 TB_SYSTEM_vx_In <= 32'b0;										
+			 TB_SYSTEM_vy_In <= 32'b0;
+			 TB_SYSTEM_wz_In <= 32'b0;
+			 TB_SYSTEM_theta_In <= 32'b0;	 
 	
+	
+	$display("Finishing testbench"); 
+	$stop;	
 @eachvec;
 $finish;                                           
 // --> end                                             

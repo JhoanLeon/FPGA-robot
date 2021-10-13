@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu Sep 16 09:24:09 2021
+Wed Oct 13 16:02:49 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -15,34 +15,38 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
- 13. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0
- 14. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0
- 15. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u1
- 16. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos
- 17. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin
- 18. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin
- 19. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos
- 20. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vx
- 21. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vy
- 22. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u2
- 23. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u3
- 24. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos"
- 25. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin"
- 26. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin"
- 27. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos"
- 28. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u1"
- 29. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0"
- 30. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter"
- 31. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter"
- 32. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U"
- 33. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0"
- 34. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0"
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |BB_SYSTEM
+ 15. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0
+ 16. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0
+ 17. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u1
+ 18. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos
+ 19. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin
+ 20. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin
+ 21. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos
+ 22. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vx
+ 23. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vy
+ 24. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u2
+ 25. Parameter Settings for User Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u3
+ 26. Parameter Settings for Inferred Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0
+ 27. Parameter Settings for Inferred Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4
+ 28. Parameter Settings for Inferred Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2
+ 29. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos"
+ 30. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin"
+ 31. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin"
+ 32. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos"
+ 33. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u1"
+ 34. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0"
+ 35. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter"
+ 36. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter"
+ 37. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U"
+ 38. Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
 
 
 
@@ -69,16 +73,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 16 09:24:09 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 13 16:02:49 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 65                                          ;
-;     Total combinational functions  ; 51                                          ;
-;     Dedicated logic registers      ; 54                                          ;
-; Total registers                    ; 54                                          ;
-; Total pins                         ; 4                                           ;
+; Total logic elements               ; 1,284                                       ;
+;     Total combinational functions  ; 1,175                                       ;
+;     Dedicated logic registers      ; 549                                         ;
+; Total registers                    ; 549                                         ;
+; Total pins                         ; 228                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -185,23 +189,31 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
-+------------------------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path               ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                              ; Library ;
-+------------------------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
-; ../RTL_COMPONENTS/GLOBAL_VELOCITY.v            ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v            ;         ;
-; ../RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v ;         ;
-; ../RTL_COMPONENTS/SC_REGGENERAL.v              ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v              ;         ;
-; ../RTL_COMPONENTS/qmults.v                     ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v                     ;         ;
-; ../RTL_COMPONENTS/qadd.v                       ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v                       ;         ;
-; ../RTL_COMPONENTS/core_cordic.v                ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v                ;         ;
-; BB_SYSTEM.v                                    ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/BB_SYSTEM.v                 ;         ;
-+------------------------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                ;
++------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path               ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                              ; Library ;
++------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; ../RTL_COMPONENTS/GLOBAL_VELOCITY.v            ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v            ;         ;
+; ../RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v ;         ;
+; ../RTL_COMPONENTS/SC_REGGENERAL.v              ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v              ;         ;
+; ../RTL_COMPONENTS/qmults.v                     ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v                     ;         ;
+; ../RTL_COMPONENTS/qadd.v                       ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v                       ;         ;
+; ../RTL_COMPONENTS/core_cordic.v                ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v                ;         ;
+; BB_SYSTEM.v                                    ; yes             ; User Verilog HDL File        ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/BB_SYSTEM.v                 ;         ;
+; lpm_add_sub.tdf                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                    ;         ;
+; addcore.inc                                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/addcore.inc                                        ;         ;
+; look_add.inc                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/look_add.inc                                       ;         ;
+; bypassff.inc                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/bypassff.inc                                       ;         ;
+; altshift.inc                                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altshift.inc                                       ;         ;
+; alt_stratix_add_sub.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                            ;         ;
+; aglobal191.inc                                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                                     ;         ;
+; db/add_sub_svi.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/db/add_sub_svi.tdf          ;         ;
++------------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------+
@@ -209,44 +221,62 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 65                       ;
+; Estimated Total logic elements              ; 1,284                    ;
 ;                                             ;                          ;
-; Total combinational functions               ; 51                       ;
+; Total combinational functions               ; 1175                     ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 12                       ;
-;     -- 3 input functions                    ; 3                        ;
-;     -- <=2 input functions                  ; 36                       ;
+;     -- 4 input functions                    ; 392                      ;
+;     -- 3 input functions                    ; 645                      ;
+;     -- <=2 input functions                  ; 138                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 20                       ;
-;     -- arithmetic mode                      ; 31                       ;
+;     -- normal mode                          ; 641                      ;
+;     -- arithmetic mode                      ; 534                      ;
 ;                                             ;                          ;
-; Total registers                             ; 54                       ;
-;     -- Dedicated logic registers            ; 54                       ;
+; Total registers                             ; 549                      ;
+;     -- Dedicated logic registers            ; 549                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
-; I/O pins                                    ; 4                        ;
+; I/O pins                                    ; 228                      ;
 ;                                             ;                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 54                       ;
-; Total fan-out                               ; 292                      ;
-; Average fan-out                             ; 2.58                     ;
+; Maximum fan-out                             ; 549                      ;
+; Total fan-out                               ; 6193                     ;
+; Average fan-out                             ; 2.84                     ;
 +---------------------------------------------+--------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
-+----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+----------------------------+--------------+
-; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Entity Name                ; Library Name ;
-+----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+----------------------------+--------------+
-; |BB_SYSTEM                                         ; 51 (0)              ; 54 (0)                    ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |BB_SYSTEM                                                                               ; BB_SYSTEM                  ; work         ;
-;    |GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|            ; 51 (0)              ; 54 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0                                            ; GLOBAL_VELOCITY            ; work         ;
-;       |SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0| ; 7 (7)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0 ; SC_STATEMACHINE_GLOBAL_VEL ; work         ;
-;       |cordic:cordic_core_u0|                      ; 0 (0)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0                      ; cordic                     ; work         ;
-;       |qmults:multiplier_vx_cos|                   ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos                   ; qmults                     ; work         ;
-+----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+----------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                   ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                       ; Entity Name                ; Library Name ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
+; |BB_SYSTEM                                         ; 1175 (2)            ; 549 (0)                   ; 0           ; 0            ; 0       ; 0         ; 228  ; 0            ; |BB_SYSTEM                                                                                                                ; BB_SYSTEM                  ; work         ;
+;    |GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|            ; 1173 (46)           ; 549 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0                                                                             ; GLOBAL_VELOCITY            ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u0|                ; 0 (0)               ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u1|                ; 0 (0)               ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u1                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u2|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u2                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_REGGENERAL:REGGENERAL_u3|                ; 31 (31)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u3                                                 ; SC_REGGENERAL              ; work         ;
+;       |SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0| ; 7 (7)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0                                  ; SC_STATEMACHINE_GLOBAL_VEL ; work         ;
+;       |cordic:cordic_core_u0|                      ; 389 (72)            ; 66 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0                                                       ; cordic                     ; work         ;
+;          |rotator:U|                               ; 317 (54)            ; 51 (51)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U                                             ; rotator                    ; work         ;
+;             |lpm_add_sub:Add0|                     ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0                            ; lpm_add_sub                ; work         ;
+;                |add_sub_svi:auto_generated|        ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0|add_sub_svi:auto_generated ; add_sub_svi                ; work         ;
+;             |lpm_add_sub:Add2|                     ; 32 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2                            ; lpm_add_sub                ; work         ;
+;                |add_sub_svi:auto_generated|        ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2|add_sub_svi:auto_generated ; add_sub_svi                ; work         ;
+;             |lpm_add_sub:Add4|                     ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4                            ; lpm_add_sub                ; work         ;
+;                |add_sub_svi:auto_generated|        ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4|add_sub_svi:auto_generated ; add_sub_svi                ; work         ;
+;             |signed_shifter:x_shifter|             ; 101 (101)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter                    ; signed_shifter             ; work         ;
+;             |signed_shifter:y_shifter|             ; 96 (96)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter                    ; signed_shifter             ; work         ;
+;       |qadd:adder_vx|                              ; 149 (149)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vx                                                               ; qadd                       ; work         ;
+;       |qadd:adder_vy|                              ; 148 (148)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vy                                                               ; qadd                       ; work         ;
+;       |qmults:multiplier_vx_cos|                   ; 163 (163)           ; 157 (157)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos                                                    ; qmults                     ; work         ;
+;       |qmults:multiplier_vx_sin|                   ; 93 (93)             ; 93 (93)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin                                                    ; qmults                     ; work         ;
+;       |qmults:multiplier_vy_cos|                   ; 47 (47)             ; 78 (78)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos                                                    ; qmults                     ; work         ;
+;       |qmults:multiplier_vy_sin|                   ; 69 (69)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin                                                    ; qmults                     ; work         ;
++----------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -269,17 +299,373 @@ Encoding Type:  One-Hot
 +-------------------------------------+-----------------------------+-----------------------------+-----------------------------------+-----------------------------------+-------------------------------------+-------------------------------------+------------------------------------+------------------------------+------------------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                  ;
-+------------------------------------------------------------------------------------------------+--------------------+
-; Register name                                                                                  ; Reason for Removal ;
-+------------------------------------------------------------------------------------------------+--------------------+
-; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~4 ; Lost fanout        ;
-; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~5 ; Lost fanout        ;
-; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~6 ; Lost fanout        ;
-; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~7 ; Lost fanout        ;
-; Total Number of Removed Registers = 4                                                          ;                    ;
-+------------------------------------------------------------------------------------------------+--------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                 ;
++------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+; Register name                                                                                  ; Reason for Removal                                                                                ;
++------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[31]          ; Stuck at GND due to stuck port data_in                                                            ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[31]          ; Stuck at GND due to stuck port data_in                                                            ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[31]          ; Stuck at GND due to stuck port data_in                                                            ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[31]          ; Stuck at GND due to stuck port data_in                                                            ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u1|REGGENERAL_Register[16..30]     ; Stuck at GND due to stuck port data_in                                                            ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0|REGGENERAL_Register[16..30]     ; Stuck at GND due to stuck port data_in                                                            ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_done                           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_done                  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_done                           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_done                  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_done                           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_done                  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[5]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[5]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[5]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[5]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[5]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[5]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[31]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[31]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[31]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[31]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[31]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[31]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[30]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[30]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[30]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[30]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[30]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[30]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[29]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[29]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[29]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[29]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[29]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[29]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[28]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[28]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[28]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[28]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[28]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[28]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[27]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[27]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[27]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[27]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[27]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[27]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[26]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[26]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[26]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[26]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[26]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[26]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[25]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[25]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[25]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[25]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[25]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[25]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[24]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[24]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[24]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[24]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[24]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[24]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[23]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[23]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[23]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[23]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[23]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[23]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[22]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[22]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[22]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[22]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[22]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[22]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[21]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[21]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[21]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[21]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[21]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[21]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[20]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[20]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[20]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[20]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[20]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[20]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[19]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[19]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[19]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[19]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[19]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[19]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[18]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[18]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[18]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[18]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[18]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[18]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[17]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[17]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[17]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[17]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[17]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[17]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[16]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[16]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[16]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[16]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[16]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[16]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[15]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[15]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[15]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[15]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[15]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[15]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[14]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[14]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[14]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[14]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[14]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[14]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[13]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[13]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[13]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[13]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[13]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[13]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[12]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[12]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[12]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[12]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[12]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[12]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[11]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[11]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[11]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[11]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[11]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[11]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[10]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[10]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[10]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[10]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[10]                      ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[10]             ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[9]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[9]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[9]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[9]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[9]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[9]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[8]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[8]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[8]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[8]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[8]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[8]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[7]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[7]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[7]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[7]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[7]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[7]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[6]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[6]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[6]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[6]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[6]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[6]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[4]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[4]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[4]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[4]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[4]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[4]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[3]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[3]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[3]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[3]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[3]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[3]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[2]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[2]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[2]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[2]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[2]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[2]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[1]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[1]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[1]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[1]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[1]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[1]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_count[0]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[0]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_count[0]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[0]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_count[0]                       ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_count[0]              ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[62]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[62]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[20]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[20]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[19]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[19]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[18]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[18]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[17]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[17]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[16]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[16]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[15]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[15]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[14]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[14]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[13]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[13]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[12]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[12]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[11]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[11]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[10]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[10]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[9]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[9]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[8]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[8]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[7]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[7]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[6]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[6]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[5]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[5]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[4]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[4]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[3]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[3]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[2]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[2]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[1]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[1]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[0]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[0]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[30]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[30] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[29]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[29] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[28]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[28] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[27]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[27] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[26]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[26] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[25]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[25] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[24]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[24] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[23]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[23] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[22]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[22] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[21]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[21] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[20]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[20] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[19]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[19] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[18]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[18] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[17]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[17] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[16]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[16] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[15]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[15] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[14]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[14] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[13]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[13] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[12]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[12] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[11]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[11] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[10]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[10] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[9]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[9]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[8]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[8]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[7]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[7]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[6]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[6]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[5]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[5]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[4]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[4]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[3]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[3]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[2]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[2]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[1]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[1]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[0]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[0]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[18]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[18]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[17]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[17]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[16]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[16]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[15]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[15]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[14]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[14]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[13]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[13]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[12]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[12]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[11]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[11]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[10]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[10]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[9]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[9]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[8]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[8]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[7]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[7]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[6]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[6]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[5]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[5]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[4]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[4]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[3]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[3]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[2]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[2]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[1]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[1]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[0]             ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[0]    ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[30]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[30] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[29]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[29] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[28]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[28] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[27]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[27] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[26]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[26] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[25]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[25] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[24]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[24] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[23]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[23] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[22]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[22] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[21]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[21] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[20]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[20] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[19]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[19] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[18]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[18] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[17]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[17] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[16]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[16] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[15]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[15] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[14]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[14] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[13]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[13] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[12]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[12] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[11]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[11] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[10]          ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[10] ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[9]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[9]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[8]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[8]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[7]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[7]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[6]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[6]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[5]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[5]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[4]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[4]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[3]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[3]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[2]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[2]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[1]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[1]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[0]           ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[0]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[21]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[21]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[19]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[19]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[22]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[22]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[20]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[20]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[23]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[23]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[21]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[21]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[24]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[24]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[22]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[22]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[25]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[25]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[23]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[23]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[26]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[26]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[24]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[24]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[27]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[27]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[25]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[25]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[28]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[28]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[26]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[26]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[29]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[29]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[27]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[27]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[30]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[30]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[28]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[28]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[31]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[31]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[29]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[29]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[32]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[32]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[30]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[30]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[33]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[33]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[31]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[31]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[34]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[34]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[32]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[32]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[35]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[35]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[33]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[33]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[36]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[36]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[34]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[34]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[37]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[37]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[35]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[35]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[38]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[38]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[36]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[36]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[39]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[39]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[37]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[37]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[40]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[40]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[38]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[38]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[41]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[41]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[39]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[39]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[42]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[42]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[40]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[40]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[43]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[43]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[41]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[41]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[44]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[44]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[42]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[42]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[45]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[45]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[43]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[43]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[46]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[46]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[44]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[44]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[47]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[47]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[45]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[45]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[48]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[48]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[46]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[46]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[49]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[49]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[47]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[47]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[50]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[50]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[48]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[48]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[51]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[51]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[49]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[49]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[52]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[52]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[50]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[50]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[53]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[53]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[51]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[51]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[54]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[54]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[52]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[52]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[55]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[55]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[53]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[53]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[56]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[56]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[54]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[54]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[57]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[57]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[55]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[55]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[58]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[58]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[56]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[56]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[59]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[59]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[57]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[57]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[60]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[60]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[58]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[58]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplier_temp[61]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[61]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[59]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[59]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[60]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[60]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[61]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[61]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplier_temp[62]            ; Merged with GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[62]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~4 ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~5 ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~6 ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0|STATE_Register~7 ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[46..62]        ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[46..62]        ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_working_result[46..62]         ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_working_result[46..62]         ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_working_result[46..62]         ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_working_result[46..62]         ; Lost fanout                                                                                       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|iteration[4]                          ; Lost fanout                                                                                       ;
+; Total Number of Removed Registers = 428                                                        ;                                                                                                   ;
++------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                              ;
++---------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                                                                         ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++---------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[62]   ; Lost Fanouts              ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[61], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[60], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[59], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[58], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[57], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[56], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[55], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[54], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[53], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[52], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[51], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[50], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[49], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[48], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[47], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[46]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[62]   ; Lost Fanouts              ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[61], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[60], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[59], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[58], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[57], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[56], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[55], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[54], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[53], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[52], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[51], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[50], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[49], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[48], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[47], ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[46]  ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_multiplicand_temp[31] ; Stuck at GND              ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_working_result[58],  ;
+;                                                                                       ; due to stuck port data_in ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_working_result[59],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_working_result[60],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos|reg_working_result[61]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplicand_temp[31] ; Stuck at GND              ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_working_result[58],  ;
+;                                                                                       ; due to stuck port data_in ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_working_result[59],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_working_result[60],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_working_result[61]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_multiplicand_temp[31] ; Stuck at GND              ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_working_result[58],  ;
+;                                                                                       ; due to stuck port data_in ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_working_result[59],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_working_result[60],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_working_result[61]   ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplicand_temp[31] ; Stuck at GND              ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_working_result[58],  ;
+;                                                                                       ; due to stuck port data_in ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_working_result[59],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_working_result[60],  ;
+;                                                                                       ;                           ; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_working_result[61]   ;
++---------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -287,12 +673,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 54    ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 21    ;
+; Total registers                              ; 549   ;
+; Number of registers using Synchronous Clear  ; 249   ;
+; Number of registers using Synchronous Load   ; 95    ;
+; Number of registers using Asynchronous Clear ; 123   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 440   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -302,9 +688,42 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------+---------+
 ; Inverted Register                                                    ; Fan out ;
 +----------------------------------------------------------------------+---------+
-; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_done ; 5       ;
+; GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_done ; 164     ;
 ; Total number of inverted registers = 1                               ;         ;
 +----------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u2|REGGENERAL_Register[16]            ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u3|REGGENERAL_Register[29]            ;
+; 3:1                ; 126 bits  ; 252 LEs       ; 126 LEs              ; 126 LEs                ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_working_result[19]                ;
+; 3:1                ; 126 bits  ; 252 LEs       ; 126 LEs              ; 126 LEs                ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_sin|reg_working_result[0]                 ;
+; 3:1                ; 94 bits   ; 188 LEs       ; 94 LEs               ; 94 LEs                 ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[48]               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_sin|reg_multiplier_temp[0]                ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|reg_multiplier_temp[2]                ;
+; 4:1                ; 34 bits   ; 68 LEs        ; 68 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|y_1[1]                         ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|z_1[16]                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[14] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[13] ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 40 LEs               ; 2 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos|Mux0                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[12] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[11] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[10] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[9]  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[8]  ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[7]  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[6]  ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[5]  ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[4]  ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[3]  ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[2]  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:y_shifter|Q[0]  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter|Q[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -435,6 +854,90 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0 ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                         ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 17           ; Untyped                                                                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                      ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                      ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                      ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                      ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                      ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                      ;
+; USE_WYS                ; OFF          ; Untyped                                                                                      ;
+; STYLE                  ; FAST         ; Untyped                                                                                      ;
+; CBXI_PARAMETER         ; add_sub_svi  ; Untyped                                                                                      ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                               ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add4 ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                         ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 17           ; Untyped                                                                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                      ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                      ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                      ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                      ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                      ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                      ;
+; USE_WYS                ; OFF          ; Untyped                                                                                      ;
+; STYLE                  ; FAST         ; Untyped                                                                                      ;
+; CBXI_PARAMETER         ; add_sub_svi  ; Untyped                                                                                      ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                               ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2 ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value        ; Type                                                                                         ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+; LPM_WIDTH              ; 17           ; Untyped                                                                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                                                                      ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                                                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                                                                      ;
+; LPM_PIPELINE           ; 0            ; Untyped                                                                                      ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                                                                      ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                                                                      ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                                                                      ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                                                                           ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                                                                      ;
+; USE_WYS                ; OFF          ; Untyped                                                                                      ;
+; STYLE                  ; FAST         ; Untyped                                                                                      ;
+; CBXI_PARAMETER         ; add_sub_svi  ; Untyped                                                                                      ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                                                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                                                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                                                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                                                                               ;
++------------------------+--------------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vy_cos" ;
 +------------+--------+----------+--------------------------------------------------------+
@@ -539,52 +1042,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+----------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0"                      ;
-+----------------------------------------+--------+----------+------------------------+
-; Port                                   ; Type   ; Severity ; Details                ;
-+----------------------------------------+--------+----------+------------------------+
-; GLOBAL_VELOCITY_VX_LOCAL_InBus[31..19] ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_VX_LOCAL_InBus[15..0]  ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_VX_LOCAL_InBus[18]     ; Input  ; Info     ; Stuck at VCC           ;
-; GLOBAL_VELOCITY_VX_LOCAL_InBus[17]     ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_VX_LOCAL_InBus[16]     ; Input  ; Info     ; Stuck at VCC           ;
-; GLOBAL_VELOCITY_VY_LOCAL_InBus         ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_WZ_LOCAL_InBus         ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_THETA_InBus[19..18]    ; Input  ; Info     ; Stuck at VCC           ;
-; GLOBAL_VELOCITY_THETA_InBus[15..0]     ; Input  ; Info     ; Stuck at VCC           ;
-; GLOBAL_VELOCITY_THETA_InBus[31..22]    ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_THETA_InBus[17..16]    ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_THETA_InBus[21]        ; Input  ; Info     ; Stuck at VCC           ;
-; GLOBAL_VELOCITY_THETA_InBus[20]        ; Input  ; Info     ; Stuck at GND           ;
-; GLOBAL_VELOCITY_VX_GLOBAL_OutBus       ; Output ; Info     ; Explicitly unconnected ;
-; GLOBAL_VELOCITY_VY_GLOBAL_OutBus       ; Output ; Info     ; Explicitly unconnected ;
-; GLOBAL_VELOCITY_WZ_GLOBAL_OutBus       ; Output ; Info     ; Explicitly unconnected ;
-+----------------------------------------+--------+----------+------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 54                          ;
-;     CLR               ; 21                          ;
-;     SCLR              ; 32                          ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 51                          ;
-;     arith             ; 31                          ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 20                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 12                          ;
+; boundary_port         ; 228                         ;
+; cycloneiii_ff         ; 549                         ;
+;     CLR               ; 25                          ;
+;     ENA               ; 158                         ;
+;     ENA CLR           ; 36                          ;
+;     ENA CLR SLD       ; 62                          ;
+;     ENA SCLR          ; 184                         ;
+;     SCLR              ; 49                          ;
+;     SCLR SLD          ; 16                          ;
+;     SLD               ; 17                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 1175                        ;
+;     arith             ; 534                         ;
+;         2 data inputs ; 63                          ;
+;         3 data inputs ; 471                         ;
+;     normal            ; 641                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 67                          ;
+;         3 data inputs ; 174                         ;
+;         4 data inputs ; 392                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.10                        ;
-; Average LUT depth     ; 2.64                        ;
+; Max LUT depth         ; 10.70                       ;
+; Average LUT depth     ; 5.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -593,7 +1079,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -603,10 +1089,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Sep 16 09:23:57 2021
+    Info: Processing started: Wed Oct 13 16:02:33 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/pi_control.v
+    Info (12023): Found entity 1: PI_control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PI_control.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/global_velocity.v
     Info (12023): Found entity 1: GLOBAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 19
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/spi_slave.v
@@ -622,7 +1110,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_counter.v
     Info (12023): Found entity 1: SC_COUNTER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/rpm.v
-    Info (12023): Found entity 1: RPM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v Line: 3
+    Info (12023): Found entity 1: RPM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/qmults.v
     Info (12023): Found entity 1: qmults File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/qmult.v
@@ -633,12 +1121,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: qadd File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/preescaler.v
     Info (12023): Found entity 1: PREESCALER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/pid_control.v
-    Info (12023): Found entity 1: PID_control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PID_control.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/modulopwm.v
-    Info (12023): Found entity 1: moduloPWM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v Line: 2
+    Info (12023): Found entity 1: moduloPWM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/encoder.v
-    Info (12023): Found entity 1: Encoder File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v Line: 3
+    Info (12023): Found entity 1: Encoder File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v Line: 9
 Info (12021): Found 3 design units, including 3 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/core_cordic.v
     Info (12023): Found entity 1: signed_shifter File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 162
     Info (12023): Found entity 2: rotator File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 180
@@ -654,27 +1140,45 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
     Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/BB_SYSTEM.v Line: 5
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Info (12128): Elaborating entity "GLOBAL_VELOCITY" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/BB_SYSTEM.v Line: 110
-Info (12128): Elaborating entity "SC_STATEMACHINE_GLOBAL_VEL" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 114
-Info (12128): Elaborating entity "cordic" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 134
+Info (12128): Elaborating entity "GLOBAL_VELOCITY" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/BB_SYSTEM.v Line: 67
+Info (12128): Elaborating entity "SC_STATEMACHINE_GLOBAL_VEL" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 117
+Info (12128): Elaborating entity "cordic" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 141
 Info (12128): Elaborating entity "rotator" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 373
 Info (12128): Elaborating entity "signed_shifter" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 205
-Info (12128): Elaborating entity "SC_REGGENERAL" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 143
-Info (12128): Elaborating entity "qmults" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 162
-Info (12128): Elaborating entity "qadd" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vx" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 199
+Info (12128): Elaborating entity "SC_REGGENERAL" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|SC_REGGENERAL:REGGENERAL_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 150
+Info (12128): Elaborating entity "qmults" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qmults:multiplier_vx_cos" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 169
+Info (12128): Elaborating entity "qadd" for hierarchy "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|qadd:adder_vx" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 206
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|Add0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 234
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|Add4" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 239
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|Add2" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 236
+Info (12130): Elaborated megafunction instantiation "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 234
+Info (12133): Instantiated megafunction "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add0" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 234
+    Info (12134): Parameter "LPM_WIDTH" = "17"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_svi.tdf
+    Info (12023): Found entity 1: add_sub_svi File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Global_velocity/db/add_sub_svi.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 236
+Info (12133): Instantiated megafunction "GLOBAL_VELOCITY:GLOBAL_VELOCITY_u0|cordic:cordic_core_u0|rotator:U|lpm_add_sub:Add2" with the following parameter: File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 236
+    Info (12134): Parameter "LPM_WIDTH" = "17"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17049): 107 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 65 logic cells
+Info (21057): Implemented 1528 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 131 input pins
+    Info (21059): Implemented 97 output pins
+    Info (21061): Implemented 1300 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 630 megabytes
-    Info: Processing ended: Thu Sep 16 09:24:09 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 641 megabytes
+    Info: Processing ended: Wed Oct 13 16:02:49 2021
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:27
 
 

@@ -27,7 +27,7 @@ module GLOBAL_VELOCITY
 	GLOBAL_VELOCITY_CLOCK_50,
 	GLOBAL_VELOCITY_RESET_InHigh,
 	
-	GLOBAL_VELOCITY_READY_In, // input flag in high to start operations
+	GLOBAL_VELOCITY_READY_In, // input flag to start operations
 	
 	GLOBAL_VELOCITY_VX_LOCAL_InBus, // local velocity in x direction [m/s]
 	GLOBAL_VELOCITY_VY_LOCAL_InBus, // local velocity in y direction [m/s]
@@ -72,7 +72,6 @@ output	[N_WIDTH-1:0]	GLOBAL_VELOCITY_WZ_GLOBAL_OutBus;
 //  REG/WIRE declarations
 //=======================================================
 wire [XY_BITS_WIDTH-1:0] cos_17_to_32;
-wire [XY_BITS_WIDTH-1:0] signed_cos_17_to_32;
 wire [N_WIDTH-1:0] cos_output_32;
 
 wire [XY_BITS_WIDTH-1:0] sin_17_to_32;
@@ -95,8 +94,6 @@ wire start_multiply;
 wire [N_WIDTH-1:0] vx_add_result;
 wire [N_WIDTH-1:0] vy_add_result;
 
-wire [N_WIDTH-1:0] theta_cordic;
-
 //=======================================================
 //  STRUCTURAL coding
 //=======================================================
@@ -117,10 +114,6 @@ SC_STATEMACHINE_GLOBAL_VEL STATEMACHINE_u0 (
 );	
 
 
-assign theta_cordic = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,16'd90,15'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,16'd180,15'b0})) ? ({1'b0,16'd180,15'b0}-GLOBAL_VELOCITY_THETA_InBus): GLOBAL_VELOCITY_THETA_InBus;
-assign cos_17_to_32 = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,16'd90,15'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,16'd180,15'b0})) ? {~signed_cos_17_to_32[XY_BITS_WIDTH-1],signed_cos_17_to_32[XY_BITS_WIDTH-2:0]}: signed_cos_17_to_32;
-
-
 cordic cordic_core_u0 (
 
   .clk(GLOBAL_VELOCITY_CLOCK_50),
@@ -130,11 +123,11 @@ cordic cordic_core_u0 (
   .valid_in(valid_input_cordic), // input in high for iniciate iterations of cordic algorithm
   .x_i(CORDIC_CTE),
   .y_i(17'd0),
-  .theta_i({theta_cordic[N_WIDTH-1], theta_cordic[22:7]}), // theta angle to compute in notation 17b |S|IIIIIIII|FFFFFFFF| [0°-90°]
+  .theta_i({GLOBAL_VELOCITY_THETA_InBus[N_WIDTH-1], GLOBAL_VELOCITY_THETA_InBus[22:7]}), // theta angle to compute in notation 17b |S|IIIIIIII|FFFFFFFF| [0°-90°]
   
   .valid_out(valid_out_cordic_to_machine), // output flag flag that indicates final result of iterations in cordic core
   
-  .x_o(signed_cos_17_to_32), // output cos(theta) 17b |S|I|FFFFFFFFFFFFFFF|
+  .x_o(cos_17_to_32), // output cos(theta) 17b |S|I|FFFFFFFFFFFFFFF|
   .y_o(sin_17_to_32), // output sin(theta) 17b |S|I|FFFFFFFFFFFFFFF|
   .theta_o() // don't care this signal
 

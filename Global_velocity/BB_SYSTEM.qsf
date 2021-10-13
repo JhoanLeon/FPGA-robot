@@ -66,6 +66,7 @@ set_global_assignment -name EDA_TEST_BENCH_NAME TB_SYSTEM -section_id eda_simula
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TB_SYSTEM
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TB_SYSTEM -section_id TB_SYSTEM
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/TB_SYSTEM.vt -section_id TB_SYSTEM
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/PI_control.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/GLOBAL_VELOCITY.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SPI_SLAVE.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v
@@ -79,7 +80,6 @@ set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/qmult.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/qdiv.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/qadd.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/PREESCALER.v
-set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/PID_control.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/moduloPWM.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/Encoder.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/core_cordic.v

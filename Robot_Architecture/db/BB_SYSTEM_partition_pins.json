@@ -16,6 +16,42 @@
 					"strict" : false
 				},
 				{
+					"name" : "BB_SYSTEM_PWM2_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_IN21_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_IN22_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_PWM3_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_IN31_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_IN32_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_PWM4_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_IN41_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_IN42_Out",
+					"strict" : false
+				},
+				{
 					"name" : "BB_SYSTEM_MISO_Out",
 					"strict" : false
 				},
@@ -57,6 +93,18 @@
 				},
 				{
 					"name" : "BB_SYSTEM_PHASEA1_In",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_PHASEA2_In",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_PHASEA3_In",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_PHASEA4_In",
 					"strict" : false
 				}
 			]
