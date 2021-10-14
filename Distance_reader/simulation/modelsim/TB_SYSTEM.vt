@@ -1,0 +1,95 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "10/13/2021 19:12:04"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+
+parameter TCK = 20; // clock period in ns of 50MHz
+//parameter CLK_FREQ = 1000000000 / TCK; // Frequenzy in HZ (50MHz)
+
+reg TB_SYSTEM_CLOCK_50;
+reg TB_SYSTEM_ECHO_In;
+reg TB_SYSTEM_RESET_InLow;
+// wires                                               
+wire [31:0]  TB_SYSTEM_DISTANCE_OutBus;
+wire TB_SYSTEM_TRIGGER_Out;
+
+// assign statements (if any)                          
+BB_SYSTEM i1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_CLOCK_50(TB_SYSTEM_CLOCK_50),
+	.BB_SYSTEM_DISTANCE_OutBus(TB_SYSTEM_DISTANCE_OutBus),
+	.BB_SYSTEM_ECHO_In(TB_SYSTEM_ECHO_In),
+	.BB_SYSTEM_RESET_InLow(TB_SYSTEM_RESET_InLow),
+	.BB_SYSTEM_TRIGGER_Out(TB_SYSTEM_TRIGGER_Out)
+);
+
+
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+TB_SYSTEM_CLOCK_50 <= 1'b0;                                              
+// --> end                                             
+$display("Running testbench");                       
+end   
+     
+	  
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)   
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+initial	begin// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+          
+	#0 TB_SYSTEM_RESET_InLow <= 1'b0;
+		TB_SYSTEM_ECHO_In <= 1'b0;
+
+	#500 TB_SYSTEM_RESET_InLow <= 1'b1;
+		  TB_SYSTEM_ECHO_In <= 1'b0;
+		  
+	#9000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		   TB_SYSTEM_ECHO_In <= 1'b0;
+		    
+	#2000000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		  TB_SYSTEM_ECHO_In <= 1'b1;
+		  
+	#2000000 TB_SYSTEM_RESET_InLow <= 1'b1;
+		  TB_SYSTEM_ECHO_In <= 1'b0;
+		  
+	$display("Finishing testbench"); 
+	$stop;	
+@eachvec;
+$finish;                                            
+// --> end                                             
+end                                                    
+endmodule
+

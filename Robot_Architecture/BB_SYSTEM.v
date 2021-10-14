@@ -139,6 +139,11 @@ wire [2:0] waypoint_selection;
 wire stop_signal;
 wire begin_signal;
 
+wire [DATA_WIDTH-1:0] distance_1;
+wire [DATA_WIDTH-1:0] distance_2;
+wire [DATA_WIDTH-1:0] distance_3;
+wire [DATA_WIDTH-1:0] distance_4;
+
 wire [DATA_WIDTH-1:0] target_vx;
 wire [DATA_WIDTH-1:0] target_vy;
 wire [DATA_WIDTH-1:0] target_wz;
@@ -182,10 +187,10 @@ SPI_INTERFACE SPI_INTERFACE_U0
 	.SPI_INTERFACE_RPM3_InBus(rpms_3),
 	.SPI_INTERFACE_RPM4_InBus(rpms_4),
 	
-	.SPI_INTERFACE_DIST1_InBus(32'b0_0000000000000101_000000000000000), // 5m
-	.SPI_INTERFACE_DIST2_InBus(32'b0_0000000000000101_000000000000000),
-	.SPI_INTERFACE_DIST3_InBus(32'b0_0000000000000101_000000000000000),
-	.SPI_INTERFACE_DIST4_InBus(32'b0_0000000000000101_000000000000000),
+	.SPI_INTERFACE_DIST1_InBus(distance_1),
+	.SPI_INTERFACE_DIST2_InBus(distance_2),
+	.SPI_INTERFACE_DIST3_InBus(distance_3),
+	.SPI_INTERFACE_DIST4_InBus(distance_4),
 	
 	.SPI_INTERFACE_BEHAVIOR_InBus(8'd0),
 	
@@ -202,10 +207,67 @@ SPI_INTERFACE SPI_INTERFACE_U0
 
 );
 
+
 assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
 assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
 assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
 assign BB_SYSTEM_LEDs_OutBus[3] = stop_signal;
+
+
+//////////////////////////////////////////////////////////// FOR PROXIMITY SENSORS
+
+DISTANCE_READER SENSOR_1
+(
+	//////////// INPUTS //////////
+	.DISTANCE_READER_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO1_In),
+	
+	//////////// OUTPUTS //////////
+	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG1_Out),
+	.DISTANCE_READER_DISTANCE_OutBus(distance_1)
+);
+
+DISTANCE_READER SENSOR_2
+(
+	//////////// INPUTS //////////
+	.DISTANCE_READER_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO2_In),
+	
+	//////////// OUTPUTS //////////
+	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG2_Out),
+	.DISTANCE_READER_DISTANCE_OutBus(distance_2)
+);
+
+DISTANCE_READER SENSOR_3
+(
+	//////////// INPUTS //////////
+	.DISTANCE_READER_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO3_In),
+	
+	//////////// OUTPUTS //////////
+	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG3_Out),
+	.DISTANCE_READER_DISTANCE_OutBus(distance_3)
+);
+
+DISTANCE_READER SENSOR_4
+(
+	//////////// INPUTS //////////
+	.DISTANCE_READER_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO4_In),
+	
+	//////////// OUTPUTS //////////
+	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG4_Out),
+	.DISTANCE_READER_DISTANCE_OutBus(distance_4)
+);
+
 
 //////////////////////////////////////////////////////////// FOR MOTORS
 
@@ -245,13 +307,7 @@ CC_MUX81 CC_MUX81_U0 // velocities in m/s and rad/s
 	.CC_MUX81_z8_InBus(32'b0),
 	
 	.CC_MUX81_select_InBus(waypoint_selection)
-	//.CC_MUX81_select_InBus(BB_SYSTEM_SELECT_InBus)
 );
-
-
-//assign BB_SYSTEM_LEDs_OutBus[0] = BB_SYSTEM_SELECT_InBus[0];
-//assign BB_SYSTEM_LEDs_OutBus[1] = BB_SYSTEM_SELECT_InBus[1];
-//assign BB_SYSTEM_LEDs_OutBus[2] = BB_SYSTEM_SELECT_InBus[2];
 
 
 MOVEMENT_CONTROLLER MOVEMENT_CONTROLLER_U0

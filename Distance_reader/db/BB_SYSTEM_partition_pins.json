@@ -1,0 +1,149 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "BB_SYSTEM_TRIGGER_Out",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[16]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[17]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[18]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[19]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[20]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[21]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[22]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[23]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[24]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[25]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[26]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[27]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[28]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[29]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_DISTANCE_OutBus[30]",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_RESET_InLow",
+					"strict" : false
+				},
+				{
+					"name" : "BB_SYSTEM_ECHO_In",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

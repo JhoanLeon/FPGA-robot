@@ -44,7 +44,7 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 19.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:58:57  SEPTEMBER 30, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "19.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 2
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
@@ -155,6 +155,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InB
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus
+set_global_assignment -name SDC_FILE BB_SYSTEM.sdc
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/DISTANCE_READER.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SPI_INTERFACE.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/MESSAGE_INTERPRETER.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/CC_MUX81.v

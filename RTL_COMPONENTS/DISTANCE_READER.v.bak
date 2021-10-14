@@ -1,0 +1,55 @@
+
+/*
+Created by: Jhoan Esteban Leon je.leon.e@outlook.com
+with libraries from https://github.com/freecores/verilog_fixed_point_math_library
+and https://github.com/freecores/verilog_cordic_core
+
+This module read obstacule distance from promity sensor hc-sr04
+the measure of distance is done every 1ms and is in [cm/s] fixed point 32b notation U(32,15) U(N,Q)
+*/
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module BB_SYSTEM
+(
+
+	//////////// INPUTS //////////
+	BB_SYSTEM_CLOCK_50,
+	BB_SYSTEM_RESET_InLow,
+	
+	BB_SYSTEM_ECHO_In,
+	
+	//////////// OUTPUTS //////////
+	BB_SYSTEM_TRIGGER_Out,
+	BB_SYSTEM_DISTANCE_OutBus
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+parameter N_WIDTH = 32;
+parameter Q_WIDTH = 15;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input	BB_SYSTEM_CLOCK_50;
+input	BB_SYSTEM_RESET_InLow;
+	
+input	BB_SYSTEM_ECHO_In;
+
+output	BB_SYSTEM_TRIGGER_Out;
+output [N_WIDTH-1:0]	BB_SYSTEM_DISTANCE_OutBus;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+endmodule
