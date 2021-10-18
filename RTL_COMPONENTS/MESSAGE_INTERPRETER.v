@@ -257,7 +257,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_RPM1_InBus; // data
+			next_data = MESSAGE_INTERPRETER_RPM1_InBus; // data, 8b u_int
 		end		
 
 	rpm_2: // '31' for rpm_2
@@ -265,7 +265,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_RPM2_InBus; // data
+			next_data = MESSAGE_INTERPRETER_RPM2_InBus; // data, 8b u_int
 		end		
 		
 	rpm_3: // '32' for rpm_3
@@ -273,7 +273,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_RPM3_InBus; // data
+			next_data = MESSAGE_INTERPRETER_RPM3_InBus; // data, 8b u_int
 		end		
 		
 	rpm_4: // '33' for rpm_4
@@ -281,7 +281,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_RPM4_InBus; // data
+			next_data = MESSAGE_INTERPRETER_RPM4_InBus; // data, 8b u_int
 		end		
 		
 		
@@ -290,31 +290,31 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST1_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_DIST1_InBus[22:15]; // data, 8b u_int
 		end			
 
-	d_2: // '41' for dist_1
+	d_2: // '41' for dist_2
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST2_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_DIST2_InBus[22:15]; // data, 8b u_int
 		end	
 
-	d_3: // '42' for dist_1
+	d_3: // '42' for dist_3
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST3_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_DIST3_InBus[22:15]; // data, 8b u_int
 		end	
 
-	d_4: // '43' for dist_1
+	d_4: // '43' for dist_4
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST4_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_DIST4_InBus[22:15]; // data, 8b u_int
 		end			
 		
 		
@@ -323,7 +323,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // data
+			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // data, 1 byte to decode
 		end	
 	
 	accel_x: // '60' for accel_x

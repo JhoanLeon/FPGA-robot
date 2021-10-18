@@ -1,6 +1,6 @@
 
 /*
-Created by: Jhoan Esteban Leon je.leon.e@outlook.com
+Created by: Jhoan Esteban Leon - je.leon.e@outlook.com
 with libraries from https://github.com/freecores/verilog_fixed_point_math_library
 and https://github.com/freecores/verilog_cordic_core
 

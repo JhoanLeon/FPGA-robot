@@ -1,0 +1,49 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module LOCAL_VELOCITY 
+(
+	//////////// INPUTS //////////
+	BB_SYSTEM_CLOCK_50,
+	BB_SYSTEM_Reset_InHigh,
+	
+	BB_SYSTEM_W1_InBus,
+	BB_SYSTEM_W2_InBus,
+	BB_SYSTEM_W3_InBus,
+	BB_SYSTEM_W4_InBus,
+
+	//////////// OUTPUTS //////////
+	BB_SYSTEM_VX_OutBus, // local velocity vx in m/s (notation fixed point 32b)
+	BB_SYSTEM_VY_OutBus, // local velocity vy in m/s (in notation fixed point 32b)
+	BB_SYSTEM_WZ_OutBus  // local velocity wz in rad/s (in notation fixed point 32b)
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+parameter DATAWIDTH_N = 32;
+parameter FRACTIONAL_Q = 15;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input BB_SYSTEM_CLOCK_50;
+input BB_SYSTEM_Reset_InHigh;
+
+input [DATAWIDTH_N-1:0] BB_SYSTEM_W1_InBus;
+input [DATAWIDTH_N-1:0] BB_SYSTEM_W2_InBus;
+input [DATAWIDTH_N-1:0] BB_SYSTEM_W3_InBus;
+input [DATAWIDTH_N-1:0] BB_SYSTEM_W4_InBus;
+
+output [DATAWIDTH_N-1:0] BB_SYSTEM_VX_OutBus;
+output [DATAWIDTH_N-1:0] BB_SYSTEM_VY_OutBus;
+output [DATAWIDTH_N-1:0] BB_SYSTEM_WZ_OutBus;
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+
+
+endmodule

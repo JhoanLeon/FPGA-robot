@@ -58,26 +58,19 @@ always @ (posedge DISTANCE_READER_CLOCK_50)
 begin
 	counter_trigger <= counter_trigger + 1'b1;
 
-	if (DISTANCE_READER_RESET_InHigh == 1'b1) 
-	begin
-		counter_trigger <= 20'd0;
-		counter_echo <= 32'd0;
-	end
-	
-	if (counter_trigger == 20'd500000) // 10ms for each measure (count = 500.000*20ns)
-	begin
-		counter_trigger <= 20'd0;
-		counter_echo <= 32'd0;
-	end
-	
-	if (counter_trigger <= 20'd500) // 10us of trigger pulse = 500*20ns
-		DISTANCE_READER_TRIGGER_Out <= 1'b1;
-
-	if (counter_trigger > 20'd500) 
-		DISTANCE_READER_TRIGGER_Out <= 1'd0;
-	
 	if(DISTANCE_READER_ECHO_In == 1'd1)
 		counter_echo <= counter_echo + 32'b0_0000000000000000_000000000001011;
+	
+	if ((DISTANCE_READER_RESET_InHigh == 1'b1) || (counter_trigger == 20'd500000)) // 10ms for each measure (count = 500.000*20ns)
+	begin
+		counter_trigger <= 20'd0;
+		counter_echo <= 32'd0;
+	end
+	else if (counter_trigger <= 20'd500) // 10us of trigger pulse = 500*20ns
+		DISTANCE_READER_TRIGGER_Out <= 1'b1;
+
+	else if (counter_trigger > 20'd500) 
+		DISTANCE_READER_TRIGGER_Out <= 1'd0;
 end
 
 
