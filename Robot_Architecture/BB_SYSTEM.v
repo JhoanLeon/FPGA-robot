@@ -208,6 +208,7 @@ SPI_INTERFACE SPI_INTERFACE_U0
 );
 
 
+// LEDS FOR QUICKLY DEBUGGING OF WAYPOINTS FROM SPI COMMANDS
 assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
 assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
 assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
