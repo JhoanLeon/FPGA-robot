@@ -121,8 +121,8 @@ assign theta_cordic = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,16'd90,15'b0}) && (G
 assign cos_17_to_32 = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,16'd90,15'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,16'd180,15'b0})) ? {~signed_cos_17_to_32[XY_BITS_WIDTH-1],signed_cos_17_to_32[XY_BITS_WIDTH-2:0]}: signed_cos_17_to_32;
 
 
-cordic cordic_core_u0 (
-
+cordic cordic_core_u0 
+(
   .clk(GLOBAL_VELOCITY_CLOCK_50),
   .rst(GLOBAL_VELOCITY_RESET_InHigh),
   
@@ -137,11 +137,11 @@ cordic cordic_core_u0 (
   .x_o(signed_cos_17_to_32), // output cos(theta) 17b |S|I|FFFFFFFFFFFFFFF|
   .y_o(sin_17_to_32), // output sin(theta) 17b |S|I|FFFFFFFFFFFFFFF|
   .theta_o() // don't care this signal
-
 );
 
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u0 (
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u0 
+(
 	.SC_REGGENERAL_CLOCK_50(GLOBAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(GLOBAL_VELOCITY_RESET_InHigh), 
 	.SC_REGGENERAL_load_InLow(~valid_out_cordic_to_machine), 
@@ -149,7 +149,8 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u0 (
 	.SC_REGGENERAL_data_OutBUS(cos_output_32)
 );
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u1 (
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u1 
+(
 	.SC_REGGENERAL_CLOCK_50(GLOBAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(GLOBAL_VELOCITY_RESET_InHigh), 
 	.SC_REGGENERAL_load_InLow(~valid_out_cordic_to_machine), 
@@ -158,7 +159,8 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u1 (
 );
 
 
-qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_cos (
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_cos 
+(
 	.i_multiplicand(GLOBAL_VELOCITY_VX_LOCAL_InBus),
 	.i_multiplier(cos_output_32),
 	.i_start(start_multiply),
@@ -168,7 +170,8 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_cos (
 	.o_overflow()
 );
 
-qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_sin (
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_sin 
+(
 	.i_multiplicand(GLOBAL_VELOCITY_VY_LOCAL_InBus),
 	.i_multiplier(sin_output_32),
 	.i_start(start_multiply),
@@ -178,7 +181,8 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_sin (
 	.o_overflow()
 );
 
-qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_sin (
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_sin 
+(
 	.i_multiplicand(GLOBAL_VELOCITY_VX_LOCAL_InBus),
 	.i_multiplier(sin_output_32),
 	.i_start(start_multiply),
@@ -188,7 +192,8 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_sin (
 	.o_overflow()
 );
 
-qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_cos (
+qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_cos 
+(
 	.i_multiplicand(GLOBAL_VELOCITY_VY_LOCAL_InBus),
 	.i_multiplier(cos_output_32),
 	.i_start(start_multiply),
@@ -199,13 +204,15 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_cos (
 );
 
 
-qadd #(.N(N_WIDTH), .Q(Q_WIDTH)) adder_vx (
+qadd #(.N(N_WIDTH), .Q(Q_WIDTH)) adder_vx 
+(
 	.a(vx_cos_result),
    .b({sign_change_operand, vy_sin_result[N_WIDTH-2:0]}),
    .c(vx_add_result)
 );
 
-qadd #(.N(N_WIDTH), .Q(Q_WIDTH)) adder_vy (
+qadd #(.N(N_WIDTH), .Q(Q_WIDTH)) adder_vy 
+(
 	.a(vx_sin_result),
    .b(vy_cos_result),
    .c(vy_add_result)

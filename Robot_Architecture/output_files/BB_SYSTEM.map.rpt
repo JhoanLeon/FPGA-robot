@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu Oct 14 00:44:18 2021
+Mon Oct 18 19:10:53 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -185,16 +185,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 14 00:44:18 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 18 19:10:53 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,790                                       ;
-;     Total combinational functions  ; 2,668                                       ;
+; Total logic elements               ; 2,780                                       ;
+;     Total combinational functions  ; 2,658                                       ;
 ;     Dedicated logic registers      ; 813                                         ;
 ; Total registers                    ; 813                                         ;
-; Total pins                         ; 43                                          ;
+; Total pins                         ; 36                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 16                                          ;
@@ -365,30 +365,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 2,790                    ;
+; Estimated Total logic elements              ; 2,780                    ;
 ;                                             ;                          ;
-; Total combinational functions               ; 2668                     ;
+; Total combinational functions               ; 2658                     ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 739                      ;
-;     -- 3 input functions                    ; 1299                     ;
-;     -- <=2 input functions                  ; 630                      ;
+;     -- 4 input functions                    ; 753                      ;
+;     -- 3 input functions                    ; 1283                     ;
+;     -- <=2 input functions                  ; 622                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 1294                     ;
+;     -- normal mode                          ; 1284                     ;
 ;     -- arithmetic mode                      ; 1374                     ;
 ;                                             ;                          ;
 ; Total registers                             ; 813                      ;
 ;     -- Dedicated logic registers            ; 813                      ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
-; I/O pins                                    ; 43                       ;
+; I/O pins                                    ; 36                       ;
 ;                                             ;                          ;
 ; Embedded Multiplier 9-bit elements          ; 16                       ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
 ; Maximum fan-out                             ; 613                      ;
-; Total fan-out                               ; 10804                    ;
-; Average fan-out                             ; 3.01                     ;
+; Total fan-out                               ; 10765                    ;
+; Average fan-out                             ; 3.02                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -397,12 +397,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                     ; Entity Name          ; Library Name ;
 +---------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |BB_SYSTEM                                              ; 2668 (4)            ; 813 (0)                   ; 0           ; 16           ; 0       ; 8         ; 43   ; 0            ; |BB_SYSTEM                                                                                                                                                                                                              ; BB_SYSTEM            ; work         ;
+; |BB_SYSTEM                                              ; 2658 (4)            ; 813 (0)                   ; 0           ; 16           ; 0       ; 8         ; 36   ; 0            ; |BB_SYSTEM                                                                                                                                                                                                              ; BB_SYSTEM            ; work         ;
 ;    |CC_MUX81:CC_MUX81_U0|                               ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|CC_MUX81:CC_MUX81_U0                                                                                                                                                                                         ; CC_MUX81             ; work         ;
-;    |DISTANCE_READER:SENSOR_1|                           ; 56 (56)             ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_1                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
-;    |DISTANCE_READER:SENSOR_2|                           ; 24 (24)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_2                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
-;    |DISTANCE_READER:SENSOR_3|                           ; 24 (24)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_3                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
-;    |DISTANCE_READER:SENSOR_4|                           ; 24 (24)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_4                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
+;    |DISTANCE_READER:SENSOR_1|                           ; 58 (58)             ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_1                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
+;    |DISTANCE_READER:SENSOR_2|                           ; 25 (25)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_2                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
+;    |DISTANCE_READER:SENSOR_3|                           ; 25 (25)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_3                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
+;    |DISTANCE_READER:SENSOR_4|                           ; 25 (25)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|DISTANCE_READER:SENSOR_4                                                                                                                                                                                     ; DISTANCE_READER      ; work         ;
 ;    |MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|         ; 191 (0)             ; 245 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0                                                                                                                                                                   ; MOVEMENT_CONTROLLER  ; work         ;
 ;       |SC_REGGENERAL:w1_reg_u1|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_REGGENERAL:w1_reg_u1                                                                                                                                           ; SC_REGGENERAL        ; work         ;
 ;       |SC_REGGENERAL:w2_reg_u1|                         ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_REGGENERAL:w2_reg_u1                                                                                                                                           ; SC_REGGENERAL        ; work         ;
@@ -414,13 +414,13 @@ https://fpgasoftware.intel.com/eula.
 ;       |qmults:qmult_w1_second|                          ; 96 (96)             ; 94 (94)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second                                                                                                                                            ; qmults               ; work         ;
 ;       |qmults:qmult_w2_second|                          ; 46 (46)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second                                                                                                                                            ; qmults               ; work         ;
 ;       |qmults:qmult_w4_second|                          ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w4_second                                                                                                                                            ; qmults               ; work         ;
-;    |SPI_INTERFACE:SPI_INTERFACE_U0|                     ; 92 (0)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0                                                                                                                                                                               ; SPI_INTERFACE        ; work         ;
-;       |MESSAGE_INTERPRETER:MESSAGE_INT_U0|              ; 71 (71)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0                                                                                                                                            ; MESSAGE_INTERPRETER  ; work         ;
+;    |SPI_INTERFACE:SPI_INTERFACE_U0|                     ; 87 (0)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0                                                                                                                                                                               ; SPI_INTERFACE        ; work         ;
+;       |MESSAGE_INTERPRETER:MESSAGE_INT_U0|              ; 66 (66)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0                                                                                                                                            ; MESSAGE_INTERPRETER  ; work         ;
 ;       |SPI_SLAVE:SPI_U0|                                ; 21 (21)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0                                                                                                                                                              ; SPI_SLAVE            ; work         ;
-;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|                ; 610 (0)             ; 101 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
+;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|                ; 608 (0)             ; 101 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
 ;       |DIRECTION_DET:DIRECTION_MOTOR_U0|                ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|DIRECTION_DET:DIRECTION_MOTOR_U0                                                                                                                                         ; DIRECTION_DET        ; work         ;
 ;       |Encoder:ENCODER_U0|                              ; 17 (17)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0                                                                                                                                                       ; Encoder              ; work         ;
-;       |PI_control:PI_CONTROLLER_U0|                     ; 316 (28)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
+;       |PI_control:PI_CONTROLLER_U0|                     ; 314 (26)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
 ;          |qadd:first_add|                               ; 101 (101)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qadd:first_add                                                                                                                               ; qadd                 ; work         ;
 ;          |qadd:second_add|                              ; 101 (101)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
 ;          |qmult:MULT_KI_ERRORK1|                        ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1                                                                                                                        ; qmult                ; work         ;
@@ -465,12 +465,12 @@ https://fpgasoftware.intel.com/eula.
 ;                   |mpar_add:sub_par_add|                ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                                                ; mpar_add             ; work         ;
 ;                      |lpm_add_sub:adder[0]|             ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                                                           ; lpm_add_sub          ; work         ;
 ;                         |add_sub_kgh:auto_generated|    ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_kgh:auto_generated                                ; add_sub_kgh          ; work         ;
-;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|                ; 611 (0)             ; 101 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
+;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|                ; 606 (0)             ; 101 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
 ;       |DIRECTION_DET:DIRECTION_MOTOR_U0|                ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|DIRECTION_DET:DIRECTION_MOTOR_U0                                                                                                                                         ; DIRECTION_DET        ; work         ;
 ;       |Encoder:ENCODER_U0|                              ; 17 (17)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|Encoder:ENCODER_U0                                                                                                                                                       ; Encoder              ; work         ;
-;       |PI_control:PI_CONTROLLER_U0|                     ; 317 (28)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
+;       |PI_control:PI_CONTROLLER_U0|                     ; 312 (26)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
 ;          |qadd:first_add|                               ; 99 (99)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|qadd:first_add                                                                                                                               ; qadd                 ; work         ;
-;          |qadd:second_add|                              ; 104 (104)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
+;          |qadd:second_add|                              ; 101 (101)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
 ;          |qmult:MULT_KI_ERRORK1|                        ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1                                                                                                                        ; qmult                ; work         ;
 ;             |lpm_mult:Mult0|                            ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0                                                                                                         ; lpm_mult             ; work         ;
 ;                |multcore:mult_core|                     ; 43 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore             ; work         ;
@@ -513,11 +513,11 @@ https://fpgasoftware.intel.com/eula.
 ;                   |mpar_add:sub_par_add|                ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                                                ; mpar_add             ; work         ;
 ;                      |lpm_add_sub:adder[0]|             ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                                                           ; lpm_add_sub          ; work         ;
 ;                         |add_sub_kgh:auto_generated|    ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|qmult:CONV_RAD2RPM|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_kgh:auto_generated                                ; add_sub_kgh          ; work         ;
-;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|                ; 514 (0)             ; 101 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
+;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|                ; 510 (0)             ; 101 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
 ;       |Encoder:ENCODER_U0|                              ; 17 (17)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|Encoder:ENCODER_U0                                                                                                                                                       ; Encoder              ; work         ;
-;       |PI_control:PI_CONTROLLER_U0|                     ; 316 (28)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
+;       |PI_control:PI_CONTROLLER_U0|                     ; 312 (26)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
 ;          |qadd:first_add|                               ; 99 (99)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|qadd:first_add                                                                                                                               ; qadd                 ; work         ;
-;          |qadd:second_add|                              ; 103 (103)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
+;          |qadd:second_add|                              ; 101 (101)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
 ;          |qmult:MULT_KI_ERRORK1|                        ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1                                                                                                                        ; qmult                ; work         ;
 ;             |lpm_mult:Mult0|                            ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0                                                                                                         ; lpm_mult             ; work         ;
 ;                |multcore:mult_core|                     ; 43 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore             ; work         ;
@@ -549,12 +549,12 @@ https://fpgasoftware.intel.com/eula.
 ;       |qmult:CONV_PUL2RPM|                              ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|qmult:CONV_PUL2RPM                                                                                                                                                       ; qmult                ; work         ;
 ;          |lpm_mult:Mult0|                               ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|qmult:CONV_PUL2RPM|lpm_mult:Mult0                                                                                                                                        ; lpm_mult             ; work         ;
 ;             |mult_ogt:auto_generated|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|qmult:CONV_PUL2RPM|lpm_mult:Mult0|mult_ogt:auto_generated                                                                                                                ; mult_ogt             ; work         ;
-;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|                ; 516 (0)             ; 111 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
+;    |WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|                ; 517 (0)             ; 111 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4                                                                                                                                                                          ; WHEEL_CONTROLLER     ; work         ;
 ;       |DIRECTION_DET:DIRECTION_MOTOR_U0|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|DIRECTION_DET:DIRECTION_MOTOR_U0                                                                                                                                         ; DIRECTION_DET        ; work         ;
 ;       |Encoder:ENCODER_U0|                              ; 17 (17)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|Encoder:ENCODER_U0                                                                                                                                                       ; Encoder              ; work         ;
-;       |PI_control:PI_CONTROLLER_U0|                     ; 315 (28)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
-;          |qadd:first_add|                               ; 99 (99)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qadd:first_add                                                                                                                               ; qadd                 ; work         ;
-;          |qadd:second_add|                              ; 102 (102)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
+;       |PI_control:PI_CONTROLLER_U0|                     ; 316 (26)            ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0                                                                                                                                              ; PI_control           ; work         ;
+;          |qadd:first_add|                               ; 101 (101)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qadd:first_add                                                                                                                               ; qadd                 ; work         ;
+;          |qadd:second_add|                              ; 103 (103)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qadd:second_add                                                                                                                              ; qadd                 ; work         ;
 ;          |qmult:MULT_KI_ERRORK1|                        ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1                                                                                                                        ; qmult                ; work         ;
 ;             |lpm_mult:Mult0|                            ; 43 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0                                                                                                         ; lpm_mult             ; work         ;
 ;                |multcore:mult_core|                     ; 43 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|qmult:MULT_KI_ERRORK1|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore             ; work         ;
@@ -1644,35 +1644,35 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_multiplicand_temp[1..11]  ; Stuck at GND due to stuck port data_in                                                                  ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[1..11]  ; Stuck at GND due to stuck port data_in                                                                  ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[0]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[0]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[0]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[0]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[0]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[0]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[0]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[0]                     ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w3_second|reg_multiplicand_temp[12]     ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w4_second|reg_multiplicand_temp[12] ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_multiplicand_temp[12]     ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w4_second|reg_multiplicand_temp[12] ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[12]     ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w4_second|reg_multiplicand_temp[12] ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[1]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[1]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[1]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[1]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[1]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[1]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[1]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[1]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[2]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[2]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[2]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[2]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[2]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[2]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[2]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[2]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[2]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[2]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[3]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[3]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[3]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[3]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[3]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[3]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[3]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[3]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[4]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[4]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[4]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[4]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[4]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[4]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[4]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[4]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[5]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[5]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[5]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[5]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[5]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[5]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[6]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[6]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[5]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[5]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[6]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[6]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[6]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[6]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[6]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[6]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[7]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[7]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[7]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[7]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[7]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[7]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[7]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[7]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[8]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[8]                     ;
-; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[8]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[8]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[8]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[8]                     ;
+; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[8]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[8]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PREESCALER:PREESCALER_82us|COUNT[9]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[9]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PREESCALER:PREESCALER_82us|COUNT[9]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[9]                     ;
 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PREESCALER:PREESCALER_82us|COUNT[9]                         ; Merged with WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PREESCALER:PREESCALER_82us|COUNT[9]                     ;
@@ -1881,8 +1881,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[46..62]    ; Lost fanout                                                                                             ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[46..62]    ; Lost fanout                                                                                             ;
 ; DISTANCE_READER:SENSOR_1|counter_echo[23..31]                                                   ; Lost fanout                                                                                             ;
-; DISTANCE_READER:SENSOR_3|counter_echo[23..31]                                                   ; Lost fanout                                                                                             ;
 ; DISTANCE_READER:SENSOR_2|counter_echo[23..31]                                                   ; Lost fanout                                                                                             ;
+; DISTANCE_READER:SENSOR_3|counter_echo[23..31]                                                   ; Lost fanout                                                                                             ;
 ; DISTANCE_READER:SENSOR_4|counter_echo[23..31]                                                   ; Lost fanout                                                                                             ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[16]     ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplicand_temp[15] ;
 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_multiplicand_temp[16]     ; Merged with MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_multiplicand_temp[15] ;
@@ -2097,10 +2097,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Total registers                              ; 813   ;
 ; Number of registers using Synchronous Clear  ; 240   ;
-; Number of registers using Synchronous Load   ; 66    ;
+; Number of registers using Synchronous Load   ; 54    ;
 ; Number of registers using Asynchronous Clear ; 297   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 423   ;
+; Number of registers using Clock Enable       ; 424   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -2123,29 +2123,28 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[2]            ;
-; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[8]   ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[7]            ;
-; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[54]  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[5]            ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[50]  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[1]            ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[44]  ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[7]            ;
-; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w3_second|reg_working_result[9]   ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[1]            ;
+; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w3_second|reg_working_result[1]   ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|COMANDO_PWM[3]            ;
 ; 3:1                ; 63 bits   ; 126 LEs       ; 63 LEs               ; 63 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w4_second|reg_working_result[60]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|Control_k1[6]             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|Control_k1[1]             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|Control_k1[3]             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|Control_k1[7]             ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_1|counter_trigger[10]                                              ;
-; 3:1                ; 62 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[16] ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_1|counter_echo[19]                                                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_2|counter_echo[5]                                                  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_3|counter_echo[1]                                                  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_4|counter_echo[0]                                                  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[2]                    ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[2]                          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_1|counter_echo[3]                                                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_2|counter_echo[16]                                                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_3|counter_echo[24]                                                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |BB_SYSTEM|DISTANCE_READER:SENSOR_4|counter_echo[22]                                                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|PI_control:PI_CONTROLLER_U0|Control_k1[1]             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|PI_control:PI_CONTROLLER_U0|Control_k1[7]             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|PI_control:PI_CONTROLLER_U0|Control_k1[7]             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|PI_control:PI_CONTROLLER_U0|Control_k1[1]             ;
+; 3:1                ; 62 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |BB_SYSTEM|MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[39] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[0]                    ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[5]                          ;
 ; 256:1              ; 4 bits    ; 680 LEs       ; 24 LEs               ; 656 LEs                ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_select[1]       ;
-; 256:1              ; 8 bits    ; 1360 LEs      ; 80 LEs               ; 1280 LEs               ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[3]         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|counter[3]                         ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 64 LEs               ; 1296 LEs               ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[7]         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|counter[1]                         ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|Encoder:ENCODER_U0|counter[2]                         ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_3|Encoder:ENCODER_U0|counter[4]                         ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |BB_SYSTEM|WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|Encoder:ENCODER_U0|counter[7]                         ;
@@ -4227,46 +4226,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------+-------+----------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "SPI_INTERFACE:SPI_INTERFACE_U0"                                                                                  ;
-+-----------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                              ; Type   ; Severity ; Details                                                                             ;
-+-----------------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; SPI_INTERFACE_POSX_InBus[31..16]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_POSX_InBus[14..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_POSX_InBus[15]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_POSY_InBus[31..17]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_POSY_InBus[15..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_POSY_InBus[16]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_THETA_InBus[19..18] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_THETA_InBus[31..22] ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_THETA_InBus[15..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_THETA_InBus[21]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_THETA_InBus[20]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_THETA_InBus[17]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_THETA_InBus[16]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_BEHAVIOR_InBus      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUX_InBus[22..21]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUX_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUX_InBus[20..19]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUX_InBus[17..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUX_InBus[18]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[22..21]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[20..19]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[17..16]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[14..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[18]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUY_InBus[15]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[22..21]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[31..23]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[20..19]  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[15..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[18]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[17]      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; SPI_INTERFACE_IMUZ_InBus[16]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; SPI_INTERFACE_BEGINSIGNAL_OutLow  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------------------------+--------+----------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SPI_INTERFACE:SPI_INTERFACE_U0"                                                                                 ;
++----------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                             ; Type   ; Severity ; Details                                                                             ;
++----------------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; SPI_INTERFACE_BEHAVIOR_InBus     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[22..21] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[31..23] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[20..19] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[17..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUX_InBus[18]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[22..21] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[31..23] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[20..19] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[17..16] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[14..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[18]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUY_InBus[15]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[22..21] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[31..23] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[20..19] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[15..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[18]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[17]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SPI_INTERFACE_IMUZ_InBus[16]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; SPI_INTERFACE_BEGINSIGNAL_OutLow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -4274,33 +4260,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 43                          ;
+; boundary_port         ; 36                          ;
 ; cycloneiii_ff         ; 813                         ;
 ;     CLR               ; 137                         ;
-;     ENA               ; 79                          ;
-;     ENA CLR           ; 154                         ;
-;     ENA CLR SLD       ; 6                           ;
+;     ENA               ; 80                          ;
+;     ENA CLR           ; 158                         ;
+;     ENA CLR SLD       ; 2                           ;
 ;     ENA SCLR          ; 184                         ;
 ;     SCLR              ; 56                          ;
-;     SLD               ; 60                          ;
-;     plain             ; 137                         ;
+;     SLD               ; 52                          ;
+;     plain             ; 144                         ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 2673                        ;
+; cycloneiii_lcell_comb ; 2663                        ;
 ;     arith             ; 1374                        ;
 ;         1 data inputs ; 16                          ;
 ;         2 data inputs ; 417                         ;
 ;         3 data inputs ; 941                         ;
-;     normal            ; 1299                        ;
+;     normal            ; 1289                        ;
 ;         0 data inputs ; 25                          ;
 ;         1 data inputs ; 67                          ;
-;         2 data inputs ; 110                         ;
-;         3 data inputs ; 358                         ;
-;         4 data inputs ; 739                         ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 342                         ;
+;         4 data inputs ; 753                         ;
 ; cycloneiii_mac_mult   ; 8                           ;
 ; cycloneiii_mac_out    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 27.20                       ;
-; Average LUT depth     ; 14.52                       ;
+; Average LUT depth     ; 14.67                       ;
 +-----------------------+-----------------------------+
 
 
@@ -4319,9 +4305,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Oct 14 00:43:57 2021
+    Info: Processing started: Mon Oct 18 19:10:32 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_regacc.v
+    Info (12023): Found entity 1: SC_REGACC File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGACC.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/pos_calculator.v
+    Info (12023): Found entity 1: POS_CALCULATOR File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CALCULATOR.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/odom_calculator.v
+    Info (12023): Found entity 1: ODOM_CALCULATOR File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ODOM_CALCULATOR.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/local_velocity.v
+    Info (12023): Found entity 1: LOCAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/LOCAL_VELOCITY.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/distance_reader.v
     Info (12023): Found entity 1: DISTANCE_READER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DISTANCE_READER.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/spi_interface.v
@@ -4329,7 +4323,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/message_interpreter.v
     Info (12023): Found entity 1: MESSAGE_INTERPRETER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_mux81.v
-    Info (12023): Found entity 1: CC_MUX81 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX81.v Line: 22
+    Info (12023): Found entity 1: CC_MUX81 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX81.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/wheel_controller.v
     Info (12023): Found entity 1: WHEEL_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/spi_slave.v
@@ -4379,7 +4373,7 @@ Info (12021): Found 3 design units, including 3 entities, in source file /users/
     Info (12023): Found entity 2: rotator File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 180
     Info (12023): Found entity 3: cordic File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 252
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_mux41.v
-    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v Line: 22
+    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_lessthan.v
     Info (12023): Found entity 1: CC_LESSTHAN File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_greaterthan.v
@@ -4389,8 +4383,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
     Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 8
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Warning (10034): Output port "BB_SYSTEM_SCL_Out" at BB_SYSTEM.v(121) has no driver File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 121
-Info (12128): Elaborating entity "SPI_INTERFACE" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 208
+Warning (10034): Output port "BB_SYSTEM_SCL_Out" at BB_SYSTEM.v(111) has no driver File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 111
+Info (12128): Elaborating entity "SPI_INTERFACE" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 200
 Info (12128): Elaborating entity "SPI_SLAVE" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_INTERFACE.v Line: 114
 Info (12128): Elaborating entity "MESSAGE_INTERPRETER" for hierarchy "SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_INTERFACE.v Line: 153
 Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(154): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 154
@@ -4467,14 +4461,14 @@ Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(3
 Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(356): variable "current_stop" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 356
 Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(357): variable "current_begin" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 357
 Warning (10235): Verilog HDL Always Construct warning at MESSAGE_INTERPRETER.v(358): variable "current_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 358
-Info (12128): Elaborating entity "DISTANCE_READER" for hierarchy "DISTANCE_READER:SENSOR_1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 230
-Info (12128): Elaborating entity "CC_MUX81" for hierarchy "CC_MUX81:CC_MUX81_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 310
-Info (12128): Elaborating entity "MOVEMENT_CONTROLLER" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 328
+Info (12128): Elaborating entity "DISTANCE_READER" for hierarchy "DISTANCE_READER:SENSOR_1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 223
+Info (12128): Elaborating entity "CC_MUX81" for hierarchy "CC_MUX81:CC_MUX81_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 303
+Info (12128): Elaborating entity "MOVEMENT_CONTROLLER" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 321
 Info (12128): Elaborating entity "SC_STATEMACHINE_MULT" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 128
 Info (12128): Elaborating entity "qadd" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qadd:qadd_w1_first" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 139
 Info (12128): Elaborating entity "qmults" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 151
 Info (12128): Elaborating entity "SC_REGGENERAL" for hierarchy "MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_REGGENERAL:w1_reg_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 162
-Info (12128): Elaborating entity "WHEEL_CONTROLLER" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 347
+Info (12128): Elaborating entity "WHEEL_CONTROLLER" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 340
 Info (12128): Elaborating entity "DIRECTION_DET" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|DIRECTION_DET:DIRECTION_MOTOR_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 86
 Info (12128): Elaborating entity "SC_COUNTER" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|SC_COUNTER:COUNTER_TICK_167ms_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 100
 Info (12128): Elaborating entity "Encoder" for hierarchy "WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 112
@@ -4562,35 +4556,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mult
 Info (13014): Ignored 152 buffer(s)
     Info (13019): Ignored 152 SOFT buffer(s)
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "BB_SYSTEM_SDA_InOut" has no driver File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 122
+    Warning (13040): bidirectional pin "BB_SYSTEM_SDA_InOut" has no driver File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 112
 Info (13000): Registers with preset signals will power-up high File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_SLAVE.v Line: 185
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "BB_SYSTEM_SCL_Out" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 121
+    Warning (13410): Pin "BB_SYSTEM_SCL_Out" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 111
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 151 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/output_files/BB_SYSTEM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEB1_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 87
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEB2_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 93
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEB3_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 99
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_PHASEB4_In" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 105
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_SELECT_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 132
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_SELECT_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 132
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_SELECT_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 132
-Info (21057): Implemented 2951 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 20 input pins
+Info (21057): Implemented 2926 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
     Info (21059): Implemented 22 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 2892 logic cells
+    Info (21061): Implemented 2874 logic cells
     Info (21062): Implemented 16 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
-    Info: Peak virtual memory: 668 megabytes
-    Info: Processing ended: Thu Oct 14 00:44:18 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
+    Info: Peak virtual memory: 671 megabytes
+    Info: Processing ended: Mon Oct 18 19:10:53 2021
     Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +------------------------------------------+

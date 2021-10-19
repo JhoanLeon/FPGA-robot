@@ -125,7 +125,6 @@ set_location_assignment PIN_55 -to BB_SYSTEM_PWM2_Out
 set_location_assignment PIN_142 -to BB_SYSTEM_PWM3_Out
 set_location_assignment PIN_141 -to BB_SYSTEM_PWM4_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PWM4_Out
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEB4_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PWM3_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PWM2_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PWM1_Out
@@ -135,26 +134,16 @@ set_location_assignment PIN_46 -to BB_SYSTEM_PHASEA1_In
 set_location_assignment PIN_44 -to BB_SYSTEM_PHASEA2_In
 set_location_assignment PIN_129 -to BB_SYSTEM_PHASEA3_In
 set_location_assignment PIN_128 -to BB_SYSTEM_PHASEA4_In
-set_location_assignment PIN_43 -to BB_SYSTEM_PHASEB1_In
-set_location_assignment PIN_42 -to BB_SYSTEM_PHASEB2_In
-set_location_assignment PIN_127 -to BB_SYSTEM_PHASEB3_In
-set_location_assignment PIN_126 -to BB_SYSTEM_PHASEB4_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA4_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA1_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_MISO_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_MOSI_In
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEB3_In
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEB1_In
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEB2_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA3_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA2_In
-set_location_assignment PIN_105 -to BB_SYSTEM_SELECT_InBus[2]
-set_location_assignment PIN_103 -to BB_SYSTEM_SELECT_InBus[1]
-set_location_assignment PIN_100 -to BB_SYSTEM_SELECT_InBus[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SELECT_InBus
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SC_REGACC.v
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/POS_CALCULATOR.v
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/ODOM_CALCULATOR.v
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/LOCAL_VELOCITY.v
 set_global_assignment -name SDC_FILE BB_SYSTEM.sdc
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/DISTANCE_READER.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SPI_INTERFACE.v

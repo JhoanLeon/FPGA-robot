@@ -16,25 +16,21 @@ module BB_SYSTEM
 	BB_SYSTEM_IN11_Out,
 	BB_SYSTEM_IN12_Out,
 	BB_SYSTEM_PHASEA1_In,
-	BB_SYSTEM_PHASEB1_In,
 
 	BB_SYSTEM_PWM2_Out,
 	BB_SYSTEM_IN21_Out,
 	BB_SYSTEM_IN22_Out,
 	BB_SYSTEM_PHASEA2_In,
-	BB_SYSTEM_PHASEB2_In,
 	
 	BB_SYSTEM_PWM3_Out,
 	BB_SYSTEM_IN31_Out,
 	BB_SYSTEM_IN32_Out,
 	BB_SYSTEM_PHASEA3_In,
-	BB_SYSTEM_PHASEB3_In,
 
 	BB_SYSTEM_PWM4_Out,
 	BB_SYSTEM_IN41_Out,
 	BB_SYSTEM_IN42_Out,	
 	BB_SYSTEM_PHASEA4_In,
-	BB_SYSTEM_PHASEB4_In,
 	
 	// Proximity sensors
 	BB_SYSTEM_TRIG1_Out,
@@ -60,9 +56,7 @@ module BB_SYSTEM
 	BB_SYSTEM_CS_In,
 	
 	//////////// DEBUG //////////
-	BB_SYSTEM_LEDs_OutBus,
-	BB_SYSTEM_SELECT_InBus
-	
+	BB_SYSTEM_LEDs_OutBus
 );
 
 //=======================================================
@@ -84,25 +78,21 @@ output	BB_SYSTEM_PWM1_Out;
 output	BB_SYSTEM_IN11_Out;
 output	BB_SYSTEM_IN12_Out;
 input		BB_SYSTEM_PHASEA1_In;
-input		BB_SYSTEM_PHASEB1_In;
 
 output	BB_SYSTEM_PWM2_Out;
 output	BB_SYSTEM_IN21_Out;
 output	BB_SYSTEM_IN22_Out;
 input		BB_SYSTEM_PHASEA2_In;
-input		BB_SYSTEM_PHASEB2_In;
 	
 output	BB_SYSTEM_PWM3_Out;
 output	BB_SYSTEM_IN31_Out;
 output	BB_SYSTEM_IN32_Out;
 input		BB_SYSTEM_PHASEA3_In;
-input		BB_SYSTEM_PHASEB3_In;
 
 output	BB_SYSTEM_PWM4_Out;
 output	BB_SYSTEM_IN41_Out;
 output	BB_SYSTEM_IN42_Out;	
 input		BB_SYSTEM_PHASEA4_In;
-input		BB_SYSTEM_PHASEB4_In;
 	
 	// Proximity sensors
 output	BB_SYSTEM_TRIG1_Out;
@@ -129,7 +119,6 @@ input		BB_SYSTEM_CS_In;
 	
 	// Debug
 output [3:0]	BB_SYSTEM_LEDs_OutBus;
-input  [2:0]	BB_SYSTEM_SELECT_InBus;
 
 //=======================================================
 //  REG/WIRE declarations
@@ -163,6 +152,10 @@ wire [DATA_WIDTH-1:0] current_W2;
 wire [DATA_WIDTH-1:0] current_W3;
 wire [DATA_WIDTH-1:0] current_W4;
 
+wire [DATA_WIDTH-1:0] global_pos_x;
+wire [DATA_WIDTH-1:0] global_pos_y;
+wire [DATA_WIDTH-1:0] theta_angle;
+
 //=======================================================
 //  STRUCTURAL coding
 //=======================================================
@@ -178,9 +171,9 @@ SPI_INTERFACE SPI_INTERFACE_U0
 	.SPI_INTERFACE_MOSI_In(BB_SYSTEM_MOSI_In),
 	.SPI_INTERFACE_SCK_In(BB_SYSTEM_SCLK_In),
 	
-	.SPI_INTERFACE_POSX_InBus(32'b0_0000000000000001_000000000000000), // 1, 2, 90
-	.SPI_INTERFACE_POSY_InBus(32'b0_0000000000000010_000000000000000),
-	.SPI_INTERFACE_THETA_InBus(32'b0_0000000001011010_000000000000000),
+	.SPI_INTERFACE_POSX_InBus(global_pos_x),
+	.SPI_INTERFACE_POSY_InBus(global_pos_y),
+	.SPI_INTERFACE_THETA_InBus(theta_angle),
 	
 	.SPI_INTERFACE_RPM1_InBus(rpms_1),
 	.SPI_INTERFACE_RPM2_InBus(rpms_2),
@@ -204,7 +197,6 @@ SPI_INTERFACE SPI_INTERFACE_U0
 	.SPI_INTERFACE_WAYSELECT_OutBus(waypoint_selection),
 	.SPI_INTERFACE_STOPSIGNAL_OutLow(stop_signal), // active in low
 	.SPI_INTERFACE_BEGINSIGNAL_OutLow(begin_signal) // active in low
-
 );
 
 
@@ -404,6 +396,27 @@ WHEEL_CONTROLLER WHEEL_CONTROLLER_4
 	.WHEEL_CONTROLLER_W_OutBus(current_W4)
 );
 
+
+//////////////////////////////////////////////////////////// FOR ODOMETRY
+
+//ODOM_CALCULATOR ODOMETRY_CALCULATOR
+//(
+//	//////////// INPUTS //////////
+//	.ODOM_CALCULATOR_CLOCK_50(BB_SYSTEM_CLOCK_50),
+//	.ODOM_CALCULATOR_Reset_InHigh(~BB_SYSTEM_RESET_InLow),
+//	
+//	.ODOM_CALCULATOR_SETBEGIN_InLow(begin_signal),
+//	.ODOM_CALCULATOR_W1_InBus(current_W1),
+//	.ODOM_CALCULATOR_W2_InBus(current_W2),
+//	.ODOM_CALCULATOR_W3_InBus(current_W3),
+//	.ODOM_CALCULATOR_W4_InBus(current_W4),
+//	.ODOM_CALCULATOR_THETA_InBus(theta_angle),
+//
+//	//////////// OUTPUTS //////////
+//	.ODOM_CALCULATOR_POSX_OutBus(global_pos_x), // position in global x in m notation fixed point 32b
+//	.ODOM_CALCULATOR_POSY_OutBus(global_pos_y), // position in global y in m notation fixed point 32b
+//	.ODOM_CALCULATOR_THETA_OutBus(theta_angle)  // rotation angle in degrees notation fixed point 32b
+//);
 
 
 endmodule

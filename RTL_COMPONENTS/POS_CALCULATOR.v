@@ -2,7 +2,8 @@
 //  MODULE Definition
 //=======================================================
 
-module POS_CALCULATOR (
+module POS_CALCULATOR 
+(
 
 	//////////// INPUTS //////////
 	POS_CALCULATOR_CLOCK_50,
