@@ -91,8 +91,8 @@ qadd #(.Q(15), .N(32)) second_add // 32 bit to detect overflow and cut overshoot
 `ifdef _17B
 always @(posedge Prescaler_clk)
 begin
-	if ( Control_k[30:15] >= 16'd220 ) //Caso de saturacion del controlador por arriba (parte entera del número)
-		COMANDO_PWM <= 8'd220; // original was 250 -> 255
+	if ( Control_k[30:15] >= 16'd200 ) //Caso de saturacion del controlador por arriba (parte entera del número)
+		COMANDO_PWM <= 8'd200; // original was 250 -> 255
 	else if ( (Control_k[30:15] <= 16'd5) || (Control_k[31] == 1'b1) ) //Caso de saturacion del controlador por abajo
 		COMANDO_PWM <= 8'd0;
 	else

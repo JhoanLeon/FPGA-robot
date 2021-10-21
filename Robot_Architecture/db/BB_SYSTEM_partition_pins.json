@@ -44,10 +44,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_IN41_Out",
-					"strict" : false
-				},
-				{
 					"name" : "BB_SYSTEM_IN42_Out",
 					"strict" : false
 				},
@@ -104,6 +100,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "BB_SYSTEM_ECHO4_In",
+					"strict" : false
+				},
+				{
 					"name" : "BB_SYSTEM_ECHO3_In",
 					"strict" : false
 				},
@@ -113,10 +113,6 @@
 				},
 				{
 					"name" : "BB_SYSTEM_ECHO2_In",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_ECHO4_In",
 					"strict" : false
 				},
 				{

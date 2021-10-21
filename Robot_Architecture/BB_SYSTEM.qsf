@@ -140,6 +140,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_MISO_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_MOSI_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA3_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA2_In
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/POS_CONTROLLER.v
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/ERROR_CONTROL.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SC_REGACC.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/POS_CALCULATOR.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/ODOM_CALCULATOR.v

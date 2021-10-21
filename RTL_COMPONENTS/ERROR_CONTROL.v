@@ -50,14 +50,14 @@ begin
 
 	if (ERROR_CONTROL_Y_InBus > h1) // si el error es positivo, vaya hacia adelante
 		begin
-			ERROR_CONTROL_VX_OutBus <= ERROR_CONTROL_Y_InBus; // o una velocidad estandar
+			ERROR_CONTROL_VX_OutBus <= 32'b0_0000000000000000_011000000000000;//ERROR_CONTROL_Y_InBus; // o una velocidad estandar
 			ERROR_CONTROL_VY_OutBus <= 32'b0;
 			ERROR_CONTROL_WZ_OutBus <= 32'b0;
 		end
 		
 	else if ( (ERROR_CONTROL_Y_InBus[N_WIDTH-1] == 1'b1) && (ERROR_CONTROL_Y_InBus[N_WIDTH-2:0] > {h1[N_WIDTH-2:0]}) ) // si el error es negativo, vaya hacia atrás
 		begin
-			ERROR_CONTROL_VX_OutBus <= ERROR_CONTROL_Y_InBus; // o una velocidad estandar
+			ERROR_CONTROL_VX_OutBus <= 32'b1_0000000000000000_011000000000000;//ERROR_CONTROL_Y_InBus; // o una velocidad estandar
 			ERROR_CONTROL_VY_OutBus <= 32'b0;
 			ERROR_CONTROL_WZ_OutBus <= 32'b0;
 		end
@@ -68,14 +68,14 @@ begin
 			if (ERROR_CONTROL_X_InBus > h2) // ajustar coordenada x positiva
 				begin
 					ERROR_CONTROL_VX_OutBus <= 32'b0;
-					ERROR_CONTROL_VY_OutBus <= {~ERROR_CONTROL_X_InBus[N_WIDTH-1],ERROR_CONTROL_X_InBus[N_WIDTH-2:0]};
+					ERROR_CONTROL_VY_OutBus <= 32'b1_0000000000000000_011000000000000;//{~ERROR_CONTROL_X_InBus[N_WIDTH-1],ERROR_CONTROL_X_InBus[N_WIDTH-2:0]};
 					ERROR_CONTROL_WZ_OutBus <= 32'b0;
 				end
 			
 			else if ( (ERROR_CONTROL_X_InBus[N_WIDTH-1] == 1'b1) && (ERROR_CONTROL_X_InBus[N_WIDTH-2:0] > {h2[N_WIDTH-2:0]}) )
 				begin
 					ERROR_CONTROL_VX_OutBus <= 32'b0;
-					ERROR_CONTROL_VY_OutBus <= {~ERROR_CONTROL_X_InBus[N_WIDTH-1],ERROR_CONTROL_X_InBus[N_WIDTH-2:0]};
+					ERROR_CONTROL_VY_OutBus <= 32'b0_0000000000000000_011000000000000;//{~ERROR_CONTROL_X_InBus[N_WIDTH-1],ERROR_CONTROL_X_InBus[N_WIDTH-2:0]};
 					ERROR_CONTROL_WZ_OutBus <= 32'b0;			
 				end
 
@@ -86,14 +86,14 @@ begin
 						begin
 							ERROR_CONTROL_VX_OutBus <= 32'b0;
 							ERROR_CONTROL_VY_OutBus <= 32'b0;
-							ERROR_CONTROL_WZ_OutBus <= ERROR_CONTROL_Z_InBus;					
+							ERROR_CONTROL_WZ_OutBus <= 32'b0_0000000000000000_011000000000000;//ERROR_CONTROL_Z_InBus;					
 						end
 			
 					else if ( (ERROR_CONTROL_Z_InBus[N_WIDTH-1] == 1'b1) && (ERROR_CONTROL_Z_InBus[N_WIDTH-2:0] > {h3[N_WIDTH-2:0]}) )
 						begin
 							ERROR_CONTROL_VX_OutBus <= 32'b0;
 							ERROR_CONTROL_VY_OutBus <= 32'b0;
-							ERROR_CONTROL_WZ_OutBus <= ERROR_CONTROL_Z_InBus;
+							ERROR_CONTROL_WZ_OutBus <= 32'b1_0000000000000000_011000000000000;//ERROR_CONTROL_Z_InBus;
 						end
 			
 					else // si el error Z está en los límites, entonces ya ajustó la rotación

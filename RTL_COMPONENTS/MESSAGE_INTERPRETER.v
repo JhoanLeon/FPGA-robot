@@ -232,7 +232,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSX_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_POSX_InBus[18:11]; // [22:15] data 0000_0000 
 		end	
 		
 	y_i: // '21' for y_i
@@ -240,7 +240,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSY_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_POSY_InBus[18:11]; // data
 		end	
 		
 	theta_i: // '22' for theta_i
@@ -248,7 +248,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_THETA_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_THETA_InBus[18:11]; // data
 		end	
 
 		

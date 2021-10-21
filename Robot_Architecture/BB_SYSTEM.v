@@ -128,6 +128,8 @@ wire [2:0] waypoint_selection;
 wire stop_signal;
 wire begin_signal;
 
+wire [1:0] movement_selection; 
+
 wire [DATA_WIDTH-1:0] distance_1;
 wire [DATA_WIDTH-1:0] distance_2;
 wire [DATA_WIDTH-1:0] distance_3;
@@ -155,6 +157,18 @@ wire [DATA_WIDTH-1:0] current_W4;
 wire [DATA_WIDTH-1:0] global_pos_x;
 wire [DATA_WIDTH-1:0] global_pos_y;
 wire [DATA_WIDTH-1:0] theta_angle;
+
+wire [DATA_WIDTH-1:0] target_posx;
+wire [DATA_WIDTH-1:0] target_posy;
+wire [DATA_WIDTH-1:0] target_theta;
+
+wire [DATA_WIDTH-1:0] velocity_x_posc;
+wire [DATA_WIDTH-1:0] velocity_y_posc;
+wire [DATA_WIDTH-1:0] velocity_z_posc;
+
+wire [DATA_WIDTH-1:0] velocity_x_behavior;
+wire [DATA_WIDTH-1:0] velocity_y_behavior;
+wire [DATA_WIDTH-1:0] velocity_z_behavior;
 
 //=======================================================
 //  STRUCTURAL coding
@@ -264,42 +278,69 @@ DISTANCE_READER SENSOR_4
 
 //////////////////////////////////////////////////////////// FOR MOTORS
 
-CC_MUX81 CC_MUX81_U0 // velocities in m/s and rad/s
+//CC_MUX81 CC_MUX81_U0 // velocities in m/s and rad/s
+//(
+////////////// OUTPUTS //////////
+//	.CC_MUX81_x_OutBus(target_vx),
+//	.CC_MUX81_y_OutBus(target_vy),
+//	.CC_MUX81_z_OutBus(target_wz),
+//	
+////////////// INPUTS //////////
+//	.CC_MUX81_x1_InBus(32'b0), // 0m/s
+//	.CC_MUX81_x2_InBus(32'b0_0000000000000000_001000000000000), // 0.125m/s
+//	.CC_MUX81_x3_InBus(32'b0_0000000000000000_010000000000000), // 0.25m/s
+//	.CC_MUX81_x4_InBus(32'b0_0000000000000000_011000000000000), // 0.375m/s
+//	.CC_MUX81_x5_InBus(32'b0_0000000000000000_100000000000000), // 0.5m/s
+//	.CC_MUX81_x6_InBus(32'b1_0000000000000000_100000000000000), // -0.5m/s
+//	.CC_MUX81_x7_InBus(32'b0),
+//	.CC_MUX81_x8_InBus(32'b0),  
+//	
+//	.CC_MUX81_y1_InBus(32'b0), // 0m/s
+//	.CC_MUX81_y2_InBus(32'b0),
+//	.CC_MUX81_y3_InBus(32'b0),
+//	.CC_MUX81_y4_InBus(32'b0),
+//	.CC_MUX81_y5_InBus(32'b0),
+//	.CC_MUX81_y6_InBus(32'b0),
+//	.CC_MUX81_y7_InBus(32'b0_0000000000000000_011000000000000), // +0.375m/s
+//	.CC_MUX81_y8_InBus(32'b1_0000000000000000_011000000000000), // -0.375m/s
+//	
+//	.CC_MUX81_z1_InBus(32'b0), // 0rad/s
+//	.CC_MUX81_z2_InBus(32'b0),
+//	.CC_MUX81_z3_InBus(32'b0),
+//	.CC_MUX81_z4_InBus(32'b0),
+//	.CC_MUX81_z5_InBus(32'b0),
+//	.CC_MUX81_z6_InBus(32'b0),
+//	.CC_MUX81_z7_InBus(32'b0),
+//	.CC_MUX81_z8_InBus(32'b0),
+//	
+//	.CC_MUX81_select_InBus(waypoint_selection)
+//);
+
+
+CC_MUX41 CC_MUX41_U0 // velocities in m/s and rad/s
 (
-//////////// OUTPUTS //////////
-	.CC_MUX81_x_OutBus(target_vx),
-	.CC_MUX81_y_OutBus(target_vy),
-	.CC_MUX81_z_OutBus(target_wz),
+	//////////// OUTPUTS //////////
+	.CC_MUX41_x_OutBus(target_vx),
+	.CC_MUX41_y_OutBus(target_vy),
+	.CC_MUX41_z_OutBus(target_wz),
 	
-//////////// INPUTS //////////
-	.CC_MUX81_x1_InBus(32'b0), // 0m/s
-	.CC_MUX81_x2_InBus(32'b0_0000000000000000_001000000000000), // 0.125m/s
-	.CC_MUX81_x3_InBus(32'b0_0000000000000000_010000000000000), // 0.25m/s
-	.CC_MUX81_x4_InBus(32'b0_0000000000000000_011000000000000), // 0.375m/s
-	.CC_MUX81_x5_InBus(32'b0_0000000000000000_100000000000000), // 0.5m/s
-	.CC_MUX81_x6_InBus(32'b1_0000000000000000_100000000000000), // -0.5m/s
-	.CC_MUX81_x7_InBus(32'b0),
-	.CC_MUX81_x8_InBus(32'b0),  
+	//////////// INPUTS //////////
+	.CC_MUX41_x1_InBus(32'b0), // 0m/s
+	.CC_MUX41_x2_InBus(velocity_x_posc),
+	.CC_MUX41_x3_InBus(velocity_x_behavior),
+	.CC_MUX41_x4_InBus(32'b0), // 0m/s  
 	
-	.CC_MUX81_y1_InBus(32'b0), // 0m/s
-	.CC_MUX81_y2_InBus(32'b0),
-	.CC_MUX81_y3_InBus(32'b0),
-	.CC_MUX81_y4_InBus(32'b0),
-	.CC_MUX81_y5_InBus(32'b0),
-	.CC_MUX81_y6_InBus(32'b0),
-	.CC_MUX81_y7_InBus(32'b0_0000000000000000_010000000000000), // +0.25m/s
-	.CC_MUX81_y8_InBus(32'b1_0000000000000000_010000000000000), // -0.25m/s
+	.CC_MUX41_y1_InBus(32'b0), // 0m/s
+	.CC_MUX41_y2_InBus(velocity_y_posc),
+	.CC_MUX41_y3_InBus(velocity_y_behavior),
+	.CC_MUX41_y4_InBus(32'b0), // 0m/s
 	
-	.CC_MUX81_z1_InBus(32'b0), // 0rad/s
-	.CC_MUX81_z2_InBus(32'b0),
-	.CC_MUX81_z3_InBus(32'b0),
-	.CC_MUX81_z4_InBus(32'b0),
-	.CC_MUX81_z5_InBus(32'b0),
-	.CC_MUX81_z6_InBus(32'b0),
-	.CC_MUX81_z7_InBus(32'b0),
-	.CC_MUX81_z8_InBus(32'b0),
+	.CC_MUX41_z1_InBus(32'b0), // 0rad/s
+	.CC_MUX41_z2_InBus(velocity_z_posc),
+	.CC_MUX41_z3_InBus(velocity_z_behavior),
+	.CC_MUX41_z4_InBus(32'b0), // 0rad/s
 	
-	.CC_MUX81_select_InBus(waypoint_selection)
+	.CC_MUX41_select_InBus(2'b01) //(movement_selection) original, but for tests it selects position controller
 );
 
 
@@ -399,24 +440,83 @@ WHEEL_CONTROLLER WHEEL_CONTROLLER_4
 
 //////////////////////////////////////////////////////////// FOR ODOMETRY
 
-//ODOM_CALCULATOR ODOMETRY_CALCULATOR
-//(
-//	//////////// INPUTS //////////
-//	.ODOM_CALCULATOR_CLOCK_50(BB_SYSTEM_CLOCK_50),
-//	.ODOM_CALCULATOR_Reset_InHigh(~BB_SYSTEM_RESET_InLow),
-//	
-//	.ODOM_CALCULATOR_SETBEGIN_InLow(begin_signal),
-//	.ODOM_CALCULATOR_W1_InBus(current_W1),
-//	.ODOM_CALCULATOR_W2_InBus(current_W2),
-//	.ODOM_CALCULATOR_W3_InBus(current_W3),
-//	.ODOM_CALCULATOR_W4_InBus(current_W4),
-//	.ODOM_CALCULATOR_THETA_InBus(theta_angle),
-//
-//	//////////// OUTPUTS //////////
-//	.ODOM_CALCULATOR_POSX_OutBus(global_pos_x), // position in global x in m notation fixed point 32b
-//	.ODOM_CALCULATOR_POSY_OutBus(global_pos_y), // position in global y in m notation fixed point 32b
-//	.ODOM_CALCULATOR_THETA_OutBus(theta_angle)  // rotation angle in degrees notation fixed point 32b
-//);
+ODOM_CALCULATOR ODOMETRY_CALCULATOR
+(
+	//////////// INPUTS //////////
+	.ODOM_CALCULATOR_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.ODOM_CALCULATOR_Reset_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	.ODOM_CALCULATOR_SETBEGIN_InLow(begin_signal),
+	.ODOM_CALCULATOR_W1_InBus(current_W1),
+	.ODOM_CALCULATOR_W2_InBus(current_W2),
+	.ODOM_CALCULATOR_W3_InBus(current_W3),
+	.ODOM_CALCULATOR_W4_InBus(current_W4),
+	.ODOM_CALCULATOR_THETA_InBus(theta_angle),
 
+	//////////// OUTPUTS //////////
+	.ODOM_CALCULATOR_POSX_OutBus(global_pos_x), // position in global x in m notation fixed point 32b
+	.ODOM_CALCULATOR_POSY_OutBus(global_pos_y), // position in global y in m notation fixed point 32b
+	.ODOM_CALCULATOR_THETA_OutBus(theta_angle)  // rotation angle in degrees notation fixed point 32b
+);
+
+
+//////////////////////////////////////////////////////////// FOR POSITION CONTROLLER
+
+CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
+(
+	//////////// OUTPUTS //////////
+	.CC_MUX81_x_OutBus(target_posx),
+	.CC_MUX81_y_OutBus(target_posy),
+	.CC_MUX81_z_OutBus(target_theta),
+	
+	//////////// INPUTS //////////
+	.CC_MUX81_x1_InBus(32'b0), // 0m
+	.CC_MUX81_x2_InBus(32'b0),
+	.CC_MUX81_x3_InBus(32'b0_0000000000000001_000000000000000), // 1m in X
+	.CC_MUX81_x4_InBus(32'b0), 
+	.CC_MUX81_x5_InBus(32'b1_0000000000000001_000000000000000), // -1m in X
+	.CC_MUX81_x6_InBus(32'b0_0000000000000000_100000000000000), // 0.5m in X
+	.CC_MUX81_x7_InBus(32'b1_0000000000000000_100000000000000), // -0.5m in X
+	.CC_MUX81_x8_InBus(32'b0_0000000000000000_010000000000000), // 0.25m in X 
+	
+	.CC_MUX81_y1_InBus(32'b0), // 0m
+	.CC_MUX81_y2_InBus(32'b0_0000000000000001_000000000000000), // 1m in Y
+	.CC_MUX81_y3_InBus(32'b0),
+	.CC_MUX81_y4_InBus(32'b1_0000000000000001_000000000000000), // -1m in Y
+	.CC_MUX81_y5_InBus(32'b0),
+	.CC_MUX81_y6_InBus(32'b0_0000000000000000_100000000000000), // 0.5m in Y
+	.CC_MUX81_y7_InBus(32'b1_0000000000000000_100000000000000), // -0.5m in Y
+	.CC_MUX81_y8_InBus(32'b0_0000000000000000_110000000000000), // 0.75m in Y 
+	
+	.CC_MUX81_z1_InBus(32'b0_0000000001011010_000000000000000), // 90deg
+	.CC_MUX81_z2_InBus(32'b0_0000000001011010_000000000000000),
+	.CC_MUX81_z3_InBus(32'b0_0000000001011010_000000000000000),
+	.CC_MUX81_z4_InBus(32'b0_0000000001011010_000000000000000),
+	.CC_MUX81_z5_InBus(32'b0_0000000001011010_000000000000000),
+	.CC_MUX81_z6_InBus(32'b0_0000000001011010_000000000000000),
+	.CC_MUX81_z7_InBus(32'b0_0000000001011010_000000000000000),
+	.CC_MUX81_z8_InBus(32'b0_0000000001011010_000000000000000),
+	
+	.CC_MUX81_select_InBus(waypoint_selection)
+);
+
+
+POS_CONTROLLER POSITION_CONTROLLER
+(
+	//////////// INPUTS //////////
+	.POS_CONTROLLER_TARGETX_InBus(target_posx),
+	.POS_CONTROLLER_TARGETY_InBus(target_posy),
+	.POS_CONTROLLER_TARGETTHETA_InBus(target_theta),
+	
+	.POS_CONTROLLER_CURRENTX_InBus(global_pos_x),
+	.POS_CONTROLLER_CURRENTY_InBus(global_pos_y),
+	.POS_CONTROLLER_CURRENTTHETA_InBus(theta_angle),
+	
+	//////////// OUTPUTS //////////
+	.POS_CONTROLLER_VX_OutBus(velocity_x_posc),
+	.POS_CONTROLLER_VY_OutBus(velocity_y_posc),
+	.POS_CONTROLLER_WZ_OutBus(velocity_z_posc)
+
+);
 
 endmodule
