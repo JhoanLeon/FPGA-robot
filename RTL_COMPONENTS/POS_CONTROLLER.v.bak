@@ -1,0 +1,65 @@
+/*
+Created by: Jhoan Esteban Leon - je.leon.e@outlook.com
+with libraries from https://github.com/freecores/verilog_fixed_point_math_library
+
+inputs and output are in fixed point 32b notation U(32,15) U(N,Q)
+*/
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module BB_SYSTEM
+(
+	//////////// INPUTS //////////
+	BB_SYSTEM_CLOCK_50,
+	BB_SYSTEM_RESET_InLow,
+	
+	BB_SYSTEM_TARGETX_InBus,
+	BB_SYSTEM_TARGETY_InBus,
+	BB_SYSTEM_TARGETTHETA_InBus,
+	
+	BB_SYSTEM_CURRENTX_InBus,
+	BB_SYSTEM_CURRENTY_InBus,
+	BB_SYSTEM_CURRENTTHETA_InBus,
+	
+	//////////// OUTPUTS //////////
+	BB_SYSTEM_VX_OutBus,
+	BB_SYSTEM_VY_OutBus,
+	BB_SYSTEM_WZ_OutBus
+
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+parameter N_WIDTH = 32;
+parameter Q_WIDTH = 15;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input	BB_SYSTEM_CLOCK_50;
+input	BB_SYSTEM_RESET_InLow;
+	
+input [N_WIDTH-1:0]	BB_SYSTEM_TARGETX_InBus;
+input [N_WIDTH-1:0]	BB_SYSTEM_TARGETY_InBus;
+input [N_WIDTH-1:0]	BB_SYSTEM_TARGETTHETA_InBus;
+	
+input [N_WIDTH-1:0]	BB_SYSTEM_CURRENTX_InBus;
+input [N_WIDTH-1:0]	BB_SYSTEM_CURRENTY_InBus;
+input [N_WIDTH-1:0]	BB_SYSTEM_CURRENTTHETA_InBus;
+	
+output [N_WIDTH-1:0]	BB_SYSTEM_VX_OutBus;
+output [N_WIDTH-1:0]	BB_SYSTEM_VY_OutBus;
+output [N_WIDTH-1:0]	BB_SYSTEM_WZ_OutBus;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+endmodule

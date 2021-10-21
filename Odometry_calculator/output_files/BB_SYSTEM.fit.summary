@@ -1,0 +1,16 @@
+Fitter Status : Failed - Wed Oct 20 08:45:12 2021
+Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Revision Name : BB_SYSTEM
+Top-level Entity Name : BB_SYSTEM
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 4,124 / 6,272 ( 66 % )
+    Total combinational functions : 3,726 / 6,272 ( 59 % )
+    Dedicated logic registers : 1,518 / 6,272 ( 24 % )
+Total registers : 1518
+Total pins : 259 / 92 ( 282 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

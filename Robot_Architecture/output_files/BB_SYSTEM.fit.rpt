@@ -1,5 +1,5 @@
 Fitter report for BB_SYSTEM
-Mon Oct 18 19:11:05 2021
+Wed Oct 20 09:11:00 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -73,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Oct 18 19:11:05 2021       ;
+; Fitter Status                      ; Successful - Wed Oct 20 09:11:00 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -161,12 +161,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.07        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   6.4%      ;
+;     Processor 2            ;   6.7%      ;
 +----------------------------+-------------+
 
 
@@ -1868,13 +1868,13 @@ Info (170195): Router estimated average interconnect usage is 7% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.60 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.59 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 14 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin BB_SYSTEM_SDA_InOut uses I/O standard 3.3-V LVTTL at 33 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 112
@@ -1895,8 +1895,8 @@ Warning (169064): Following 1 pins have no output enable or a GND or VCC output 
     Info (169065): Pin BB_SYSTEM_SDA_InOut has a permanently disabled output enable File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/BB_SYSTEM.v Line: 112
 Info (144001): Generated suppressed messages file C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/output_files/BB_SYSTEM.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 1147 megabytes
-    Info: Processing ended: Mon Oct 18 19:11:06 2021
+    Info: Peak virtual memory: 1145 megabytes
+    Info: Processing ended: Wed Oct 20 09:11:01 2021
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:13
 

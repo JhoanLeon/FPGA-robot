@@ -1,0 +1,40 @@
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module ERROR_CONTROL 
+(
+	//////////// INPUTS //////////
+	,
+	LOCAL_VELOCITY_W2_InBus,
+	LOCAL_VELOCITY_W3_InBus,
+	LOCAL_VELOCITY_W4_InBus,
+
+	//////////// OUTPUTS //////////
+	LOCAL_VELOCITY_VX_OutBus, // local velocity vx in m/s (notation fixed point 32b)
+	LOCAL_VELOCITY_VY_OutBus, // local velocity vy in m/s (in notation fixed point 32b)
+	LOCAL_VELOCITY_WZ_OutBus  // local velocity wz in rad/s (in notation fixed point 32b)
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+parameter DATAWIDTH_N = 32;
+parameter FRACTIONAL_Q = 15;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+
+
+endmodule

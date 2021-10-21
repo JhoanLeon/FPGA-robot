@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Mon Oct 18 12:29:32 2021
+Wed Oct 20 08:45:01 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -113,7 +113,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 18 12:29:32 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 20 08:45:00 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
@@ -229,7 +229,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -2046,7 +2046,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -2056,7 +2056,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Oct 18 12:29:11 2021
+    Info: Processing started: Wed Oct 20 08:44:40 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2143,7 +2143,7 @@ Info (12128): Elaborating entity "qmults" for hierarchy "ODOM_CALCULATOR:U0|LOCA
 Info (12128): Elaborating entity "SC_REGGENERAL" for hierarchy "ODOM_CALCULATOR:U0|LOCAL_VELOCITY:U0|SC_REGGENERAL:reg_vx" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/LOCAL_VELOCITY.v Line: 133
 Info (12128): Elaborating entity "GLOBAL_VELOCITY" for hierarchy "ODOM_CALCULATOR:U0|GLOBAL_VELOCITY:U1" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ODOM_CALCULATOR.v Line: 104
 Info (12128): Elaborating entity "SC_STATEMACHINE_GLOBAL_VEL" for hierarchy "ODOM_CALCULATOR:U0|GLOBAL_VELOCITY:U1|SC_STATEMACHINE_GLOBAL_VEL:STATEMACHINE_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 117
-Info (12128): Elaborating entity "cordic" for hierarchy "ODOM_CALCULATOR:U0|GLOBAL_VELOCITY:U1|cordic:cordic_core_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 141
+Info (12128): Elaborating entity "cordic" for hierarchy "ODOM_CALCULATOR:U0|GLOBAL_VELOCITY:U1|cordic:cordic_core_u0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 140
 Info (12128): Elaborating entity "rotator" for hierarchy "ODOM_CALCULATOR:U0|GLOBAL_VELOCITY:U1|cordic:cordic_core_u0|rotator:U" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 373
 Info (12128): Elaborating entity "signed_shifter" for hierarchy "ODOM_CALCULATOR:U0|GLOBAL_VELOCITY:U1|cordic:cordic_core_u0|rotator:U|signed_shifter:x_shifter" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 205
 Info (12128): Elaborating entity "POS_CALCULATOR" for hierarchy "ODOM_CALCULATOR:U0|POS_CALCULATOR:U2" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ODOM_CALCULATOR.v Line: 122
@@ -2180,8 +2180,8 @@ Info (21057): Implemented 4400 device resources after synthesis - the final reso
     Info (21059): Implemented 96 output pins
     Info (21061): Implemented 4141 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 662 megabytes
-    Info: Processing ended: Mon Oct 18 12:29:32 2021
+    Info: Peak virtual memory: 663 megabytes
+    Info: Processing ended: Wed Oct 20 08:45:01 2021
     Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:34
 

@@ -1,5 +1,5 @@
 Timing Analyzer report for BB_SYSTEM
-Mon Oct 18 19:11:13 2021
+Wed Oct 20 09:11:11 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -100,12 +100,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.16        ;
+; Average used               ; 1.18        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  16.1%      ;
+;     Processor 2            ;  17.7%      ;
 +----------------------------+-------------+
 
 
@@ -114,7 +114,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; BB_SYSTEM.sdc ; OK     ; Mon Oct 18 19:11:10 2021 ;
+; BB_SYSTEM.sdc ; OK     ; Wed Oct 20 09:11:09 2021 ;
 +---------------+--------+--------------------------+
 
 
@@ -295,10 +295,10 @@ No paths to report.
 +-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
 ; Slack ; From Node                                                                                                    ; To Node                                                                                                      ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
+; 0.452 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|Encoder:ENCODER_U0|counter[0]                                            ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|Encoder:ENCODER_U0|counter[0]                                            ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.746      ;
 ; 0.452 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_multiplier_temp[0]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_multiplier_temp[0]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.746      ;
 ; 0.452 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_done                                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_first|reg_done                                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.746      ;
 ; 0.452 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|Encoder:ENCODER_U0|counter[0]                                            ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_4|Encoder:ENCODER_U0|counter[0]                                            ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.746      ;
-; 0.452 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|Encoder:ENCODER_U0|counter[0]                                            ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_2|Encoder:ENCODER_U0|counter[0]                                            ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.746      ;
 ; 0.453 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|MISO_Register                                                ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|MISO_Register                                                ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0|STATE_Register.STATE_CHECK_0 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0|STATE_Register.STATE_CHECK_0 ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|counter[0]                                            ; WHEEL_CONTROLLER:WHEEL_CONTROLLER_1|Encoder:ENCODER_U0|counter[0]                                            ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.746      ;
@@ -332,18 +332,18 @@ No paths to report.
 ; 0.665 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[38]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[39]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.959      ;
 ; 0.665 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[33]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[34]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.959      ;
 ; 0.665 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[18]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[19]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.959      ;
+; 0.666 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[5]                                             ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[6]                                             ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.959      ;
 ; 0.666 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[44]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[45]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.960      ;
 ; 0.666 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[36]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[37]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.960      ;
 ; 0.666 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[32]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[33]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.960      ;
 ; 0.666 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[31]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[32]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.960      ;
 ; 0.666 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[22]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[23]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.960      ;
 ; 0.666 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[21]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[22]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.960      ;
-; 0.666 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[5]                                             ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[6]                                             ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.959      ;
-; 0.667 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[14]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[15]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.961      ;
 ; 0.667 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[6]                                             ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[7]                                             ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.960      ;
 ; 0.667 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[0]                                             ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[1]                                             ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.960      ;
-; 0.668 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[2]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[3]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.962      ;
+; 0.667 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[14]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[15]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.961      ;
 ; 0.668 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[1]                                             ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[2]                                             ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.961      ;
+; 0.668 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[2]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[3]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.962      ;
 ; 0.669 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[28]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[29]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.963      ;
 ; 0.671 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|SCK_Register                                                 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register.State_RISE_EDGE                               ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.964      ;
 ; 0.679 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|DataOut_Register[0]                                          ; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_select[0]                          ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.972      ;
@@ -352,12 +352,12 @@ No paths to report.
 ; 0.692 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[1]                                       ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[2]                                       ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.985      ;
 ; 0.694 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[10]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[11]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.988      ;
 ; 0.695 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[27]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[28]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.989      ;
-; 0.698 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[37]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[38]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.992      ;
 ; 0.698 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|SCKOld_Register                                              ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register.State_RISE_EDGE                               ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.991      ;
+; 0.698 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[37]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[38]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.992      ;
 ; 0.701 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[23]                    ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[24]                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.995      ;
-; 0.702 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[45]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[45]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.996      ;
 ; 0.702 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[1]                                       ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register.State_NEW_DATA                                ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.995      ;
 ; 0.702 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|SCKOld_Register                                              ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register.State_EDGE                                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.995      ;
+; 0.702 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[45]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[45]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 0.996      ;
 ; 0.703 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0|STATE_Register.STATE_START_0 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|SC_STATEMACHINE_MULT:STATEMACHINE_u0|STATE_Register.STATE_CHECK_0 ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 0.996      ;
 ; 0.711 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|SCKOld_Register                                              ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|State_Register.State_FALL_EDGE                               ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.081      ; 1.004      ;
 ; 0.712 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[3]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_multiplier_temp[4]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.006      ;
@@ -380,12 +380,6 @@ No paths to report.
 ; 0.735 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[8]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[8]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.030      ;
 ; 0.735 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[6]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[6]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.030      ;
 ; 0.735 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[5]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[5]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.030      ;
-; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[8]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[8]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
-; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[6]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[6]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
-; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[5]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[5]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
-; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[13]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[13]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.031      ;
-; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[3]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[3]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.031      ;
-; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[1]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[1]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.031      ;
 ; 0.736 ; DISTANCE_READER:SENSOR_3|counter_echo[13]                                                                    ; DISTANCE_READER:SENSOR_3|counter_echo[13]                                                                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
 ; 0.736 ; DISTANCE_READER:SENSOR_3|counter_echo[11]                                                                    ; DISTANCE_READER:SENSOR_3|counter_echo[11]                                                                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
 ; 0.736 ; DISTANCE_READER:SENSOR_3|counter_echo[10]                                                                    ; DISTANCE_READER:SENSOR_3|counter_echo[10]                                                                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
@@ -394,7 +388,13 @@ No paths to report.
 ; 0.736 ; DISTANCE_READER:SENSOR_4|counter_echo[10]                                                                    ; DISTANCE_READER:SENSOR_4|counter_echo[10]                                                                    ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
 ; 0.736 ; DISTANCE_READER:SENSOR_4|counter_echo[9]                                                                     ; DISTANCE_READER:SENSOR_4|counter_echo[9]                                                                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
 ; 0.736 ; DISTANCE_READER:SENSOR_4|counter_echo[7]                                                                     ; DISTANCE_READER:SENSOR_4|counter_echo[7]                                                                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
-; 0.737 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[13]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[13]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.031      ;
+; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[8]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[8]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
+; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[6]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[6]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
+; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[5]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w2_second|reg_working_result[5]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.030      ;
+; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[13]                     ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[13]                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.031      ;
+; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[3]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[3]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.031      ;
+; 0.736 ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[1]                      ; MOVEMENT_CONTROLLER:MOVEMENT_CONTROLLER_U0|qmults:qmult_w1_second|reg_working_result[1]                      ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.083      ; 1.031      ;
+; 0.737 ; DISTANCE_READER:SENSOR_3|counter_echo[8]                                                                     ; DISTANCE_READER:SENSOR_3|counter_echo[8]                                                                     ; BB_SYSTEM_CLOCK_50 ; BB_SYSTEM_CLOCK_50 ; 0.000        ; 0.082      ; 1.031      ;
 +-------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+--------------------+--------------------+--------------+------------+------------+
 
 
@@ -1290,7 +1290,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Mon Oct 18 19:11:09 2021
+    Info: Processing started: Wed Oct 20 09:11:07 2021
 Info: Command: quartus_sta BB_SYSTEM -c BB_SYSTEM
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 2 processors
@@ -1438,7 +1438,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 40 warnings
     Info: Peak virtual memory: 654 megabytes
-    Info: Processing ended: Mon Oct 18 19:11:13 2021
+    Info: Processing ended: Wed Oct 20 09:11:11 2021
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

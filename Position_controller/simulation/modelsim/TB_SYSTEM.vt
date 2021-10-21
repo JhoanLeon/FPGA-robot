@@ -1,0 +1,95 @@
+// Copyright (C) 2019  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "10/21/2021 10:57:49"
+                                                                                
+// Verilog Test Bench template for design : BB_SYSTEM
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg [31:0] TB_SYSTEM_CURRENTTHETA_InBus;
+reg [31:0] TB_SYSTEM_CURRENTX_InBus;
+reg [31:0] TB_SYSTEM_CURRENTY_InBus;
+reg [31:0] TB_SYSTEM_TARGETTHETA_InBus;
+reg [31:0] TB_SYSTEM_TARGETX_InBus;
+reg [31:0] TB_SYSTEM_TARGETY_InBus;
+// wires                                               
+wire [31:0]  TB_SYSTEM_VX_OutBus;
+wire [31:0]  TB_SYSTEM_VY_OutBus;
+wire [31:0]  TB_SYSTEM_WZ_OutBus;
+
+// assign statements (if any)                          
+BB_SYSTEM i1 (
+// port map - connection between master ports and signals/registers   
+	.BB_SYSTEM_CURRENTTHETA_InBus(TB_SYSTEM_CURRENTTHETA_InBus),
+	.BB_SYSTEM_CURRENTX_InBus(TB_SYSTEM_CURRENTX_InBus),
+	.BB_SYSTEM_CURRENTY_InBus(TB_SYSTEM_CURRENTY_InBus),
+	.BB_SYSTEM_TARGETTHETA_InBus(TB_SYSTEM_TARGETTHETA_InBus),
+	.BB_SYSTEM_TARGETX_InBus(TB_SYSTEM_TARGETX_InBus),
+	.BB_SYSTEM_TARGETY_InBus(TB_SYSTEM_TARGETY_InBus),
+	.BB_SYSTEM_VX_OutBus(TB_SYSTEM_VX_OutBus),
+	.BB_SYSTEM_VY_OutBus(TB_SYSTEM_VY_OutBus),
+	.BB_SYSTEM_WZ_OutBus(TB_SYSTEM_WZ_OutBus)
+);
+
+initial
+begin 
+		  TB_SYSTEM_CURRENTX_InBus <= 32'b0;
+		  TB_SYSTEM_CURRENTY_InBus <= 32'b0;
+		  TB_SYSTEM_CURRENTTHETA_InBus <= 32'b0;
+		  $display("Running testbench");
+end
+		  
+always
+	//#10 TB_SYSTEM_CURRENTY_InBus <= TB_SYSTEM_CURRENTY_InBus + 32'b0_0000000000000000_01000000000000;
+	#10 TB_SYSTEM_CURRENTX_InBus <= TB_SYSTEM_CURRENTX_InBus + 32'b0_0000000000000000_01000000000000;
+
+initial begin                                                                                                                                                                     
+	#0   TB_SYSTEM_TARGETX_InBus <= 32'b0;
+		  TB_SYSTEM_TARGETY_InBus <= 32'b0;
+		  TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;
+		  
+	#50  TB_SYSTEM_TARGETX_InBus <= 32'b0;   
+		  TB_SYSTEM_TARGETY_InBus <= 32'b0; // 32'b0_0000000000000101_000000000000000; // 5m
+		  TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;	  
+		  
+	#50 TB_SYSTEM_TARGETX_InBus <= 32'b0_0000000000000101_000000000000000; // 5m   
+		  TB_SYSTEM_TARGETY_InBus <= 32'b0; 
+		  TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;
+	
+	#1000 TB_SYSTEM_TARGETX_InBus <= 32'b0;
+		   TB_SYSTEM_TARGETY_InBus <= 32'b0;
+		   TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;
+	
+	$display("Finishing testbench"); 
+	$stop;	  
+@eachvec;                                              
+// --> end                                             
+end                                                    
+
+endmodule
+
