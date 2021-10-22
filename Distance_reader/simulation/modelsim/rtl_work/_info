@@ -7,118 +7,73 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim
+Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim
 vBB_SYSTEM
-Z1 !s110 1634185628
+!s110 1634864016
 !i10b 1
-!s100 ;eUVn@zU=@^T:[=SBQ`DZ0
-IMcQ?<N?<8Xo<ceNfVzHla3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 i>=mnJSlZ=g:M>5EHZF`]0
+IzKXOccRLLz`TXJ83HNFWe1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1634169268
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/BB_SYSTEM.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/BB_SYSTEM.v
+w1634862081
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/BB_SYSTEM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/BB_SYSTEM.v
 L0 6
-Z3 OV;L;10.5b;63
+Z2 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1634185628.000000
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/BB_SYSTEM.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/BB_SYSTEM.v|
+Z3 !s108 1634864016.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/BB_SYSTEM.v|
 !i113 1
-Z5 o-vlog01compat -work work
-!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader}
-Z6 tCvgOpt 0
+Z4 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader}
+Z5 tCvgOpt 0
 n@b@b_@s@y@s@t@e@m
 vDISTANCE_READER
-Z7 !s110 1634185629
+Z6 !s110 1634864017
 !i10b 1
-!s100 k@N2h_T0eIOggcgCG_X3E3
-IRi4:lH1[dW0Bfab4>on]f1
-R2
+!s100 X<d@:j@34f:0gg9D^VH:02
+ID5[MRUWM[bZNTX<]P9^io2
+R1
 R0
-w1634185561
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DISTANCE_READER.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DISTANCE_READER.v
+w1634863867
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/DISTANCE_READER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/DISTANCE_READER.v
 L0 14
-R3
+R2
 r1
 !s85 0
 31
-Z8 !s108 1634185629.000000
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DISTANCE_READER.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DISTANCE_READER.v|
+R3
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/DISTANCE_READER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/DISTANCE_READER.v|
 !i113 1
+R4
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS}
 R5
-Z9 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS}
-R6
 n@d@i@s@t@a@n@c@e_@r@e@a@d@e@r
-vqmults
-R1
-!i10b 1
-!s100 _L3`ZQahV6S_`[B?i6gX]1
-I4Mo7;WW7kSo1_]LdI7;on3
-R2
-R0
-w1631800197
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v
-Z10 L0 22
-R3
-r1
-!s85 0
-31
-R4
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v|
-!i113 1
-R5
-R9
-R6
-vSC_REGGENERAL
-R1
-!i10b 1
-!s100 Hi4ToV9201QFUnno1lkY@0
-IzL`AYd>@ajQLYGHDk_Q0a0
-R2
-R0
-w1631801793
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v
-R10
-R3
-r1
-!s85 0
-31
-R4
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v|
-!i113 1
-R5
-R9
-R6
-n@s@c_@r@e@g@g@e@n@e@r@a@l
 vTB_SYSTEM
-R7
+R6
 !i10b 1
-!s100 Ygj6BJ>WlFQ`Z`0f7RJVe0
-IAmgLdW?h5N8:H36g9VRBJ0
-R2
+!s100 CBecHccFdL:?cX4?O9GGg3
+IN8<WXO0oLB]ZdPc2[=Of>1
+R1
 R0
-w1634184970
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim/TB_SYSTEM.vt
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim/TB_SYSTEM.vt
+w1634863959
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim/TB_SYSTEM.vt
 L0 29
-R3
+R2
 r1
 !s85 0
 31
-R8
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim/TB_SYSTEM.vt|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim/TB_SYSTEM.vt|
+!s108 1634864017.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim/TB_SYSTEM.vt|
 !i113 1
+R4
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Distance_reader/simulation/modelsim}
 R5
-!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Distance_reader/simulation/modelsim}
-R6
 n@t@b_@s@y@s@t@e@m

@@ -5,7 +5,6 @@
 
 module BB_SYSTEM
 (
-
 	//////////// INPUTS //////////
 	BB_SYSTEM_CLOCK_50,
 	BB_SYSTEM_RESET_InLow,
@@ -19,14 +18,13 @@ module BB_SYSTEM
 	BB_SYSTEM_W2_OutBus,
 	BB_SYSTEM_W3_OutBus,
 	BB_SYSTEM_W4_OutBus
-
 );
 
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -52,7 +50,7 @@ output [N_WIDTH-1:0]	BB_SYSTEM_W4_OutBus;
 //  STRUCTURAL coding
 //=======================================================
 
-MOVEMENT_CONTROLLER u0
+MOVEMENT_CONTROLLER U0
 (
 	.MOVEMENT_CONTROLLER_CLOCK_50(BB_SYSTEM_CLOCK_50),
 	.MOVEMENT_CONTROLLER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),

@@ -24,8 +24,8 @@ module BB_SYSTEM (
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter DATAWIDTH_N = 32;
-parameter FRACTIONAL_Q = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -34,15 +34,15 @@ input BB_SYSTEM_CLOCK_50;
 input BB_SYSTEM_Reset_InLow;
 
 input BB_SYSTEM_SETBEGIN_InLow;
-input [DATAWIDTH_N-1:0] BB_SYSTEM_W1_InBus;
-input [DATAWIDTH_N-1:0] BB_SYSTEM_W2_InBus;
-input [DATAWIDTH_N-1:0] BB_SYSTEM_W3_InBus;
-input [DATAWIDTH_N-1:0] BB_SYSTEM_W4_InBus;
-input [DATAWIDTH_N-1:0] BB_SYSTEM_THETA_InBus;
+input [N_WIDTH-1:0] BB_SYSTEM_W1_InBus;
+input [N_WIDTH-1:0] BB_SYSTEM_W2_InBus;
+input [N_WIDTH-1:0] BB_SYSTEM_W3_InBus;
+input [N_WIDTH-1:0] BB_SYSTEM_W4_InBus;
+input [N_WIDTH-1:0] BB_SYSTEM_THETA_InBus;
 
-output [DATAWIDTH_N-1:0] BB_SYSTEM_POSX_OutBus;
-output [DATAWIDTH_N-1:0] BB_SYSTEM_POSY_OutBus;
-output [DATAWIDTH_N-1:0] BB_SYSTEM_THETA_OutBus;
+output [N_WIDTH-1:0] BB_SYSTEM_POSX_OutBus;
+output [N_WIDTH-1:0] BB_SYSTEM_POSY_OutBus;
+output [N_WIDTH-1:0] BB_SYSTEM_THETA_OutBus;
 
 //=======================================================
 //  STRUCTURAL coding

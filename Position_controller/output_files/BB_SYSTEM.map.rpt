@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu Oct 21 11:58:36 2021
+Thu Oct 21 20:31:17 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -20,7 +20,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  12. Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|qadd:sub_error_x
  13. Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|qadd:sub_error_y
  14. Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|qadd:sub_error_theta
- 15. Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|ERROR_CONTROL:error_mangmt
+ 15. Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|ERROR_CONTROL:error_management
  16. Post-Synthesis Netlist Statistics for Top Partition
  17. Elapsed Time Per Partition
  18. Analysis & Synthesis Messages
@@ -51,16 +51,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 21 11:58:36 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 21 20:31:17 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 740                                         ;
-;     Total combinational functions  ; 740                                         ;
+; Total logic elements               ; 267                                         ;
+;     Total combinational functions  ; 267                                         ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 288                                         ;
+; Total pins                         ; 153                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -170,62 +170,62 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+------------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                  ; Library ;
-+------------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------+---------+
-; ../RTL_COMPONENTS/qadd.v           ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v           ;         ;
-; BB_SYSTEM.v                        ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v ;         ;
-; ../RTL_COMPONENTS/POS_CONTROLLER.v ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v ;         ;
-; ../RTL_COMPONENTS/ERROR_CONTROL.v  ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ERROR_CONTROL.v  ;         ;
-+------------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                           ; Library ;
++------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; ../RTL_COMPONENTS/qadd.v           ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v           ;         ;
+; BB_SYSTEM.v                        ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v ;         ;
+; ../RTL_COMPONENTS/POS_CONTROLLER.v ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v ;         ;
+; ../RTL_COMPONENTS/ERROR_CONTROL.v  ; yes             ; User Verilog HDL File  ; C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ERROR_CONTROL.v  ;         ;
++------------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                   ;
-+---------------------------------------------+-------------------------------------------------+
-; Resource                                    ; Usage                                           ;
-+---------------------------------------------+-------------------------------------------------+
-; Estimated Total logic elements              ; 740                                             ;
-;                                             ;                                                 ;
-; Total combinational functions               ; 740                                             ;
-; Logic element usage by number of LUT inputs ;                                                 ;
-;     -- 4 input functions                    ; 324                                             ;
-;     -- 3 input functions                    ; 401                                             ;
-;     -- <=2 input functions                  ; 15                                              ;
-;                                             ;                                                 ;
-; Logic elements by mode                      ;                                                 ;
-;     -- normal mode                          ; 380                                             ;
-;     -- arithmetic mode                      ; 360                                             ;
-;                                             ;                                                 ;
-; Total registers                             ; 0                                               ;
-;     -- Dedicated logic registers            ; 0                                               ;
-;     -- I/O registers                        ; 0                                               ;
-;                                             ;                                                 ;
-; I/O pins                                    ; 288                                             ;
-;                                             ;                                                 ;
-; Embedded Multiplier 9-bit elements          ; 0                                               ;
-;                                             ;                                                 ;
-; Maximum fan-out node                        ; POS_CONTROLLER:U0|qadd:sub_error_y|LessThan0~60 ;
-; Maximum fan-out                             ; 62                                              ;
-; Total fan-out                               ; 2913                                            ;
-; Average fan-out                             ; 2.21                                            ;
-+---------------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                     ;
++---------------------------------------------+-----------------------------------+
+; Resource                                    ; Usage                             ;
++---------------------------------------------+-----------------------------------+
+; Estimated Total logic elements              ; 267                               ;
+;                                             ;                                   ;
+; Total combinational functions               ; 267                               ;
+; Logic element usage by number of LUT inputs ;                                   ;
+;     -- 4 input functions                    ; 66                                ;
+;     -- 3 input functions                    ; 188                               ;
+;     -- <=2 input functions                  ; 13                                ;
+;                                             ;                                   ;
+; Logic elements by mode                      ;                                   ;
+;     -- normal mode                          ; 87                                ;
+;     -- arithmetic mode                      ; 180                               ;
+;                                             ;                                   ;
+; Total registers                             ; 0                                 ;
+;     -- Dedicated logic registers            ; 0                                 ;
+;     -- I/O registers                        ; 0                                 ;
+;                                             ;                                   ;
+; I/O pins                                    ; 153                               ;
+;                                             ;                                   ;
+; Embedded Multiplier 9-bit elements          ; 0                                 ;
+;                                             ;                                   ;
+; Maximum fan-out node                        ; BB_SYSTEM_TARGETX_InBus[16]~input ;
+; Maximum fan-out                             ; 7                                 ;
+; Total fan-out                               ; 1014                              ;
+; Average fan-out                             ; 1.77                              ;
++---------------------------------------------+-----------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name    ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+----------------+--------------+
-; |BB_SYSTEM                         ; 740 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 288  ; 0            ; |BB_SYSTEM                                              ; BB_SYSTEM      ; work         ;
-;    |POS_CONTROLLER:U0|             ; 740 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0                            ; POS_CONTROLLER ; work         ;
-;       |ERROR_CONTROL:error_mangmt| ; 111 (111)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|ERROR_CONTROL:error_mangmt ; ERROR_CONTROL  ; work         ;
-;       |qadd:sub_error_theta|       ; 210 (210)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_theta       ; qadd           ; work         ;
-;       |qadd:sub_error_x|           ; 209 (209)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_x           ; qadd           ; work         ;
-;       |qadd:sub_error_y|           ; 210 (210)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_y           ; qadd           ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name    ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+; |BB_SYSTEM                             ; 267 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 153  ; 0            ; |BB_SYSTEM                                                  ; BB_SYSTEM      ; work         ;
+;    |POS_CONTROLLER:U0|                 ; 267 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0                                ; POS_CONTROLLER ; work         ;
+;       |ERROR_CONTROL:error_management| ; 49 (49)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|ERROR_CONTROL:error_management ; ERROR_CONTROL  ; work         ;
+;       |qadd:sub_error_theta|           ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_theta           ; qadd           ; work         ;
+;       |qadd:sub_error_x|               ; 78 (78)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_x               ; qadd           ; work         ;
+;       |qadd:sub_error_y|               ; 76 (76)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_y               ; qadd           ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -244,17 +244,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_y|c[2]                                  ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_x|c[15]                                 ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_theta|c[24]                             ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|ERROR_CONTROL:error_mangmt|ERROR_CONTROL_VY_OutBus[26] ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 31 LEs               ; 93 LEs                 ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|ERROR_CONTROL:error_mangmt|ERROR_CONTROL_WZ_OutBus[0]  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_y|c[9]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_x|c[0]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|qadd:sub_error_theta|c[15]                                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |BB_SYSTEM|POS_CONTROLLER:U0|ERROR_CONTROL:error_management|ERROR_CONTROL_WZ_OutBus[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -262,8 +261,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+--------------------------------------------------+
 ; Parameter Name ; Value ; Type                                             ;
 +----------------+-------+--------------------------------------------------+
-; N_WIDTH        ; 32    ; Signed Integer                                   ;
-; Q_WIDTH        ; 15    ; Signed Integer                                   ;
+; N_WIDTH        ; 17    ; Signed Integer                                   ;
+; Q_WIDTH        ; 8     ; Signed Integer                                   ;
 +----------------+-------+--------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -273,8 +272,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------+
 ; Parameter Name ; Value ; Type                                  ;
 +----------------+-------+---------------------------------------+
-; N_WIDTH        ; 32    ; Signed Integer                        ;
-; Q_WIDTH        ; 15    ; Signed Integer                        ;
+; N_WIDTH        ; 17    ; Signed Integer                        ;
+; Q_WIDTH        ; 8     ; Signed Integer                        ;
 +----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -284,8 +283,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                   ;
 +----------------+-------+--------------------------------------------------------+
-; Q              ; 15    ; Signed Integer                                         ;
-; N              ; 32    ; Signed Integer                                         ;
+; Q              ; 8     ; Signed Integer                                         ;
+; N              ; 17    ; Signed Integer                                         ;
 +----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -295,8 +294,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                   ;
 +----------------+-------+--------------------------------------------------------+
-; Q              ; 15    ; Signed Integer                                         ;
-; N              ; 32    ; Signed Integer                                         ;
+; Q              ; 8     ; Signed Integer                                         ;
+; N              ; 17    ; Signed Integer                                         ;
 +----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -306,23 +305,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                       ;
 +----------------+-------+------------------------------------------------------------+
-; Q              ; 15    ; Signed Integer                                             ;
-; N              ; 32    ; Signed Integer                                             ;
+; Q              ; 8     ; Signed Integer                                             ;
+; N              ; 17    ; Signed Integer                                             ;
 +----------------+-------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|ERROR_CONTROL:error_mangmt ;
-+----------------+----------------------------------+---------------------------------------+
-; Parameter Name ; Value                            ; Type                                  ;
-+----------------+----------------------------------+---------------------------------------+
-; N_WIDTH        ; 32                               ; Signed Integer                        ;
-; Q_WIDTH        ; 15                               ; Signed Integer                        ;
-; h1             ; 00000000000000000000101000000000 ; Unsigned Binary                       ;
-; h2             ; 00000000000000000000101000000000 ; Unsigned Binary                       ;
-; h3             ; 00000000000001010000000000000000 ; Unsigned Binary                       ;
-+----------------+----------------------------------+---------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: POS_CONTROLLER:U0|ERROR_CONTROL:error_management ;
++----------------+-------------------+----------------------------------------------------------+
+; Parameter Name ; Value             ; Type                                                     ;
++----------------+-------------------+----------------------------------------------------------+
+; N_WIDTH        ; 17                ; Signed Integer                                           ;
+; Q_WIDTH        ; 8                 ; Signed Integer                                           ;
+; h1             ; 00000000000010100 ; Unsigned Binary                                          ;
+; h2             ; 00000000000010100 ; Unsigned Binary                                          ;
+; h3             ; 00000101000000000 ; Unsigned Binary                                          ;
++----------------+-------------------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -331,18 +330,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 288                         ;
-; cycloneiii_lcell_comb ; 741                         ;
-;     arith             ; 360                         ;
-;         3 data inputs ; 360                         ;
-;     normal            ; 381                         ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 15                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 324                         ;
+; boundary_port         ; 153                         ;
+; cycloneiii_lcell_comb ; 270                         ;
+;     arith             ; 180                         ;
+;         3 data inputs ; 180                         ;
+;     normal            ; 90                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 66                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.00                       ;
-; Average LUT depth     ; 11.00                       ;
+; Max LUT depth         ; 10.20                       ;
+; Average LUT depth     ; 8.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -351,7 +351,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -361,110 +361,155 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Oct 21 11:58:23 2021
+    Info: Processing started: Thu Oct 21 20:31:04 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/wheel_controller.v
-    Info (12023): Found entity 1: WHEEL_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 8
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/spi_slave.v
-    Info (12023): Found entity 1: SPI_SLAVE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_SLAVE.v Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/spi_interface.v
-    Info (12023): Found entity 1: SPI_INTERFACE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SPI_INTERFACE.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_statemachine_mult.v
-    Info (12023): Found entity 1: SC_STATEMACHINE_MULT File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_MULT.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_statemachine_global_vel.v
-    Info (12023): Found entity 1: SC_STATEMACHINE_GLOBAL_VEL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_statemachine_base.v
-    Info (12023): Found entity 1: SC_STATEMACHINE_BASE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_STATEMACHINE_BASE.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_regshifter.v
-    Info (12023): Found entity 1: SC_REGSHIFTER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGSHIFTER.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_reggeneral.v
-    Info (12023): Found entity 1: SC_REGGENERAL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGGENERAL.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_regacc.v
-    Info (12023): Found entity 1: SC_REGACC File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_REGACC.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_debounce.v
-    Info (12023): Found entity 1: SC_DEBOUNCE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_DEBOUNCE.v Line: 43
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_counter_pwm.v
-    Info (12023): Found entity 1: SC_COUNTER_PWM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER_PWM.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/sc_counter.v
-    Info (12023): Found entity 1: SC_COUNTER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/SC_COUNTER.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/rpm.v
-    Info (12023): Found entity 1: RPM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/RPM.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/qmults.v
-    Info (12023): Found entity 1: qmults File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmults.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/qmult.v
-    Info (12023): Found entity 1: qmult File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qmult.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/qdiv.v
-    Info (12023): Found entity 1: qdiv File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qdiv.v Line: 26
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/qadd.v
-    Info (12023): Found entity 1: qadd File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/preescaler.v
-    Info (12023): Found entity 1: PREESCALER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PREESCALER.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/pos_calculator.v
-    Info (12023): Found entity 1: POS_CALCULATOR File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CALCULATOR.v Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/pi_control.v
-    Info (12023): Found entity 1: PI_control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/PI_control.v Line: 11
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/odom_calculator.v
-    Info (12023): Found entity 1: ODOM_CALCULATOR File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ODOM_CALCULATOR.v Line: 10
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/movement_controller.v
-    Info (12023): Found entity 1: MOVEMENT_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 19
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/modulopwm.v
-    Info (12023): Found entity 1: moduloPWM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/moduloPWM.v Line: 7
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/message_interpreter.v
-    Info (12023): Found entity 1: MESSAGE_INTERPRETER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/local_velocity.v
-    Info (12023): Found entity 1: LOCAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/LOCAL_VELOCITY.v Line: 17
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/global_velocity.v
-    Info (12023): Found entity 1: GLOBAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 19
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/encoder.v
-    Info (12023): Found entity 1: Encoder File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/Encoder.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/distance_reader.v
-    Info (12023): Found entity 1: DISTANCE_READER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DISTANCE_READER.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/direction_det.v
-    Info (12023): Found entity 1: DIRECTION_DET File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/DIRECTION_DET.v Line: 9
-Info (12021): Found 3 design units, including 3 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/core_cordic.v
-    Info (12023): Found entity 1: signed_shifter File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 162
-    Info (12023): Found entity 2: rotator File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 180
-    Info (12023): Found entity 3: cordic File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 252
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_mux81.v
-    Info (12023): Found entity 1: CC_MUX81 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX81.v Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_mux41.v
-    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v Line: 4
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_lessthan.v
-    Info (12023): Found entity 1: CC_LESSTHAN File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_greaterthan.v
-    Info (12023): Found entity 1: CC_GREATERTHAN File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_GREATERTHAN.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_equal.v
-    Info (12023): Found entity 1: CC_EQUAL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_EQUAL.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/wheel_controller.v
+    Info (12023): Found entity 1: WHEEL_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/WHEEL_CONTROLLER.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/spi_slave.v
+    Info (12023): Found entity 1: SPI_SLAVE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SPI_SLAVE.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/spi_interface.v
+    Info (12023): Found entity 1: SPI_INTERFACE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SPI_INTERFACE.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_statemachine_mult.v
+    Info (12023): Found entity 1: SC_STATEMACHINE_MULT File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_MULT.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_statemachine_global_vel.v
+    Info (12023): Found entity 1: SC_STATEMACHINE_GLOBAL_VEL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_statemachine_base.v
+    Info (12023): Found entity 1: SC_STATEMACHINE_BASE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_BASE.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_regshifter.v
+    Info (12023): Found entity 1: SC_REGSHIFTER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_REGSHIFTER.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_reggeneral.v
+    Info (12023): Found entity 1: SC_REGGENERAL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_REGGENERAL.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_regacc.v
+    Info (12023): Found entity 1: SC_REGACC File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_REGACC.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_debounce.v
+    Info (12023): Found entity 1: SC_DEBOUNCE File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_DEBOUNCE.v Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_counter_pwm.v
+    Info (12023): Found entity 1: SC_COUNTER_PWM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_COUNTER_PWM.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/sc_counter.v
+    Info (12023): Found entity 1: SC_COUNTER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_COUNTER.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/rpm.v
+    Info (12023): Found entity 1: RPM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/RPM.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/qmults.v
+    Info (12023): Found entity 1: qmults File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qmults.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/qmult.v
+    Info (12023): Found entity 1: qmult File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qmult.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/qdiv.v
+    Info (12023): Found entity 1: qdiv File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qdiv.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/qadd.v
+    Info (12023): Found entity 1: qadd File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/preescaler.v
+    Info (12023): Found entity 1: PREESCALER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/PREESCALER.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/pos_calculator.v
+    Info (12023): Found entity 1: POS_CALCULATOR File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CALCULATOR.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/pi_control.v
+    Info (12023): Found entity 1: PI_control File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/PI_control.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/odom_calculator.v
+    Info (12023): Found entity 1: ODOM_CALCULATOR File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ODOM_CALCULATOR.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/movement_controller.v
+    Info (12023): Found entity 1: MOVEMENT_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/MOVEMENT_CONTROLLER.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/modulopwm.v
+    Info (12023): Found entity 1: moduloPWM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/moduloPWM.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/message_interpreter.v
+    Info (12023): Found entity 1: MESSAGE_INTERPRETER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/MESSAGE_INTERPRETER.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/local_velocity.v
+    Info (12023): Found entity 1: LOCAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/LOCAL_VELOCITY.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/global_velocity.v
+    Info (12023): Found entity 1: GLOBAL_VELOCITY File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/GLOBAL_VELOCITY.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/encoder.v
+    Info (12023): Found entity 1: Encoder File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/Encoder.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/distance_reader.v
+    Info (12023): Found entity 1: DISTANCE_READER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/DISTANCE_READER.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/direction_det.v
+    Info (12023): Found entity 1: DIRECTION_DET File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/DIRECTION_DET.v Line: 9
+Info (12021): Found 3 design units, including 3 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/core_cordic.v
+    Info (12023): Found entity 1: signed_shifter File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/core_cordic.v Line: 162
+    Info (12023): Found entity 2: rotator File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/core_cordic.v Line: 180
+    Info (12023): Found entity 3: cordic File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/core_cordic.v Line: 252
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/cc_mux81.v
+    Info (12023): Found entity 1: CC_MUX81 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/CC_MUX81.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/cc_mux41.v
+    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/CC_MUX41.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/cc_lessthan.v
+    Info (12023): Found entity 1: CC_LESSTHAN File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/CC_LESSTHAN.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/cc_greaterthan.v
+    Info (12023): Found entity 1: CC_GREATERTHAN File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/CC_GREATERTHAN.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/cc_equal.v
+    Info (12023): Found entity 1: CC_EQUAL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/CC_EQUAL.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file bb_system.v
-    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/pos_controller.v
-    Info (12023): Found entity 1: POS_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v Line: 12
-Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/error_control.v
-    Info (12023): Found entity 1: ERROR_CONTROL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ERROR_CONTROL.v Line: 5
+    Info (12023): Found entity 1: BB_SYSTEM File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/pos_controller.v
+    Info (12023): Found entity 1: POS_CONTROLLER File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot-copia17b/rtl_components/error_control.v
+    Info (12023): Found entity 1: ERROR_CONTROL File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ERROR_CONTROL.v Line: 5
 Info (12127): Elaborating entity "BB_SYSTEM" for the top level hierarchy
-Info (12128): Elaborating entity "POS_CONTROLLER" for hierarchy "POS_CONTROLLER:U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v Line: 69
-Info (12128): Elaborating entity "qadd" for hierarchy "POS_CONTROLLER:U0|qadd:sub_error_x" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v Line: 67
-Info (12128): Elaborating entity "ERROR_CONTROL" for hierarchy "POS_CONTROLLER:U0|ERROR_CONTROL:error_mangmt" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v Line: 97
+Info (12128): Elaborating entity "POS_CONTROLLER" for hierarchy "POS_CONTROLLER:U0" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 68
+Info (12128): Elaborating entity "qadd" for hierarchy "POS_CONTROLLER:U0|qadd:sub_error_x" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v Line: 66
+Info (12128): Elaborating entity "ERROR_CONTROL" for hierarchy "POS_CONTROLLER:U0|ERROR_CONTROL:error_management" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v Line: 96
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[0]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[1]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[2]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[3]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[4]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[7]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[8]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[9]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[10]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[11]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[12]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[13]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[14]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[15]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VX_OutBus[16]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 41
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[0]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[1]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[2]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[3]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[4]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[7]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[8]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[9]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[10]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[11]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[12]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[13]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[14]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_VY_OutBus[15]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 42
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[0]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[1]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[2]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[3]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[4]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[7]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[8]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[9]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[10]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[11]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[12]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[13]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[14]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[15]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
+    Warning (13410): Pin "BB_SYSTEM_WZ_OutBus[16]" is stuck at GND File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v Line: 43
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/output_files/BB_SYSTEM.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/output_files/BB_SYSTEM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1028 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 192 input pins
-    Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 740 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 629 megabytes
-    Info: Processing ended: Thu Oct 21 11:58:36 2021
+Info (21057): Implemented 420 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 102 input pins
+    Info (21059): Implemented 51 output pins
+    Info (21061): Implemented 267 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 624 megabytes
+    Info: Processing ended: Thu Oct 21 20:31:17 2021
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/output_files/BB_SYSTEM.map.smsg.
+The suppressed messages can be found in C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/output_files/BB_SYSTEM.map.smsg.
 
 

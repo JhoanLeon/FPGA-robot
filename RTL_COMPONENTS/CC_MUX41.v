@@ -1,7 +1,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_MUX41
+module CC_MUX41 #(parameter N_WIDTH = 17)
 (
 //////////// OUTPUTS //////////
 	CC_MUX41_x_OutBus,
@@ -34,33 +34,33 @@ module CC_MUX41
 //=======================================================
 //  PORT declarations
 //=======================================================
-output [31:0]	CC_MUX41_x_OutBus;
-output [31:0]	CC_MUX41_y_OutBus;
-output [31:0]	CC_MUX41_z_OutBus;
+output [N_WIDTH-1:0]	CC_MUX41_x_OutBus;
+output [N_WIDTH-1:0]	CC_MUX41_y_OutBus;
+output [N_WIDTH-1:0]	CC_MUX41_z_OutBus;
 
-input [31:0]	CC_MUX41_x1_InBus;
-input [31:0]	CC_MUX41_x2_InBus;
-input [31:0]	CC_MUX41_x3_InBus;
-input [31:0]	CC_MUX41_x4_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_x1_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_x2_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_x3_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_x4_InBus;
 	
-input [31:0]	CC_MUX41_y1_InBus;
-input [31:0]	CC_MUX41_y2_InBus;
-input [31:0]	CC_MUX41_y3_InBus;
-input [31:0]	CC_MUX41_y4_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_y1_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_y2_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_y3_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_y4_InBus;
 
-input [31:0]	CC_MUX41_z1_InBus;
-input [31:0]	CC_MUX41_z2_InBus;
-input [31:0]	CC_MUX41_z3_InBus;
-input [31:0]	CC_MUX41_z4_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_z1_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_z2_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_z3_InBus;
+input [N_WIDTH-1:0]	CC_MUX41_z4_InBus;
 	
 input [1:0]		CC_MUX41_select_InBus;
 
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [31:0] x;
-reg [31:0] y;
-reg [31:0] z;
+reg [N_WIDTH-1:0] x;
+reg [N_WIDTH-1:0] y;
+reg [N_WIDTH-1:0] z;
 
 //=======================================================
 //  Structural coding

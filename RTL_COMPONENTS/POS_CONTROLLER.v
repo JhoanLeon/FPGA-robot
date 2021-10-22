@@ -2,7 +2,7 @@
 Created by: Jhoan Esteban Leon - je.leon.e@outlook.com
 with libraries from https://github.com/freecores/verilog_fixed_point_math_library
 
-inputs and output are in fixed point 32b notation U(32,15) U(N,Q)
+inputs and output are in fixed point 17b notation U(17,8) U(N,Q)
 */
 
 //=======================================================
@@ -24,14 +24,13 @@ module POS_CONTROLLER
 	POS_CONTROLLER_VX_OutBus,
 	POS_CONTROLLER_VY_OutBus,
 	POS_CONTROLLER_WZ_OutBus
-
 );
 
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -83,7 +82,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) sub_error_theta
 );
 
 
-ERROR_CONTROL error_mangmt
+ERROR_CONTROL error_management
 (
 	//////////// INPUTS //////////
 	.ERROR_CONTROL_X_InBus(error_pos_x),

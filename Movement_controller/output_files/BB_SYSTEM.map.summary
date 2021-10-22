@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Oct 21 12:07:07 2021
+Analysis & Synthesis Status : Successful - Thu Oct 21 20:19:19 2021
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : BB_SYSTEM
 Top-level Entity Name : BB_SYSTEM
 Family : Cyclone IV E
-Total logic elements : 1,375
-    Total combinational functions : 1,182
-    Dedicated logic registers : 677
-Total registers : 677
-Total pins : 226
+Total logic elements : 744
+    Total combinational functions : 641
+    Dedicated logic registers : 351
+Total registers : 351
+Total pins : 121
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

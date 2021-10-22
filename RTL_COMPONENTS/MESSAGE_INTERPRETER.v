@@ -48,8 +48,8 @@ module MESSAGE_INTERPRETER
 //  PARAMETER declarations
 //=======================================================
 parameter INT_WIDTH = 8;
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 localparam waypoint1 = 8'd1;
 localparam waypoint2 = 8'd2;
@@ -231,7 +231,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSX_InBus[18:11]; // [22:15] data 0000_0000 
+			next_data = MESSAGE_INTERPRETER_POSX_InBus[11:4]; // data x_xxxx0000_0000xxxx 
 		end	
 		
 	y_i: // '21' for y_i
@@ -239,7 +239,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSY_InBus[18:11]; // data
+			next_data = MESSAGE_INTERPRETER_POSY_InBus[11:4]; // data
 		end	
 		
 	theta_i: // '22' for theta_i
@@ -247,7 +247,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_THETA_InBus[18:11]; // data
+			next_data = MESSAGE_INTERPRETER_THETA_InBus[11:4]; // data
 		end	
 
 		
@@ -289,7 +289,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST1_InBus[22:15]; // data, 8b u_int
+			next_data = MESSAGE_INTERPRETER_DIST1_InBus[15:8]; // data, 8b u_int
 		end			
 
 	d_2: // '41' for dist_2
@@ -297,7 +297,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST2_InBus[22:15]; // data, 8b u_int
+			next_data = MESSAGE_INTERPRETER_DIST2_InBus[15:8]; // data, 8b u_int
 		end	
 
 	d_3: // '42' for dist_3
@@ -305,7 +305,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST3_InBus[22:15]; // data, 8b u_int
+			next_data = MESSAGE_INTERPRETER_DIST3_InBus[15:8]; // data, 8b u_int
 		end	
 
 	d_4: // '43' for dist_4
@@ -313,7 +313,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_DIST4_InBus[22:15]; // data, 8b u_int
+			next_data = MESSAGE_INTERPRETER_DIST4_InBus[15:8]; // data, 8b u_int
 		end			
 		
 		
@@ -330,7 +330,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUX_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_IMUX_InBus[15:8]; // data, 8b u_int
 		end			
 	
 	accel_y: // '60' for accel_y
@@ -338,7 +338,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUY_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_IMUY_InBus[15:8]; // data
 		end	
 	
 	gyro_z: // '60' for gyro_z
@@ -346,7 +346,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUZ_InBus[22:15]; // data
+			next_data = MESSAGE_INTERPRETER_IMUZ_InBus[15:8]; // data
 		end	
 	
 	default:
@@ -388,7 +388,7 @@ begin
 			current_data <= next_data;
 		end
 end
-	
+
 
 assign MESSAGE_INTERPRETER_WAYSELECT_OutBus = current_select;
 assign MESSAGE_INTERPRETER_STOPSIGNAL_OutLow = current_stop;

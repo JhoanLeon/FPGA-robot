@@ -45,8 +45,8 @@ module BB_SYSTEM
 //  PARAMETER declarations
 //=======================================================
 parameter INT_WIDTH = 8;
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -92,7 +92,7 @@ output	BB_SYSTEM_BEGINSIGNAL_OutLow;
 //  STRUCTURAL coding
 //=======================================================
 
-SPI_INTERFACE SPI_INTERFACE_U0
+SPI_INTERFACE U0
 (	
 	//////////// INPUTS //////////
 	.SPI_INTERFACE_CLOCK_50(BB_SYSTEM_CLOCK_50),

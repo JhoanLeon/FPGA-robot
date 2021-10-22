@@ -7,71 +7,71 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim
+Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim
 vBB_SYSTEM
-Z1 !s110 1634835069
+Z1 !s110 1634866764
 !i10b 1
-!s100 7Q^OQNQBRgkQH[[zP0QI81
-I1oR<GXb;_W==NXNVAgF_b2
+!s100 `GE][W^h=NLz<Web0UfL13
+I6lEVMdQI?RfglUMnO9dz93
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1634831381
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v
+w1634865604
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v
 L0 6
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1634835069.000000
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/BB_SYSTEM.v|
+Z4 !s108 1634866764.000000
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/BB_SYSTEM.v|
 !i113 1
 Z5 o-vlog01compat -work work
-!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller}
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller}
 Z6 tCvgOpt 0
 n@b@b_@s@y@s@t@e@m
 vERROR_CONTROL
 R1
 !i10b 1
-!s100 PGYVk8D:FkIdBh]`:8XlC1
-IEO5bY5PUMC1Ll=gYSojHB1
+!s100 78Ig@E_iJ5d4EIOO6nGFE3
+I5EBJ1S@OSHVOYMUgJNlde3
 R2
 R0
-w1634834336
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ERROR_CONTROL.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ERROR_CONTROL.v
+w1634866260
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ERROR_CONTROL.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ERROR_CONTROL.v
 L0 5
 R3
 r1
 !s85 0
 31
 R4
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ERROR_CONTROL.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/ERROR_CONTROL.v|
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ERROR_CONTROL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ERROR_CONTROL.v|
 !i113 1
 R5
-Z7 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS}
+Z7 !s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS}
 R6
 n@e@r@r@o@r_@c@o@n@t@r@o@l
 vPOS_CONTROLLER
 R1
 !i10b 1
-!s100 _RFBYDgNY6:V:kI3F6PBF2
-I9_agXcKG9OBWmo`4j`1]k2
+!s100 _dlXPjokoeK`A<nK1>cdT2
+I@>o8HN@ghenD_20RSZm?E1
 R2
 R0
-w1634831393
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v
+w1634865718
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v
 L0 12
 R3
 r1
 !s85 0
 31
 R4
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/POS_CONTROLLER.v|
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/POS_CONTROLLER.v|
 !i113 1
 R5
 R7
@@ -81,20 +81,20 @@ vqadd
 R1
 !i10b 1
 !s100 MlCg20Djel?kKV;m`hgY`0
-ICdIFi59`7JIgoLkVO;6a81
+If5A@ZhA9k]Yi@o8dZ59M]2
 R2
 R0
 w1634758986
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v
 L0 22
 R3
 r1
 !s85 0
 31
 R4
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/qadd.v|
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v|
 !i113 1
 R5
 R7
@@ -102,23 +102,23 @@ R6
 vTB_SYSTEM
 R1
 !i10b 1
-!s100 ;5aIc0AmeZEFlb1R2j4@V0
-I5TGP;Ue^gcRgSW`hO_S1c3
+!s100 VlCUcSBJEAg879I081?L43
+I=B=oO85hNNP?3G_]if1b13
 R2
 R0
-w1634835049
-8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim/TB_SYSTEM.vt
-FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim/TB_SYSTEM.vt
+w1634866751
+8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim/TB_SYSTEM.vt
+FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim/TB_SYSTEM.vt
 L0 29
 R3
 r1
 !s85 0
 31
 R4
-!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim/TB_SYSTEM.vt|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim/TB_SYSTEM.vt|
+!s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim/TB_SYSTEM.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim/TB_SYSTEM.vt|
 !i113 1
 R5
-!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Position_controller/simulation/modelsim}
+!s92 -vlog01compat -work work {+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Position_controller/simulation/modelsim}
 R6
 n@t@b_@s@y@s@t@e@m

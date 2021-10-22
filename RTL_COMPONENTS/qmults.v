@@ -75,13 +75,13 @@ module qmults#(
 			if (reg_multiplicand_temp[reg_count] == 1'b1)								//	if the appropriate multiplicand bit is 1
 				reg_working_result <= reg_working_result + reg_multiplier_temp;	//		then add the temp multiplier
 	
-			reg_multiplier_temp <= reg_multiplier_temp << 1;						//	Do a left-shift on the multiplier
-			reg_count <= reg_count + 1;													//	Increment the count
+			reg_multiplier_temp <= reg_multiplier_temp << 1'b1;						//	Do a left-shift on the multiplier
+			reg_count <= reg_count + 1'b1;													//	Increment the count
 
 			//stop condition
 			if(reg_count == N) begin
 				reg_done <= 1'b1;										//	If we're done, it's time to tell the calling process
-				if (reg_working_result[2*N-2:N-1+Q] > 0)			// Check for an overflow
+				if (reg_working_result[2*N-2:N-1+Q] > 1'b0)			// Check for an overflow
 					reg_overflow <= 1'b1;
 //			else
 //				reg_count <= reg_count + 1;													//	Increment the count

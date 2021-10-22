@@ -72,66 +72,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_W1_OutBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W1_OutBus[31]",
-					"strict" : false
-				},
-				{
 					"name" : "BB_SYSTEM_W2_OutBus[0]",
 					"strict" : false
 				},
@@ -197,66 +137,6 @@
 				},
 				{
 					"name" : "BB_SYSTEM_W2_OutBus[16]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W2_OutBus[31]",
 					"strict" : false
 				},
 				{
@@ -328,66 +208,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_W3_OutBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W3_OutBus[31]",
-					"strict" : false
-				},
-				{
 					"name" : "BB_SYSTEM_W4_OutBus[0]",
 					"strict" : false
 				},
@@ -453,66 +273,6 @@
 				},
 				{
 					"name" : "BB_SYSTEM_W4_OutBus[16]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_W4_OutBus[31]",
 					"strict" : false
 				},
 				{
@@ -652,151 +412,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[16]",
-					"strict" : false
-				},
-				{
 					"name" : "BB_SYSTEM_TARGETVX_InBus[16]",
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[17]",
+					"name" : "BB_SYSTEM_TARGETVY_InBus[16]",
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVX_InBus[31]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETVY_InBus[31]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[31]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[23]",
+					"name" : "BB_SYSTEM_TARGETWZ_InBus[16]",
 					"strict" : false
 				},
 				{
@@ -861,50 +485,6 @@
 				},
 				{
 					"name" : "BB_SYSTEM_TARGETWZ_InBus[15]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[16]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[30]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_TARGETWZ_InBus[27]",
 					"strict" : false
 				}
 			]

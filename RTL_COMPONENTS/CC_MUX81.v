@@ -2,7 +2,7 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module CC_MUX81
+module CC_MUX81 #(parameter N_WIDTH = 17)
 (
 //////////// OUTPUTS //////////
 	CC_MUX81_x_OutBus,
@@ -47,45 +47,45 @@ module CC_MUX81
 //=======================================================
 //  PORT declarations
 //=======================================================
-output [31:0]	CC_MUX81_x_OutBus;
-output [31:0]	CC_MUX81_y_OutBus;
-output [31:0]	CC_MUX81_z_OutBus;
+output [N_WIDTH-1:0]	CC_MUX81_x_OutBus;
+output [N_WIDTH-1:0]	CC_MUX81_y_OutBus;
+output [N_WIDTH-1:0]	CC_MUX81_z_OutBus;
 
-input [31:0]	CC_MUX81_x1_InBus;
-input [31:0]	CC_MUX81_x2_InBus;
-input [31:0]	CC_MUX81_x3_InBus;
-input [31:0]	CC_MUX81_x4_InBus;
-input [31:0]	CC_MUX81_x5_InBus;
-input [31:0]	CC_MUX81_x6_InBus;
-input [31:0]	CC_MUX81_x7_InBus;
-input [31:0]	CC_MUX81_x8_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x1_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x2_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x3_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x4_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x5_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x6_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x7_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_x8_InBus;
 	
-input [31:0]	CC_MUX81_y1_InBus;
-input [31:0]	CC_MUX81_y2_InBus;
-input [31:0]	CC_MUX81_y3_InBus;
-input [31:0]	CC_MUX81_y4_InBus;
-input [31:0]	CC_MUX81_y5_InBus;
-input [31:0]	CC_MUX81_y6_InBus;
-input [31:0]	CC_MUX81_y7_InBus;
-input [31:0]	CC_MUX81_y8_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y1_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y2_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y3_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y4_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y5_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y6_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y7_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_y8_InBus;
 
-input [31:0]	CC_MUX81_z1_InBus;
-input [31:0]	CC_MUX81_z2_InBus;
-input [31:0]	CC_MUX81_z3_InBus;
-input [31:0]	CC_MUX81_z4_InBus;
-input [31:0]	CC_MUX81_z5_InBus;
-input [31:0]	CC_MUX81_z6_InBus;
-input [31:0]	CC_MUX81_z7_InBus;
-input [31:0]	CC_MUX81_z8_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z1_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z2_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z3_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z4_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z5_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z6_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z7_InBus;
+input [N_WIDTH-1:0]	CC_MUX81_z8_InBus;
 	
 input [2:0]		CC_MUX81_select_InBus;
 
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [31:0] x;
-reg [31:0] y;
-reg [31:0] z;
+reg [N_WIDTH-1:0] x;
+reg [N_WIDTH-1:0] y;
+reg [N_WIDTH-1:0] z;
 
 //=======================================================
 //  Structural coding

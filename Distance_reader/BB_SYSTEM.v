@@ -21,8 +21,8 @@ module BB_SYSTEM
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -32,7 +32,7 @@ input	BB_SYSTEM_RESET_InLow;
 	
 input	BB_SYSTEM_ECHO_In;
 
-output	BB_SYSTEM_TRIGGER_Out;
+output BB_SYSTEM_TRIGGER_Out;
 output [N_WIDTH-1:0]	BB_SYSTEM_DISTANCE_OutBus;
 
 //=======================================================

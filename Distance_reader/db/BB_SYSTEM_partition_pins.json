@@ -76,67 +76,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[17]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[18]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[19]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[20]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[21]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[22]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[23]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[24]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[25]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[26]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[27]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[28]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[29]",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_DISTANCE_OutBus[30]",
+					"name" : "BB_SYSTEM_RESET_InLow",
 					"strict" : false
 				},
 				{
 					"name" : "BB_SYSTEM_CLOCK_50",
-					"strict" : false
-				},
-				{
-					"name" : "BB_SYSTEM_RESET_InLow",
 					"strict" : false
 				},
 				{

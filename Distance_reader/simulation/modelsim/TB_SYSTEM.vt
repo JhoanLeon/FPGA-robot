@@ -39,7 +39,7 @@ reg TB_SYSTEM_CLOCK_50;
 reg TB_SYSTEM_ECHO_In;
 reg TB_SYSTEM_RESET_InLow;
 // wires                                               
-wire [31:0]  TB_SYSTEM_DISTANCE_OutBus;
+wire [16:0]  TB_SYSTEM_DISTANCE_OutBus;
 wire TB_SYSTEM_TRIGGER_Out;
 
 // assign statements (if any)                          

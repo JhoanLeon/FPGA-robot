@@ -9,7 +9,7 @@ vx_global = vx_local*cos(theta) - vy_local*sin(theta)
 vy_global = vx_local*sin(theta) + vy_local*cos(theta)
 wz_global = wz_local
 
-inputs and output results are all in [m/s] [rad/s] and fixed point 32b notation U(32,15) U(N,Q)
+inputs and output results are all in [m/s] [rad/s] and fixed point 17b notation U(17,8) U(N,Q)
 */
 
 //=======================================================
@@ -17,11 +17,6 @@ inputs and output results are all in [m/s] [rad/s] and fixed point 32b notation 
 //=======================================================
 
 module GLOBAL_VELOCITY 
-#(
-	//Parameterized values
-	parameter N_WIDTH = 32,
-	parameter Q_WIDTH = 15
-) 
 (
 	//////////// INPUTS //////////
 	GLOBAL_VELOCITY_CLOCK_50,
@@ -45,6 +40,9 @@ module GLOBAL_VELOCITY
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
+
 localparam THETA_BITS = 17;
 localparam XY_BITS_WIDTH = 17;
 localparam CORDIC_CTE = 17'd19899;
@@ -101,8 +99,8 @@ wire [N_WIDTH-1:0] theta_cordic;
 //  STRUCTURAL coding
 //=======================================================
 
-SC_STATEMACHINE_GLOBAL_VEL STATEMACHINE_u0 (
-
+SC_STATEMACHINE_GLOBAL_VEL STATEMACHINE_u0 
+(
 	.SC_STATEMACHINE_GLOBAL_VEL_CLOCK_50(GLOBAL_VELOCITY_CLOCK_50),
 	.SC_STATEMACHINE_GLOBAL_VEL_RESET_InHigh(GLOBAL_VELOCITY_RESET_InHigh),
 	.SC_STATEMACHINE_GLOBAL_VEL_ready_InHigh(GLOBAL_VELOCITY_READY_In),
@@ -113,7 +111,6 @@ SC_STATEMACHINE_GLOBAL_VEL STATEMACHINE_u0 (
 	.SC_STATEMACHINE_GLOBAL_VEL_validin_cordic_Out(valid_input_cordic),
 	.SC_STATEMACHINE_GLOBAL_VEL_start_multiply_Out(start_multiply),
 	.SC_STATEMACHINE_GLOBAL_VEL_done_Out(GLOBAL_VELOCITY_DONE_Out)
-	
 );	
 
 

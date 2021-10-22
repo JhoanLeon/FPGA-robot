@@ -8,9 +8,8 @@ w2 = (1/r)*(vx + vy + k1*wz)
 w3 = (1/r)*(vx + vy - k1*wz)
 w4 = (1/r)*(vx - vy + k1*wz)
 
-inputs and output results are all in [m/s] [rad/s] and fixed point 32b notation U(32,15) U(N,Q)
+inputs and output results are all in [m/s] [rad/s] and fixed point 17b notation U(17,15)
 */
-
 
 //=======================================================
 //  MODULE Definition
@@ -18,7 +17,6 @@ inputs and output results are all in [m/s] [rad/s] and fixed point 32b notation 
 
 module MOVEMENT_CONTROLLER
 (
-
 	//////////// INPUTS //////////
 	MOVEMENT_CONTROLLER_CLOCK_50,
 	MOVEMENT_CONTROLLER_RESET_InHigh,
@@ -32,14 +30,13 @@ module MOVEMENT_CONTROLLER
 	MOVEMENT_CONTROLLER_W2_OutBus,
 	MOVEMENT_CONTROLLER_W3_OutBus,
 	MOVEMENT_CONTROLLER_W4_OutBus
-
 );
 
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -134,7 +131,7 @@ SC_STATEMACHINE_MULT  STATEMACHINE_u0
 qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w1_first // vx - vy
 (
    .a(MOVEMENT_CONTROLLER_TARGETVX_InBus),
-   .b({~MOVEMENT_CONTROLLER_TARGETVY_InBus[31], MOVEMENT_CONTROLLER_TARGETVY_InBus[30:0]}),
+   .b({~MOVEMENT_CONTROLLER_TARGETVY_InBus[N_WIDTH-1], MOVEMENT_CONTROLLER_TARGETVY_InBus[N_WIDTH-2:0]}),
    .c(w1_first_result)
 );
 
@@ -142,7 +139,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w1_first // vx - vy
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w1_first // k1*wz
 (
 	.i_multiplicand(MOVEMENT_CONTROLLER_TARGETWZ_InBus),
-	.i_multiplier(32'b0_0000000000000000_001010100011111), // k1 = 0.165000
+	.i_multiplier(17'b0_00000000_00101010), // k1 = 0.1650 (0.1640)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w1_second_result),
@@ -165,7 +162,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) w1_reg_u0 // reg(k1*wz)
 qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w1_second // vx - vy - k1*wz 
 (
    .a(w1_first_result),
-   .b({~w1_reg_second_result[31], w1_reg_second_result[30:0]}),
+   .b({~w1_reg_second_result[N_WIDTH-1], w1_reg_second_result[N_WIDTH-2:0]}),
    .c(w1_third_result)
 );
 
@@ -173,7 +170,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w1_second // vx - vy - k1*wz
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w1_second // (vx - vy - k1*wz) * 1/r
 (
 	.i_multiplicand(w1_third_result),
-	.i_multiplier(32'b0_0000000000011011_100101100001001), // 1/r = 27.586210
+	.i_multiplier(17'b0_00011011_10010110), // 1/r = 27.5862 (27.5859)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w1_fourth_result),
@@ -207,7 +204,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w2_first // vx + vy
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w2_first // k1*wz
 (
 	.i_multiplicand(MOVEMENT_CONTROLLER_TARGETWZ_InBus),
-	.i_multiplier(32'b0_0000000000000000_001010100011111), // k1 = 0.165000
+	.i_multiplier(17'b0_00000000_00101010), // k1 = 0.1650 (0.1640)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w2_second_result),
@@ -238,7 +235,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w2_second // vx + vy + k1*wz
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w2_second // (vx + vy + k1*wz) * 1/r
 (
 	.i_multiplicand(w2_third_result),
-	.i_multiplier(32'b0_0000000000011011_100101100001001), // 1/r = 27.586210
+	.i_multiplier(17'b0_00011011_10010110), // 1/r = 27.5862 (27.5859)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w2_fourth_result),
@@ -272,7 +269,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w3_first // vx + vy
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w3_first // k1*wz
 (
 	.i_multiplicand(MOVEMENT_CONTROLLER_TARGETWZ_InBus),
-	.i_multiplier(32'b0_0000000000000000_001010100011111), // k1 = 0.165000
+	.i_multiplier(17'b0_00000000_00101010), // k1 = 0.1650 (0.1640)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w3_second_result),
@@ -295,7 +292,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) w3_reg_u0 // reg[k1*wz]
 qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w3_second // vx + vy - k1*wz 
 (
    .a(w3_first_result),
-   .b({~w3_reg_second_result[31], w3_reg_second_result[30:0]}),
+   .b({~w3_reg_second_result[N_WIDTH-1], w3_reg_second_result[N_WIDTH-2:0]}),
    .c(w3_third_result)
 );
 
@@ -303,7 +300,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w3_second // vx + vy - k1*wz
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w3_second // (vx + vy - k1*wz) * 1/r
 (
 	.i_multiplicand(w3_third_result),
-	.i_multiplier(32'b0_0000000000011011_100101100001001), // 1/r = 27.586210
+	.i_multiplier(17'b0_00011011_10010110), // 1/r = 27.5862 (27.5859)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w3_fourth_result),
@@ -329,7 +326,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) w3_reg_u1 // reg[(vx + vy - k1*w
 qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w4_first // vx - vy
 (
    .a(MOVEMENT_CONTROLLER_TARGETVX_InBus),
-   .b({~MOVEMENT_CONTROLLER_TARGETVY_InBus[31], MOVEMENT_CONTROLLER_TARGETVY_InBus[30:0]}),
+   .b({~MOVEMENT_CONTROLLER_TARGETVY_InBus[N_WIDTH-1], MOVEMENT_CONTROLLER_TARGETVY_InBus[N_WIDTH-2:0]}),
    .c(w4_first_result)
 );
 
@@ -337,7 +334,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w4_first // vx - vy
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w4_first // k1*wz
 (
 	.i_multiplicand(MOVEMENT_CONTROLLER_TARGETWZ_InBus),
-	.i_multiplier(32'b0_0000000000000000_001010100011111), // k1 = 0.165000
+	.i_multiplier(17'b0_00000000_00101010), // k1 = 0.1650 (0.1640)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w4_second_result),
@@ -368,7 +365,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) qadd_w4_second // vx - vy + k1*wz
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) qmult_w4_second // (vx - vy + k1*wz) * 1/r
 (
 	.i_multiplicand(w4_third_result),
-	.i_multiplier(32'b0_0000000000011011_100101100001001), // 1/r = 27.586210
+	.i_multiplier(17'b0_00011011_10010110), // 1/r = 27.5862 (27.5859)
 	.i_start(start_multiplications),
 	.i_clk(MOVEMENT_CONTROLLER_CLOCK_50),
 	.o_result_out(w4_fourth_result),

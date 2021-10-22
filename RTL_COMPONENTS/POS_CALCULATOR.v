@@ -4,7 +4,6 @@
 
 module POS_CALCULATOR 
 (
-
 	//////////// INPUTS //////////
 	POS_CALCULATOR_CLOCK_50,
 	POS_CALCULATOR_Reset_InHigh,
@@ -18,14 +17,13 @@ module POS_CALCULATOR
 	POS_CALCULATOR_POSX_OutBus, // [m] fixed point 32b
 	POS_CALCULATOR_POSY_OutBus, // [m] fixed point 32b
 	POS_CALCULATOR_THETA_OutBus // [deg] fixed point 32b
-
 );
 
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter DATAWIDTH_N = 32;
-parameter FRACTIONAL_Q = 15;
+parameter N_WIDTH = 32;
+parameter Q_WIDTH = 15;
 
 //=======================================================
 //  PORT declarations
@@ -34,13 +32,13 @@ input POS_CALCULATOR_CLOCK_50;
 input POS_CALCULATOR_Reset_InHigh;
 
 input POS_CALCULATOR_SETBEGIN_InLow;
-input [DATAWIDTH_N-1:0]	POS_CALCULATOR_VX_InBus;
-input [DATAWIDTH_N-1:0]	POS_CALCULATOR_VY_InBus;
-input [DATAWIDTH_N-1:0]	POS_CALCULATOR_WZ_InBus;
+input [N_WIDTH-1:0]	POS_CALCULATOR_VX_InBus;
+input [N_WIDTH-1:0]	POS_CALCULATOR_VY_InBus;
+input [N_WIDTH-1:0]	POS_CALCULATOR_WZ_InBus;
 
-output [DATAWIDTH_N-1:0]	POS_CALCULATOR_POSX_OutBus;
-output [DATAWIDTH_N-1:0]	POS_CALCULATOR_POSY_OutBus;
-output [DATAWIDTH_N-1:0]	POS_CALCULATOR_THETA_OutBus;
+output [N_WIDTH-1:0]	POS_CALCULATOR_POSX_OutBus;
+output [N_WIDTH-1:0]	POS_CALCULATOR_POSY_OutBus;
+output [N_WIDTH-1:0]	POS_CALCULATOR_THETA_OutBus;
 
 //=======================================================
 //  REG/WIRE declarations
@@ -52,25 +50,25 @@ wire load_flag;
 
 wire mult_start_flag;
 
-wire [DATAWIDTH_N-1:0] result_mult_vx;
+wire [N_WIDTH-1:0] result_mult_vx;
 wire flag_complete_mult_vx;
 
-wire [DATAWIDTH_N-1:0] reg_mult_vx;
-wire [DATAWIDTH_N-1:0] sum_vx;
+wire [N_WIDTH-1:0] reg_mult_vx;
+wire [N_WIDTH-1:0] sum_vx;
 
 
-wire [DATAWIDTH_N-1:0] result_mult_vy;
+wire [N_WIDTH-1:0] result_mult_vy;
 wire flag_complete_mult_vy;
 
-wire [DATAWIDTH_N-1:0] reg_mult_vy;
-wire [DATAWIDTH_N-1:0] sum_vy;
+wire [N_WIDTH-1:0] reg_mult_vy;
+wire [N_WIDTH-1:0] sum_vy;
 
 
-wire [DATAWIDTH_N-1:0] result_mult_vz;
+wire [N_WIDTH-1:0] result_mult_vz;
 wire flag_complete_mult_vz;
 
-wire [DATAWIDTH_N-1:0] reg_mult_vz;
-wire [DATAWIDTH_N-1:0] sum_vz;
+wire [N_WIDTH-1:0] reg_mult_vz;
+wire [N_WIDTH-1:0] sum_vz;
 
 //=======================================================
 //  STRUCTURAL coding
@@ -103,10 +101,10 @@ SC_STATEMACHINE_MULT mult_machine
 
 //////////////////////////////////////////// FOR POSX
 
-qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vx
+qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vx
 (
 	.i_multiplicand(POS_CALCULATOR_VX_InBus),
-	.i_multiplier(32'b0_0000000000000000_000000101001000), // 0.010 s = 10ms
+	.i_multiplier(17'b0_00000000_00000011), // 0.0100 s = 10ms (0.0117)
 	.i_start(mult_start_flag),
 	.i_clk(POS_CALCULATOR_CLOCK_50),
 	.o_result_out(result_mult_vx),
@@ -115,7 +113,7 @@ qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vx
 );
 
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) register_mult_vx
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) register_mult_vx
 (
 	.SC_REGGENERAL_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(POS_CALCULATOR_Reset_InHigh), 
@@ -125,7 +123,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) register_mult_vx
 );
 
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_vx
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_vx
 (
     .a(reg_mult_vx),
     .b(POS_CALCULATOR_POSX_OutBus),
@@ -133,7 +131,7 @@ qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_vx
 );
 
 
-SC_REGACC #(.REGACC_DATAWIDTH(DATAWIDTH_N), .INITIAL_VALUE(32'b0)) reg_accumulator_posx
+SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_posx
 (
 	.SC_REGACC_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGACC_RESET_InHigh(POS_CALCULATOR_Reset_InHigh),
@@ -146,10 +144,10 @@ SC_REGACC #(.REGACC_DATAWIDTH(DATAWIDTH_N), .INITIAL_VALUE(32'b0)) reg_accumulat
 
 //////////////////////////////////////////// FOR POSY
 
-qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vy
+qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vy
 (
 	.i_multiplicand(POS_CALCULATOR_VY_InBus),
-	.i_multiplier(32'b0_0000000000000000_000000101001000), // 0.010 s = 10ms
+	.i_multiplier(17'b0_00000000_00000011), // 0.010 s = 10ms (0.0117)
 	.i_start(mult_start_flag),
 	.i_clk(POS_CALCULATOR_CLOCK_50),
 	.o_result_out(result_mult_vy),
@@ -158,7 +156,7 @@ qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vy
 );
 
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) register_mult_vy
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) register_mult_vy
 (
 	.SC_REGGENERAL_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(POS_CALCULATOR_Reset_InHigh), 
@@ -168,7 +166,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) register_mult_vy
 );
 
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_vy
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_vy
 (
     .a(reg_mult_vy),
     .b(POS_CALCULATOR_POSY_OutBus),
@@ -176,7 +174,7 @@ qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_vy
 );
 
 	
-SC_REGACC #(.REGACC_DATAWIDTH(DATAWIDTH_N), .INITIAL_VALUE(32'b0)) reg_accumulator_posy
+SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_posy
 (
 	.SC_REGACC_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGACC_RESET_InHigh(POS_CALCULATOR_Reset_InHigh),
@@ -189,10 +187,10 @@ SC_REGACC #(.REGACC_DATAWIDTH(DATAWIDTH_N), .INITIAL_VALUE(32'b0)) reg_accumulat
 
 //////////////////////////////////////////// FOR THETA
 
-qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vz
+qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vz
 (
 	.i_multiplicand(POS_CALCULATOR_WZ_InBus),
-	.i_multiplier(32'b0_0000000000000000_100100101010111), // 0.010*180/pi = 0.572958
+	.i_multiplier(17'b0_00000000_10010011), // 0.010*180/pi = 0.5730 (0.5742)
 
 	.i_start(mult_start_flag),
 	.i_clk(POS_CALCULATOR_CLOCK_50),
@@ -202,7 +200,7 @@ qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vz
 );
 
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) register_mult_vz
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) register_mult_vz
 (
 	.SC_REGGENERAL_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(POS_CALCULATOR_Reset_InHigh), 
@@ -212,7 +210,7 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) register_mult_vz
 );
 
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_vz
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_vz
 (
     .a(reg_mult_vz),
     .b(POS_CALCULATOR_THETA_OutBus),
@@ -220,7 +218,7 @@ qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_vz
 );
 
 
-SC_REGACC #(.REGACC_DATAWIDTH(DATAWIDTH_N), .INITIAL_VALUE({1'b0,16'd90,15'b0})) reg_accumulator_theta
+SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE({1'b0,8'd90,8'b0})) reg_accumulator_theta
 (
 	.SC_REGACC_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGACC_RESET_InHigh(POS_CALCULATOR_Reset_InHigh),

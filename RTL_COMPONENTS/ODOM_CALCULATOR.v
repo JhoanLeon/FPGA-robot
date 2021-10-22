@@ -29,8 +29,8 @@ module ODOM_CALCULATOR (
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter DATAWIDTH_N = 32;
-parameter FRACTIONAL_Q = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -39,26 +39,26 @@ input ODOM_CALCULATOR_CLOCK_50;
 input ODOM_CALCULATOR_Reset_InHigh;
 
 input ODOM_CALCULATOR_SETBEGIN_InLow;
-input [DATAWIDTH_N-1:0] ODOM_CALCULATOR_W1_InBus;
-input [DATAWIDTH_N-1:0] ODOM_CALCULATOR_W2_InBus;
-input [DATAWIDTH_N-1:0] ODOM_CALCULATOR_W3_InBus;
-input [DATAWIDTH_N-1:0] ODOM_CALCULATOR_W4_InBus;
-input [DATAWIDTH_N-1:0] ODOM_CALCULATOR_THETA_InBus;
+input [N_WIDTH-1:0] ODOM_CALCULATOR_W1_InBus;
+input [N_WIDTH-1:0] ODOM_CALCULATOR_W2_InBus;
+input [N_WIDTH-1:0] ODOM_CALCULATOR_W3_InBus;
+input [N_WIDTH-1:0] ODOM_CALCULATOR_W4_InBus;
+input [N_WIDTH-1:0] ODOM_CALCULATOR_THETA_InBus;
 
-output [DATAWIDTH_N-1:0] ODOM_CALCULATOR_POSX_OutBus;
-output [DATAWIDTH_N-1:0] ODOM_CALCULATOR_POSY_OutBus;
-output [DATAWIDTH_N-1:0] ODOM_CALCULATOR_THETA_OutBus;
+output [N_WIDTH-1:0] ODOM_CALCULATOR_POSX_OutBus;
+output [N_WIDTH-1:0] ODOM_CALCULATOR_POSY_OutBus;
+output [N_WIDTH-1:0] ODOM_CALCULATOR_THETA_OutBus;
 
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-wire [DATAWIDTH_N-1:0] local_vx;
-wire [DATAWIDTH_N-1:0] local_vy;
-wire [DATAWIDTH_N-1:0] local_wz;
+wire [N_WIDTH-1:0] local_vx;
+wire [N_WIDTH-1:0] local_vy;
+wire [N_WIDTH-1:0] local_wz;
 
-wire [DATAWIDTH_N-1:0] global_vx;
-wire [DATAWIDTH_N-1:0] global_vy;
-wire [DATAWIDTH_N-1:0] global_wz;
+wire [N_WIDTH-1:0] global_vx;
+wire [N_WIDTH-1:0] global_vy;
+wire [N_WIDTH-1:0] global_wz;
 
 //=======================================================
 //  STRUCTURAL coding

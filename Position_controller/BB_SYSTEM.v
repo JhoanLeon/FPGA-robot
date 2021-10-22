@@ -24,8 +24,8 @@ module BB_SYSTEM
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations
@@ -65,7 +65,6 @@ POS_CONTROLLER U0
 	.POS_CONTROLLER_VX_OutBus(BB_SYSTEM_VX_OutBus),
 	.POS_CONTROLLER_VY_OutBus(BB_SYSTEM_VY_OutBus),
 	.POS_CONTROLLER_WZ_OutBus(BB_SYSTEM_WZ_OutBus)
-
 );
 
 endmodule

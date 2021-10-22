@@ -7,7 +7,7 @@ vx_local = (w1 + w2 + w3 + w4)*(r/4)
 vy_local = (-w1 + w2 + w3 - w4)*(r/4)
 wz_local = (-w1 + w2 - w3 + w4)*(r/(4*(lx+ly)))
 
-inputs velocities are in [rad/s] and output results are in [m/s] fixed point 32b notation U(32,15) U(N,Q)
+inputs velocities are in [rad/s] and output results are in [m/s] fixed point 17b notation U(17,8) U(N,Q)
 */
 
 //=======================================================
@@ -34,8 +34,8 @@ module LOCAL_VELOCITY
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter DATAWIDTH_N = 32;
-parameter FRACTIONAL_Q = 15;
+parameter N_WIDTH = 32;
+parameter Q_WIDTH = 15;
 
 //=======================================================
 //  PORT declarations
@@ -43,14 +43,14 @@ parameter FRACTIONAL_Q = 15;
 input LOCAL_VELOCITY_CLOCK_50;
 input LOCAL_VELOCITY_Reset_InHigh;
 
-input [DATAWIDTH_N-1:0] LOCAL_VELOCITY_W1_InBus;
-input [DATAWIDTH_N-1:0] LOCAL_VELOCITY_W2_InBus;
-input [DATAWIDTH_N-1:0] LOCAL_VELOCITY_W3_InBus;
-input [DATAWIDTH_N-1:0] LOCAL_VELOCITY_W4_InBus;
+input [N_WIDTH-1:0] LOCAL_VELOCITY_W1_InBus;
+input [N_WIDTH-1:0] LOCAL_VELOCITY_W2_InBus;
+input [N_WIDTH-1:0] LOCAL_VELOCITY_W3_InBus;
+input [N_WIDTH-1:0] LOCAL_VELOCITY_W4_InBus;
 
-output [DATAWIDTH_N-1:0] LOCAL_VELOCITY_VX_OutBus;
-output [DATAWIDTH_N-1:0] LOCAL_VELOCITY_VY_OutBus;
-output [DATAWIDTH_N-1:0] LOCAL_VELOCITY_WZ_OutBus;
+output [N_WIDTH-1:0] LOCAL_VELOCITY_VX_OutBus;
+output [N_WIDTH-1:0] LOCAL_VELOCITY_VY_OutBus;
+output [N_WIDTH-1:0] LOCAL_VELOCITY_WZ_OutBus;
 
 //=======================================================
 //  REG/WIRE declarations
@@ -58,23 +58,23 @@ output [DATAWIDTH_N-1:0] LOCAL_VELOCITY_WZ_OutBus;
 
 wire start_flag;
 
-wire [DATAWIDTH_N-1:0] result_add_w1_w2;
-wire [DATAWIDTH_N-1:0] result_add_w1_w2_w3;
-wire [DATAWIDTH_N-1:0] result_add_w1_w2_w3_w4;
+wire [N_WIDTH-1:0] result_add_w1_w2;
+wire [N_WIDTH-1:0] result_add_w1_w2_w3;
+wire [N_WIDTH-1:0] result_add_w1_w2_w3_w4;
 wire flag_result_vx;
-wire [DATAWIDTH_N-1:0] result_vx;
+wire [N_WIDTH-1:0] result_vx;
 
-wire [DATAWIDTH_N-1:0] result_sub_w1_w2;
-wire [DATAWIDTH_N-1:0] result_sub_w1_w2_w3;
-wire [DATAWIDTH_N-1:0] result_sub_w1_w2_w3_w4;
+wire [N_WIDTH-1:0] result_sub_w1_w2;
+wire [N_WIDTH-1:0] result_sub_w1_w2_w3;
+wire [N_WIDTH-1:0] result_sub_w1_w2_w3_w4;
 wire flag_result_vy;
-wire [DATAWIDTH_N-1:0] result_vy;
+wire [N_WIDTH-1:0] result_vy;
 
-wire [DATAWIDTH_N-1:0] result_tri_w1_w2;
-wire [DATAWIDTH_N-1:0] result_tri_w1_w2_w3;
-wire [DATAWIDTH_N-1:0] result_tri_w1_w2_w3_w4;
+wire [N_WIDTH-1:0] result_tri_w1_w2;
+wire [N_WIDTH-1:0] result_tri_w1_w2_w3;
+wire [N_WIDTH-1:0] result_tri_w1_w2_w3_w4;
 wire flag_result_wz;
-wire [DATAWIDTH_N-1:0] result_wz;
+wire [N_WIDTH-1:0] result_wz;
 
 //=======================================================
 //  STRUCTURAL coding
@@ -91,31 +91,31 @@ SC_STATEMACHINE_MULT MULT_MACHINE
 
 ///////////////////////////// FOR VX = (w1 + w2 + w3 + w4)*(r/4)
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_w1_w2
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_w1_w2
 (
     .a(LOCAL_VELOCITY_W1_InBus),
     .b(LOCAL_VELOCITY_W2_InBus),
     .c(result_add_w1_w2)
 );
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_w1_w2_w3
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_w1_w2_w3
 (
     .a(result_add_w1_w2),
     .b(LOCAL_VELOCITY_W3_InBus),
     .c(result_add_w1_w2_w3)
 );
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) add_w1_w2_w3_w4
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_w1_w2_w3_w4
 (
     .a(result_add_w1_w2_w3),
     .b(LOCAL_VELOCITY_W4_InBus),
     .c(result_add_w1_w2_w3_w4)
 );
 
-qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vx
+qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vx
 (
 	.i_multiplicand(result_add_w1_w2_w3_w4),
-	.i_multiplier(32'b0_0000000000000000_000000100101001),
+	.i_multiplier(17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
 	.i_start(start_flag),
 	.i_clk(LOCAL_VELOCITY_CLOCK_50),
 	.o_result_out(result_vx),
@@ -123,7 +123,7 @@ qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vx
 	.o_overflow()
 );
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) reg_vx
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) reg_vx
 (
 	.SC_REGGENERAL_CLOCK_50(LOCAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(LOCAL_VELOCITY_Reset_InHigh), 
@@ -134,31 +134,31 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) reg_vx
 
 ///////////////////////////// FOR VY = (-w1 + w2 + w3 - w4)*(r/4)
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) sub_w1_w2
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) sub_w1_w2
 (
-    .a({~LOCAL_VELOCITY_W1_InBus[DATAWIDTH_N-1],LOCAL_VELOCITY_W1_InBus[DATAWIDTH_N-2:0]}),
+    .a({~LOCAL_VELOCITY_W1_InBus[N_WIDTH-1],LOCAL_VELOCITY_W1_InBus[N_WIDTH-2:0]}),
     .b(LOCAL_VELOCITY_W2_InBus),
     .c(result_sub_w1_w2)
 );
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) sub_w1_w2_w3
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) sub_w1_w2_w3
 (
     .a(result_sub_w1_w2),
     .b(LOCAL_VELOCITY_W3_InBus),
     .c(result_sub_w1_w2_w3)
 );
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) sub_w1_w2_w3_w4
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) sub_w1_w2_w3_w4
 (
     .a(result_sub_w1_w2_w3),
-    .b({~LOCAL_VELOCITY_W4_InBus[DATAWIDTH_N-1],LOCAL_VELOCITY_W4_InBus[DATAWIDTH_N-2:0]}),
+    .b({~LOCAL_VELOCITY_W4_InBus[N_WIDTH-1],LOCAL_VELOCITY_W4_InBus[N_WIDTH-2:0]}),
     .c(result_sub_w1_w2_w3_w4)
 );
 
-qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vy
+qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vy
 (
 	.i_multiplicand(result_sub_w1_w2_w3_w4),
-	.i_multiplier(32'b0_0000000000000000_000000100101001),
+	.i_multiplier(17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
 	.i_start(start_flag),
 	.i_clk(LOCAL_VELOCITY_CLOCK_50),
 	.o_result_out(result_vy),
@@ -166,7 +166,7 @@ qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_vy
 	.o_overflow()
 );
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) reg_vy
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) reg_vy
 (
 	.SC_REGGENERAL_CLOCK_50(LOCAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(LOCAL_VELOCITY_Reset_InHigh), 
@@ -178,31 +178,31 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) reg_vy
 
 ///////////////////////////// FOR WZ = (-w1 + w2 - w3 + w4)*(r/(4*(lx+ly)))
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) tri_w1_w2
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) tri_w1_w2
 (
-    .a({~LOCAL_VELOCITY_W1_InBus[DATAWIDTH_N-1],LOCAL_VELOCITY_W1_InBus[DATAWIDTH_N-2:0]}),
+    .a({~LOCAL_VELOCITY_W1_InBus[N_WIDTH-1],LOCAL_VELOCITY_W1_InBus[N_WIDTH-2:0]}),
     .b(LOCAL_VELOCITY_W2_InBus),
     .c(result_tri_w1_w2)
 );
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) tri_w1_w2_w3
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) tri_w1_w2_w3
 (
     .a(result_tri_w1_w2),
-    .b({~LOCAL_VELOCITY_W3_InBus[DATAWIDTH_N-1],LOCAL_VELOCITY_W3_InBus[DATAWIDTH_N-2:0]}),
+    .b({~LOCAL_VELOCITY_W3_InBus[N_WIDTH-1],LOCAL_VELOCITY_W3_InBus[N_WIDTH-2:0]}),
     .c(result_tri_w1_w2_w3)
 );
 
-qadd #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) tri_w1_w2_w3_w4
+qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) tri_w1_w2_w3_w4
 (
     .a(result_tri_w1_w2_w3),
     .b(LOCAL_VELOCITY_W4_InBus),
     .c(result_tri_w1_w2_w3_w4)
 );
 
-qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_wz
+qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_wz
 (
 	.i_multiplicand(result_tri_w1_w2_w3_w4),
-	.i_multiplier(32'b0_0000000000000000_000011100001000),
+	.i_multiplier(17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
 	.i_start(start_flag),
 	.i_clk(LOCAL_VELOCITY_CLOCK_50),
 	.o_result_out(result_wz),
@@ -210,7 +210,7 @@ qmults #(.Q(FRACTIONAL_Q), .N(DATAWIDTH_N)) mult_wz
 	.o_overflow()
 );
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATAWIDTH_N)) reg_wz
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) reg_wz
 (
 	.SC_REGGENERAL_CLOCK_50(LOCAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(LOCAL_VELOCITY_Reset_InHigh), 

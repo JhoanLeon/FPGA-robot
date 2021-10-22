@@ -31,16 +31,16 @@ module TB_SYSTEM();
 // general purpose registers
 reg eachvec;
 // test vector input registers
-reg [31:0] TB_SYSTEM_CURRENTTHETA_InBus;
-reg [31:0] TB_SYSTEM_CURRENTX_InBus;
-reg [31:0] TB_SYSTEM_CURRENTY_InBus;
-reg [31:0] TB_SYSTEM_TARGETTHETA_InBus;
-reg [31:0] TB_SYSTEM_TARGETX_InBus;
-reg [31:0] TB_SYSTEM_TARGETY_InBus;
+reg [16:0] TB_SYSTEM_CURRENTTHETA_InBus;
+reg [16:0] TB_SYSTEM_CURRENTX_InBus;
+reg [16:0] TB_SYSTEM_CURRENTY_InBus;
+reg [16:0] TB_SYSTEM_TARGETTHETA_InBus;
+reg [16:0] TB_SYSTEM_TARGETX_InBus;
+reg [16:0] TB_SYSTEM_TARGETY_InBus;
 // wires                                               
-wire [31:0]  TB_SYSTEM_VX_OutBus;
-wire [31:0]  TB_SYSTEM_VY_OutBus;
-wire [31:0]  TB_SYSTEM_WZ_OutBus;
+wire [16:0]  TB_SYSTEM_VX_OutBus;
+wire [16:0]  TB_SYSTEM_VY_OutBus;
+wire [16:0]  TB_SYSTEM_WZ_OutBus;
 
 // assign statements (if any)                          
 BB_SYSTEM i1 (
@@ -58,32 +58,32 @@ BB_SYSTEM i1 (
 
 initial
 begin 
-		  TB_SYSTEM_CURRENTX_InBus <= 32'b0;
-		  TB_SYSTEM_CURRENTY_InBus <= 32'b0;
-		  TB_SYSTEM_CURRENTTHETA_InBus <= 32'b0;
+		  TB_SYSTEM_CURRENTX_InBus <= 17'b0;
+		  TB_SYSTEM_CURRENTY_InBus <= 17'b0;
+		  TB_SYSTEM_CURRENTTHETA_InBus <= 17'b0;
 		  $display("Running testbench");
 end
 		  
 always
-	//#10 TB_SYSTEM_CURRENTY_InBus <= TB_SYSTEM_CURRENTY_InBus + 32'b0_0000000000000000_01000000000000;
-	#10 TB_SYSTEM_CURRENTX_InBus <= TB_SYSTEM_CURRENTX_InBus + 32'b0_0000000000000000_01000000000000;
+	//#10 TB_SYSTEM_CURRENTY_InBus <= TB_SYSTEM_CURRENTY_InBus + 17'b0_00000000_01000000;
+	#10 TB_SYSTEM_CURRENTX_InBus <= TB_SYSTEM_CURRENTX_InBus + 17'b0_00000000_01000000;
 
 initial begin                                                                                                                                                                     
-	#0   TB_SYSTEM_TARGETX_InBus <= 32'b0;
-		  TB_SYSTEM_TARGETY_InBus <= 32'b0;
-		  TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;
+	#0   TB_SYSTEM_TARGETX_InBus <= 17'b0;
+		  TB_SYSTEM_TARGETY_InBus <= 17'b0;
+		  TB_SYSTEM_TARGETTHETA_InBus <= 17'b0;
 		  
-	#50  TB_SYSTEM_TARGETX_InBus <= 32'b0;   
-		  TB_SYSTEM_TARGETY_InBus <= 32'b0; // 32'b0_0000000000000101_000000000000000; // 5m
-		  TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;	  
+	#50  TB_SYSTEM_TARGETX_InBus <= 17'b0;   
+		  TB_SYSTEM_TARGETY_InBus <= 17'b0_00000101_00000000; // 5m
+		  TB_SYSTEM_TARGETTHETA_InBus <= 17'b0;	  
 		  
-	#50 TB_SYSTEM_TARGETX_InBus <= 32'b0_0000000000000101_000000000000000; // 5m   
-		  TB_SYSTEM_TARGETY_InBus <= 32'b0; 
-		  TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;
+	#1000 TB_SYSTEM_TARGETX_InBus <= 17'b0_00000101_00000000; // 5m   
+		   TB_SYSTEM_TARGETY_InBus <= 17'b0; 
+		   TB_SYSTEM_TARGETTHETA_InBus <= 17'b0;
 	
-	#1000 TB_SYSTEM_TARGETX_InBus <= 32'b0;
-		   TB_SYSTEM_TARGETY_InBus <= 32'b0;
-		   TB_SYSTEM_TARGETTHETA_InBus <= 32'b0;
+	#1000 TB_SYSTEM_TARGETX_InBus <= 17'b0;
+		   TB_SYSTEM_TARGETY_InBus <= 17'b0;
+		   TB_SYSTEM_TARGETTHETA_InBus <= 17'b0;
 	
 	$display("Finishing testbench"); 
 	$stop;	  

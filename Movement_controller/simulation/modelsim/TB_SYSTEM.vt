@@ -36,14 +36,14 @@ parameter TCK = 20; // clock period in ns of 50MHz
 // test vector input registers
 reg TB_SYSTEM_CLOCK_50;
 reg TB_SYSTEM_RESET_InLow;
-reg [31:0] TB_SYSTEM_TARGETVX_InBus;
-reg [31:0] TB_SYSTEM_TARGETVY_InBus;
-reg [31:0] TB_SYSTEM_TARGETWZ_InBus;
+reg [16:0] TB_SYSTEM_TARGETVX_InBus;
+reg [16:0] TB_SYSTEM_TARGETVY_InBus;
+reg [16:0] TB_SYSTEM_TARGETWZ_InBus;
 // wires                                               
-wire [31:0]  TB_SYSTEM_W1_OutBus;
-wire [31:0]  TB_SYSTEM_W2_OutBus;
-wire [31:0]  TB_SYSTEM_W3_OutBus;
-wire [31:0]  TB_SYSTEM_W4_OutBus;
+wire [16:0]  TB_SYSTEM_W1_OutBus;
+wire [16:0]  TB_SYSTEM_W2_OutBus;
+wire [16:0]  TB_SYSTEM_W3_OutBus;
+wire [16:0]  TB_SYSTEM_W4_OutBus;
 
 // assign statements (if any)                          
 BB_SYSTEM i1 (
@@ -80,49 +80,49 @@ initial begin
 // insert code here --> begin 
 
 	#0 TB_SYSTEM_RESET_InLow <= 1'b0; // RESET
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;
 		
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1; // Todo en cero
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;
 		
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0_0000000000000000_100000000000000; // 0.5 m/s de velocidad en X (adelante) (w1 = 13.79310 rad/s)
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;		
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0_00000000_10000000; // 0.5 m/s de velocidad en X (adelante) (w1 = 13.79310 rad/s)
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;		
 
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0_0000000000000000_010000000000000; // 0.25 m/s (w1 = 6.89655 rad/s)
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0_00000000_01000000; // 0.25 m/s (w1 = 6.89655 rad/s)
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;
 		
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b1_0000000000000000_001000000000000; // -0.125 m/s (w1 = -3.44828 rad/s)
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		TB_SYSTEM_TARGETVX_InBus <= 17'b1_00000000_00100000; // -0.125 m/s (w1 = -3.44828 rad/s)
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;
 		
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0_0000000000000000_100000000000000; // 0.5 m/s en Y (izquierda) (w1 = -13.79310 rad/s)
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;		
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0_00000000_10000000; // 0.5 m/s en Y (izquierda) (w1 = -13.79310 rad/s)
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;		
 		
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
-		TB_SYSTEM_TARGETVY_InBus <= 32'b1_0000000000000000_100000000000000; // -0.5 m/s en Y (derecha) (w1 = 13.79310 rad/s)
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;		
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 17'b1_00000000_10000000; // -0.5 m/s en Y (derecha) (w1 = 13.79310 rad/s)
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;		
 
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;
 	
 	#1000 TB_SYSTEM_RESET_InLow <= 1'b1;
-		TB_SYSTEM_TARGETVX_InBus <= 32'b0; 
-		TB_SYSTEM_TARGETVY_InBus <= 32'b0;
-		TB_SYSTEM_TARGETWZ_InBus <= 32'b0;	
+		TB_SYSTEM_TARGETVX_InBus <= 17'b0; 
+		TB_SYSTEM_TARGETVY_InBus <= 17'b0;
+		TB_SYSTEM_TARGETWZ_InBus <= 17'b0;	
 		
    $display("Finishing test vectors"); 
 	$stop;
