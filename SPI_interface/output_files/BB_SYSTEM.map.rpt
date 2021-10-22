@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BB_SYSTEM
-Thu Oct 07 10:06:01 2021
+Thu Oct 21 18:44:10 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -52,15 +52,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 07 10:06:01 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 21 18:44:10 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; BB_SYSTEM                                   ;
 ; Top-level Entity Name              ; BB_SYSTEM                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 56                                          ;
-;     Total combinational functions  ; 46                                          ;
-;     Dedicated logic registers      ; 42                                          ;
-; Total registers                    ; 42                                          ;
+; Total logic elements               ; 129                                         ;
+;     Total combinational functions  ; 118                                         ;
+;     Dedicated logic registers      ; 43                                          ;
+; Total registers                    ; 43                                          ;
 ; Total pins                         ; 371                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -189,20 +189,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 56                       ;
+; Estimated Total logic elements              ; 129                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 46                       ;
+; Total combinational functions               ; 118                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 17                       ;
-;     -- 3 input functions                    ; 24                       ;
-;     -- <=2 input functions                  ; 5                        ;
+;     -- 4 input functions                    ; 79                       ;
+;     -- 3 input functions                    ; 30                       ;
+;     -- <=2 input functions                  ; 9                        ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 46                       ;
+;     -- normal mode                          ; 118                      ;
 ;     -- arithmetic mode                      ; 0                        ;
 ;                                             ;                          ;
-; Total registers                             ; 42                       ;
-;     -- Dedicated logic registers            ; 42                       ;
+; Total registers                             ; 43                       ;
+;     -- Dedicated logic registers            ; 43                       ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 371                      ;
@@ -210,9 +210,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; BB_SYSTEM_CLOCK_50~input ;
-; Maximum fan-out                             ; 42                       ;
-; Total fan-out                               ; 683                      ;
-; Average fan-out                             ; 0.82                     ;
+; Maximum fan-out                             ; 43                       ;
+; Total fan-out                               ; 977                      ;
+; Average fan-out                             ; 1.08                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -221,10 +221,10 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                          ; Entity Name         ; Library Name ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+---------------------+--------------+
-; |BB_SYSTEM                                 ; 46 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 371  ; 0            ; |BB_SYSTEM                                                                   ; BB_SYSTEM           ; work         ;
-;    |SPI_INTERFACE:SPI_INTERFACE_U0|        ; 46 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0                                    ; SPI_INTERFACE       ; work         ;
-;       |MESSAGE_INTERPRETER:MESSAGE_INT_U0| ; 25 (25)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0 ; MESSAGE_INTERPRETER ; work         ;
-;       |SPI_SLAVE:SPI_U0|                   ; 21 (21)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0                   ; SPI_SLAVE           ; work         ;
+; |BB_SYSTEM                                 ; 118 (0)             ; 43 (0)                    ; 0           ; 0            ; 0       ; 0         ; 371  ; 0            ; |BB_SYSTEM                                                                   ; BB_SYSTEM           ; work         ;
+;    |SPI_INTERFACE:SPI_INTERFACE_U0|        ; 118 (0)             ; 43 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0                                    ; SPI_INTERFACE       ; work         ;
+;       |MESSAGE_INTERPRETER:MESSAGE_INT_U0| ; 97 (97)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0 ; MESSAGE_INTERPRETER ; work         ;
+;       |SPI_SLAVE:SPI_U0|                   ; 21 (21)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0                   ; SPI_SLAVE           ; work         ;
 +--------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,12 +259,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 42    ;
+; Total registers                              ; 43    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 42    ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 43    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 31    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -275,11 +275,10 @@ Encoding Type:  One-Hot
 ; Inverted Register                                                               ; Fan out ;
 +---------------------------------------------------------------------------------+---------+
 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|MISO_Register                   ; 2       ;
-; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_stop  ; 1       ;
-; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_begin ; 1       ;
+; SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_begin ; 2       ;
 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|SS_Register                     ; 3       ;
 ; SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|MOSI_Register                   ; 1       ;
-; Total number of inverted registers = 5                                          ;         ;
+; Total number of inverted registers = 4                                          ;         ;
 +---------------------------------------------------------------------------------+---------+
 
 
@@ -290,9 +289,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
 ; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|BitCounter_Register[2]              ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|SPI_SLAVE:SPI_U0|Data_Register[7]                    ;
-; 20:1               ; 3 bits    ; 39 LEs        ; 18 LEs               ; 21 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_select[0] ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 8 LEs                ; 680 LEs                ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[7]   ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 8 LEs                ; 18 LEs                 ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_stop      ;
+; 256:1              ; 4 bits    ; 680 LEs       ; 24 LEs               ; 656 LEs                ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_select[0] ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 80 LEs               ; 1280 LEs               ; Yes        ; |BB_SYSTEM|SPI_INTERFACE:SPI_INTERFACE_U0|MESSAGE_INTERPRETER:MESSAGE_INT_U0|current_data[7]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
 
 
@@ -349,18 +347,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 371                         ;
-; cycloneiii_ff         ; 42                          ;
-;     CLR               ; 10                          ;
-;     ENA CLR           ; 32                          ;
-; cycloneiii_lcell_comb ; 49                          ;
-;     normal            ; 49                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 17                          ;
+; cycloneiii_ff         ; 43                          ;
+;     CLR               ; 12                          ;
+;     ENA CLR           ; 22                          ;
+;     ENA CLR SLD       ; 9                           ;
+; cycloneiii_lcell_comb ; 120                         ;
+;     normal            ; 120                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 79                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.57                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -379,7 +378,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Oct 07 10:05:32 2021
+    Info: Processing started: Thu Oct 21 18:43:57 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -432,9 +431,9 @@ Info (12021): Found 3 design units, including 3 entities, in source file /users/
     Info (12023): Found entity 2: rotator File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 180
     Info (12023): Found entity 3: cordic File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/core_cordic.v Line: 252
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_mux81.v
-    Info (12023): Found entity 1: CC_MUX81 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX81.v Line: 22
+    Info (12023): Found entity 1: CC_MUX81 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX81.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_mux41.v
-    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v Line: 22
+    Info (12023): Found entity 1: CC_MUX41 File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_MUX41.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_lessthan.v
     Info (12023): Found entity 1: CC_LESSTHAN File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/RTL_COMPONENTS/CC_LESSTHAN.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /users/usuario windows/desktop/proyecto de grado/fpga-robot/rtl_components/cc_greaterthan.v
@@ -458,7 +457,7 @@ Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/output_files/BB_SYSTEM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 352 input pin(s) that do not drive logic
+Warning (21074): Design contains 240 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
@@ -470,14 +469,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[8]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[9]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[10]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[11]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSX_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 60
@@ -502,14 +493,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[8]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[9]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[10]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[11]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
     Warning (15610): No output dependent on input pin "BB_SYSTEM_POSY_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 61
@@ -534,14 +517,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[8]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[9]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[10]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[11]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
@@ -555,38 +530,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[29]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[30]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
     Warning (15610): No output dependent on input pin "BB_SYSTEM_THETA_InBus[31]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 62
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[3]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[4]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[5]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[6]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM1_InBus[7]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 64
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[3]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[4]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[5]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[6]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM2_InBus[7]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 65
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[3]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[4]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[5]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[6]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM3_InBus[7]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 66
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[3]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[4]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[5]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[6]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_RPM4_InBus[7]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 67
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[0]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[1]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[2]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
@@ -602,14 +545,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST1_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 69
@@ -634,14 +569,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST2_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 70
@@ -666,14 +593,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST3_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 71
@@ -698,14 +617,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
     Warning (15610): No output dependent on input pin "BB_SYSTEM_DIST4_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 72
@@ -730,14 +641,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUX_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 76
@@ -762,14 +665,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUY_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 77
@@ -794,14 +689,6 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[12]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[13]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[14]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[15]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[16]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[17]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[18]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[19]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[20]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[21]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-    Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[22]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[23]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[24]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[25]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
@@ -811,15 +698,15 @@ Warning (21074): Design contains 352 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[29]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[30]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
     Warning (15610): No output dependent on input pin "BB_SYSTEM_IMUZ_InBus[31]" File: C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/SPI_interface/BB_SYSTEM.v Line: 78
-Info (21057): Implemented 428 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 501 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 365 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 57 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 354 warnings
-    Info: Peak virtual memory: 628 megabytes
-    Info: Processing ended: Thu Oct 07 10:06:01 2021
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:29
+    Info (21061): Implemented 130 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 242 warnings
+    Info: Peak virtual memory: 631 megabytes
+    Info: Processing ended: Thu Oct 21 18:44:10 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 
 +------------------------------------------+

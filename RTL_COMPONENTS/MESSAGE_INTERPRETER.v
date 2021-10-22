@@ -137,13 +137,12 @@ reg next_begin;
 //  STRUCTURAL coding
 //=======================================================
 
-assign MESSAGE_INTERPRETER_WAYSELECT_OutBus = current_select;
-assign MESSAGE_INTERPRETER_STOPSIGNAL_OutLow = current_stop;
-assign MESSAGE_INTERPRETER_BEGINSIGNAL_OutLow = current_begin;
-assign MESSAGE_INTERPRETER_DATAOUT_OutBus = current_data;
-
-always @(MESSAGE_INTERPRETER_FLAGDATAIN_In, MESSAGE_INTERPRETER_DATAIN_InBus)
+//always @(MESSAGE_INTERPRETER_FLAGDATAIN_In, MESSAGE_INTERPRETER_DATAIN_InBus)
+always @(*)
 begin
+	if (MESSAGE_INTERPRETER_FLAGDATAIN_In == 1'b1)
+	begin
+	
 	case (MESSAGE_INTERPRETER_DATAIN_InBus)
 	
 	waypoint1: // waypoint 1
@@ -358,6 +357,17 @@ begin
 			next_data = current_data;
 		end	
 	endcase	
+	
+	end
+	
+	else
+	begin
+		next_select = current_select;
+		next_stop = current_stop;
+		next_begin = current_begin;
+		next_data = current_data;
+	end
+	
 end
 
 
@@ -378,6 +388,12 @@ begin
 			current_data <= next_data;
 		end
 end
-		
+	
+
+assign MESSAGE_INTERPRETER_WAYSELECT_OutBus = current_select;
+assign MESSAGE_INTERPRETER_STOPSIGNAL_OutLow = current_stop;
+assign MESSAGE_INTERPRETER_BEGINSIGNAL_OutLow = current_begin;
+assign MESSAGE_INTERPRETER_DATAOUT_OutBus = current_data;
+
 		
 endmodule
