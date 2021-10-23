@@ -27,7 +27,7 @@ module GLOBAL_VELOCITY
 	GLOBAL_VELOCITY_VX_LOCAL_InBus, // local velocity in x direction [m/s]
 	GLOBAL_VELOCITY_VY_LOCAL_InBus, // local velocity in y direction [m/s]
 	GLOBAL_VELOCITY_WZ_LOCAL_InBus, // local velocity in z direction [rad/s]
-	GLOBAL_VELOCITY_THETA_InBus, // theta angle to compute in notation 32b |S|IIIIIIIIIIIIIIII|FFFFFFFFFFFFFFF| [0°-90°]
+	GLOBAL_VELOCITY_THETA_InBus, // theta angle to compute in notation 17b |S|IIIIIIII|FFFFFFFF| [0°-90°]
 
 	//////////// OUTPUTS //////////
 	GLOBAL_VELOCITY_DONE_Out, // output flag to indicate complete results
@@ -71,10 +71,10 @@ output	[N_WIDTH-1:0]	GLOBAL_VELOCITY_WZ_GLOBAL_OutBus;
 //=======================================================
 wire [XY_BITS_WIDTH-1:0] cos_17_to_32;
 wire [XY_BITS_WIDTH-1:0] signed_cos_17_to_32;
-wire [N_WIDTH-1:0] cos_output_32;
+wire [N_WIDTH-1:0] cos_output_17b;
 
 wire [XY_BITS_WIDTH-1:0] sin_17_to_32;
-wire [N_WIDTH-1:0] sin_output_32;
+wire [N_WIDTH-1:0] sin_output_17b;
 
 wire [N_WIDTH-1:0] vx_cos_result;
 wire [N_WIDTH-1:0] vy_sin_result;
@@ -114,8 +114,8 @@ SC_STATEMACHINE_GLOBAL_VEL STATEMACHINE_u0
 );	
 
 
-assign theta_cordic = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,16'd90,15'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,16'd180,15'b0})) ? ({1'b0,16'd180,15'b0}-GLOBAL_VELOCITY_THETA_InBus): GLOBAL_VELOCITY_THETA_InBus;
-assign cos_17_to_32 = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,16'd90,15'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,16'd180,15'b0})) ? {~signed_cos_17_to_32[XY_BITS_WIDTH-1],signed_cos_17_to_32[XY_BITS_WIDTH-2:0]}: signed_cos_17_to_32;
+assign theta_cordic = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,8'd90,8'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,8'd180,8'b0})) ? ({1'b0,8'd180,8'b0}-GLOBAL_VELOCITY_THETA_InBus): GLOBAL_VELOCITY_THETA_InBus;
+assign cos_17_to_32 = ((GLOBAL_VELOCITY_THETA_InBus > {1'b0,8'd90,8'b0}) && (GLOBAL_VELOCITY_THETA_InBus <= {1'b0,8'd180,8'b0})) ? {~signed_cos_17_to_32[XY_BITS_WIDTH-1],signed_cos_17_to_32[XY_BITS_WIDTH-2:0]}: signed_cos_17_to_32;
 
 
 cordic cordic_core_u0 
@@ -127,7 +127,7 @@ cordic cordic_core_u0
   .valid_in(valid_input_cordic), // input in high for iniciate iterations of cordic algorithm
   .x_i(CORDIC_CTE),
   .y_i(17'd0),
-  .theta_i({theta_cordic[N_WIDTH-1], theta_cordic[22:7]}), // theta angle to compute in notation 17b |S|IIIIIIII|FFFFFFFF| [0°-90°]
+  .theta_i(theta_cordic), // theta angle to compute in notation 17b |S|IIIIIIII|FFFFFFFF| [0°-90°]
   
   .valid_out(valid_out_cordic_to_machine), // output flag flag that indicates final result of iterations in cordic core
   
@@ -142,8 +142,8 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u0
 	.SC_REGGENERAL_CLOCK_50(GLOBAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(GLOBAL_VELOCITY_RESET_InHigh), 
 	.SC_REGGENERAL_load_InLow(~valid_out_cordic_to_machine), 
-	.SC_REGGENERAL_data_InBus({cos_17_to_32[XY_BITS_WIDTH-1], 15'b0, cos_17_to_32[XY_BITS_WIDTH-2:0]}), // |S|000000000000000I|FFFFFFFFFFFFFFF| 17b 
-	.SC_REGGENERAL_data_OutBUS(cos_output_32)
+	.SC_REGGENERAL_data_InBus({cos_17_to_32[XY_BITS_WIDTH-1], 7'b0, cos_17_to_32[XY_BITS_WIDTH-2:7]}), // |S|0000000I|FFFFFFFFXXXXXXX| 17b -> 17b 
+	.SC_REGGENERAL_data_OutBUS(cos_output_17b)
 );
 
 SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u1 
@@ -151,15 +151,15 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_u1
 	.SC_REGGENERAL_CLOCK_50(GLOBAL_VELOCITY_CLOCK_50),
 	.SC_REGGENERAL_RESET_InHigh(GLOBAL_VELOCITY_RESET_InHigh), 
 	.SC_REGGENERAL_load_InLow(~valid_out_cordic_to_machine), 
-	.SC_REGGENERAL_data_InBus({sin_17_to_32[XY_BITS_WIDTH-1], 15'b0, sin_17_to_32[XY_BITS_WIDTH-2:0]}), // |S|000000000000000I|FFFFFFFFFFFFFFF| 17b
-	.SC_REGGENERAL_data_OutBUS(sin_output_32)
+	.SC_REGGENERAL_data_InBus({sin_17_to_32[XY_BITS_WIDTH-1], 7'b0, sin_17_to_32[XY_BITS_WIDTH-2:7]}), // |S|0000000I|FFFFFFFFXXXXXXX| 17b -> 17b
+	.SC_REGGENERAL_data_OutBUS(sin_output_17b)
 );
 
 
 qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_cos 
 (
 	.i_multiplicand(GLOBAL_VELOCITY_VX_LOCAL_InBus),
-	.i_multiplier(cos_output_32),
+	.i_multiplier(cos_output_17b),
 	.i_start(start_multiply),
 	.i_clk(GLOBAL_VELOCITY_CLOCK_50),
 	.o_result_out(vx_cos_result),
@@ -170,7 +170,7 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_cos
 qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_sin 
 (
 	.i_multiplicand(GLOBAL_VELOCITY_VY_LOCAL_InBus),
-	.i_multiplier(sin_output_32),
+	.i_multiplier(sin_output_17b),
 	.i_start(start_multiply),
 	.i_clk(GLOBAL_VELOCITY_CLOCK_50),
 	.o_result_out(vy_sin_result),
@@ -181,7 +181,7 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_sin
 qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_sin 
 (
 	.i_multiplicand(GLOBAL_VELOCITY_VX_LOCAL_InBus),
-	.i_multiplier(sin_output_32),
+	.i_multiplier(sin_output_17b),
 	.i_start(start_multiply),
 	.i_clk(GLOBAL_VELOCITY_CLOCK_50),
 	.o_result_out(vx_sin_result),
@@ -192,7 +192,7 @@ qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vx_sin
 qmults #(.N(N_WIDTH), .Q(Q_WIDTH)) multiplier_vy_cos 
 (
 	.i_multiplicand(GLOBAL_VELOCITY_VY_LOCAL_InBus),
-	.i_multiplier(cos_output_32),
+	.i_multiplier(cos_output_17b),
 	.i_start(start_multiply),
 	.i_clk(GLOBAL_VELOCITY_CLOCK_50),
 	.o_result_out(vy_cos_result),

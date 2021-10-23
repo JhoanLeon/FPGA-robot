@@ -9,21 +9,21 @@ module POS_CALCULATOR
 	POS_CALCULATOR_Reset_InHigh,
 
 	POS_CALCULATOR_SETBEGIN_InLow,	
-	POS_CALCULATOR_VX_InBus, // global velocity vx in m/s (in notation fixed point 32b)
-	POS_CALCULATOR_VY_InBus, // global velocity vy in m/s (in notation fixed point 32b)
-	POS_CALCULATOR_WZ_InBus, // global velocity wz in rad/s (in notation fixed point 32b)
+	POS_CALCULATOR_VX_InBus, // global velocity vx in m/s (in notation fixed point 17b)
+	POS_CALCULATOR_VY_InBus, // global velocity vy in m/s (in notation fixed point 17b)
+	POS_CALCULATOR_WZ_InBus, // global velocity wz in rad/s (in notation fixed point 17b)
 	
 	//////////// OUTPUTS //////////
-	POS_CALCULATOR_POSX_OutBus, // [m] fixed point 32b
-	POS_CALCULATOR_POSY_OutBus, // [m] fixed point 32b
-	POS_CALCULATOR_THETA_OutBus // [deg] fixed point 32b
+	POS_CALCULATOR_POSX_OutBus, // [m] fixed point 17b
+	POS_CALCULATOR_POSY_OutBus, // [m] fixed point 17b
+	POS_CALCULATOR_THETA_OutBus // [deg] fixed point 17b
 );
 
 //=======================================================
 //  PARAMETER declarations
 //=======================================================
-parameter N_WIDTH = 32;
-parameter Q_WIDTH = 15;
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
 
 //=======================================================
 //  PORT declarations

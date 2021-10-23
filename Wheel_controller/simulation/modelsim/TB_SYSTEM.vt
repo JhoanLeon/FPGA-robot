@@ -40,12 +40,12 @@ reg TB_SYSTEM_CLOCK_50;
 reg TB_SYSTEM_ENCODERA_In;
 reg TB_SYSTEM_ENCODERB_In;
 reg TB_SYSTEM_RESET_InLow;
-reg [31:0] TB_SYSTEM_TARGETW_InBus;
+reg [16:0] TB_SYSTEM_TARGETW_InBus;
 // wires                                               
 wire [1:0]  TB_SYSTEM_DIR_OutBus;
 wire TB_SYSTEM_PWM_Out;
 wire [7:0]  TB_SYSTEM_RPM_OutBus;
-wire [31:0]  TB_SYSTEM_W_OutBus;
+wire [16:0]  TB_SYSTEM_W_OutBus;
 
 // assign statements (if any)                          
 BB_SYSTEM i1 (
@@ -110,16 +110,16 @@ initial begin
 // code executes for every event on sensitivity list   
 // insert code here --> begin    
 	#0 TB_SYSTEM_RESET_InLow <= 1'b0;
-		TB_SYSTEM_TARGETW_InBus <= 32'b0;
+		TB_SYSTEM_TARGETW_InBus <= 17'b0;
 	
 	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
-		TB_SYSTEM_TARGETW_InBus <= 32'b0;
+		TB_SYSTEM_TARGETW_InBus <= 17'b0;
 	
 	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
-		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000001010_000000000000000; // 10.0 rad/s -> 95.5 rpms
+		TB_SYSTEM_TARGETW_InBus <= 17'b0_00001010_00000000; // 10.0 rad/s -> 95.5 rpms
 
 	#360000000 TB_SYSTEM_RESET_InLow <= 1'b1; // 360ms
-		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000001010_000000000000000;
+		TB_SYSTEM_TARGETW_InBus <= 17'b0_00001010_00000000;
 		
 //	#10000 TB_SYSTEM_RESET_InLow <= 1'b1; // 10us
 //		TB_SYSTEM_TARGETW_InBus <= 32'b0_0000000000000001_000000000000000; // 1.0 rad/s -> 9.5 rpms

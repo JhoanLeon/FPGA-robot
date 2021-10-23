@@ -34,6 +34,6 @@ begin
 		counter <= counter + 1'b1;
 end
 
-assign Count = {1'b0, counter[7:1]};
+assign Count = {1'b0, counter[7:1]}; // divide by 2 due to the count on pos and neg edge of encoder phase
 
 endmodule
