@@ -247,7 +247,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_THETA_InBus[11:4]; // data
+			next_data = MESSAGE_INTERPRETER_THETA_InBus[15:8]; // data, 8b u_int
 		end	
 
 		

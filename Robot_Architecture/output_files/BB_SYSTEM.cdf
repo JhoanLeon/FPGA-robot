@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot/Robot_Architecture/output_files/") File("BB_SYSTEM.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Robot_Architecture/output_files/") File("BB_SYSTEM.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

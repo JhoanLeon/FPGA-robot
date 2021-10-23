@@ -140,6 +140,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_MISO_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_MOSI_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA3_In
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_PHASEA2_In
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/PI_CONTROL.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/POS_CONTROLLER.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/ERROR_CONTROL.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SC_REGACC.v
@@ -167,7 +168,6 @@ set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/qmult.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/qdiv.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/qadd.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/PREESCALER.v
-set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/PI_control.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/MOVEMENT_CONTROLLER.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/moduloPWM.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/GLOBAL_VELOCITY.v
