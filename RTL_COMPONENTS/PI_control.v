@@ -23,7 +23,7 @@ reg [N_WIDTH-1:0] Control_k1 = 0; // Señal de control en k-1
 wire [N_WIDTH-1:0] first_res;  // 
 wire [N_WIDTH-1:0] second_res; // 
 wire [N_WIDTH-1:0] third_res;  // 
-wire [31:0] Control_k;  // 32 bits to detect overflow, Señal de control en k 
+wire [31:0] Control_k;  // 32 bits to detect overflow, Senial de control en k 
 
 // caso en el que no llega a los setpoints, no oscila
 parameter K_P = 17'b0_00000000_00010100; // este valor debe ser calibrado 0.0781
@@ -71,16 +71,16 @@ qadd #(.Q(15), .N(32)) second_add // 32 bit to detect overflow and cut overshoot
 
 always @(posedge Prescaler_clk)
 begin
-	if ( Control_k[30:15] >= 16'd200 ) // Caso de saturacion del controlador por arriba (parte entera del número)
-		COMANDO_PWM <= 8'd200; // original was 250 -> 255
+	if ( Control_k[30:15] >= 16'd250 ) // Caso de saturacion del controlador por arriba (parte entera del número)
+		COMANDO_PWM <= 8'd255; // original was 250 -> 255
 	else if ( (Control_k[30:15] <= 16'd5) || (Control_k[31] == 1'b1) ) // Caso de saturacion del controlador por abajo
 		COMANDO_PWM <= 8'd0;
 	else
-		COMANDO_PWM <= Control_k[22:15];	// Caso sin saturacion, solo parte entera del numero
+		COMANDO_PWM <= Control_k[22:15];	// Caso sin saturacion, solo parte entera de 8bits del numero
 		
 	// Actualiza el (k-1) para la siguiente iteración k 
-	Error_k1 <= Error_k;
-	Control_k1 <= {Control_k[31], COMANDO_PWM, Control_k[14:7]};
+	Error_k1 <= Error_k; // 17b
+	Control_k1 <= {Control_k[31], COMANDO_PWM, Control_k[14:7]}; // 17b
 end
 
 

@@ -41,7 +41,6 @@ module MESSAGE_INTERPRETER
 	MESSAGE_INTERPRETER_WAYSELECT_OutBus,
 	MESSAGE_INTERPRETER_STOPSIGNAL_OutLow,
 	MESSAGE_INTERPRETER_BEGINSIGNAL_OutLow
-
 );
 
 //=======================================================
@@ -231,7 +230,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSX_InBus[11:4]; // data x_xxxx0000_0000xxxx 
+			next_data = MESSAGE_INTERPRETER_POSX_InBus[15:8];//[11:4]; // data x_xxxx0000_0000xxxx 
 		end	
 		
 	y_i: // '21' for y_i
@@ -239,7 +238,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSY_InBus[11:4]; // data
+			next_data = MESSAGE_INTERPRETER_POSY_InBus[15:8];//[11:4]; // data x_xxxx0000_0000xxxx
 		end	
 		
 	theta_i: // '22' for theta_i
@@ -322,8 +321,9 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // data, 1 byte to decode
+			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // data, 1 byte to decode behavior
 		end	
+	
 	
 	accel_x: // '60' for accel_x
 		begin
@@ -338,7 +338,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUY_InBus[15:8]; // data
+			next_data = MESSAGE_INTERPRETER_IMUY_InBus[15:8]; // data, 8b u_int
 		end	
 	
 	gyro_z: // '60' for gyro_z
@@ -346,7 +346,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUZ_InBus[15:8]; // data
+			next_data = MESSAGE_INTERPRETER_IMUZ_InBus[15:8]; // data, 8b u_int
 		end	
 	
 	default:

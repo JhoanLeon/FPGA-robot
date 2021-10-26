@@ -2,8 +2,8 @@
 //  MODULE Definition
 //=======================================================
 
-module BB_SYSTEM (
-
+module BB_SYSTEM 
+(
 	//////////// INPUTS //////////
 	BB_SYSTEM_CLOCK_50,
 	BB_SYSTEM_Reset_InLow,

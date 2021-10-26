@@ -92,7 +92,7 @@ Encoder ENCODER_U0
 	.ChannelA(WHEEL_CONTROLLER_ENCODERA_In), 
 	.ChannelB(WHEEL_CONTROLLER_ENCODERB_In), 
 	
-	.Count(pulses_count_bus), // pulses in the last 167ms interval of time
+	.Count(pulses_count_bus), // pulses in the last 167.77ms interval of time
 	.Dir(current_direction_rot) // measured direction (0 cw, 1 ccw) of motor based on encoder phases
 );
 
@@ -113,9 +113,6 @@ SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_U0
 	.SC_REGGENERAL_RESET_InHigh(WHEEL_CONTROLLER_RESET_InHigh), 
 	.SC_REGGENERAL_load_InLow(WHEEL_CONTROLLER_TICK167ms_In), 
 	.SC_REGGENERAL_data_InBus(rpm_out_17b),
-	//.SC_REGGENERAL_data_InBus(17'b0_00000000_00000000), // 0rpms for test
-	//.SC_REGGENERAL_data_InBus(17'b0_00110010_00000000), // 50rpms for test
-	
 	.SC_REGGENERAL_data_OutBUS(reg_rpm_out)
 );
 
@@ -133,7 +130,7 @@ qmult #(.Q(Q_WIDTH), .N(N_WIDTH)) CONV_RAD2RPM
 
 qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) ERROR_CALCULATOR
 (
-	.a(setpoint_rpm_17b),
+	.a({1'b0, setpoint_rpm_17b[N_WIDTH-2:0]}), // does not matter sign of setpoint, just the value
    .b({1'b1, reg_rpm_out[N_WIDTH-2:0]}), // it is: error(rpm) = setpoint(rpm) - current(rpm)
    .c(error_rpm_17b)
 );

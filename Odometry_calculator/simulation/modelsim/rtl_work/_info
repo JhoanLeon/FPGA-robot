@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/simulation/modelsim
 vBB_SYSTEM
-Z1 !s110 1634957189
+Z1 !s110 1635177449
 !i10b 1
-!s100 P0B]HSPWiY8mk`n?3FKLz2
-If1gA<dXZO4NXNc;lLOmb90
+!s100 6o9Ec:]LeGXo4O:95BB5R0
+ITWaLj=G^B1UKz?GdaVfoR0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1634867478
+w1635171606
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/BB_SYSTEM.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/BB_SYSTEM.v
 L0 5
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1634957189.000000
+Z4 !s108 1635177449.000000
 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/BB_SYSTEM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/BB_SYSTEM.v|
 !i113 1
@@ -100,13 +100,13 @@ R12
 R6
 n@l@o@c@a@l_@v@e@l@o@c@i@t@y
 vODOM_CALCULATOR
-R1
+Z13 !s110 1635177450
 !i10b 1
-!s100 J5N1OAoai2fREJgMzPmHX2
-IAbi4]NHAVCf9Ii2FbMNLG2
+!s100 2W18jY:j9Fg:FVZ?No]eR1
+IONA]<INhZ:6z1imNc;lF]1
 R2
 R0
-w1634867497
+w1635171688
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ODOM_CALCULATOR.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/ODOM_CALCULATOR.v
 L0 10
@@ -155,7 +155,7 @@ R0
 w1634758986
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qadd.v
-Z13 L0 22
+Z14 L0 22
 R3
 r1
 !s85 0
@@ -177,7 +177,7 @@ R0
 w1634864710
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qmults.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/qmults.v
-R13
+R14
 R3
 r1
 !s85 0
@@ -244,7 +244,7 @@ R0
 w1631801793
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_REGGENERAL.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_REGGENERAL.v
-R13
+R14
 R3
 r1
 !s85 0
@@ -267,7 +267,7 @@ R0
 w1631801328
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_GLOBAL_VEL.v
-R13
+R14
 R3
 r1
 !s85 0
@@ -290,7 +290,7 @@ R0
 w1632608778
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_MULT.v
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/RTL_COMPONENTS/SC_STATEMACHINE_MULT.v
-R13
+R14
 R3
 r1
 !s85 0
@@ -326,13 +326,13 @@ R5
 R12
 R6
 vTB_SYSTEM
-!s110 1634957190
+R13
 !i10b 1
-!s100 <5G1CV6]8UmDSklm2gz@Q2
-I;InDGPQK:aTBgTaFoRdQ=3
+!s100 3WKdoRefi1ZGPVj:O>a2z0
+I?JRY8?4A3b1kPCLjUJ<1R0
 R2
 R0
-w1634956368
+w1635177438
 8C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/simulation/modelsim/TB_SYSTEM.vt
 FC:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/simulation/modelsim/TB_SYSTEM.vt
 L0 29
@@ -340,7 +340,7 @@ R3
 r1
 !s85 0
 31
-!s108 1634957190.000000
+!s108 1635177450.000000
 !s107 C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/simulation/modelsim/TB_SYSTEM.vt|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/simulation/modelsim|C:/Users/USUARIO WINDOWS/Desktop/Proyecto de Grado/FPGA-robot-copia17b/Odometry_calculator/simulation/modelsim/TB_SYSTEM.vt|
 !i113 1
