@@ -161,9 +161,6 @@ wire [DATA_WIDTH-1:0] current_W4;
 wire [DATA_WIDTH-1:0] global_pos_x;
 wire [DATA_WIDTH-1:0] global_pos_y;
 
-wire [DATA_WIDTH-1:0] cm_global_pos_x;
-wire [DATA_WIDTH-1:0] cm_global_pos_y;
-
 wire [DATA_WIDTH-1:0] theta_angle;
 
 wire [DATA_WIDTH-1:0] target_posx;
@@ -186,6 +183,16 @@ wire TICK_42ms;
 //  STRUCTURAL coding
 //=======================================================
 
+//////////////////////////////////////////////////////////// LEDS FOR QUICKLY DEBUGGING
+assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
+assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
+//assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
+//assign BB_SYSTEM_LEDs_OutBus[3] = stop_signal;
+//assign BB_SYSTEM_LEDs_OutBus[3] = begin_signal;
+assign BB_SYSTEM_LEDs_OutBus[2] = ~global_pos_x[DATA_WIDTH-1];
+assign BB_SYSTEM_LEDs_OutBus[3] = ~global_pos_y[DATA_WIDTH-1];
+
+
 //////////////////////////////////////////////////////////// FOR SPI COMMUNICATION
 
 SPI_INTERFACE SPI_INTERFACE_U0
@@ -197,8 +204,8 @@ SPI_INTERFACE SPI_INTERFACE_U0
 	.SPI_INTERFACE_MOSI_In(BB_SYSTEM_MOSI_In),
 	.SPI_INTERFACE_SCK_In(BB_SYSTEM_SCLK_In),
 	
-	.SPI_INTERFACE_POSX_InBus(cm_global_pos_x),//global_pos_x),
-	.SPI_INTERFACE_POSY_InBus(cm_global_pos_y),//global_pos_y),
+	.SPI_INTERFACE_POSX_InBus(global_pos_x), 
+	.SPI_INTERFACE_POSY_InBus(global_pos_y),
 	.SPI_INTERFACE_THETA_InBus(theta_angle),
 	
 	.SPI_INTERFACE_RPM1_InBus(rpms_1),
@@ -226,19 +233,35 @@ SPI_INTERFACE SPI_INTERFACE_U0
 );
 
 
-// LEDS FOR QUICKLY DEBUGGING OF WAYPOINTS FROM SPI COMMANDS - GOOD
-assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
-assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
-//assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
-//assign BB_SYSTEM_LEDs_OutBus[3] = stop_signal;
-//assign BB_SYSTEM_LEDs_OutBus[3] = begin_signal;
-assign BB_SYSTEM_LEDs_OutBus[2] = ~global_pos_x[DATA_WIDTH-1];
-assign BB_SYSTEM_LEDs_OutBus[3] = ~global_pos_y[DATA_WIDTH-1];
-
-
 //////////////////////////////////////////////////////////// FOR MOTORS
 
-//CC_MUX81 CC_MUX81_U0 // velocities in m/s and rad/s
+CC_MUX41 CC_MUX41_U0 // velocities in cm/s and rad/s
+(
+	//////////// OUTPUTS //////////
+	.CC_MUX41_x_OutBus(target_vx),
+	.CC_MUX41_y_OutBus(target_vy),
+	.CC_MUX41_z_OutBus(target_wz),
+	
+	//////////// INPUTS //////////
+	.CC_MUX41_x1_InBus(17'b0), // 0cm/s
+	.CC_MUX41_x2_InBus(velocity_x_posc),
+	.CC_MUX41_x3_InBus(velocity_x_behavior),
+	.CC_MUX41_x4_InBus(17'b0), // 0cm/s  
+	
+	.CC_MUX41_y1_InBus(17'b0), // 0cm/s
+	.CC_MUX41_y2_InBus(velocity_y_posc),
+	.CC_MUX41_y3_InBus(velocity_y_behavior),
+	.CC_MUX41_y4_InBus(17'b0), // 0cm/s
+	
+	.CC_MUX41_z1_InBus(17'b0), // 0rad/s
+	.CC_MUX41_z2_InBus(velocity_z_posc),
+	.CC_MUX41_z3_InBus(velocity_z_behavior),
+	.CC_MUX41_z4_InBus(17'b0), // 0rad/s
+	
+	.CC_MUX41_select_InBus(2'b01) // (movement_selection original), but for tests it selects position controller
+);
+
+//CC_MUX81 CC_MUX81_U0 // velocities in cm/s and rad/s for Testing and debugging
 //(
 //	//////////// OUTPUTS //////////
 //	.CC_MUX81_x_OutBus(target_vx),
@@ -275,33 +298,6 @@ assign BB_SYSTEM_LEDs_OutBus[3] = ~global_pos_y[DATA_WIDTH-1];
 //	
 //	.CC_MUX81_select_InBus(waypoint_selection)
 //);
-
-
-CC_MUX41 CC_MUX41_U0 // velocities in m/s and rad/s
-(
-	//////////// OUTPUTS //////////
-	.CC_MUX41_x_OutBus(target_vx),
-	.CC_MUX41_y_OutBus(target_vy),
-	.CC_MUX41_z_OutBus(target_wz),
-	
-	//////////// INPUTS //////////
-	.CC_MUX41_x1_InBus(17'b0), // 0m/s
-	.CC_MUX41_x2_InBus(velocity_x_posc),
-	.CC_MUX41_x3_InBus(velocity_x_behavior),
-	.CC_MUX41_x4_InBus(17'b0), // 0m/s  
-	
-	.CC_MUX41_y1_InBus(17'b0), // 0m/s
-	.CC_MUX41_y2_InBus(velocity_y_posc),
-	.CC_MUX41_y3_InBus(velocity_y_behavior),
-	.CC_MUX41_y4_InBus(17'b0), // 0m/s
-	
-	.CC_MUX41_z1_InBus(17'b0), // 0rad/s
-	.CC_MUX41_z2_InBus(velocity_z_posc),
-	.CC_MUX41_z3_InBus(velocity_z_behavior),
-	.CC_MUX41_z4_InBus(17'b0), // 0rad/s
-	
-	.CC_MUX41_select_InBus(2'b01) //(movement_selection) original, but for tests it selects position controller
-);
 
 
 MOVEMENT_CONTROLLER MOVEMENT_CONTROLLER_U0
@@ -439,8 +435,8 @@ SC_COUNTER #(.N(N_COUNTER_TICK_42ms)) COUNTER_TICK_42ms // N is the amount of bi
 	.SC_COUNTER_ENABLE_InLow(1'b0), // if this signal is low the counter works
 	.SC_COUNTER_CLEAR_InLow(1'b1), // signal to clear the count
 	
-	.SC_COUNTER_REGCOUNT(), //Output bus for count
-	.SC_COUNTER_FLAG_OutLow(), //Output flag InLow for specific number of count
+	.SC_COUNTER_REGCOUNT(), // Output bus for count
+	.SC_COUNTER_FLAG_OutLow(), // Output flag InLow for specific number of count
 	.SC_COUNTER_ENDCOUNT_OutLow(TICK_42ms) // output flag InLow for end of total count
 );
 
@@ -460,27 +456,9 @@ ODOM_CALCULATOR ODOMETRY_CALCULATOR
 	.ODOM_CALCULATOR_THETA_InBus(theta_angle),
 
 	//////////// OUTPUTS //////////
-	.ODOM_CALCULATOR_POSX_OutBus(global_pos_x), // position in global x in m notation fixed point 17b
-	.ODOM_CALCULATOR_POSY_OutBus(global_pos_y), // position in global y in m notation fixed point 17b
+	.ODOM_CALCULATOR_POSX_OutBus(global_pos_x), // position in global x in cm notation fixed point 17b
+	.ODOM_CALCULATOR_POSY_OutBus(global_pos_y), // position in global y in cm notation fixed point 17b
 	.ODOM_CALCULATOR_THETA_OutBus(theta_angle)  // rotation angle in degrees notation fixed point 17b
-);
-
-
-qmult #(.Q(8), .N(DATA_WIDTH)) mult_m2cm_posx
-(
-	 .i_multiplicand(global_pos_x),
-	 .i_multiplier(17'b0_1100100_00000000), // 100 from m to cm
-	 .o_result(cm_global_pos_x),
-	 .ovr()
-);
-
-
-qmult #(.Q(8), .N(DATA_WIDTH)) mult_m2cm_posy
-(
-	 .i_multiplicand(global_pos_y),
-	 .i_multiplier(17'b0_1100100_00000000), // 100 from m to cm
-	 .o_result(cm_global_pos_y),
-	 .ovr()
 );
 
 
@@ -494,22 +472,22 @@ CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
 	.CC_MUX81_z_OutBus(target_theta),
 	
 	//////////// INPUTS //////////
-	.CC_MUX81_x1_InBus(17'b0), // 0m
+	.CC_MUX81_x1_InBus(17'b0), // 0cm
 	.CC_MUX81_x2_InBus(17'b0),
-	.CC_MUX81_x3_InBus(17'b0_00000001_00000000), // 1m in X
+	.CC_MUX81_x3_InBus(17'b0_01100100_00000000), // 100cm in X
 	.CC_MUX81_x4_InBus(17'b0), 
-	.CC_MUX81_x5_InBus(17'b1_00000001_00000000), // -1m in X
-	.CC_MUX81_x6_InBus(17'b0_00000000_10000000), // 0.5m in X
-	.CC_MUX81_x7_InBus(17'b1_00000000_10000000), // -0.5m in X
+	.CC_MUX81_x5_InBus(17'b1_01100100_00000000), // -100cm in X
+	.CC_MUX81_x6_InBus(17'b0_00110010_00000000), // 50cm in X
+	.CC_MUX81_x7_InBus(17'b1_00110010_00000000), // -50cm in X
 	.CC_MUX81_x8_InBus(17'b0_00000000_01000000), // 0.25m in X 
 	
-	.CC_MUX81_y1_InBus(17'b0), // 0m
-	.CC_MUX81_y2_InBus(17'b0_00000001_00000000), // 1m in Y
+	.CC_MUX81_y1_InBus(17'b0), // 0cm
+	.CC_MUX81_y2_InBus(17'b0_01100100_00000000), // 100cm in Y
 	.CC_MUX81_y3_InBus(17'b0),
-	.CC_MUX81_y4_InBus(17'b1_00000001_00000000), // -1m in Y
+	.CC_MUX81_y4_InBus(17'b1_01100100_00000000), // -100cm in Y
 	.CC_MUX81_y5_InBus(17'b0),
-	.CC_MUX81_y6_InBus(17'b0_00000000_10000000), // 0.5m in Y
-	.CC_MUX81_y7_InBus(17'b1_00000000_10000000), // -0.5m in Y
+	.CC_MUX81_y6_InBus(17'b0_00110010_00000000), // 50cm in Y
+	.CC_MUX81_y7_InBus(17'b1_00110010_00000000), // -50cm in Y
 	.CC_MUX81_y8_InBus(17'b0_00000000_11000000), // 0.75m in Y 
 	
 	.CC_MUX81_z1_InBus(17'b0_01011010_00000000), // 90deg
@@ -519,7 +497,8 @@ CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
 	.CC_MUX81_z5_InBus(17'b0_01011010_00000000),
 	.CC_MUX81_z6_InBus(17'b0_01011010_00000000),
 	.CC_MUX81_z7_InBus(17'b0_01011010_00000000),
-	.CC_MUX81_z8_InBus(17'b0_01011010_00000000),
+	.CC_MUX81_z8_InBus(17'b0_01011010_00000000),	
+	
 	
 	.CC_MUX81_select_InBus(waypoint_selection)
 );

@@ -19,8 +19,8 @@
 //=======================================================
 //  MODULE Definition
 //=======================================================
-module SC_REGGENERAL #(parameter REGGENERAL_DATAWIDTH=32)(
-
+module SC_REGGENERAL #(parameter REGGENERAL_DATAWIDTH=32)
+(
 	//////////// INPUTS //////////
 	SC_REGGENERAL_CLOCK_50,
 	SC_REGGENERAL_RESET_InHigh, 

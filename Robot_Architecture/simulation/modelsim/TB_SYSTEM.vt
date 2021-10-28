@@ -25,7 +25,7 @@
 // Simulation tool : ModelSim-Altera (Verilog)
 // 
 
-`timescale 1 ns/ 1 ns
+`timescale 1 ps/ 1 ps
 module TB_SYSTEM();
 // constants                                           
 // general purpose registers

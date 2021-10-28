@@ -7,7 +7,7 @@ vx_local = (w1 + w2 + w3 + w4)*(r/4)
 vy_local = (-w1 + w2 + w3 - w4)*(r/4)
 wz_local = (-w1 + w2 - w3 + w4)*(r/(4*(lx+ly)))
 
-inputs velocities are in [rad/s] and output results are in [m/s] fixed point 17b notation U(17,8) U(N,Q)
+inputs velocities are in [rad/s] and output results are in [cm/s] fixed point 17b notation U(17,8) U(N,Q)
 */
 
 //=======================================================
@@ -26,8 +26,8 @@ module LOCAL_VELOCITY
 	LOCAL_VELOCITY_W4_InBus,
 
 	//////////// OUTPUTS //////////
-	LOCAL_VELOCITY_VX_OutBus, // local velocity vx in m/s (notation fixed point 32b)
-	LOCAL_VELOCITY_VY_OutBus, // local velocity vy in m/s (in notation fixed point 32b)
+	LOCAL_VELOCITY_VX_OutBus, // local velocity vx in cm/s (notation fixed point 32b)
+	LOCAL_VELOCITY_VY_OutBus, // local velocity vy in cm/s (in notation fixed point 32b)
 	LOCAL_VELOCITY_WZ_OutBus  // local velocity wz in rad/s (in notation fixed point 32b)
 );
 
@@ -115,7 +115,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_w1_w2_w3_w4
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vx
 (
 	.i_multiplicand(result_add_w1_w2_w3_w4),
-	.i_multiplier(17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
+	.i_multiplier(17'b0_00000000_11101000), // 0.90625 (0.90625) // 17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
 	.i_start(start_flag),
 	.i_clk(LOCAL_VELOCITY_CLOCK_50),
 	.o_result_out(result_vx),
@@ -158,7 +158,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) sub_w1_w2_w3_w4
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vy
 (
 	.i_multiplicand(result_sub_w1_w2_w3_w4),
-	.i_multiplier(17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
+	.i_multiplier(17'b0_00000000_11101000), // 0.90625 (0.90625) // 17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
 	.i_start(start_flag),
 	.i_clk(LOCAL_VELOCITY_CLOCK_50),
 	.o_result_out(result_vy),
@@ -202,7 +202,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) tri_w1_w2_w3_w4
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_wz
 (
 	.i_multiplicand(result_tri_w1_w2_w3_w4),
-	.i_multiplier(17'b0_00000000_00000010), // r/4 = 0.0091 (0.0078)
+	.i_multiplier(17'b0_00000000_00001110), // r/(4*(lx+ly) = 0.05492 (0.05469)
 	.i_start(start_flag),
 	.i_clk(LOCAL_VELOCITY_CLOCK_50),
 	.o_result_out(result_wz),

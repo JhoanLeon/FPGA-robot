@@ -14,7 +14,7 @@ output outPWM;//Senal
 
 //REGS
 reg salidaActual = 1'b0;//Salida
-assign outPWM = salidaActual;//Asignacion de la salida
+reg salidaFutura = 1'b0;//Salida
 
 //WIRES
 wire flagSubida;
@@ -37,24 +37,37 @@ SC_COUNTER_PWM #(.N(8)) contador // N is the amount of bit for count, maximun nu
 	.SC_COUNTER_PWM_REGCOUNT(), //Output bus for count
 	.SC_COUNTER_PWM_FLAG_OutLow(flagBajada), //Output flag InLow for specific number of count
 	.SC_COUNTER_PWM_ENDCOUNT_OutLow(flagSubida) // output flag InLow for end of total count
-	
 );
 
-//Logica secuencial MAQUINA DE ESTADOS
-always@(inPWM, outPWM, flagSubida, flagBajada)//Maquina de estados que traduce los flags en la senal
+
+//Lógica Combinacional
+always@(*) // inPWM, outPWM, flagSubida, flagBajada)//Maquina de estados que traduce los flags en la senal
 begin
 	if( inPWM >= 8'd250 )
-		salidaActual <= 1'b1; // saturacion por arriba
+		salidaFutura <= 1'b1; // saturacion por arriba
 	
 	else if( flagSubida == 1'b0 ) // flags are active in low
-			salidaActual <= 1'b1;
+			salidaFutura <= 1'b1;
 	
 	else if( flagBajada == 1'b0 )
-			salidaActual <= 1'b0;
+			salidaFutura <= 1'b0;
 	
 	else
-			salidaActual <= outPWM;
+			salidaFutura <= salidaActual;
 end
+
+
+// Lógica secuencial MAQUINA DE ESTADOS
+always @(posedge clock, posedge reset)
+begin
+	if (reset == 1'b1)
+		salidaActual <= 1'b0;
+	else
+		salidaActual <= salidaFutura; // actual es la futura anterior
+end
+
+
+assign outPWM = salidaActual; // Asignacion de la salida
 
 
 endmodule

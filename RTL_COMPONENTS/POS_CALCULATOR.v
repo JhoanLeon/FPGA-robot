@@ -1,6 +1,7 @@
 /*
 Created by: Jhoan Esteban Leon - je.leon.e@outlook.com
 inputs velocities are in [rad/s] and output results are in [m] fixed point 17b notation U(32,15) U(N,Q)
+output velocities with the modification will be use in [cm/s]
 */
 
 //=======================================================
@@ -123,7 +124,7 @@ SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_p
 	.SC_REGACC_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGACC_RESET_InHigh(POS_CALCULATOR_Reset_InHigh),
 	.SC_REGACC_clear_InLow(POS_CALCULATOR_SETBEGIN_InLow), // reset initial value with set begin signal
-	.SC_REGACC_load_InLow(POS_CALCULATOR_TICKLOAD_InLow), // load new data every 167.77ms
+	.SC_REGACC_load_InLow(POS_CALCULATOR_TICKLOAD_InLow), // load new data every 41.94ms
 	.SC_REGACC_data_InBUS(sum_vx),
 	.SC_REGACC_data_OutBUS(POS_CALCULATOR_POSX_OutBus)
 );
@@ -134,7 +135,7 @@ SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_p
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vy
 (
 	.i_multiplicand(POS_CALCULATOR_VY_InBus),
-	.i_multiplier(17'b0_00000000_00001011), // 0.041940 (0.04297) //17'b0_00000000_00010101), // 0.083886 (0.0820) // 17'b0_00000000_00101011), // 167.77ms (167.9688)
+	.i_multiplier(17'b0_00000000_00001011), // 0.041940 (0.04297) //17'b0_00000000_00010101), // 0.083886 (0.0820)
 	.i_start(mult_start_flag),
 	.i_clk(POS_CALCULATOR_CLOCK_50),
 	.o_result_out(result_mult_vy),
@@ -166,7 +167,7 @@ SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_p
 	.SC_REGACC_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGACC_RESET_InHigh(POS_CALCULATOR_Reset_InHigh),
 	.SC_REGACC_clear_InLow(POS_CALCULATOR_SETBEGIN_InLow), // reset initial value with set begin signal
-	.SC_REGACC_load_InLow(POS_CALCULATOR_TICKLOAD_InLow), // load new data every 167.77ms
+	.SC_REGACC_load_InLow(POS_CALCULATOR_TICKLOAD_InLow), // load new data every 41.94ms
 	.SC_REGACC_data_InBUS(sum_vy),
 	.SC_REGACC_data_OutBUS(POS_CALCULATOR_POSY_OutBus)
 );
@@ -177,7 +178,7 @@ SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_p
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vz
 (
 	.i_multiplicand(POS_CALCULATOR_WZ_InBus),
-	.i_multiplier(17'b0_00000010_01100111), // 2.403159 (2.4023) //17'b0_00000100_11001110), // 4.806318 (4.8047)
+	.i_multiplier(17'b0_00000010_01100111), // 42ms*180/pi = 2.403159 (2.4023) //17'b0_00000100_11001110), // 4.806318 (4.8047)
 
 	.i_start(mult_start_flag),
 	.i_clk(POS_CALCULATOR_CLOCK_50),

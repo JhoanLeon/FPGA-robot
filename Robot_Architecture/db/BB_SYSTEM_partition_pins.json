@@ -88,11 +88,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_CLOCK_50",
+					"name" : "BB_SYSTEM_RESET_InLow",
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_RESET_InLow",
+					"name" : "BB_SYSTEM_CLOCK_50",
 					"strict" : false
 				},
 				{
