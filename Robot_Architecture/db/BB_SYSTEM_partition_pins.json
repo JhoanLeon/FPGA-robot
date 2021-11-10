@@ -104,11 +104,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_ECHO4_In",
+					"name" : "BB_SYSTEM_ECHO3_In",
 					"strict" : false
 				},
 				{
-					"name" : "BB_SYSTEM_ECHO3_In",
+					"name" : "BB_SYSTEM_ECHO4_In",
 					"strict" : false
 				},
 				{

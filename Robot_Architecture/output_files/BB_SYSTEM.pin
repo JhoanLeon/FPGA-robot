@@ -28,7 +28,7 @@
  -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
  --                 of its bank.
  --                  Bank 1:       3.3V
- --                  Bank 2:       3.3V
+ --                  Bank 2:       2.5V
  --                  Bank 3:       3.3V
  --                  Bank 4:       3.3V
  --                  Bank 5:       3.3V
@@ -94,15 +94,15 @@ GND                          : 22        : gnd    :                   :         
 BB_SYSTEM_CLOCK_50           : 23        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND+                         : 24        :        :                   :         : 2         :                
 GND+                         : 25        :        :                   :         : 2         :                
-VCCIO2                       : 26        : power  :                   : 3.3V    : 2         :                
+VCCIO2                       : 26        : power  :                   : 2.5V    : 2         :                
 GND                          : 27        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 28        :        :                   :         : 2         :                
 VCCINT                       : 29        : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 30        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 31        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 32        :        :                   :         : 2         :                
-BB_SYSTEM_SDA_InOut          : 33        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-BB_SYSTEM_SCL_Out            : 34        : output : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 33        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : 34        :        :                   :         : 2         :                
 VCCA1                        : 35        : power  :                   : 2.5V    :           :                
 GNDA1                        : 36        : gnd    :                   :         :           :                
 VCCD_PLL1                    : 37        : power  :                   : 1.2V    :           :                

@@ -113,9 +113,9 @@ POS_CALCULATOR U2
 
 	.POS_CALCULATOR_SETBEGIN_InLow(ODOM_CALCULATOR_SETBEGIN_InLow),
 	.POS_CALCULATOR_TICKLOAD_InLow(ODOM_CALCULATOR_TICKLOAD_InLow), // tick at 41.94ms to update position	
-	.POS_CALCULATOR_VX_InBus(global_vx), // global velocity vx in cm/s (in notation fixed point 17b)
-	.POS_CALCULATOR_VY_InBus(global_vy), // global velocity vy in cm/s (in notation fixed point 17b)
-	.POS_CALCULATOR_WZ_InBus(global_wz), // global velocity wz in rad/s (in notation fixed point 17b)
+	.POS_CALCULATOR_VX_InBus(global_vx), // global velocity vx in cm/s fixed point 17b
+	.POS_CALCULATOR_VY_InBus(global_vy), // global velocity vy in cm/s fixed point 17b	
+	.POS_CALCULATOR_WZ_InBus(global_wz), // global velocity wz in rad/s fixed point 17b
 	
 	//////////// OUTPUTS //////////
 	.POS_CALCULATOR_POSX_OutBus(ODOM_CALCULATOR_POSX_OutBus), // [cm] fixed point 17b

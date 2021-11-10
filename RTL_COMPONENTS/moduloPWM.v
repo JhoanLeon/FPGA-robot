@@ -8,7 +8,7 @@ module moduloPWM(reset, clock, inPWM, outPWM);
 
 //INPUTS AND OUTPUTS
 input reset;//Reset
-input clock;//Clock preescalado a 82us porque 82us * 255 flancos = 20ms (periodo de la señal de PWM)
+input clock;//Clock preescalado a 41us porque 41us * 255 flancos = 10ms (periodo del PWM)
 input [7:0] inPWM;//PWM solicitado
 output outPWM;//Senal
 

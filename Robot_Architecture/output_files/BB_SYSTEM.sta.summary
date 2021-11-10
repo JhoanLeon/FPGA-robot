@@ -3,7 +3,7 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'BB_SYSTEM_CLOCK_50'
-Slack : 2.736
+Slack : 2.518
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'BB_SYSTEM_CLOCK_50'
@@ -11,19 +11,19 @@ Slack : 0.452
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'BB_SYSTEM_CLOCK_50'
-Slack : 16.609
+Slack : 16.794
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'BB_SYSTEM_CLOCK_50'
-Slack : 1.727
+Slack : 2.258
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
-Slack : 9.612
+Slack : 9.624
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'BB_SYSTEM_CLOCK_50'
-Slack : 3.866
+Slack : 3.762
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'BB_SYSTEM_CLOCK_50'
@@ -31,19 +31,19 @@ Slack : 0.400
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'BB_SYSTEM_CLOCK_50'
-Slack : 16.817
+Slack : 16.981
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'BB_SYSTEM_CLOCK_50'
-Slack : 1.563
+Slack : 2.032
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
-Slack : 9.531
+Slack : 9.510
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'BB_SYSTEM_CLOCK_50'
-Slack : 12.564
+Slack : 12.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'BB_SYSTEM_CLOCK_50'
@@ -51,15 +51,15 @@ Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'BB_SYSTEM_CLOCK_50'
-Slack : 18.412
+Slack : 18.527
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'BB_SYSTEM_CLOCK_50'
-Slack : 0.731
+Slack : 0.966
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BB_SYSTEM_CLOCK_50'
-Slack : 9.262
+Slack : 9.261
 TNS   : 0.000
 
 ------------------------------------------------------------

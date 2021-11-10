@@ -1,7 +1,6 @@
 /*
 Created by: Jhoan Esteban Leon - je.leon.e@outlook.com
-inputs velocities are in [rad/s] and output results are in [m] fixed point 17b notation U(32,15) U(N,Q)
-output velocities with the modification will be use in [cm/s]
+inputs velocities are in [rad/s] and output results are in [cm] fixed point 17b notation U(32,15) U(N,Q)
 */
 
 //=======================================================
@@ -16,13 +15,13 @@ module POS_CALCULATOR
 
 	POS_CALCULATOR_SETBEGIN_InLow,
 	POS_CALCULATOR_TICKLOAD_InLow,
-	POS_CALCULATOR_VX_InBus, // global velocity vx in m/s (in notation fixed point 17b)
-	POS_CALCULATOR_VY_InBus, // global velocity vy in m/s (in notation fixed point 17b)
-	POS_CALCULATOR_WZ_InBus, // global velocity wz in rad/s (in notation fixed point 17b)
+	POS_CALCULATOR_VX_InBus, // global velocity vx in cm/s (fixed point 17b)
+	POS_CALCULATOR_VY_InBus, // global velocity vy in cm/s (fixed point 17b)
+	POS_CALCULATOR_WZ_InBus, // global velocity wz in rad/s (fixed point 17b)
 	
 	//////////// OUTPUTS //////////
-	POS_CALCULATOR_POSX_OutBus, // [m] fixed point 17b
-	POS_CALCULATOR_POSY_OutBus, // [m] fixed point 17b
+	POS_CALCULATOR_POSX_OutBus, // [cm] fixed point 17b
+	POS_CALCULATOR_POSY_OutBus, // [cm] fixed point 17b
 	POS_CALCULATOR_THETA_OutBus // [deg] fixed point 17b
 );
 
@@ -135,7 +134,7 @@ SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_p
 qmults #(.Q(Q_WIDTH), .N(N_WIDTH)) mult_vy
 (
 	.i_multiplicand(POS_CALCULATOR_VY_InBus),
-	.i_multiplier(17'b0_00000000_00001011), // 0.041940 (0.04297) //17'b0_00000000_00010101), // 0.083886 (0.0820)
+	.i_multiplier(17'b0_00000000_00001011), // 0.041940 (0.04297)
 	.i_start(mult_start_flag),
 	.i_clk(POS_CALCULATOR_CLOCK_50),
 	.o_result_out(result_mult_vy),
@@ -162,7 +161,7 @@ qadd #(.Q(Q_WIDTH), .N(N_WIDTH)) add_vy
 );
 
 	
-SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_posy
+SC_REGACC #(.REGACC_DATAWIDTH(N_WIDTH), .INITIAL_VALUE(17'b0)) reg_accumulator_posy //original is 17'b0
 (
 	.SC_REGACC_CLOCK_50(POS_CALCULATOR_CLOCK_50),
 	.SC_REGACC_RESET_InHigh(POS_CALCULATOR_Reset_InHigh),

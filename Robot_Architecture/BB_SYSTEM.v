@@ -45,10 +45,6 @@ module BB_SYSTEM
 	BB_SYSTEM_TRIG4_Out,
 	BB_SYSTEM_ECHO4_In,
 	
-	// I2C Master
-	BB_SYSTEM_SCL_Out,
-	BB_SYSTEM_SDA_InOut,	
-	
 	// SPI Slave
 	BB_SYSTEM_SCLK_In,
 	BB_SYSTEM_MISO_Out,
@@ -111,10 +107,6 @@ input		BB_SYSTEM_ECHO3_In;
 output	BB_SYSTEM_TRIG4_Out;
 input		BB_SYSTEM_ECHO4_In;
 	
-	// I2C Master
-output	BB_SYSTEM_SCL_Out;
-inout		BB_SYSTEM_SDA_InOut;	
-	
 	// SPI Slave
 input		BB_SYSTEM_SCLK_In;
 output	BB_SYSTEM_MISO_Out;
@@ -132,6 +124,8 @@ wire [2:0] waypoint_selection;
 wire stop_signal;
 wire begin_signal;
 
+wire new_signal;
+
 wire [1:0] movement_selection; 
 
 wire [DATA_WIDTH-1:0] distance_1;
@@ -148,6 +142,8 @@ wire [DATA_WIDTH-1:0] target_W2;
 wire [DATA_WIDTH-1:0] target_W3;
 wire [DATA_WIDTH-1:0] target_W4;
 
+wire [INT_WIDTH-1:0] current_behavior;
+
 wire [INT_WIDTH-1:0] rpms_1;
 wire [INT_WIDTH-1:0] rpms_2;
 wire [INT_WIDTH-1:0] rpms_3;
@@ -160,12 +156,16 @@ wire [DATA_WIDTH-1:0] current_W4;
 
 wire [DATA_WIDTH-1:0] global_pos_x;
 wire [DATA_WIDTH-1:0] global_pos_y;
-
 wire [DATA_WIDTH-1:0] theta_angle;
 
 wire [DATA_WIDTH-1:0] target_posx;
 wire [DATA_WIDTH-1:0] target_posy;
 wire [DATA_WIDTH-1:0] target_theta;
+
+wire global_flag_goal;
+
+wire [DATA_WIDTH-1:0] global_error_x;
+wire [DATA_WIDTH-1:0] global_error_y;
 
 wire [DATA_WIDTH-1:0] velocity_x_posc;
 wire [DATA_WIDTH-1:0] velocity_y_posc;
@@ -173,7 +173,6 @@ wire [DATA_WIDTH-1:0] velocity_z_posc;
 
 wire [DATA_WIDTH-1:0] velocity_x_behavior;
 wire [DATA_WIDTH-1:0] velocity_y_behavior;
-wire [DATA_WIDTH-1:0] velocity_z_behavior;
 
 wire TICK_167ms;
 wire CLK_41us;
@@ -184,13 +183,24 @@ wire TICK_42ms;
 //=======================================================
 
 //////////////////////////////////////////////////////////// LEDS FOR QUICKLY DEBUGGING
-assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
-assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
+//assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
+//assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
 //assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
 //assign BB_SYSTEM_LEDs_OutBus[3] = stop_signal;
 //assign BB_SYSTEM_LEDs_OutBus[3] = begin_signal;
-assign BB_SYSTEM_LEDs_OutBus[2] = ~global_pos_x[DATA_WIDTH-1];
-assign BB_SYSTEM_LEDs_OutBus[3] = ~global_pos_y[DATA_WIDTH-1];
+
+// assign BB_SYSTEM_LEDs_OutBus[0] = global_flag_goal;
+
+//assign BB_SYSTEM_LEDs_OutBus[0] = ~global_pos_x[DATA_WIDTH-1];
+assign BB_SYSTEM_LEDs_OutBus[2] = ~global_error_x[DATA_WIDTH-1];
+
+assign BB_SYSTEM_LEDs_OutBus[0] = ~movement_selection[0];
+assign BB_SYSTEM_LEDs_OutBus[1] = ~movement_selection[1];
+
+//assign BB_SYSTEM_LEDs_OutBus[2] = ~global_pos_y[DATA_WIDTH-1];
+assign BB_SYSTEM_LEDs_OutBus[3] = ~global_error_y[DATA_WIDTH-1];
+
+//assign BB_SYSTEM_LEDs_OutBus[2] = new_signal;
 
 
 //////////////////////////////////////////////////////////// FOR SPI COMMUNICATION
@@ -218,20 +228,46 @@ SPI_INTERFACE SPI_INTERFACE_U0
 	.SPI_INTERFACE_DIST3_InBus(distance_3),
 	.SPI_INTERFACE_DIST4_InBus(distance_4),
 	
-	.SPI_INTERFACE_BEHAVIOR_InBus(8'd0),
-	
-	.SPI_INTERFACE_IMUX_InBus(17'b0_11001000_00000000), // 200, 201, 202
-	.SPI_INTERFACE_IMUY_InBus(17'b0_11001001_00000000),
-	.SPI_INTERFACE_IMUZ_InBus(17'b0_11001010_00000000),
+	.SPI_INTERFACE_BEHAVIOR_InBus(current_behavior),
 	
 	//////////// OUTPUTS ////////// 
 	.SPI_INTERFACE_MISO_Out(BB_SYSTEM_MISO_Out),
+	
+	.SPI_INTERFACE_NEWSIGNAL_OutBus(new_signal),
 	
 	.SPI_INTERFACE_WAYSELECT_OutBus(waypoint_selection),
 	.SPI_INTERFACE_STOPSIGNAL_OutLow(stop_signal), // active in low
 	.SPI_INTERFACE_BEGINSIGNAL_OutLow(begin_signal) // active in low
 );
 
+//////////////////////////////////////////////////////////// FOR REACTIVE NAVIGATION
+
+DECISION_CONTROLLER DECISION_ALGORITHM
+(
+	//////////// INPUTS //////////
+	.DECISION_CONTROLLER_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.DECISION_CONTROLLER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	.DECISION_CONTROLLER_DIST1_InBus(distance_1),
+	.DECISION_CONTROLLER_DIST2_InBus(distance_2),
+	.DECISION_CONTROLLER_DIST3_InBus(distance_3),
+	.DECISION_CONTROLLER_DIST4_InBus(distance_4),
+	
+	.DECISION_CONTROLLER_NEWSIGNAL_InLow(new_signal),
+	.DECISION_CONTROLLER_STOP_InLow(stop_signal),
+	.DECISION_CONTROLLER_FLAGGOAL_InLow(global_flag_goal),
+	
+	.DECISION_CONTROLLER_ERRORX_InBus(global_error_x),
+	.DECISION_CONTROLLER_ERRORY_InBus(global_error_y),
+	
+	//////////// OUTPUTS ////////// 
+	.DECISION_CONTROLLER_CURRENTBEH_OutBus(current_behavior),
+	
+	.DECISION_CONTROLLER_MUXSELECT_OutBus(movement_selection),
+	
+	.DECISION_CONTROLLER_VELX_OutBus(velocity_x_behavior),
+	.DECISION_CONTROLLER_VELY_OutBus(velocity_y_behavior)
+);
 
 //////////////////////////////////////////////////////////// FOR MOTORS
 
@@ -255,13 +291,14 @@ CC_MUX41 CC_MUX41_U0 // velocities in cm/s and rad/s
 	
 	.CC_MUX41_z1_InBus(17'b0), // 0rad/s
 	.CC_MUX41_z2_InBus(velocity_z_posc),
-	.CC_MUX41_z3_InBus(velocity_z_behavior),
+	.CC_MUX41_z3_InBus(17'b0), // no adjust of rotation avoiding obstacles
 	.CC_MUX41_z4_InBus(17'b0), // 0rad/s
 	
-	.CC_MUX41_select_InBus(2'b01) // (movement_selection original), but for tests it selects position controller
+	.CC_MUX41_select_InBus(movement_selection)
 );
 
-//CC_MUX81 CC_MUX81_U0 // velocities in cm/s and rad/s for Testing and debugging
+
+//CC_MUX81 CC_MUX81_U0 // velocities in cm/s and rad/s for Testing and Debugging wheel controllers
 //(
 //	//////////// OUTPUTS //////////
 //	.CC_MUX81_x_OutBus(target_vx),
@@ -270,11 +307,11 @@ CC_MUX41 CC_MUX41_U0 // velocities in cm/s and rad/s
 //	
 //	//////////// INPUTS //////////
 //	.CC_MUX81_x1_InBus(17'b0), // 0m/s
-//	.CC_MUX81_x2_InBus(17'b0_00000000_00100000), // 0.125m/s
-//	.CC_MUX81_x3_InBus(17'b0_00000000_01000000), // 0.25m/s
-//	.CC_MUX81_x4_InBus(17'b0_00000000_01100000), // 0.375m/s
-//	.CC_MUX81_x5_InBus(17'b0_00000000_10000000), // 0.5m/s
-//	.CC_MUX81_x6_InBus(17'b1_00000000_01100000), // -0.375m/s
+//	.CC_MUX81_x2_InBus(17'b0_00001100_10000000), // 12.5cm/s
+//	.CC_MUX81_x3_InBus(17'b0_00011001_00000000), // 25.0cm/s
+//	.CC_MUX81_x4_InBus(17'b0_00100101_10000000), // 37.5m/s
+//	.CC_MUX81_x5_InBus(17'b0_00110010_00000000), // 50.0m/s
+//	.CC_MUX81_x6_InBus(17'b1_00100101_10000000), // -37.5m/s
 //	.CC_MUX81_x7_InBus(17'b0),
 //	.CC_MUX81_x8_InBus(17'b0),  
 //	
@@ -284,8 +321,8 @@ CC_MUX41 CC_MUX41_U0 // velocities in cm/s and rad/s
 //	.CC_MUX81_y4_InBus(17'b0),
 //	.CC_MUX81_y5_InBus(17'b0),
 //	.CC_MUX81_y6_InBus(17'b0),
-//	.CC_MUX81_y7_InBus(17'b0_00000000_01100000), // +0.375m/s
-//	.CC_MUX81_y8_InBus(17'b1_00000000_01100000), // -0.375m/s
+//	.CC_MUX81_y7_InBus(17'b0_00100101_10000000), // +37.5m/s
+//	.CC_MUX81_y8_InBus(17'b1_00100101_10000000), // -37.5m/s
 //	
 //	.CC_MUX81_z1_InBus(17'b0), // 0rad/s
 //	.CC_MUX81_z2_InBus(17'b0),
@@ -479,7 +516,7 @@ CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
 	.CC_MUX81_x5_InBus(17'b1_01100100_00000000), // -100cm in X
 	.CC_MUX81_x6_InBus(17'b0_00110010_00000000), // 50cm in X
 	.CC_MUX81_x7_InBus(17'b1_00110010_00000000), // -50cm in X
-	.CC_MUX81_x8_InBus(17'b0_00000000_01000000), // 0.25m in X 
+	.CC_MUX81_x8_InBus(17'b0_00011001_00000000), // 25cm in X 
 	
 	.CC_MUX81_y1_InBus(17'b0), // 0cm
 	.CC_MUX81_y2_InBus(17'b0_01100100_00000000), // 100cm in Y
@@ -488,7 +525,7 @@ CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
 	.CC_MUX81_y5_InBus(17'b0),
 	.CC_MUX81_y6_InBus(17'b0_00110010_00000000), // 50cm in Y
 	.CC_MUX81_y7_InBus(17'b1_00110010_00000000), // -50cm in Y
-	.CC_MUX81_y8_InBus(17'b0_00000000_11000000), // 0.75m in Y 
+	.CC_MUX81_y8_InBus(17'b0_01001011_00000000), // 75cm in Y 
 	
 	.CC_MUX81_z1_InBus(17'b0_01011010_00000000), // 90deg
 	.CC_MUX81_z2_InBus(17'b0_01011010_00000000),
@@ -516,6 +553,11 @@ POS_CONTROLLER POSITION_CONTROLLER
 	.POS_CONTROLLER_CURRENTTHETA_InBus(theta_angle),
 	
 	//////////// OUTPUTS //////////
+	.POS_CONTROLLER_GOAL_OutLow(global_flag_goal), // flag outlow to indicate goal was reached 
+	
+	.POS_CONTROLLER_ERROR_X_OutBus(global_error_x),
+	.POS_CONTROLLER_ERROR_Y_OutBus(global_error_y),
+	
 	.POS_CONTROLLER_VX_OutBus(velocity_x_posc),
 	.POS_CONTROLLER_VY_OutBus(velocity_y_posc),
 	.POS_CONTROLLER_WZ_OutBus(velocity_z_posc)
@@ -575,5 +617,6 @@ DISTANCE_READER SENSOR_4
 	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG4_Out),
 	.DISTANCE_READER_DISTANCE_OutBus(distance_4)
 );
+
 
 endmodule

@@ -1,0 +1,108 @@
+//****************************************
+// Made by: Jhoan Esteban León - je.leon.e@outlook.com
+//****************************************
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module DECISION_CONTROLLER
+(
+	//////////// INPUTS //////////
+	DECISION_CONTROLLER_CLOCK_50,
+	DECISION_CONTROLLER_RESET_InHigh,
+	
+	DECISION_CONTROLLER_FLAGDATAIN_In, // InHigh
+	DECISION_CONTROLLER_DATAIN_InBus,
+	
+	DECISION_CONTROLLER_POSX_InBus,
+	DECISION_CONTROLLER_POSY_InBus,
+	DECISION_CONTROLLER_THETA_InBus,
+	
+	DECISION_CONTROLLER_RPM1_InBus,
+	DECISION_CONTROLLER_RPM2_InBus,
+	DECISION_CONTROLLER_RPM3_InBus,
+	DECISION_CONTROLLER_RPM4_InBus,
+	
+	DECISION_CONTROLLER_DIST1_InBus,
+	DECISION_CONTROLLER_DIST2_InBus,
+	DECISION_CONTROLLER_DIST3_InBus,
+	DECISION_CONTROLLER_DIST4_InBus,
+	
+	DECISION_CONTROLLER_BEHAVIOR_InBus,
+	
+	DECISION_CONTROLLER_IMUX_InBus,
+	DECISION_CONTROLLER_IMUY_InBus,
+	DECISION_CONTROLLER_IMUZ_InBus,
+	
+	//////////// OUTPUTS ////////// 
+	DECISION_CONTROLLER_DATAOUT_OutBus,
+	
+	DECISION_CONTROLLER_WAYSELECT_OutBus,
+	DECISION_CONTROLLER_STOPSIGNAL_OutLow,
+	DECISION_CONTROLLER_BEGINSIGNAL_OutLow
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input	DECISION_CONTROLLER_CLOCK_50;
+input	DECISION_CONTROLLER_RESET_InHigh;
+	
+input	DECISION_CONTROLLER_FLAGDATAIN_In;
+input [INT_WIDTH-1:0]	DECISION_CONTROLLER_DATAIN_InBus;
+	
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_POSX_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_POSY_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_THETA_InBus;
+	
+input [INT_WIDTH-1:0]	DECISION_CONTROLLER_RPM1_InBus;
+input [INT_WIDTH-1:0]	DECISION_CONTROLLER_RPM2_InBus;
+input [INT_WIDTH-1:0]	DECISION_CONTROLLER_RPM3_InBus;
+input [INT_WIDTH-1:0]	DECISION_CONTROLLER_RPM4_InBus;
+	
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_DIST1_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_DIST2_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_DIST3_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_DIST4_InBus;
+	
+input [INT_WIDTH-1:0]	DECISION_CONTROLLER_BEHAVIOR_InBus;
+	
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_IMUX_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_IMUY_InBus;
+input [N_WIDTH-1:0]	DECISION_CONTROLLER_IMUZ_InBus;
+	
+	//////////// OUTPUTS ////////// 
+output [INT_WIDTH-1:0]	DECISION_CONTROLLER_DATAOUT_OutBus;
+	
+output [2:0]	DECISION_CONTROLLER_WAYSELECT_OutBus;
+output DECISION_CONTROLLER_STOPSIGNAL_OutLow;
+output DECISION_CONTROLLER_BEGINSIGNAL_OutLow;
+	
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+reg [INT_WIDTH-1:0] current_data;
+reg [INT_WIDTH-1:0] next_data;
+
+reg [2:0] current_select;
+reg [2:0] next_select; 
+
+reg current_stop;
+reg next_stop;
+
+reg current_begin;
+reg next_begin;
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+//always @(DECISION_CONTROLLER_FLAGDATAIN_In, DECISION_CONTROLLER_DATAIN_InBus)
+always @(*)
+
+endmodule

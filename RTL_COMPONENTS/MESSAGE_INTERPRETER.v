@@ -31,12 +31,10 @@ module MESSAGE_INTERPRETER
 	
 	MESSAGE_INTERPRETER_BEHAVIOR_InBus,
 	
-	MESSAGE_INTERPRETER_IMUX_InBus,
-	MESSAGE_INTERPRETER_IMUY_InBus,
-	MESSAGE_INTERPRETER_IMUZ_InBus,
-	
 	//////////// OUTPUTS ////////// 
 	MESSAGE_INTERPRETER_DATAOUT_OutBus,
+	
+	MESSAGE_INTERPRETER_NEWSIGNAL_OutBus,
 	
 	MESSAGE_INTERPRETER_WAYSELECT_OutBus,
 	MESSAGE_INTERPRETER_STOPSIGNAL_OutLow,
@@ -77,10 +75,6 @@ localparam d_4 = 8'd43;
 
 localparam behavior = 8'd50;
 
-localparam accel_x = 8'd60;
-localparam accel_y = 8'd61;
-localparam gyro_z = 8'd62;
-
 //=======================================================
 //  PORT declarations
 //=======================================================
@@ -106,12 +100,10 @@ input [N_WIDTH-1:0]	MESSAGE_INTERPRETER_DIST4_InBus;
 	
 input [INT_WIDTH-1:0]	MESSAGE_INTERPRETER_BEHAVIOR_InBus;
 	
-input [N_WIDTH-1:0]	MESSAGE_INTERPRETER_IMUX_InBus;
-input [N_WIDTH-1:0]	MESSAGE_INTERPRETER_IMUY_InBus;
-input [N_WIDTH-1:0]	MESSAGE_INTERPRETER_IMUZ_InBus;
-	
 	//////////// OUTPUTS ////////// 
 output [INT_WIDTH-1:0]	MESSAGE_INTERPRETER_DATAOUT_OutBus;
+	
+output MESSAGE_INTERPRETER_NEWSIGNAL_OutBus;	
 	
 output [2:0]	MESSAGE_INTERPRETER_WAYSELECT_OutBus;
 output MESSAGE_INTERPRETER_STOPSIGNAL_OutLow;
@@ -132,6 +124,9 @@ reg next_stop;
 reg current_begin;
 reg next_begin;
 
+reg current_signal;
+reg next_signal;
+
 //=======================================================
 //  STRUCTURAL coding
 //=======================================================
@@ -149,6 +144,7 @@ begin
 			next_select = 3'b000; // origin waypoint
 			next_stop = 1'b1; // no stop
 			next_begin = 1'b1; // no begin
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -157,6 +153,7 @@ begin
 			next_select = 3'b001; // 2 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -165,6 +162,7 @@ begin
 			next_select = 3'b010; // 3 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -173,6 +171,7 @@ begin
 			next_select = 3'b011; // 4 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -181,6 +180,7 @@ begin
 			next_select = 3'b100; // 5 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -189,6 +189,7 @@ begin
 			next_select = 3'b101; // 6 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -197,6 +198,7 @@ begin
 			next_select = 3'b110; // 7 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 		
@@ -205,22 +207,25 @@ begin
 			next_select = 3'b111; // 8 channel mux
 			next_stop = 1'b1;
 			next_begin = 1'b1;
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 
 	stop_signal: // stop
 		begin
-			next_select = 3'b000; 
+			next_select = current_select; // continuw with the same waypoint
 			next_stop = 1'b0; // stop signal active in low
 			next_begin = 1'b1;
+			next_signal = 1'b1; // no new signal
 			next_data = current_data;
 		end
 	
 	begin_signal: // begin
 		begin
-			next_select = 3'b000;
+			next_select = 3'b000; // select waypoint origin
 			next_stop = 1'b1;
 			next_begin = 1'b0; // begin signal active in low
+			next_signal = 1'b0; // new signal
 			next_data = current_data;
 		end
 	
@@ -230,7 +235,8 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSX_InBus[15:8];//[11:4]; // data x_xxxx0000_0000xxxx 
+			next_signal = 1'b1; // no new signal
+			next_data = MESSAGE_INTERPRETER_POSX_InBus[15:8];// uint8
 		end	
 		
 	y_i: // '21' for y_i
@@ -238,7 +244,8 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_POSY_InBus[15:8];//[11:4]; // data x_xxxx0000_0000xxxx
+			next_signal = 1'b1; // no new signal
+			next_data = MESSAGE_INTERPRETER_POSY_InBus[15:8];// uint8
 		end	
 		
 	theta_i: // '22' for theta_i
@@ -246,6 +253,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_THETA_InBus[15:8]; // data, 8b u_int
 		end	
 
@@ -255,6 +263,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_RPM1_InBus; // data, 8b u_int
 		end		
 
@@ -263,6 +272,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_RPM2_InBus; // data, 8b u_int
 		end		
 		
@@ -271,6 +281,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_RPM3_InBus; // data, 8b u_int
 		end		
 		
@@ -279,6 +290,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_RPM4_InBus; // data, 8b u_int
 		end		
 		
@@ -288,6 +300,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_DIST1_InBus[15:8]; // data, 8b u_int
 		end			
 
@@ -296,6 +309,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_DIST2_InBus[15:8]; // data, 8b u_int
 		end	
 
@@ -304,6 +318,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_DIST3_InBus[15:8]; // data, 8b u_int
 		end	
 
@@ -312,6 +327,7 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_DIST4_InBus[15:8]; // data, 8b u_int
 		end			
 		
@@ -321,39 +337,17 @@ begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = 1'b1; // no new signal
 			next_data = MESSAGE_INTERPRETER_BEHAVIOR_InBus; // data, 1 byte to decode behavior
 		end	
-	
-	
-	accel_x: // '60' for accel_x
-		begin
-			next_select = current_select;
-			next_stop = current_stop;
-			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUX_InBus[15:8]; // data, 8b u_int
-		end			
-	
-	accel_y: // '60' for accel_y
-		begin
-			next_select = current_select;
-			next_stop = current_stop;
-			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUY_InBus[15:8]; // data, 8b u_int
-		end	
-	
-	gyro_z: // '60' for gyro_z
-		begin
-			next_select = current_select;
-			next_stop = current_stop;
-			next_begin = current_begin;
-			next_data = MESSAGE_INTERPRETER_IMUZ_InBus[15:8]; // data, 8b u_int
-		end	
+		
 	
 	default:
 		begin
 			next_select = current_select;
 			next_stop = current_stop;
 			next_begin = current_begin;
+			next_signal = current_signal;
 			next_data = current_data;
 		end	
 	endcase	
@@ -365,6 +359,7 @@ begin
 		next_select = current_select;
 		next_stop = current_stop;
 		next_begin = current_begin;
+		next_signal = current_signal;
 		next_data = current_data;
 	end
 	
@@ -376,8 +371,9 @@ begin
 	if (MESSAGE_INTERPRETER_RESET_InHigh == 1'b1)
 		begin
 			current_select = 3'b000; // origin
-			current_stop = 1'b0; // begin in stop 
+			current_stop = 1'b1; 
 			current_begin = 1'b1;
+			current_signal = 1'b1; // no new signal
 			current_data = 8'b00000000; // no data to send
 		end
 	else
@@ -385,6 +381,7 @@ begin
 			current_select <= next_select;
 			current_stop <= next_stop;
 			current_begin <= next_begin;
+			current_signal <= next_signal;
 			current_data <= next_data;
 		end
 end
@@ -395,5 +392,6 @@ assign MESSAGE_INTERPRETER_STOPSIGNAL_OutLow = current_stop;
 assign MESSAGE_INTERPRETER_BEGINSIGNAL_OutLow = current_begin;
 assign MESSAGE_INTERPRETER_DATAOUT_OutBus = current_data;
 
+assign MESSAGE_INTERPRETER_NEWSIGNAL_OutBus = current_signal; // current_select ^ next_select;
 		
 endmodule
