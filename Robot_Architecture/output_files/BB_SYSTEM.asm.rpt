@@ -1,5 +1,5 @@
 Assembler report for BB_SYSTEM
-Wed Nov 10 18:36:25 2021
+Wed Nov 17 19:06:41 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Nov 10 18:36:25 2021 ;
+; Assembler Status      ; Successful - Wed Nov 17 19:06:41 2021 ;
 ; Revision Name         ; BB_SYSTEM                             ;
 ; Top-level Entity Name ; BB_SYSTEM                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------------------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                                                       ;
 +----------------+-------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x003DCEAD                                                                                                                    ;
-; Checksum       ; 0x003DCEAD                                                                                                                    ;
+; JTAG usercode  ; 0x003D8F50                                                                                                                    ;
+; Checksum       ; 0x003D8F50                                                                                                                    ;
 +----------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Nov 10 18:36:24 2021
+    Info: Processing started: Wed Nov 17 19:06:32 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off BB_SYSTEM -c BB_SYSTEM
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 592 megabytes
-    Info: Processing ended: Wed Nov 10 18:36:26 2021
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 588 megabytes
+    Info: Processing ended: Wed Nov 17 19:06:41 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:02
 
 

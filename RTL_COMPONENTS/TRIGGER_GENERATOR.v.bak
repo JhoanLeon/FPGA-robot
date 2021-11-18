@@ -1,0 +1,113 @@
+
+/*
+Created by: Jhoan Esteban Leon je.leon.e@outlook.com
+with libraries from https://github.com/freecores/verilog_fixed_point_math_library
+
+This module read obstacule distance from promity sensor hc-sr04
+the measure of distance is done every 10ms and is in [cm/s] fixed point 17b notation U(17,8) U(N,Q)
+*/
+
+//=======================================================
+//  MODULE Definition
+//=======================================================
+
+module TRIGGER_GENERATOR
+(
+	//////////// INPUTS //////////
+	TRIGGER_GENERATOR_CLOCK_50,
+	TRIGGER_GENERATOR_RESET_InHigh,
+	
+	TRIGGER_GENERATOR_ECHO_In,
+	
+	//////////// OUTPUTS //////////
+	TRIGGER_GENERATOR_TRIGGER_Out,
+	TRIGGER_GENERATOR_LOADSIGNAL_OutLow,
+	TRIGGER_GENERATOR_DISTANCE_OutBus
+);
+
+//=======================================================
+//  PARAMETER declarations
+//=======================================================
+parameter N_WIDTH = 17;
+parameter Q_WIDTH = 8;
+
+//=======================================================
+//  PORT declarations
+//=======================================================
+input	TRIGGER_GENERATOR_CLOCK_50;
+input	TRIGGER_GENERATOR_RESET_InHigh;
+	
+input	TRIGGER_GENERATOR_ECHO_In;
+
+output reg	TRIGGER_GENERATOR_TRIGGER_Out;
+
+output reg TRIGGER_GENERATOR_LOADSIGNAL_OutLow;
+
+output [N_WIDTH-1:0]	TRIGGER_GENERATOR_DISTANCE_OutBus;
+
+//=======================================================
+//  REG/WIRE declarations
+//=======================================================
+reg [19:0] counter_trigger = 20'b0;
+reg [N_WIDTH-1:0] counter_echo = 17'b0;
+reg [3:0] counter_pulses_10 = 4'b0; // counter to reduce conversion rate to the precision
+
+//=======================================================
+//  STRUCTURAL coding
+//=======================================================
+
+always @ (posedge TRIGGER_GENERATOR_CLOCK_50) 
+begin
+	counter_trigger = counter_trigger + 1'b1;
+	
+	if ((TRIGGER_GENERATOR_RESET_InHigh == 1'b1) || (counter_trigger == 20'd500000)) // 10ms for each measure (count = 500.000*20ns)
+	begin
+		counter_trigger = 20'd0; // reset the counter for trigger pulses
+		counter_echo = 17'd0; // counter of echo time
+		counter_pulses_10 = 4'd0; // reset the counter
+		TRIGGER_GENERATOR_LOADSIGNAL_OutLow = 1'b1; // no activate load signal
+	end
+	
+	else if (counter_trigger <= 20'd500) // 10us of trigger pulse = 500*20ns
+	begin
+		TRIGGER_GENERATOR_TRIGGER_Out = 1'b1; // activate trigger
+		TRIGGER_GENERATOR_LOADSIGNAL_OutLow = 1'b1; // no activate load signal
+	end
+	
+	else if (counter_trigger == 20'd499999)
+	begin
+		TRIGGER_GENERATOR_TRIGGER_Out = 1'b0; // no trigger
+		TRIGGER_GENERATOR_LOADSIGNAL_OutLow = 1'b0; // activate load signal		
+	end	
+	
+	else
+	begin
+		TRIGGER_GENERATOR_TRIGGER_Out = 1'd0; // no trigger
+		TRIGGER_GENERATOR_LOADSIGNAL_OutLow = 1'b1; // no activate load signal
+	end
+
+	
+	
+	if (counter_pulses_10 < 4'd10)
+	begin
+		counter_pulses_10 = counter_pulses_10 + 1'b1;
+	end
+	
+	else if ( (TRIGGER_GENERATOR_ECHO_In == 1'd1) && (counter_pulses_10 == 4'd10) )
+	begin
+		counter_echo = counter_echo + 17'b0_00000000_00000001; // 0.003432 cm/pulso (0.003906)
+		counter_pulses_10 = 4'd0; // reset the counter
+	end
+	
+	else
+	begin
+		counter_pulses_10 = 4'd0; // reset the counter
+	end	
+	
+end
+
+
+assign TRIGGER_GENERATOR_DISTANCE_OutBus = counter_echo;
+
+
+endmodule

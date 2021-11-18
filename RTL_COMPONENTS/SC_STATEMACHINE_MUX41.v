@@ -59,8 +59,8 @@ output reg [1:0] SC_STATEMACHINE_MUX41_MUXSELECT_OutBus;
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-reg [4:0] STATE_Register = 0;
-reg [4:0] STATE_Signal = 0;
+reg [2:0] STATE_Register = 0;
+reg [2:0] STATE_Signal = 0;
 
 //=======================================================
 //  STRUCTURAL coding
@@ -79,11 +79,15 @@ begin
 		
 		STATE_POSCONT_0:	if (SC_STATEMACHINE_MUX41_STOP_InLow == 1'b0 || SC_STATEMACHINE_MUX41_FLAGGOAL_InLow == 1'b0)
 									STATE_Signal = STATE_STOP_0;
+								else if (SC_STATEMACHINE_MUX41_BEHAVIOR_In == 1'b0)
+									STATE_Signal = STATE_AVOIDCONT_0;
 								else
 									STATE_Signal = STATE_POSCONT_0;
 		
 		STATE_AVOIDCONT_0:	if (SC_STATEMACHINE_MUX41_STOP_InLow == 1'b0 || SC_STATEMACHINE_MUX41_FLAGGOAL_InLow == 1'b0)
 										STATE_Signal = STATE_STOP_0;
+									else if (SC_STATEMACHINE_MUX41_BEHAVIOR_In == 1'b1)
+										STATE_Signal = STATE_POSCONT_0;
 									else
 										STATE_Signal = STATE_AVOIDCONT_0;
 		
@@ -147,4 +151,5 @@ begin
 		end
 	endcase
 end
+
 endmodule

@@ -213,7 +213,7 @@ begin
 
 	stop_signal: // stop
 		begin
-			next_select = current_select; // continuw with the same waypoint
+			next_select = current_select; // continue with the same waypoint
 			next_stop = 1'b0; // stop signal active in low
 			next_begin = 1'b1;
 			next_signal = 1'b1; // no new signal

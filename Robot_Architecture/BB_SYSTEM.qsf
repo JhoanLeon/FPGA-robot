@@ -111,11 +111,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_TRIG4_Out
 set_location_assignment PIN_121 -to BB_SYSTEM_TRIG3_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_TRIG3_Out
 set_location_assignment PIN_66 -to BB_SYSTEM_TRIG2_Out
-set_location_assignment PIN_59 -to BB_SYSTEM_TRIG1_Out
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_TRIG2_Out
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SDA_InOut
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_SCL_Out
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_TRIG1_Out
 set_location_assignment PIN_125 -to BB_SYSTEM_RESET_InLow
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BB_SYSTEM_RESET_InLow
 set_location_assignment PIN_58 -to BB_SYSTEM_PWM1_Out
@@ -179,4 +175,6 @@ set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/CC_GREATERTHAN.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/CC_EQUAL.v
 set_global_assignment -name VERILOG_FILE BB_SYSTEM.v
 set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/DECISION_CONTROLLER.v
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/SC_STATEMACHINE_DESC.v
+set_global_assignment -name VERILOG_FILE ../RTL_COMPONENTS/TRIGGER_GENERATOR.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

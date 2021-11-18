@@ -33,7 +33,7 @@ module BB_SYSTEM
 	BB_SYSTEM_PHASEA4_In,
 	
 	// Proximity sensors
-	BB_SYSTEM_TRIG1_Out,
+	//BB_SYSTEM_TRIG1_Out,
 	BB_SYSTEM_ECHO1_In,
 
 	BB_SYSTEM_TRIG2_Out,
@@ -62,8 +62,8 @@ parameter DATA_WIDTH = 17;
 parameter INT_WIDTH = 8;
 
 parameter N_COUNTER_TICK_167ms = 23; // with 23 -> tick at 167.7722ms, with 22 -> tick at 83.8860ms, change CONV_PUL2RPM
-parameter N_COUNTER_TICK_42ms = 21; // with 21 -> tick at 41.94ms change POS_CALCULATOR
 parameter N_PRESCALER_41us = 11; // 11 for 10ms PWM period (clk=41us), 12 for 20ms PWM period (clk=82us)
+parameter N_COUNTER_TICK_10ms = 19; // with 21 -> tick at 41.94ms, with 19 -> tick at 10.49ms change POS_CALCULATOR
 
 //=======================================================
 //  PORT declarations
@@ -95,7 +95,7 @@ output	BB_SYSTEM_IN42_Out;
 input		BB_SYSTEM_PHASEA4_In;
 	
 	// Proximity sensors
-output	BB_SYSTEM_TRIG1_Out;
+//input		BB_SYSTEM_TRIG1_Out;
 input		BB_SYSTEM_ECHO1_In;
 
 output	BB_SYSTEM_TRIG2_Out;
@@ -132,6 +132,14 @@ wire [DATA_WIDTH-1:0] distance_1;
 wire [DATA_WIDTH-1:0] distance_2;
 wire [DATA_WIDTH-1:0] distance_3;
 wire [DATA_WIDTH-1:0] distance_4;
+
+wire [DATA_WIDTH-1:0] reg_distance_1;
+wire [DATA_WIDTH-1:0] reg_distance_2;
+wire [DATA_WIDTH-1:0] reg_distance_3;
+wire [DATA_WIDTH-1:0] reg_distance_4;
+
+wire trigger_pulse;
+wire load_distances;
 
 wire [DATA_WIDTH-1:0] target_vx;
 wire [DATA_WIDTH-1:0] target_vy;
@@ -176,31 +184,27 @@ wire [DATA_WIDTH-1:0] velocity_y_behavior;
 
 wire TICK_167ms;
 wire CLK_41us;
-wire TICK_42ms;
+wire TICK_10ms;
 
 //=======================================================
 //  STRUCTURAL coding
 //=======================================================
 
 //////////////////////////////////////////////////////////// LEDS FOR QUICKLY DEBUGGING
+
 //assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
 //assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
 //assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
 //assign BB_SYSTEM_LEDs_OutBus[3] = stop_signal;
-//assign BB_SYSTEM_LEDs_OutBus[3] = begin_signal;
-
-// assign BB_SYSTEM_LEDs_OutBus[0] = global_flag_goal;
 
 //assign BB_SYSTEM_LEDs_OutBus[0] = ~global_pos_x[DATA_WIDTH-1];
 assign BB_SYSTEM_LEDs_OutBus[2] = ~global_error_x[DATA_WIDTH-1];
 
-assign BB_SYSTEM_LEDs_OutBus[0] = ~movement_selection[0];
-assign BB_SYSTEM_LEDs_OutBus[1] = ~movement_selection[1];
-
 //assign BB_SYSTEM_LEDs_OutBus[2] = ~global_pos_y[DATA_WIDTH-1];
 assign BB_SYSTEM_LEDs_OutBus[3] = ~global_error_y[DATA_WIDTH-1];
 
-//assign BB_SYSTEM_LEDs_OutBus[2] = new_signal;
+assign BB_SYSTEM_LEDs_OutBus[0] = ~movement_selection[0];
+assign BB_SYSTEM_LEDs_OutBus[1] = ~movement_selection[1];
 
 
 //////////////////////////////////////////////////////////// FOR SPI COMMUNICATION
@@ -240,6 +244,7 @@ SPI_INTERFACE SPI_INTERFACE_U0
 	.SPI_INTERFACE_BEGINSIGNAL_OutLow(begin_signal) // active in low
 );
 
+
 //////////////////////////////////////////////////////////// FOR REACTIVE NAVIGATION
 
 DECISION_CONTROLLER DECISION_ALGORITHM
@@ -268,6 +273,7 @@ DECISION_CONTROLLER DECISION_ALGORITHM
 	.DECISION_CONTROLLER_VELX_OutBus(velocity_x_behavior),
 	.DECISION_CONTROLLER_VELY_OutBus(velocity_y_behavior)
 );
+
 
 //////////////////////////////////////////////////////////// FOR MOTORS
 
@@ -363,8 +369,8 @@ SC_COUNTER #(.N(N_COUNTER_TICK_167ms)) COUNTER_TICK_167ms // N is the amount of 
 	.SC_COUNTER_CLEAR_InLow(1'b1), // signal to clear the count
 	
 	.SC_COUNTER_REGCOUNT(), //Output bus for count
-	.SC_COUNTER_FLAG_OutLow(), //Output flag InLow for specific number of count
-	.SC_COUNTER_ENDCOUNT_OutLow(TICK_167ms) // output flag InLow for end of total count
+	.SC_COUNTER_FLAG_OutLow(), //Output flag OutLow for specific number of count
+	.SC_COUNTER_ENDCOUNT_OutLow(TICK_167ms) // output flag OutLow for end of total count
 );
 
 
@@ -465,7 +471,7 @@ WHEEL_CONTROLLER WHEEL_CONTROLLER_4
 
 //////////////////////////////////////////////////////////// FOR ODOMETRY
 
-SC_COUNTER #(.N(N_COUNTER_TICK_42ms)) COUNTER_TICK_42ms // N is the amount of bit for count, maximun number of flag and count is 2^(N)-1
+SC_COUNTER #(.N(N_COUNTER_TICK_10ms)) COUNTER_TICK_10ms // N is the amount of bit for count, maximun number of flag and count is 2^(N)-1
 (
 	.SC_COUNTER_CLOCK(BB_SYSTEM_CLOCK_50),
 	.SC_COUNTER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
@@ -474,7 +480,7 @@ SC_COUNTER #(.N(N_COUNTER_TICK_42ms)) COUNTER_TICK_42ms // N is the amount of bi
 	
 	.SC_COUNTER_REGCOUNT(), // Output bus for count
 	.SC_COUNTER_FLAG_OutLow(), // Output flag InLow for specific number of count
-	.SC_COUNTER_ENDCOUNT_OutLow(TICK_42ms) // output flag InLow for end of total count
+	.SC_COUNTER_ENDCOUNT_OutLow(TICK_10ms) // output flag InLow for end of total count
 );
 
 
@@ -485,7 +491,7 @@ ODOM_CALCULATOR ODOMETRY_CALCULATOR
 	.ODOM_CALCULATOR_Reset_InHigh(~BB_SYSTEM_RESET_InLow),
 	
 	.ODOM_CALCULATOR_SETBEGIN_InLow(begin_signal),
-	.ODOM_CALCULATOR_TICKLOAD_InLow(TICK_42ms),
+	.ODOM_CALCULATOR_TICKLOAD_InLow(TICK_10ms),
 	.ODOM_CALCULATOR_W1_InBus(current_W1),
 	.ODOM_CALCULATOR_W2_InBus(current_W2),
 	.ODOM_CALCULATOR_W3_InBus(current_W3),
@@ -536,7 +542,6 @@ CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
 	.CC_MUX81_z7_InBus(17'b0_01011010_00000000),
 	.CC_MUX81_z8_InBus(17'b0_01011010_00000000),	
 	
-	
 	.CC_MUX81_select_InBus(waypoint_selection)
 );
 
@@ -566,6 +571,22 @@ POS_CONTROLLER POSITION_CONTROLLER
 
 //////////////////////////////////////////////////////////// FOR PROXIMITY SENSORS
 
+TRIGGER_GENERATOR TRIGGER_GENERATOR_PULSE
+(
+	//////////// INPUTS //////////
+	.TRIGGER_GENERATOR_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.TRIGGER_GENERATOR_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
+	
+	//////////// OUTPUTS //////////
+	.TRIGGER_GENERATOR_TRIGGER_Out(trigger_pulse),
+	.TRIGGER_GENERATOR_LOADSIGNAL_OutLow(load_distances)
+);
+
+//assign BB_SYSTEM_TRIG1_Out = trigger_pulse;
+assign BB_SYSTEM_TRIG2_Out = trigger_pulse;
+assign BB_SYSTEM_TRIG3_Out = trigger_pulse;
+assign BB_SYSTEM_TRIG4_Out = trigger_pulse;
+
 DISTANCE_READER SENSOR_1
 (
 	//////////// INPUTS //////////
@@ -573,11 +594,23 @@ DISTANCE_READER SENSOR_1
 	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
 	
 	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO1_In),
+	.DISTANCE_READER_LOADSIGNAL_InLow(load_distances),
 	
 	//////////// OUTPUTS //////////
-	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG1_Out),
-	.DISTANCE_READER_DISTANCE_OutBus(distance_1)
+	.DISTANCE_READER_DISTANCE_OutBus(reg_distance_1)
 );
+
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATA_WIDTH)) REG_DIST_1
+(
+	//////////// INPUTS //////////
+	.SC_REGGENERAL_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.SC_REGGENERAL_RESET_InHigh(~BB_SYSTEM_RESET_InLow), 
+	.SC_REGGENERAL_load_InLow(load_distances), 
+	.SC_REGGENERAL_data_InBus(reg_distance_1),
+	//////////// OUTPUTS //////////
+	.SC_REGGENERAL_data_OutBUS(distance_1)
+);
+
 
 DISTANCE_READER SENSOR_2
 (
@@ -586,11 +619,23 @@ DISTANCE_READER SENSOR_2
 	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
 	
 	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO2_In),
+	.DISTANCE_READER_LOADSIGNAL_InLow(load_distances),
 	
 	//////////// OUTPUTS //////////
-	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG2_Out),
-	.DISTANCE_READER_DISTANCE_OutBus(distance_2)
+	.DISTANCE_READER_DISTANCE_OutBus(reg_distance_2)
 );
+
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATA_WIDTH)) REG_DIST_2
+(
+	//////////// INPUTS //////////
+	.SC_REGGENERAL_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.SC_REGGENERAL_RESET_InHigh(~BB_SYSTEM_RESET_InLow), 
+	.SC_REGGENERAL_load_InLow(load_distances), 
+	.SC_REGGENERAL_data_InBus(reg_distance_2),
+	//////////// OUTPUTS //////////
+	.SC_REGGENERAL_data_OutBUS(distance_2)
+);
+
 
 DISTANCE_READER SENSOR_3
 (
@@ -599,11 +644,23 @@ DISTANCE_READER SENSOR_3
 	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
 	
 	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO3_In),
+	.DISTANCE_READER_LOADSIGNAL_InLow(load_distances),
 	
 	//////////// OUTPUTS //////////
-	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG3_Out),
-	.DISTANCE_READER_DISTANCE_OutBus(distance_3)
+	.DISTANCE_READER_DISTANCE_OutBus(reg_distance_3)
 );
+
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATA_WIDTH)) REG_DIST_3
+(
+	//////////// INPUTS //////////
+	.SC_REGGENERAL_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.SC_REGGENERAL_RESET_InHigh(~BB_SYSTEM_RESET_InLow), 
+	.SC_REGGENERAL_load_InLow(load_distances), 
+	.SC_REGGENERAL_data_InBus(reg_distance_3),
+	//////////// OUTPUTS //////////
+	.SC_REGGENERAL_data_OutBUS(distance_3)
+);
+
 
 DISTANCE_READER SENSOR_4
 (
@@ -612,10 +669,21 @@ DISTANCE_READER SENSOR_4
 	.DISTANCE_READER_RESET_InHigh(~BB_SYSTEM_RESET_InLow),
 	
 	.DISTANCE_READER_ECHO_In(BB_SYSTEM_ECHO4_In),
+	.DISTANCE_READER_LOADSIGNAL_InLow(load_distances),
 	
 	//////////// OUTPUTS //////////
-	.DISTANCE_READER_TRIGGER_Out(BB_SYSTEM_TRIG4_Out),
-	.DISTANCE_READER_DISTANCE_OutBus(distance_4)
+	.DISTANCE_READER_DISTANCE_OutBus(reg_distance_4)
+);
+
+SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(DATA_WIDTH)) REG_DIST_4
+(
+	//////////// INPUTS //////////
+	.SC_REGGENERAL_CLOCK_50(BB_SYSTEM_CLOCK_50),
+	.SC_REGGENERAL_RESET_InHigh(~BB_SYSTEM_RESET_InLow), 
+	.SC_REGGENERAL_load_InLow(load_distances), 
+	.SC_REGGENERAL_data_InBus(reg_distance_4),
+	//////////// OUTPUTS //////////
+	.SC_REGGENERAL_data_OutBUS(distance_4)
 );
 
 

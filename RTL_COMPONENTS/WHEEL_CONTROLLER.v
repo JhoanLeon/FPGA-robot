@@ -165,19 +165,19 @@ qmult #(.Q(Q_WIDTH), .N(N_WIDTH)) CONV_RPM2RAD
 );
 
 
-SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_U1
-(
-	.SC_REGGENERAL_CLOCK_50(WHEEL_CONTROLLER_CLOCK),
-	.SC_REGGENERAL_RESET_InHigh(WHEEL_CONTROLLER_RESET_InHigh), 
-	.SC_REGGENERAL_load_InLow(WHEEL_CONTROLLER_CLK82us_In), // WHEEL_CONTROLLER_TICK167ms_In), 
-	.SC_REGGENERAL_data_InBus(rad_out_17b),
-
-	.SC_REGGENERAL_data_OutBUS(reg_rad_out)
-);
+//SC_REGGENERAL #(.REGGENERAL_DATAWIDTH(N_WIDTH)) REGGENERAL_U1
+//(
+//	.SC_REGGENERAL_CLOCK_50(WHEEL_CONTROLLER_CLOCK),
+//	.SC_REGGENERAL_RESET_InHigh(WHEEL_CONTROLLER_RESET_InHigh), 
+//	.SC_REGGENERAL_load_InLow(1'b0), // always update info  WHEEL_CONTROLLER_CLK82us_In), // WHEEL_CONTROLLER_TICK167ms_In), 
+//	.SC_REGGENERAL_data_InBus(rad_out_17b),
+//
+//	.SC_REGGENERAL_data_OutBUS(reg_rad_out)
+//);
 
 
 assign WHEEL_CONTROLLER_RPM_OutBus = reg_rpm_out[15:8]; // 8 bits for int number of rpms
 //assign WHEEL_CONTROLLER_W_OutBus = {current_direction_rot, reg_rad_out[30:0]}; // this uses direction calculated from encoders
-assign WHEEL_CONTROLLER_W_OutBus = {WHEEL_CONTROLLER_TARGETW_InBus[N_WIDTH-1], reg_rad_out[N_WIDTH-2:0]}; // this uses direction of setpoint velocity
+assign WHEEL_CONTROLLER_W_OutBus = {WHEEL_CONTROLLER_TARGETW_InBus[N_WIDTH-1], rad_out_17b[N_WIDTH-2:0]}; // this uses direction of setpoint velocity
 
 endmodule
