@@ -517,17 +517,17 @@ CC_MUX81 CC_MUX81_U1 // 8 waypoints for position controller
 	//////////// INPUTS //////////
 	.CC_MUX81_x1_InBus(17'b0), // 0cm
 	.CC_MUX81_x2_InBus(17'b0),
-	.CC_MUX81_x3_InBus(17'b0_01100100_00000000), // 100cm in X
+	.CC_MUX81_x3_InBus(17'b0_11001000_00000000), // 200cm in X
 	.CC_MUX81_x4_InBus(17'b0), 
-	.CC_MUX81_x5_InBus(17'b1_01100100_00000000), // -100cm in X
+	.CC_MUX81_x5_InBus(17'b1_11001000_00000000), // -200cm in X
 	.CC_MUX81_x6_InBus(17'b0_00110010_00000000), // 50cm in X
 	.CC_MUX81_x7_InBus(17'b1_00110010_00000000), // -50cm in X
 	.CC_MUX81_x8_InBus(17'b0_00011001_00000000), // 25cm in X 
 	
 	.CC_MUX81_y1_InBus(17'b0), // 0cm
-	.CC_MUX81_y2_InBus(17'b0_01100100_00000000), // 100cm in Y
+	.CC_MUX81_y2_InBus(17'b0_11001000_00000000), // 200cm in Y
 	.CC_MUX81_y3_InBus(17'b0),
-	.CC_MUX81_y4_InBus(17'b1_01100100_00000000), // -100cm in Y
+	.CC_MUX81_y4_InBus(17'b1_11001000_00000000), // -200cm in Y
 	.CC_MUX81_y5_InBus(17'b0),
 	.CC_MUX81_y6_InBus(17'b0_00110010_00000000), // 50cm in Y
 	.CC_MUX81_y7_InBus(17'b1_00110010_00000000), // -50cm in Y

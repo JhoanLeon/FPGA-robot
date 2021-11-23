@@ -29,7 +29,7 @@ parameter N_WIDTH = 17;
 
 //// CENTIMETERS
 parameter h = 17'b0_00000101_00000000; // 5cm de error para X y Y
-parameter h1 = 17'b0_00010100_00000000; // 20deg de error en theta [100deg-80deg]
+parameter h1 = 17'b0_00001010_00000000; // 10deg de error en theta [100deg-80deg]
 
 parameter global_velocity_pos = 17'b0_00110010_00000000; // +50cm/s
 parameter global_velocity_neg = 17'b1_00110010_00000000; // -50cm/s
@@ -108,7 +108,7 @@ begin
 						begin
 							ERROR_CONTROL_VX_OutBus = 17'b0;
 							ERROR_CONTROL_VY_OutBus = 17'b0;
-							ERROR_CONTROL_WZ_OutBus = 17'b1_00000011_00000000; // global_velocity_neg;
+							ERROR_CONTROL_WZ_OutBus = 17'b1_00000011_00000000; // -3rad/s global_velocity_neg;
 							ERROR_CONTROL_GOAL_FLAG = 1'b1;
 						end
 			
