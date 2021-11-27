@@ -1,5 +1,7 @@
-
-// This project contains the complete architecture of the FPGA-ROBOT
+//****************************************
+// This project contains the complete architecture on 17b of the FP-ROBOT
+// Made by: Jhoan Esteban León - je.leon.e@outlook.com
+//****************************************
 
 //=======================================================
 //  MODULE Definition
@@ -192,15 +194,7 @@ wire TICK_10ms;
 
 //////////////////////////////////////////////////////////// LEDS FOR QUICKLY DEBUGGING
 
-//assign BB_SYSTEM_LEDs_OutBus[0] = ~waypoint_selection[0];
-//assign BB_SYSTEM_LEDs_OutBus[1] = ~waypoint_selection[1];
-//assign BB_SYSTEM_LEDs_OutBus[2] = ~waypoint_selection[2];
-//assign BB_SYSTEM_LEDs_OutBus[3] = stop_signal;
-
-//assign BB_SYSTEM_LEDs_OutBus[0] = ~global_pos_x[DATA_WIDTH-1];
 assign BB_SYSTEM_LEDs_OutBus[2] = ~global_error_x[DATA_WIDTH-1];
-
-//assign BB_SYSTEM_LEDs_OutBus[2] = ~global_pos_y[DATA_WIDTH-1];
 assign BB_SYSTEM_LEDs_OutBus[3] = ~global_error_y[DATA_WIDTH-1];
 
 assign BB_SYSTEM_LEDs_OutBus[0] = ~movement_selection[0];
@@ -304,45 +298,6 @@ CC_MUX41 CC_MUX41_U0 // velocities in cm/s and rad/s
 );
 
 
-//CC_MUX81 CC_MUX81_U0 // velocities in cm/s and rad/s for Testing and Debugging wheel controllers
-//(
-//	//////////// OUTPUTS //////////
-//	.CC_MUX81_x_OutBus(target_vx),
-//	.CC_MUX81_y_OutBus(target_vy),
-//	.CC_MUX81_z_OutBus(target_wz),
-//	
-//	//////////// INPUTS //////////
-//	.CC_MUX81_x1_InBus(17'b0), // 0m/s
-//	.CC_MUX81_x2_InBus(17'b0_00001100_10000000), // 12.5cm/s
-//	.CC_MUX81_x3_InBus(17'b0_00011001_00000000), // 25.0cm/s
-//	.CC_MUX81_x4_InBus(17'b0_00100101_10000000), // 37.5m/s
-//	.CC_MUX81_x5_InBus(17'b0_00110010_00000000), // 50.0m/s
-//	.CC_MUX81_x6_InBus(17'b1_00100101_10000000), // -37.5m/s
-//	.CC_MUX81_x7_InBus(17'b0),
-//	.CC_MUX81_x8_InBus(17'b0),  
-//	
-//	.CC_MUX81_y1_InBus(17'b0), // 0m/s
-//	.CC_MUX81_y2_InBus(17'b0),
-//	.CC_MUX81_y3_InBus(17'b0),
-//	.CC_MUX81_y4_InBus(17'b0),
-//	.CC_MUX81_y5_InBus(17'b0),
-//	.CC_MUX81_y6_InBus(17'b0),
-//	.CC_MUX81_y7_InBus(17'b0_00100101_10000000), // +37.5m/s
-//	.CC_MUX81_y8_InBus(17'b1_00100101_10000000), // -37.5m/s
-//	
-//	.CC_MUX81_z1_InBus(17'b0), // 0rad/s
-//	.CC_MUX81_z2_InBus(17'b0),
-//	.CC_MUX81_z3_InBus(17'b0),
-//	.CC_MUX81_z4_InBus(17'b0),
-//	.CC_MUX81_z5_InBus(17'b0),
-//	.CC_MUX81_z6_InBus(17'b0),
-//	.CC_MUX81_z7_InBus(17'b0),
-//	.CC_MUX81_z8_InBus(17'b0),
-//	
-//	.CC_MUX81_select_InBus(waypoint_selection)
-//);
-
-
 MOVEMENT_CONTROLLER MOVEMENT_CONTROLLER_U0
 (
 	//////////// INPUTS //////////
@@ -374,7 +329,7 @@ SC_COUNTER #(.N(N_COUNTER_TICK_167ms)) COUNTER_TICK_167ms // N is the amount of 
 );
 
 
-PREESCALER #(.N_DATAWIDTH(N_PRESCALER_41us)) PREESCALER_41us
+PREESCALER #(.N_DATAWIDTH(N_PRESCALER_41us)) PREESCALER_41us // To generate PWM to control motors
 (
 	.CLOCK_IN(BB_SYSTEM_CLOCK_50),
 	.CLOCK_OUT(CLK_41us)	

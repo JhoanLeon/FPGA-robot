@@ -80,8 +80,8 @@ localparam STATE_TIME1_33									= 26;
 parameter N_WIDTH = 17;
 parameter B_WIDTH = 8;
 
-parameter h = 17'b0_00001010_00000000; // 10cm de error para X y Y
-parameter safe_dist = 17'b0_00001111_00000000; // 15cm de distancia segura a los obstaculos
+parameter h = 17'b0_00001010_00000000; // 10cm error for X y Y position
+parameter safe_dist = 17'b0_00001111_00000000; // 15cm minimum safe distance to obstacles
 
 parameter vel_pos = 17'b0_00110010_00000000; // +50cm/s
 parameter vel_neg = 17'b1_00110010_00000000; // -50cm/s
@@ -137,15 +137,15 @@ begin
 		
 		
 		
-		STATE_AVOID_0:	if ( (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-1] == 1'b0) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) && (SC_STATEMACHINE_DESC_DIST1_InBus <= safe_dist) )
+		STATE_AVOID_0:	if ( (SC_STATEMACHINE_DESC_DIST1_InBus <= safe_dist) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-1] == 1'b0) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) )
 								STATE_Signal = STATE_AVOID_01;
 							else
 								STATE_Signal = STATE_AVOID_1;
 								
 		STATE_AVOID_01:	if (SC_STATEMACHINE_DESC_DIST1_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_01; // si todavia hay obstaculo, muevase a la derecha
+									STATE_Signal = STATE_AVOID_01; // if there is still an obstacle, move to the right
 								else
-									STATE_Signal = STATE_TIME0_0; // si ya no hay obstaculos, vaya a la meta, pero despues de un tiempo
+									STATE_Signal = STATE_TIME0_0; // if there are no obstacles, go to goal, but after a while
 									
 		STATE_TIME0_0:	if (SC_STATEMACHINE_DESC_TIMEFLAG_InLow == 1'b0)
 								STATE_Signal = STATE_TIME1_0;
@@ -156,15 +156,15 @@ begin
 		
 		
 		
-		STATE_AVOID_1:	if ( (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-1] == 1'b1) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) && (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist) )
+		STATE_AVOID_1:	if ( (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-1] == 1'b1) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) )
 								STATE_Signal = STATE_AVOID_11;
 							else
 								STATE_Signal = STATE_AVOID_2;
 	
 		STATE_AVOID_11:	if (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_11; // si todavia hay obstaculo, muevase a la derecha
+									STATE_Signal = STATE_AVOID_11; // if there is still an obstacle, move to the right
 								else
-									STATE_Signal = STATE_TIME0_1; // si ya no hay obstaculos, vaya a la meta, pero despues de un tiempo
+									STATE_Signal = STATE_TIME0_1; // if there are no obstacles, go to goal, but after a while
 
 		STATE_TIME0_1:	if (SC_STATEMACHINE_DESC_TIMEFLAG_InLow == 1'b0)
 								STATE_Signal = STATE_TIME1_1;
@@ -175,15 +175,15 @@ begin
 									
 				
 									
-		STATE_AVOID_2:	if ( (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-1] == 1'b0) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] <= h[N_WIDTH-2:0]) && (SC_STATEMACHINE_DESC_DIST2_InBus <= safe_dist) && (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) )
+		STATE_AVOID_2:	if ( (SC_STATEMACHINE_DESC_DIST2_InBus <= safe_dist) && (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-1] == 1'b0) && (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] <= h[N_WIDTH-2:0]) )
 								STATE_Signal = STATE_AVOID_21;
 							else
 								STATE_Signal = STATE_AVOID_3;		
 		
 		STATE_AVOID_21:	if (SC_STATEMACHINE_DESC_DIST2_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_21; // si todavia hay obstaculo lateral, muevase hacia adelante
+									STATE_Signal = STATE_AVOID_21; // if there is still a side obstacle, move forward
 								else
-									STATE_Signal = STATE_TIME0_2; // si ya no hay obstaculos lateral, vaya a la derecha, pero despues de un tiempo
+									STATE_Signal = STATE_TIME0_2; // if there is no lateral obstacle, go to the right, but after a while
 
 		STATE_TIME0_2:	if (SC_STATEMACHINE_DESC_TIMEFLAG_InLow == 1'b0)
 								STATE_Signal = STATE_TIME1_2;
@@ -193,14 +193,14 @@ begin
 		STATE_TIME1_2: STATE_Signal = STATE_AVOID_22;
 		
 		STATE_AVOID_22: if (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_23; // si detecto obstaculo atrás, esquivelo a la derecha
+									STATE_Signal = STATE_AVOID_23; // if detect an obstacle behind, avoid it
 							 else
-									STATE_Signal = STATE_AVOID_22; // si no detecta obstaculo, vaya a la derecha
+									STATE_Signal = STATE_AVOID_22; // if don't detect an obstacle yet, go right
 		
 		STATE_AVOID_23: if (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_23; // si todavia hay obstaculo atrás, muevase a la derecha
+									STATE_Signal = STATE_AVOID_23; // if there is still an obstacle behind, move to the right
 							 else
-									STATE_Signal = STATE_TIME0_23; // si ya no hay obstaculos, vaya a la meta, pero despues de un tiempo
+									STATE_Signal = STATE_TIME0_23; // if there are no obstacles, go to goal, but after a while
 	
 		STATE_TIME0_23:	if (SC_STATEMACHINE_DESC_TIMEFLAG_InLow == 1'b0)
 								STATE_Signal = STATE_TIME1_23;
@@ -211,15 +211,15 @@ begin
 		
 		
 		
-		STATE_AVOID_3:	if ( (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-1] == 1'b1) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] <= h[N_WIDTH-2:0]) && (SC_STATEMACHINE_DESC_DIST4_InBus <= safe_dist) && (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) )
+		STATE_AVOID_3:	if ( (SC_STATEMACHINE_DESC_DIST4_InBus <= safe_dist) && (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-1] == 1'b1) && (SC_STATEMACHINE_DESC_ERRORX_InBus[N_WIDTH-2:0] > h[N_WIDTH-2:0]) && (SC_STATEMACHINE_DESC_ERRORY_InBus[N_WIDTH-2:0] <= h[N_WIDTH-2:0]) )
 								STATE_Signal = STATE_AVOID_31;
 							else
 								STATE_Signal = STATE_GOAL_0;		
 		
 		STATE_AVOID_31:	if (SC_STATEMACHINE_DESC_DIST4_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_31; // si todavia hay obstaculo lateral, muevase hacia adelante
+									STATE_Signal = STATE_AVOID_31; // if there is still a side obstacle, move forward
 								else
-									STATE_Signal = STATE_TIME0_3; // si ya no hay obstaculos, vaya a la izquierda, pero despues de un tiempo
+									STATE_Signal = STATE_TIME0_3; // if there is no lateral obstacle, go to the left, but after a while
 
 		STATE_TIME0_3:	if (SC_STATEMACHINE_DESC_TIMEFLAG_InLow == 1'b0)
 								STATE_Signal = STATE_TIME1_3;
@@ -229,14 +229,14 @@ begin
 		STATE_TIME1_3: STATE_Signal = STATE_AVOID_32;	
 	
 		STATE_AVOID_32: if (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_33; // si detecto obstaculo atrás, esquivelo a la izquierda
+									STATE_Signal = STATE_AVOID_33; // if detect an obstacle behind, avoid it
 							 else
-									STATE_Signal = STATE_AVOID_32; // si no detecta obstaculo, vaya a la izquierda
+									STATE_Signal = STATE_AVOID_32; // if don't detect an obstacle yet, go left
 									
 		STATE_AVOID_33: if (SC_STATEMACHINE_DESC_DIST3_InBus <= safe_dist)
-									STATE_Signal = STATE_AVOID_33; // si todavia hay obstaculo atrás, muevase a la izquierda
+									STATE_Signal = STATE_AVOID_33; // if there is still an obstacle behind, move to the left
 							 else
-									STATE_Signal = STATE_TIME0_33; // si ya no hay obstaculos, vaya a la meta, pero despues de un tiempo
+									STATE_Signal = STATE_TIME0_33; // if there are no obstacles, go to goal, but after a while
 		
 		STATE_TIME0_33:	if (SC_STATEMACHINE_DESC_TIMEFLAG_InLow == 1'b0)
 									STATE_Signal = STATE_TIME1_33;
@@ -246,7 +246,7 @@ begin
 		STATE_TIME1_33: STATE_Signal = STATE_GOAL_0;
 		
 		
-				
+		
 		default: STATE_Signal = STATE_RESET_0;
 	endcase
 end
